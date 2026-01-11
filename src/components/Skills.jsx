@@ -14,6 +14,7 @@ const Skills = () => {
     frontend: { title: 'Front-End', color: 'purple', icon: '🎨' },
     database: { title: 'Database', color: 'green', icon: '🗄️' },
     devops: { title: 'DevOps', color: 'orange', icon: '🚀' },
+    ai: { title: 'AI & Automation', color: 'cyan', icon: '🤖' },
     other: { title: 'Other', color: 'pink', icon: '📚' },
   };
 
@@ -133,7 +134,7 @@ const Skills = () => {
               <h3 className="text-2xl font-bold mb-4 text-slate-800 dark:text-slate-200">
                 Technical Expertise Summary
               </h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
                     {skills.filter(s => s.category === 'backend').length}
@@ -157,6 +158,12 @@ const Skills = () => {
                     {skills.filter(s => s.category === 'devops').length}
                   </div>
                   <div className="text-slate-600 dark:text-slate-400">DevOps Skills</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-2">
+                    {skills.filter(s => s.category === 'ai').length}
+                  </div>
+                  <div className="text-slate-600 dark:text-slate-400">AI & Automation</div>
                 </div>
               </div>
             </div>
