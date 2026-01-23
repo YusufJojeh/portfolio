@@ -15,11 +15,13 @@ A modern, responsive portfolio website built with React.js, Tailwind CSS, and Fr
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js 19.1.0
+- **Framework**: Next.js 16.1.1 (App Router)
+- **Frontend**: React 19.1.0
 - **Styling**: Tailwind CSS 3.4.0
 - **Animations**: Framer Motion 11.0.0
 - **Icons**: Lucide React 0.400.0
-- **Build Tool**: Vite 7.0.4
+- **Internationalization**: next-intl 4.7.0
+- **3D Graphics**: Three.js 0.182.0
 - **Package Manager**: npm
 
 ## 📋 Prerequisites
@@ -58,13 +60,15 @@ The application will be available at `http://localhost:3000`
 npm run build
 ```
 
-The built files will be in the `dist` directory.
+The built files will be in the `.next` directory.
 
-### 5. Preview Production Build
+### 5. Start Production Server
 
 ```bash
-npm run preview
+npm start
 ```
+
+The application will be available at `http://localhost:3000`
 
 ## 📁 Project Structure
 
@@ -132,11 +136,12 @@ export const personalInfo = {
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
+### Vercel (Recommended for Next.js)
 
 1. Push your code to GitHub
 2. Connect your repository to Vercel
-3. Deploy automatically
+3. Vercel will automatically detect Next.js and configure the build
+4. Deploy automatically on every push
 
 ```bash
 # Install Vercel CLI
@@ -146,27 +151,27 @@ npm i -g vercel
 vercel
 ```
 
+**Build Settings:**
+- Build Command: `npm run build`
+- Output Directory: `.next`
+- Install Command: `npm install`
+
 ### Netlify
 
+1. Connect your GitHub repository
+2. Configure build settings:
+   - Build command: `npm run build`
+   - Publish directory: `.next`
+3. Add environment variables if needed
+4. Deploy
+
+### Other Platforms
+
+For other platforms (AWS, DigitalOcean, etc.):
 1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
-3. Configure build settings if needed
-
-### GitHub Pages
-
-1. Add to `package.json`:
-```json
-{
-  "homepage": "https://yourusername.github.io/portfolio",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
-
-2. Install gh-pages: `npm install --save-dev gh-pages`
-3. Deploy: `npm run deploy`
+2. Start the production server: `npm start`
+3. Ensure Node.js 18+ is available
+4. Set `NODE_ENV=production`
 
 ## 📱 Browser Support
 

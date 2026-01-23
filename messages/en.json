@@ -1,0 +1,346 @@
+{
+  "nav": {
+    "home": "Home",
+    "flagship": "Flagship Systems",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to my portfolio",
+    "greeting": "Hi, I'm",
+    "name": "Yusuf Mohammad Jojeh",
+    "shortName": "Yusuf Jojeh",
+    "title": "Full-Stack & AI Systems Engineer | DevOps Enthusiast | Prompt Engineering Specialist",
+    "shortTitle": "Full-Stack & AI Engineer",
+    "summary": "I build AI-powered business platforms, healthcare automation systems, and scalable web applications. I leverage advanced AI tools like ChatGPT, Claude, and Cursor to write clean, production-ready code faster and smarter.",
+    "tagline1": "Building Scalable Systems",
+    "tagline2": "AI-Native Solutions",
+    "tagline3": "DevOps-Ready",
+    "getInTouch": "Get In Touch",
+    "downloadCV": "Download CV",
+    "location": "Aleppo, Syria (open to relocation/remote)"
+  },
+  "flagship": {
+    "title": "Flagship Systems",
+    "subtitle": "AI-powered enterprise solutions and healthcare systems built with modern technologies and prompt engineering expertise",
+    "aiIntegration": "AI Integration",
+    "techStack": "Tech Stack",
+    "myRole": "My Role",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "privateProject": "Private Project",
+    "getInTouch": "Get In Touch",
+    "wantMore": "Want to see more projects or discuss collaboration?",
+    "systems": {
+      "system1": {
+        "title": "AI Business Platform (PR)",
+        "type": "Enterprise SaaS",
+        "description": "Modular AI-driven business management platform with intelligent workflows and real-time analytics.",
+        "aiFeatures": [
+          "AI-assisted code generation & architecture validation",
+          "ChatGPT + Code Interpreter for testing and optimization",
+          "Automated workflow suggestions using AI"
+        ],
+        "role": "Full-stack development, AI integration, system architecture, CI/CD pipelines",
+        "highlights": ["Production-ready", "AI-native", "Cloud-ready"]
+      },
+      "system2": {
+        "title": "Medical Mini AI Agent (MedApp)",
+        "type": "Healthcare AI",
+        "description": "Voice-powered AI assistant for healthcare appointment scheduling and payment automation.",
+        "aiFeatures": [
+          "NLP & voice recognition for natural interaction",
+          "Intent detection with AI models",
+          "Prompt engineering for booking flows"
+        ],
+        "role": "Backend & frontend development, NLP integration, payment flow, privacy design",
+        "highlights": ["Voice AI", "Healthcare domain", "Payment integration"]
+      },
+      "system3": {
+        "title": "CRM System",
+        "type": "Business Platform",
+        "description": "Standalone customer relationship management platform with modular architecture and modern frontend.",
+        "aiFeatures": [
+          "AI-assisted module generation",
+          "Prompt engineering for CRUD automation",
+          "Code optimization with AI tools"
+        ],
+        "role": "Full-stack development, modular API design, enterprise architecture",
+        "highlights": ["Enterprise-ready", "Modular design", "API-driven"]
+      }
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "summary1": "Passionate about crafting scalable, intelligent business solutions that leverage AI, automation, and modern web technologies. With expertise in full-stack development and AI systems, I build platforms that solve real-world problems.",
+    "summary2": "Always exploring emerging technologies and best practices to stay at the forefront of software engineering. I believe in writing clean, maintainable code and collaborating with teams to deliver exceptional user experiences.",
+    "summary3": "I'm passionate about creating scalable web applications and delivering exceptional user experiences. With expertise in both frontend and backend development, I enjoy working on full-stack projects that challenge me to think creatively and solve complex problems.",
+    "summary4": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community through tutoring and mentoring.",
+    "getInTouch": "Get In Touch",
+    "education": "Education",
+    "educationDegree": "BSc in Information Engineering & Distributed Systems",
+    "educationInstitution": "Al-Shahbaa University",
+    "educationPeriod": "2021 - 2026",
+    "educationGPA": "GPA: 3.10",
+    "educationDescription": "Focused on distributed systems, software engineering, and information technology fundamentals.",
+    "certifications": "Certifications",
+    "certificationsList": {
+      "cert1": {
+        "name": "Developing AI Applications with Python and Flask",
+        "issuer": "IBM/Coursera",
+        "date": "Jul 15 2025"
+      },
+      "cert2": {
+        "name": "Responsive Web Design",
+        "issuer": "University of London/Coursera",
+        "date": "2024"
+      },
+      "cert3": {
+        "name": "Introduction to Artificial Intelligence",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert4": {
+        "name": "Python for Data Science, AI & Development",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert5": {
+        "name": "Generative AI: Introduction and Applications",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert6": {
+        "name": "Generative AI: Prompt Engineering Basics",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert7": {
+        "name": "Introduction to Software Engineering",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert8": {
+        "name": "Responsive Website Basics (HTML, CSS, JavaScript)",
+        "issuer": "University of London/Coursera",
+        "date": "2022"
+      }
+    },
+    "languages": "Languages"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "A comprehensive overview of my technical skills and expertise across various domains",
+    "filterAll": "All Skills",
+    "searchPlaceholder": "Search skills...",
+    "proficiency": "Proficiency",
+    "expert": "Expert",
+    "advanced": "Advanced",
+    "intermediate": "Intermediate",
+    "beginner": "Beginner",
+    "summary": "Technical Expertise Summary",
+    "aiAutomation": "AI & Automation",
+    "backend": "Backend Skills",
+    "frontend": "Frontend Skills",
+    "database": "Database Skills",
+    "devops": "DevOps Skills"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey and key achievements",
+    "present": "Present",
+    "highlights": "Professional Highlights",
+    "yearsExperience": "Years of Experience",
+    "yearsExp": "Positions",
+    "yearsInDevelopment": "Years in Development",
+    "yearsDev": "Years in Development",
+    "tutoringHours": "Tutoring Hours",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "technologies": "Technologies Mastered"
+    },
+    "list": {
+      "exp1": {
+        "title": "Back-End Developer",
+        "company": "Mermez",
+        "location": "Remote",
+        "period": "Jan 2025 – Present",
+        "description": [
+          "Develop and maintain Laravel-based web applications",
+          "Implement real-time features using WebSockets",
+          "Write comprehensive unit tests with PHPUnit",
+          "Containerize applications using Docker",
+          "Collaborate with cross-functional teams using Agile methodologies",
+          "Designed and maintained CI/CD workflows for Laravel applications",
+          "Improved deployment reliability using Docker-based environments"
+        ]
+      },
+      "exp2": {
+        "title": "Senior Full-Stack Developer",
+        "company": "Technology Company",
+        "location": "Remote",
+        "period": "2023 – 2024",
+        "description": [
+          "Designed and implemented backend systems using NestJS",
+          "Built AI-driven features for business workflows",
+          "Developed scalable CRM and internal platforms",
+          "Collaborated with product and DevOps teams",
+          "Leveraged AI tools (ChatGPT, Claude, Cursor) for rapid development"
+        ]
+      },
+      "exp3": {
+        "title": "Freelance Full-Stack Developer & Tutor",
+        "company": "Self-Employed",
+        "location": "Remote",
+        "period": "Sep 2022 – Present",
+        "description": [
+          "Develop custom Laravel modules and extensions",
+          "Create React.js demonstrations and proof-of-concepts",
+          "Provide technical tutoring with 150+ hours of experience",
+          "Build responsive web applications using modern frameworks",
+          "Implement RESTful APIs and database optimization"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A showcase of my technical work and innovations",
+    "allProjects": "All Projects",
+    "featured": "Featured",
+    "viewGithub": "View on GitHub",
+    "featured_badge": "Featured",
+    "totalProjects": "Total Projects",
+    "featuredProjects": "Featured Projects",
+    "openSource": "Open Source",
+    "statistics": "Project Statistics",
+    "filters": {
+      "all": "All Projects",
+      "featured": "Featured"
+    },
+    "badge": {
+      "featured": "Featured"
+    },
+    "stats": {
+      "total": "Total Projects",
+      "featured": "Featured Projects",
+      "opensource": "Open Source"
+    },
+    "list": {
+      "project1": {
+        "title": "Logistics & Moving Booking System",
+        "description": "A comprehensive logistics management platform for booking and tracking moving services with real-time updates and payment integration."
+      },
+      "project2": {
+        "title": "IdeaVote – Idea Voting Platform",
+        "description": "A collaborative platform where users can submit, vote, and discuss ideas with real-time voting and analytics dashboard."
+      },
+      "project3": {
+        "title": "ExperienceTracker",
+        "description": "A personal experience tracking application for developers to log and categorize their professional experiences and skills."
+      },
+      "project4": {
+        "title": "TrainingRequests",
+        "description": "An internal training management system for organizations to handle employee training requests and approvals."
+      },
+      "project5": {
+        "title": "BlogCMS",
+        "description": "A modern content management system for blogs with rich text editing, SEO optimization, and analytics."
+      },
+      "project6": {
+        "title": "ProjectTracker",
+        "description": "A project management tool for tracking tasks, milestones, and team collaboration with real-time updates."
+      },
+      "project7": {
+        "title": "FBP (DesignHub)",
+        "description": "A design collaboration platform for creative teams to share, review, and manage design assets and projects."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.",
+    "letsConnect": "Let's Connect",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "github": "GitHub",
+    "lookingFor": "What I'm Looking For",
+    "opportunities": [
+      "Full-time remote positions",
+      "Freelance AI/ML projects",
+      "Open source collaboration",
+      "Technical consulting"
+    ],
+    "opportunity1": "Full-time remote positions",
+    "opportunity2": "Freelance AI/ML projects",
+    "opportunity3": "Open source collaboration",
+    "opportunity4": "Technical consulting",
+    "sendMessage": "Send Me a Message",
+    "name": "Name",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "your.email@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "What's this about?",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "send": "Send Message",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent!",
+    "messageSent": "Message Sent!",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your Name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your.email@example.com"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "What's this about?"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project..."
+      }
+    },
+    "button": {
+      "sending": "Sending...",
+      "sent": "Message Sent!",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "tagline": "Passionate about creating innovative web solutions and sharing knowledge with the developer community.",
+    "quickLinks": "Quick Links",
+    "connectWithMe": "Connect With Me",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with",
+    "using": "using React & Tailwind CSS"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
+  },
+  "language": {
+    "english": "English",
+    "arabic": "Arabic",
+    "toggle": "Toggle Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu"
+  }
+}

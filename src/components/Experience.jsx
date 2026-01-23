@@ -47,7 +47,7 @@ const Experience = () => {
           {/* Experience Timeline */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 via-purple-500 to-pink-500"></div>
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-primary-500 dark:bg-secondary-500"></div>
 
             <div className="space-y-8">
               {experiences.map((experience, index) => (
@@ -59,7 +59,7 @@ const Experience = () => {
                   }`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full border-4 border-white dark:border-slate-800 shadow-lg z-10"></div>
+                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary-500 dark:bg-secondary-500 rounded-full border-4 border-white dark:border-slate-800 shadow-lg z-10"></div>
 
                   {/* Content Card */}
                   <div className={`ml-12 md:ml-0 md:w-5/12 ${

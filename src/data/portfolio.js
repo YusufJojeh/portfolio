@@ -1,8 +1,9 @@
 export const personalInfo = {
   name: "Yusuf Mohammad Jojeh",
-  title: "Full-Stack Developer",
+  title: "Full-Stack & AI Systems Engineer | DevOps Enthusiast | Prompt Engineering Specialist",
   location: "Aleppo, Syria (open to relocation/remote)",
-  summary: "Full-stack developer with 3+ years of experience specializing in PHP (Laravel), JavaScript (ES6+), REST APIs, DevOps, and Agile methodologies. Passionate about creating scalable web applications and delivering exceptional user experiences.",
+  summary: "I build AI-powered business platforms, healthcare automation systems, and scalable web applications. I leverage advanced AI tools like ChatGPT, Claude, and Cursor to write clean, production-ready code faster and smarter.",
+  tagline: "Building Scalable Systems → AI-Native Solutions → DevOps-Ready",
   contact: {
     phone: "+963 980 278 664",
     email: "yassaf.jojah@gmail.com",
@@ -11,7 +12,7 @@ export const personalInfo = {
   },
   languages: [
     { name: "Arabic", level: "Native" },
-    { name: "English", level: "Intermediate" }
+    { name: "English", level: "Professional Working Proficiency" }
   ]
 };
 
@@ -27,12 +28,29 @@ export const experiences = [
       "Implement real-time features using WebSockets",
       "Write comprehensive unit tests with PHPUnit",
       "Containerize applications using Docker",
-      "Collaborate with cross-functional teams using Agile methodologies"
+      "Collaborate with cross-functional teams using Agile methodologies",
+      "Designed and maintained CI/CD workflows for Laravel applications",
+      "Improved deployment reliability using Docker-based environments"
     ],
-    technologies: ["Laravel", "MySQL", "PHPUnit", "Docker", "WebSockets", "Git"]
+    technologies: ["Laravel", "MySQL", "PHPUnit", "Docker", "WebSockets", "Git", "CI/CD"]
   },
   {
     id: "2",
+    title: "Senior Full-Stack Developer",
+    company: "Technology Company",
+    location: "Remote",
+    period: "2023 – 2024",
+    description: [
+      "Designed and implemented backend systems using NestJS",
+      "Built AI-driven features for business workflows",
+      "Developed scalable CRM and internal platforms",
+      "Collaborated with product and DevOps teams",
+      "Leveraged AI tools (ChatGPT, Claude, Cursor) for rapid development"
+    ],
+    technologies: ["NestJS", "Next.js", "PostgreSQL", "AI Tools", "Docker", "CI/CD"]
+  },
+  {
+    id: "3",
     title: "Freelance Full-Stack Developer & Tutor",
     company: "Self-Employed",
     location: "Remote",
@@ -45,6 +63,58 @@ export const experiences = [
       "Implement RESTful APIs and database optimization"
     ],
     technologies: ["Laravel", "React", "JavaScript", "MySQL", "REST APIs", "Git"]
+  }
+];
+
+// Flagship Systems - Main Portfolio Projects
+export const flagshipSystems = [
+  {
+    id: 1,
+    title: "AI Business Platform (PR)",
+    type: "Enterprise SaaS",
+    stack: ["NestJS", "Next.js", "PostgreSQL", "Docker", "CI/CD"],
+    description: "Modular AI-driven business management platform with intelligent workflows and real-time analytics.",
+    aiFeatures: [
+      "AI-assisted code generation & architecture validation",
+      "ChatGPT + Code Interpreter for testing and optimization",
+      "Automated workflow suggestions using AI"
+    ],
+    role: "Full-stack development, AI integration, system architecture, CI/CD pipelines",
+    highlights: ["Production-ready", "AI-native", "Cloud-ready"],
+    demoUrl: null,
+    githubUrl: null
+  },
+  {
+    id: 2,
+    title: "Medical Mini AI Agent (MedApp)",
+    type: "Healthcare AI",
+    stack: ["Laravel", "Flask", "Tailwind CSS", "Blade", "APIs"],
+    description: "Voice-powered AI assistant for healthcare appointment scheduling and payment automation.",
+    aiFeatures: [
+      "NLP & voice recognition for natural interaction",
+      "Intent detection with AI models",
+      "Prompt engineering for booking flows"
+    ],
+    role: "Backend & frontend development, NLP integration, payment flow, privacy design",
+    highlights: ["Voice AI", "Healthcare domain", "Payment integration"],
+    demoVideo: null,
+    githubUrl: null
+  },
+  {
+    id: 3,
+    title: "CRM System",
+    type: "Business Platform",
+    stack: ["Laravel", "React", "MySQL"],
+    description: "Standalone customer relationship management platform with modular architecture and modern frontend.",
+    aiFeatures: [
+      "AI-assisted module generation",
+      "Prompt engineering for CRUD automation",
+      "Code optimization with AI tools"
+    ],
+    role: "Full-stack development, modular API design, enterprise architecture",
+    highlights: ["Enterprise-ready", "Modular design", "API-driven"],
+    demoUrl: null,
+    githubUrl: null
   }
 ];
 
@@ -103,6 +173,15 @@ export const projects = [
 ];
 
 export const skills = [
+  // AI & Automation Skills (New - Priority)
+  { name: "Prompt Engineering", icon: "Brain", category: "ai", proficiency: 5 },
+  { name: "ChatGPT / Claude", icon: "MessageSquare", category: "ai", proficiency: 5 },
+  { name: "Cursor IDE", icon: "Code2", category: "ai", proficiency: 5 },
+  { name: "AI-Assisted Development", icon: "Sparkles", category: "ai", proficiency: 5 },
+  { name: "Code Generation & Optimization", icon: "Zap", category: "ai", proficiency: 5 },
+  { name: "Generative AI Workflows", icon: "Workflow", category: "ai", proficiency: 5 },
+  { name: "NestJS", icon: "nest", category: "backend", proficiency: 4 },
+
   // Backend Skills
   { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
   { name: "Laravel", icon: "laravel", category: "backend", proficiency: 5 },

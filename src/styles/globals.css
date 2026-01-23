@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* CSS Variables for better performance */
+  :root {
+    --color-primary: 33 150 243;
+    --color-secondary: 255 193 7;
+    /* Logo colors - Light theme (Blue gradient matching primary colors) */
+    --logo-color-1: #2196f3;
+    --logo-color-2: #1e88e5;
+    --logo-color-3: #1976d2;
+  }
+
+  .dark {
+    /* Logo colors - Dark theme (Gold/Yellow gradient matching secondary colors) */
+    --logo-color-1: #ffc107;
+    --logo-color-2: #ffb300;
+    --logo-color-3: #ffa000;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-slate-50 dark:bg-slate-950;
+    @apply text-slate-900 dark:text-slate-50;
+    @apply transition-colors duration-300;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+}
+
+@layer components {
+  /* Glass Effects - Optimized with GPU acceleration */
+  .glass {
+    @apply bg-white/10 dark:bg-slate-900/10 backdrop-blur-md border border-primary-200/20 dark:border-secondary-500/20;
+    will-change: transform;
+  }
+
+  .glass-card {
+    @apply bg-white/90 dark:bg-dark-900/90
+           backdrop-blur-xl border-2 border-primary-200/30 dark:border-secondary-500/30
+           rounded-2xl shadow-2xl
+           hover:shadow-secondary-400/20 dark:hover:shadow-secondary-500/30
+           hover:scale-[1.02] hover:border-primary-400/50 dark:hover:border-secondary-400/50
+           transition-all duration-500;
+    will-change: transform;
+  }
+
+  /* Text Colors */
+  .gradient-text {
+    @apply text-primary-600 dark:text-secondary-400;
+  }
+
+  /* Layout */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Optimized scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-600 dark:bg-secondary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-700 dark:bg-secondary-700;
+}

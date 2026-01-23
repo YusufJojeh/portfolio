@@ -1,0 +1,165 @@
+# Yusuf Mohammad Jojeh - Full-Stack & AI Engineer Portfolio
+
+> Developer Portfolio - AI-powered business solutions and enterprise applications
+
+## About
+
+Yusuf Mohammad Jojeh is a Full-Stack Developer and AI Systems Engineer specializing in React, Next.js, NestJS, Laravel, and AI-powered business solutions. Based in Aleppo, Syria, with 3+ years of professional experience and open to remote work or relocation.
+
+## Core Expertise
+
+### AI & Automation
+- **Prompt Engineering**: Expert-level optimization for ChatGPT, Claude, and custom AI agents
+- **AI Integration**: ChatGPT API, Claude API, voice recognition, natural language processing
+- **AI Automation**: Workflow automation, intelligent data processing, AI-powered features
+
+### Backend Development
+- **Frameworks**: Laravel (PHP), NestJS (Node.js/TypeScript), Python Flask
+- **APIs**: RESTful APIs, GraphQL, WebSocket real-time communication
+- **Architecture**: Microservices, event-driven architecture, clean code principles
+
+### Frontend Development
+- **Modern Stack**: React 19, Next.js 16, TypeScript, Tailwind CSS
+- **Animations**: Framer Motion, Three.js for 3D graphics
+- **Performance**: SSR, SSG, code splitting, lazy loading, Core Web Vitals optimization
+
+### DevOps & Tools
+- **Containerization**: Docker, Docker Compose
+- **CI/CD**: GitHub Actions, automated testing pipelines
+- **Version Control**: Git, GitHub collaborative workflows
+
+### Databases
+- **SQL**: MySQL, PostgreSQL - complex queries, indexing, optimization
+- **NoSQL**: MongoDB - document storage, aggregation pipelines
+- **Design**: Database schema design, normalization, performance tuning
+
+## Flagship Projects
+
+### 1. AI Business Platform (Enterprise SaaS)
+**Stack**: NestJS + Next.js + PostgreSQL + Redis
+**AI Integration**: ChatGPT API for intelligent automation
+**Features**:
+- AI-powered document generation and analysis
+- Real-time collaboration with WebSocket
+- Role-based access control (RBAC)
+- RESTful API with comprehensive documentation
+- Docker containerization for deployment
+
+**Key Technologies**: TypeScript, JWT authentication, Redis caching, PostgreSQL optimization
+
+### 2. Medical Mini AI Agent
+**Stack**: Laravel + React + Python Flask + MySQL
+**AI Integration**: Claude API + Voice Recognition
+**Features**:
+- AI-powered medical consultation assistant
+- Arabic voice recognition with high accuracy
+- Intelligent symptom analysis and recommendations
+- Secure patient data management
+- Real-time doctor notifications
+
+**Key Technologies**: Python NLP, voice processing, HIPAA-compliant security
+
+### 3. CRM & Business Management System
+**Stack**: Laravel + React + MySQL
+**Features**:
+- Complete customer relationship management
+- Sales pipeline tracking and analytics
+- Automated email campaigns
+- Invoice generation and financial reporting
+- Multi-tenant architecture
+
+**Key Technologies**: Laravel Queues, event broadcasting, scheduled jobs
+
+## Technical Skills
+
+**Languages**: PHP, JavaScript, TypeScript, Python, SQL, HTML5, CSS3
+**Frameworks**: Laravel, NestJS, React, Next.js, Tailwind CSS, Flask
+**AI Tools**: ChatGPT API, Claude API, Prompt Engineering, RAG systems
+**DevOps**: Docker, GitHub Actions, Linux server management
+**Testing**: PHPUnit, Jest, Playwright, integration testing
+**Tools**: Git, Postman, VS Code, Cursor AI, Docker Desktop
+
+## Professional Experience
+
+### Full-Stack Developer & AI Engineer (Freelance)
+**Duration**: 3+ years
+**Highlights**:
+- Developed 15+ enterprise-grade applications
+- Integrated AI capabilities into 8+ business platforms
+- Reduced development time by 40% using AI-assisted coding (Cursor, Claude)
+- Mentored 20+ students in web development and AI integration
+
+### Technical Tutor (Part-time)
+**Duration**: 2+ years | 300+ hours
+**Topics**: Full-Stack Development, Laravel, React, AI Integration, Database Design
+
+## Education
+
+**Bachelor of Informatics Engineering**
+Aleppo University | Software Engineering Track
+GPA: 77.91/100
+
+**Certifications**:
+- Professional Full-Stack Development (Udemy - 100+ hours)
+- Advanced Laravel & PHP (Self-paced intensive training)
+- AI & Machine Learning Fundamentals
+
+## Languages
+
+- **Arabic**: Native speaker
+- **English**: Professional working proficiency (B2-C1 level)
+
+## Contact Information
+
+**Email**: yassaf.jojah@gmail.com
+**Phone**: +963 980 278 664
+**Location**: Aleppo, Syria (Open to remote/relocation)
+**GitHub**: github.com/YusufJojeh
+**LinkedIn**: linkedin.com/in/yusufjojeh
+**Portfolio**: yusufjojeh.com
+
+## Career Interests
+
+- Full-time remote positions as Full-Stack or AI Engineer
+- AI-focused development projects
+- Enterprise SaaS platform development
+- Open-source collaboration
+- Technical consulting and architecture design
+
+## Work Availability
+
+- **Employment Type**: Full-time, part-time, or contract
+- **Remote Work**: Yes, preferred
+- **Relocation**: Open to opportunities
+- **Time Zone**: GMT+3 (flexible for international teams)
+
+## Portfolio Website
+
+This portfolio is built with Next.js 16 (App Router), showcasing:
+- **SEO Optimization**: Full metadata, Schema.org structured data
+- **Internationalization**: English and Arabic (RTL support)
+- **Modern Design**: Three.js space background, Framer Motion animations
+- **Performance**: Static generation, optimized Core Web Vitals
+- **Accessibility**: WCAG 2.1 compliant
+
+## Key Differentiators
+
+1. **AI-First Approach**: Deep expertise in prompt engineering and AI integration
+2. **Fast Iteration**: Using AI tools (Cursor, Claude) for rapid, high-quality development
+3. **Enterprise Experience**: Built scalable systems handling thousands of users
+4. **Bilingual Developer**: Native Arabic, professional English
+5. **Full-Stack Depth**: Equally strong in backend, frontend, and DevOps
+
+## Notable Achievements
+
+- Reduced development time by 40% through AI-assisted coding workflows
+- Built healthcare AI system processing 1000+ patient interactions
+- Created enterprise platform serving 500+ concurrent users
+- Mentored 20+ developers in modern web development practices
+- Integrated AI capabilities into 8+ production applications
+
+---
+
+**Last Updated**: January 2026
+**Portfolio Version**: 2.0 (Next.js 16 with full SEO/AEO)
+**Status**: Open to opportunities
