@@ -10,6 +10,6 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Match all pathnames except for static files
-  matcher: ['/((?!api|_next/static|_next/image|favicon\\.svg).*)']
+  // Match all pathnames except for static files (public assets, _next, etc.)
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };
