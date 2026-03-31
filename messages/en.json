@@ -295,6 +295,10 @@
       "project10": {
         "title": "Medical Booking System – Enterprise Healthcare Platform",
         "description": "AI-powered medical appointment booking and patient management system. Features multi-role workflows (admin, doctor, patient), Stripe payment processing, real-time Jitsi video consultations, WhatsApp reminders via Twilio, AI clinical decision support, health metrics tracking, subscription management, referral system, and HIPAA-compliance infrastructure."
+      },
+      "project11": {
+        "title": "Rakez ERP – Enterprise Resource Planning System",
+        "description": "Enterprise-grade ERP platform for real estate and sales management. Automates commission management with multi-party distribution, approval workflows, and VAT calculations. Features advanced booking/reservations with waiting list Queue, 67+ role-based permissions, real-time WebSocket notifications, OpenAI-powered AI assistant with Arabic support, comprehensive analytics, marketing budget tracking (Facebook & TikTok integration), media management, and 150+ protected API endpoints for complex business operations."
       }
     }
   },

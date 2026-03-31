@@ -214,6 +214,13 @@ export const projects = [
     description: "AI-powered medical appointment booking and patient management platform with multi-role workflows, digital payments (Stripe), real-time video consultations (Jitsi), WhatsApp reminders (Twilio), comprehensive clinical decision support, health metrics tracking, subscriptions, referral system, and full HIPAA-compliance infrastructure.",
     technologies: ["Laravel", "Blade", "Vite", "Tailwind CSS", "MySQL", "Redis", "Stripe", "Twilio", "Jitsi", "OpenAI", "Pest", "Alpine.js"],
     githubUrl: "https://github.com/YusufJojeh/medical-booking-system"
+  },
+  {
+    id: "11",
+    title: "Rakez ERP – Enterprise Resource Planning System",
+    description: "Enterprise-grade ERP platform for real estate and sales management with automated commission calculation (multi-party distribution, approval workflows, VAT), advanced booking/reservations with waiting list system, 67+ role-based permissions across 9 predefined roles, real-time WebSocket notifications, AI-powered assistant (OpenAI with Arabic support), comprehensive analytics dashboards, marketing budget tracking with platform integrations (Facebook SDK, TikTok API), media management, 150+ protected API endpoints, and production-ready architecture for complex business operations.",
+    technologies: ["Laravel 12", "PHP 8.2+", "MySQL", "PostgreSQL", "Redis", "Laravel Reverb", "Sanctum", "Spatie Permission", "Vite", "Vue/React", "OpenAI", "Twilio", "Facebook SDK", "TikTok API", "mPDF"],
+    githubUrl: "https://github.com/YusufJojeh/rakez-erp"
   }
 ];
 
