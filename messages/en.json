@@ -283,6 +283,10 @@
       "project7": {
         "title": "FBP (DesignHub)",
         "description": "Asset management platform for creative teams with file versioning, permission-based access control, real-time collaboration features, and bulk asset operations."
+      },
+      "project8": {
+        "title": "RestoCafe OS – Multi-Tenant SaaS POS Platform",
+        "description": "Production-grade Point-of-Sale system for restaurants and cafés. Features multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA with service workers, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments with Kubernetes scaling."
       }
     }
   },

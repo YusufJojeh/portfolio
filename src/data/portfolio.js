@@ -193,6 +193,13 @@ export const projects = [
     description: "Asset management platform for creative teams with file versioning, permission-based access control, real-time collaboration features, and bulk asset operations.",
     technologies: ["Laravel", "MySQL", "File Management", "RBAC", "Real-time"],
     githubUrl: "https://github.com/YusufJojeh/FBP"
+  },
+  {
+    id: "8",
+    title: "RestoCafe OS – Multi-Tenant SaaS POS Platform",
+    description: "Production-grade Point-of-Sale system for restaurants and cafés with multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments.",
+    technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "WebSocket", "Socket.IO", "Redux", "Service Workers", "Docker", "Kubernetes", "Redis", "Prometheus"],
+    githubUrl: "https://github.com/YusufJojeh/restocafe-os"
   }
 ];
 
