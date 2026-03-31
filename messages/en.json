@@ -287,6 +287,10 @@
       "project8": {
         "title": "RestoCafe OS – Multi-Tenant SaaS POS Platform",
         "description": "Production-grade Point-of-Sale system for restaurants and cafés. Features multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA with service workers, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments with Kubernetes scaling."
+      },
+      "project9": {
+        "title": "Matjrii – Multi-Store E-Commerce SaaS Platform",
+        "description": "Comprehensive SaaS platform for unlimited e-commerce store creation. Includes 27+ payment gateways, 10+ professional themes, 22+ languages, AI-powered content generation, multi-tenant architecture, POS system integration, inventory management, role-based permissions, advanced analytics, and complete security compliance."
       }
     }
   },

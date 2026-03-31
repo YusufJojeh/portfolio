@@ -200,6 +200,13 @@ export const projects = [
     description: "Production-grade Point-of-Sale system for restaurants and cafés with multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments.",
     technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "WebSocket", "Socket.IO", "Redux", "Service Workers", "Docker", "Kubernetes", "Redis", "Prometheus"],
     githubUrl: "https://github.com/YusufJojeh/restocafe-os"
+  },
+  {
+    id: "9",
+    title: "Matjrii – Multi-Store E-Commerce SaaS Platform",
+    description: "Comprehensive e-commerce SaaS platform enabling unlimited store creation with 27+ payment gateways, 10+ professional themes, 22+ language support, AI content generation (ChatGPT), multi-tenant isolation, advanced inventory management, POS integration, comprehensive analytics, and enterprise-grade security.",
+    technologies: ["Laravel", "React", "TypeScript", "MySQL", "PostgreSQL", "OpenAI API", "Inertia.js", "Tailwind CSS", "Stripe", "PayPal", "Razorpay"],
+    githubUrl: "https://github.com/YusufJojeh/matjrii-saas"
   }
 ];
 
