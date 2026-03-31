@@ -13,19 +13,19 @@
     "greeting": "Hi, I'm",
     "name": "Yusuf Mohammad Jojeh",
     "shortName": "Yusuf Jojeh",
-    "title": "Full-Stack & AI Systems Engineer | DevOps Enthusiast | Prompt Engineering Specialist",
-    "shortTitle": "Full-Stack & AI Engineer",
-    "summary": "I build AI-powered business platforms, healthcare automation systems, and scalable web applications. I leverage advanced AI tools like ChatGPT, Claude, and Cursor to write clean, production-ready code faster and smarter.",
-    "tagline1": "Building Scalable Systems",
-    "tagline2": "AI-Native Solutions",
-    "tagline3": "DevOps-Ready",
+    "title": "Backend Developer | SaaS & AI Systems Engineer",
+    "shortTitle": "Backend Developer",
+    "summary": "Backend engineer with 3+ years building scalable SaaS systems, AI-integrated platforms, and production-grade APIs. Specialized in Laravel and NestJS backend architecture, secure authentication systems, and complex business logic implementation. Building systems that handle real-world operational complexity, including CRM/ERP functionality, multi-role permission structures, and AI-driven features integrated into product workflows.",
+    "tagline1": "Scalable Backend Systems",
+    "tagline2": "SaaS & AI Products",
+    "tagline3": "Production-Ready Architecture",
     "getInTouch": "Get In Touch",
     "downloadCV": "Download CV",
-    "location": "Aleppo, Syria (open to relocation/remote)"
+    "location": "Aleppo, Syria | Full Remote | Willing to Relocate"
   },
   "flagship": {
     "title": "Flagship Systems",
-    "subtitle": "AI-powered enterprise solutions and healthcare systems built with modern technologies and prompt engineering expertise",
+    "subtitle": "Backend-focused enterprise solutions with REST APIs, CRM/ERP business logic, and production-grade architecture",
     "aiIntegration": "AI Integration",
     "techStack": "Tech Stack",
     "myRole": "My Role",
@@ -36,49 +36,49 @@
     "wantMore": "Want to see more projects or discuss collaboration?",
     "systems": {
       "system1": {
-        "title": "AI Business Platform (PR)",
-        "type": "Enterprise SaaS",
-        "description": "Modular AI-driven business management platform with intelligent workflows and real-time analytics.",
+        "title": "Enterprise CRM & Business Platform",
+        "type": "Business Systems",
+        "description": "Modular, scalable business management platform with customer relationships, order management, permissions, and integrated workflows for production use.",
         "aiFeatures": [
-          "AI-assisted code generation & architecture validation",
-          "ChatGPT + Code Interpreter for testing and optimization",
-          "Automated workflow suggestions using AI"
+          "Backend API for business workflow automation",
+          "Advanced role-based access control and permissions",
+          "Integration with third-party services and payment systems"
         ],
-        "role": "Full-stack development, AI integration, system architecture, CI/CD pipelines",
-        "highlights": ["Production-ready", "AI-native", "Cloud-ready"]
+        "role": "Backend architecture, REST API design, database schema, authentication, business logic implementation, production deployment",
+        "highlights": ["Production-ready", "Enterprise architecture", "RBAC & permissions"]
       },
       "system2": {
-        "title": "Medical Mini AI Agent (MedApp)",
-        "type": "Healthcare AI",
-        "description": "Voice-powered AI assistant for healthcare appointment scheduling and payment automation.",
+        "title": "Healthcare Operations Platform",
+        "type": "Business Systems",
+        "description": "Backend system for healthcare appointment scheduling, payment processing, and patient management with robust business logic and data integrity.",
         "aiFeatures": [
-          "NLP & voice recognition for natural interaction",
-          "Intent detection with AI models",
-          "Prompt engineering for booking flows"
+          "Complex business logic for appointment scheduling",
+          "Payment gateway integration and transaction management",
+          "Notification and workflow automation systems"
         ],
-        "role": "Backend & frontend development, NLP integration, payment flow, privacy design",
-        "highlights": ["Voice AI", "Healthcare domain", "Payment integration"]
+        "role": "Backend development, API design, payment integration, database optimization, production reliability",
+        "highlights": ["Production system", "Payment integration", "Business-critical"]
       },
       "system3": {
-        "title": "CRM System",
-        "type": "Business Platform",
-        "description": "Standalone customer relationship management platform with modular architecture and modern frontend.",
+        "title": "CRM System with Advanced Permissions",
+        "type": "Business Systems",
+        "description": "Standalone customer relationship management platform featuring modular API architecture, advanced permission structures, multi-tenant support, and enterprise-grade design.",
         "aiFeatures": [
-          "AI-assisted module generation",
-          "Prompt engineering for CRUD automation",
-          "Code optimization with AI tools"
+          "Role-based access control (RBAC) and permission management",
+          "Dynamic module system for business workflow customization",
+          "API-driven architecture for integration and extension"
         ],
-        "role": "Full-stack development, modular API design, enterprise architecture",
-        "highlights": ["Enterprise-ready", "Modular design", "API-driven"]
+        "role": "Backend API development, permission systems, database architecture, modular design, team collaboration",
+        "highlights": ["Enterprise-ready", "Modular architecture", "API-driven"]
       }
     }
   },
   "about": {
     "title": "About Me",
-    "summary1": "Passionate about crafting scalable, intelligent business solutions that leverage AI, automation, and modern web technologies. With expertise in full-stack development and AI systems, I build platforms that solve real-world problems.",
-    "summary2": "Always exploring emerging technologies and best practices to stay at the forefront of software engineering. I believe in writing clean, maintainable code and collaborating with teams to deliver exceptional user experiences.",
-    "summary3": "I'm passionate about creating scalable web applications and delivering exceptional user experiences. With expertise in both frontend and backend development, I enjoy working on full-stack projects that challenge me to think creatively and solve complex problems.",
-    "summary4": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community through tutoring and mentoring.",
+    "summary1": "Backend engineer focused on building scalable systems, REST APIs, and business-critical platforms. I specialize in translating business requirements into clean, maintainable code architectures with a strong backend-first approach. With expertise in Laravel and NestJS, I design systems that are reliable, secure, and production-ready.",
+    "summary2": "I believe in writing code that solves real problems. I focus on backend fundamentals: database design, API architecture, authentication, permissions, and integrations. I stay current with best practices in software engineering and collaborate effectively with product and DevOps teams.",
+    "summary3": "I'm experienced in building full-stack applications with a backend-first approach, handling complex business logic, data modeling, and system architecture. I enjoy solving challenging problems that require thinking through system design, performance, and scalability.",
+    "summary4": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or mentoring junior developers in backend engineering and system design.",
     "getInTouch": "Get In Touch",
     "education": "Education",
     "educationDegree": "BSc in Information Engineering & Distributed Systems",
@@ -142,8 +142,8 @@
     "intermediate": "Intermediate",
     "beginner": "Beginner",
     "summary": "Technical Expertise Summary",
-    "aiAutomation": "AI & Automation",
-    "backend": "Backend Skills",
+    "aiAutomation": "AI & APIs Integration",
+    "backend": "Backend Engineering",
     "frontend": "Frontend Skills",
     "database": "Database Skills",
     "devops": "DevOps Skills"
@@ -165,44 +165,41 @@
     },
     "list": {
       "exp1": {
-        "title": "Back-End Developer",
-        "company": "Mermez",
+        "title": "Backend Developer | SaaS & AI Systems",
+        "company": "Rakez Company",
         "location": "Remote",
-        "period": "Jan 2025 – Present",
+        "period": "Dec 2025 – Present",
         "description": [
-          "Develop and maintain Laravel-based web applications",
-          "Implement real-time features using WebSockets",
-          "Write comprehensive unit tests with PHPUnit",
-          "Containerize applications using Docker",
-          "Collaborate with cross-functional teams using Agile methodologies",
-          "Designed and maintained CI/CD workflows for Laravel applications",
-          "Improved deployment reliability using Docker-based environments"
+          "Designed and built backend services for AI-powered CRM modules, translating product requirements into secure, scalable API architectures",
+          "Developed RESTful APIs and business logic using Laravel and NestJS to support complex CRM workflows and data operations",
+          "Integrated AI-driven features (LLM APIs, agents, lead enrichment) into production CRM workflows with focus on reliability",
+          "Maintained code quality, system performance, and production readiness through testing, monitoring, and continuous optimization",
+          "Collaborated with product and engineering teams to deliver scalable features and system improvements"
         ]
       },
       "exp2": {
-        "title": "Senior Full-Stack Developer",
-        "company": "Technology Company",
+        "title": "Backend Developer | iLogistics SaaS",
+        "company": "Mermez (Creative Digital Solutions)",
         "location": "Remote",
-        "period": "2023 – 2024",
+        "period": "Jan 2025 – Nov 2025",
         "description": [
-          "Designed and implemented backend systems using NestJS",
-          "Built AI-driven features for business workflows",
-          "Developed scalable CRM and internal platforms",
-          "Collaborated with product and DevOps teams",
-          "Leveraged AI tools (ChatGPT, Claude, Cursor) for rapid development"
+          "Designed and developed RESTful APIs for iLogistics SaaS platform using Laravel and MySQL, handling multi-tenant operations",
+          "Optimized database queries and schemas, resulting in approximately 25% performance improvement across tracking and reporting modules",
+          "Implemented secure multi-user authentication, JWT-based authorization, and role-based access control for operational security",
+          "Delivered backend functionality for real-time tracking, analytics dashboards, and complex business reporting features",
+          "Supported system stability, code reviews, and production deployment processes"
         ]
       },
       "exp3": {
-        "title": "Freelance Full-Stack Developer & Tutor",
-        "company": "Self-Employed",
-        "location": "Remote",
-        "period": "Sep 2022 – Present",
+        "title": "Full-Stack Developer | CRM Systems",
+        "company": "Business Flow",
+        "location": "Remote/Hybrid",
+        "period": "Nov 2025 – Jan 2026",
         "description": [
-          "Develop custom Laravel modules and extensions",
-          "Create React.js demonstrations and proof-of-concepts",
-          "Provide technical tutoring with 150+ hours of experience",
-          "Build responsive web applications using modern frameworks",
-          "Implement RESTful APIs and database optimization"
+          "Developed backend-heavy CRM systems and operational dashboards using Laravel with emphasis on secure API design",
+          "Built REST APIs with comprehensive RBAC implementation, input validation, and structured business logic workflows",
+          "Contributed to full-stack feature delivery while maintaining code quality, performance, and system maintainability",
+          "Identified and proposed architectural improvements to enhance scalability and developer efficiency"
         ]
       }
     }
@@ -233,53 +230,53 @@
     "list": {
       "project1": {
         "title": "Logistics & Moving Booking System",
-        "description": "A comprehensive logistics management platform for booking and tracking moving services with real-time updates and payment integration."
+        "description": "Production logistics platform featuring order management, real-time tracking, payment gateway integration, multi-role permissions, and RESTful APIs for mobile and web clients."
       },
       "project2": {
-        "title": "IdeaVote – Idea Voting Platform",
-        "description": "A collaborative platform where users can submit, vote, and discuss ideas with real-time voting and analytics dashboard."
+        "title": "IdeaVote – Collaborative Voting Platform",
+        "description": "Real-time collaborative platform with complex voting logic, live analytics, permission structures, and WebSocket integration for instant updates across users."
       },
       "project3": {
         "title": "ExperienceTracker",
-        "description": "A personal experience tracking application for developers to log and categorize their professional experiences and skills."
+        "description": "Developer portfolio platform with structured data models, performance tracking, experience categorization, and analytics dashboard for professional growth monitoring."
       },
       "project4": {
-        "title": "TrainingRequests",
-        "description": "An internal training management system for organizations to handle employee training requests and approvals."
+        "title": "TrainingRequests – HR Operations System",
+        "description": "Enterprise HR workflow system with approval routing, email notifications, PDF document generation, and role-based access control for training approval processes."
       },
       "project5": {
-        "title": "BlogCMS",
-        "description": "A modern content management system for blogs with rich text editing, SEO optimization, and analytics."
+        "title": "BlogCMS – Content Management System",
+        "description": "Full-featured CMS with content versioning, SEO optimization framework, real-time analytics, and REST API for headless publishing across multiple channels."
       },
       "project6": {
-        "title": "ProjectTracker",
-        "description": "A project management tool for tracking tasks, milestones, and team collaboration with real-time updates."
+        "title": "ProjectTracker – Team Collaboration System",
+        "description": "Project management backend with task routing, team permissions, real-time updates via WebSockets, file attachment handling, and milestone tracking for agile teams."
       },
       "project7": {
         "title": "FBP (DesignHub)",
-        "description": "A design collaboration platform for creative teams to share, review, and manage design assets and projects."
+        "description": "Asset management platform for creative teams with file versioning, permission-based access control, real-time collaboration features, and bulk asset operations."
       }
     }
   },
   "contact": {
     "title": "Get In Touch",
-    "subtitle": "I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.",
+    "subtitle": "Looking for a backend engineer who can contribute quickly and deliver production-grade systems? Let's connect.",
     "letsConnect": "Let's Connect",
     "email": "Email",
     "phone": "Phone",
     "location": "Location",
     "github": "GitHub",
-    "lookingFor": "What I'm Looking For",
+    "lookingFor": "Currently Seeking",
     "opportunities": [
-      "Full-time remote positions",
-      "Freelance AI/ML projects",
-      "Open source collaboration",
-      "Technical consulting"
+      "Full-time backend & backend-focused full-stack roles",
+      "Remote positions (GCC, MENA, International)",
+      "Product teams, SaaS, CRM/ERP systems",
+      "Architecture & system design contributions"
     ],
-    "opportunity1": "Full-time remote positions",
-    "opportunity2": "Freelance AI/ML projects",
-    "opportunity3": "Open source collaboration",
-    "opportunity4": "Technical consulting",
+    "opportunity1": "Full-time backend & backend-focused full-stack roles",
+    "opportunity2": "Remote positions (GCC, MENA, International)",
+    "opportunity3": "Product teams, SaaS, CRM/ERP systems",
+    "opportunity4": "Architecture & system design contributions",
     "sendMessage": "Send Me a Message",
     "name": "Name",
     "namePlaceholder": "Your Name",

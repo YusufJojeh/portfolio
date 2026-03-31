@@ -1,12 +1,12 @@
 export const personalInfo = {
   name: "Yusuf Mohammad Jojeh",
-  title: "Full-Stack & AI Systems Engineer | DevOps Enthusiast | Prompt Engineering Specialist",
-  location: "Aleppo, Syria (open to relocation/remote)",
-  summary: "I build AI-powered business platforms, healthcare automation systems, and scalable web applications. I leverage advanced AI tools like ChatGPT, Claude, and Cursor to write clean, production-ready code faster and smarter.",
-  tagline: "Building Scalable Systems → AI-Native Solutions → DevOps-Ready",
+  title: "Backend Developer | SaaS & AI Systems Engineer",
+  location: "Aleppo, Syria | Full Remote | Willing to Relocate",
+  summary: "Backend engineer with 3+ years building scalable SaaS systems, AI-integrated platforms, and production-grade APIs. Specialized in Laravel and NestJS backend architecture, secure authentication systems, and complex business logic implementation. Proven ability to design and deliver systems that handle real-world operational complexity—including CRM/ERP functionality, multi-role permission structures, and AI-driven features integrated into product workflows. Comfortable contributing across the stack with strong backend-first mindset focused on performance, maintainability, and shipping reliable systems.",
+  tagline: "Scalable Backend Systems → SaaS & AI Products → Production-Ready Architecture",
   contact: {
-    phone: "+963980278664",
-    email: "ysusufmohammdjojeh@gmail.com",
+    phone: "+963 980 278 664",
+    email: "yassaf.jojah@gmail.com",
     github: "github.com/YusufJojeh",
     linkedin: "www.linkedin.com/in/yusuf-jojeh-95835b26b"
   },
@@ -19,100 +19,124 @@ export const personalInfo = {
 export const experiences = [
   {
     id: "1",
-    title: "Back-End Developer",
-    company: "Mermez",
+    title: "Backend Developer | SaaS & AI Systems",
+    company: "Rakez Company",
     location: "Remote",
-    period: "Jan 2025 – Present",
+    period: "Dec 2025 – Present",
     description: [
-      "Develop and maintain Laravel-based web applications",
-      "Implement real-time features using WebSockets",
-      "Write comprehensive unit tests with PHPUnit",
-      "Containerize applications using Docker",
-      "Collaborate with cross-functional teams using Agile methodologies",
-      "Designed and maintained CI/CD workflows for Laravel applications",
-      "Improved deployment reliability using Docker-based environments"
+      "Designed and built backend services for AI-powered CRM modules, translating product requirements into secure, scalable API architectures",
+      "Developed RESTful APIs and business logic using Laravel and NestJS to support complex CRM workflows and data operations",
+      "Integrated AI-driven features (LLM APIs, agents, lead enrichment) into production CRM workflows with focus on reliability",
+      "Maintained code quality, system performance, and production readiness through testing, monitoring, and continuous optimization",
+      "Collaborated with product and engineering teams to deliver scalable features and system improvements"
     ],
-    technologies: ["Laravel", "MySQL", "PHPUnit", "Docker", "WebSockets", "Git", "CI/CD"]
+    technologies: ["Laravel", "NestJS", "PostgreSQL", "REST APIs", "LLM Integration", "Docker", "CI/CD", "Python"]
   },
   {
     id: "2",
-    title: "Senior Full-Stack Developer",
-    company: "Technology Company",
+    title: "Backend Developer | iLogistics SaaS",
+    company: "Mermez (Creative Digital Solutions)",
     location: "Remote",
-    period: "2023 – 2024",
+    period: "Jan 2025 – Nov 2025",
     description: [
-      "Designed and implemented backend systems using NestJS",
-      "Built AI-driven features for business workflows",
-      "Developed scalable CRM and internal platforms",
-      "Collaborated with product and DevOps teams",
-      "Leveraged AI tools (ChatGPT, Claude, Cursor) for rapid development"
+      "Designed and developed RESTful APIs for iLogistics SaaS platform using Laravel and MySQL, handling multi-tenant operations",
+      "Optimized database queries and schemas, resulting in approximately 25% performance improvement across tracking and reporting modules",
+      "Implemented secure multi-user authentication, JWT-based authorization, and role-based access control for operational security",
+      "Delivered backend functionality for real-time tracking, analytics dashboards, and complex business reporting features",
+      "Supported system stability, code reviews, and production deployment processes"
     ],
-    technologies: ["NestJS", "Next.js", "PostgreSQL", "AI Tools", "Docker", "CI/CD"]
+    technologies: ["Laravel", "MySQL", "Redis", "REST APIs", "JWT", "RBAC", "Docker", "Git"]
   },
   {
     id: "3",
-    title: "Freelance Full-Stack Developer & Tutor",
+    title: "Full-Stack Developer | CRM Systems",
+    company: "Business Flow",
+    location: "Remote/Hybrid",
+    period: "Nov 2025 – Jan 2026",
+    description: [
+      "Developed backend-heavy CRM systems and operational dashboards using Laravel with emphasis on secure API design",
+      "Built REST APIs with comprehensive RBAC implementation, input validation, and structured business logic workflows",
+      "Contributed to full-stack feature delivery while maintaining code quality, performance, and system maintainability",
+      "Identified and proposed architectural improvements to enhance scalability and developer efficiency"
+    ],
+    technologies: ["Laravel", "React", "PostgreSQL", "REST APIs", "RBAC", "Git"]
+  },
+  {
+    id: "4",
+    title: "Full-Stack Developer | Freelance",
+    company: "Mytrixa",
+    location: "Remote",
+    period: "2024 – 2025 | Project-Based",
+    description: [
+      "Translated business requirements into scalable technical architectures and modular backend solutions for multiple clients",
+      "Designed and delivered custom REST APIs, database schemas, and backend systems for admin panels and reporting tools",
+      "Managed stakeholder communication, feature prioritization, and deployment support",
+      "Delivered custom backend and full-stack solutions including operational dashboards and system integrations"
+    ],
+    technologies: ["Laravel", "NestJS", "React", "MySQL", "PostgreSQL", "REST APIs", "Docker"]
+  },
+  {
+    id: "5",
+    title: "Systems Analyst",
     company: "Self-Employed",
     location: "Remote",
-    period: "Sep 2022 – Present",
+    period: "2025",
     description: [
-      "Develop custom Laravel modules and extensions",
-      "Create React.js demonstrations and proof-of-concepts",
-      "Provide technical tutoring with 150+ hours of experience",
-      "Build responsive web applications using modern frameworks",
-      "Implement RESTful APIs and database optimization"
+      "Gathered and documented business requirements through stakeholder analysis and process interviews",
+      "Developed technical designs, data models, and workflow documentation for system implementation",
+      "Identified architecture improvements and process optimization opportunities"
     ],
-    technologies: ["Laravel", "React", "JavaScript", "MySQL", "REST APIs", "Git"]
+    technologies: ["Business Analysis", "System Design", "Documentation", "Data Modeling"]
   }
 ];
 
-// Flagship Systems - Main Portfolio Projects
+// Flagship Systems - Core Technical Achievements
 export const flagshipSystems = [
   {
     id: 1,
-    title: "AI Business Platform (PR)",
-    type: "Enterprise SaaS",
-    stack: ["NestJS", "Next.js", "PostgreSQL", "Docker", "CI/CD"],
-    description: "Modular AI-driven business management platform with intelligent workflows and real-time analytics.",
+    title: "CRMA — AI-Native CRM Platform",
+    type: "SaaS Business System",
+    stack: ["Laravel 12", "React 19", "PostgreSQL", "Python FastAPI", "LLM APIs", "Docker"],
+    description: "Multi-tenant CRM system with 300+ versioned REST API endpoints. Core features include lead management, customer relationship tracking, and AI-enhanced insights (lead scoring, enrichment, predictions powered by LLM integration). Architecture designed for scale: web client support with preparation for future mobile expansion.",
     aiFeatures: [
-      "AI-assisted code generation & architecture validation",
-      "ChatGPT + Code Interpreter for testing and optimization",
-      "Automated workflow suggestions using AI"
+      "LLM-powered lead scoring and enrichment",
+      "AI-driven predictive insights and recommendations",
+      "Python FastAPI microservices for AI agent workflows"
     ],
-    role: "Full-stack development, AI integration, system architecture, CI/CD pipelines",
-    highlights: ["Production-ready", "AI-native", "Cloud-ready"],
+    role: "Backend architecture, REST API design, database optimization, AI integration, RBAC implementation, production deployment",
+    highlights: ["300+ API Endpoints", "Multi-tenant Architecture", "AI-Integrated CRM", "Production-Ready"],
     demoUrl: null,
     githubUrl: null
   },
   {
     id: 2,
-    title: "Medical Mini AI Agent (MedApp)",
-    type: "Healthcare AI",
-    stack: ["Laravel", "Flask", "Tailwind CSS", "Blade", "APIs"],
-    description: "Voice-powered AI assistant for healthcare appointment scheduling and payment automation.",
+    title: "Logistics & Booking Management System",
+    type: "Operations Platform",
+    stack: ["Laravel", "React", "MySQL", "Redis", "REST APIs", "Docker"],
+    description: "High-scale operational platform with multi-role dashboards, real-time notifications, and complex reporting. Implements secure backend workflows with RBAC, optimized for handling high-volume operations. Features include real-time tracking, operational dashboards, and role-based permission management.",
     aiFeatures: [
-      "NLP & voice recognition for natural interaction",
-      "Intent detection with AI models",
-      "Prompt engineering for booking flows"
+      "Role-based access control and permission routing",
+      "Real-time notification systems",
+      "Complex business logic for operations management"
     ],
-    role: "Backend & frontend development, NLP integration, payment flow, privacy design",
-    highlights: ["Voice AI", "Healthcare domain", "Payment integration"],
-    demoVideo: null,
+    role: "Backend API architecture, RBAC implementation, database optimization, system performance tuning",
+    highlights: ["High-Scale Operations", "Real-Time Updates", "Multi-Role Security", "Performance-Optimized"],
+    demoUrl: null,
     githubUrl: null
   },
   {
     id: 3,
-    title: "CRM System",
-    type: "Business Platform",
-    stack: ["Laravel", "React", "MySQL"],
-    description: "Standalone customer relationship management platform with modular architecture and modern frontend.",
+    title: "AI Marketing Agent Platform",
+    type: "SaaS Application",
+    stack: ["Next.js", "Flask", "Ollama", "LLM APIs", "PostgreSQL", "Docker"],
+    description: "AI-powered SaaS for content generation, analysis, and campaign planning. Integrated local LLM support (Ollama) with multilingual capabilities (Arabic/English with voice support). Built on reliable backend services to ensure stability and performance at scale. Demonstrates practical AI integration within operational workflows.",
     aiFeatures: [
-      "AI-assisted module generation",
-      "Prompt engineering for CRUD automation",
-      "Code optimization with AI tools"
+      "Local LLM integration (Ollama) for on-device inference",
+      "Multilingual AI support with voice capabilities",
+      "Content generation and analysis workflows"
     ],
-    role: "Full-stack development, modular API design, enterprise architecture",
-    highlights: ["Enterprise-ready", "Modular design", "API-driven"],
+    role: "Backend API services, AI workflow integration, system architecture, production reliability",
+    highlights: ["Local LLM Support", "Multilingual", "Voice AI", "SaaS Infrastructure"],
     demoUrl: null,
     githubUrl: null
   }
@@ -122,99 +146,97 @@ export const projects = [
   {
     id: "1",
     title: "Logistics & Moving Booking System",
-    description: "A comprehensive logistics management platform for booking and tracking moving services with real-time updates and payment integration.",
-    technologies: ["Laravel", "React", "MySQL", "REST API", "Payment Gateway"],
+    description: "Production logistics platform featuring order management, real-time tracking, payment gateway integration, multi-role permissions, and RESTful APIs for mobile and web clients.",
+    technologies: ["Laravel", "REST API", "MySQL", "Payment Gateway", "Real-time Updates"],
     githubUrl: "https://github.com/YusufJojeh/Logistics-MovingBookingSystem",
     featured: true
   },
   {
     id: "2",
-    title: "IdeaVote – Idea Voting Platform",
-    description: "A collaborative platform where users can submit, vote, and discuss ideas with real-time voting and analytics dashboard.",
-    technologies: ["Laravel", "Vue.js", "MySQL", "WebSockets", "Redis"],
+    title: "IdeaVote – Collaborative Voting Platform",
+    description: "Real-time collaborative platform with complex voting logic, live analytics, permission structures, and WebSocket integration for instant updates across users.",
+    technologies: ["Laravel", "Redis", "MySQL", "WebSockets", "Real-time Analytics"],
     githubUrl: "https://github.com/YusufJojeh/ideavote",
     featured: true
   },
   {
     id: "3",
     title: "ExperienceTracker",
-    description: "A personal experience tracking application for developers to log and categorize their professional experiences and skills.",
-    technologies: ["Laravel", "Bootstrap", "MySQL", "Chart.js"],
-    githubUrl: "https://github.com/YusufJojeh/ProfessionalExperienceTracker "
+    description: "Developer portfolio platform with structured data models, performance tracking, experience categorization, and analytics dashboard for professional growth monitoring.",
+    technologies: ["Laravel", "MySQL", "Data Modeling", "Analytics", "Chart.js"],
+    githubUrl: "https://github.com/YusufJojeh/ProfessionalExperienceTracker"
   },
   {
     id: "4",
-    title: "TrainingRequests",
-    description: "An internal training management system for organizations to handle employee training requests and approvals.",
-    technologies: ["Laravel", "MySQL", "Email Notifications", "PDF Generation"],
+    title: "TrainingRequests – HR Operations System",
+    description: "Enterprise HR workflow system with approval routing, email notifications, PDF document generation, and role-based access control for training approval processes.",
+    technologies: ["Laravel", "MySQL", "Workflow Logic", "Email Integration", "PDF"],
     githubUrl: "https://github.com/YusufJojeh/TrainingApplyPlatform"
   },
   {
     id: "5",
-    title: "BlogCMS",
-    description: "A modern content management system for blogs with rich text editing, SEO optimization, and analytics.",
-    technologies: ["Laravel", "Vue.js", "MySQL", "SEO Tools", "Analytics"],
+    title: "BlogCMS – Content Management System",
+    description: "Full-featured CMS with content versioning, SEO optimization framework, real-time analytics, and REST API for headless publishing across multiple channels.",
+    technologies: ["Laravel", "MySQL", "REST API", "SEO Architecture", "Analytics"],
     githubUrl: "https://github.com/YusufJojeh/Blog"
   },
   {
     id: "6",
-    title: "ProjectTracker",
-    description: "A project management tool for tracking tasks, milestones, and team collaboration with real-time updates.",
-    technologies: ["Laravel", "React", "MySQL", "WebSockets", "File Upload"],
+    title: "ProjectTracker – Team Collaboration System",
+    description: "Project management backend with task routing, team permissions, real-time updates via WebSockets, file attachment handling, and milestone tracking for agile teams.",
+    technologies: ["Laravel", "MySQL", "WebSockets", "File Management", "REST API"],
     githubUrl: "https://github.com/YusufJojeh/project-tracker"
   },
   {
     id: "7",
     title: "FBP (DesignHub)",
-    description: "A design collaboration platform for creative teams to share, review, and manage design assets and projects.",
-    technologies: ["Laravel", "Vue.js", "MySQL", "File Management", "Real-time"],
+    description: "Asset management platform for creative teams with file versioning, permission-based access control, real-time collaboration features, and bulk asset operations.",
+    technologies: ["Laravel", "MySQL", "File Management", "RBAC", "Real-time"],
     githubUrl: "https://github.com/YusufJojeh/FBP"
   }
 ];
 
 export const skills = [
-  // AI & Automation Skills (New - Priority)
-  { name: "Prompt Engineering", icon: "Brain", category: "ai", proficiency: 5 },
-  { name: "ChatGPT / Claude", icon: "MessageSquare", category: "ai", proficiency: 5 },
-  { name: "Cursor IDE", icon: "Code2", category: "ai", proficiency: 5 },
-  { name: "AI-Assisted Development", icon: "Sparkles", category: "ai", proficiency: 5 },
-  { name: "Code Generation & Optimization", icon: "Zap", category: "ai", proficiency: 5 },
-  { name: "Generative AI Workflows", icon: "Workflow", category: "ai", proficiency: 5 },
-  { name: "NestJS", icon: "nest", category: "backend", proficiency: 4 },
-
-  // Backend Skills
-  { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
+  // Core Backend Skills
   { name: "Laravel", icon: "laravel", category: "backend", proficiency: 5 },
-  { name: "Python", icon: "python", category: "backend", proficiency: 4 },
-  { name: "Flask", icon: "flask", category: "backend", proficiency: 4 },
+  { name: "NestJS", icon: "nest", category: "backend", proficiency: 4 },
+  { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
   { name: "REST APIs", icon: "api", category: "backend", proficiency: 5 },
-  { name: "SOAP", icon: "soap", category: "backend", proficiency: 3 },
+  { name: "PostgreSQL", icon: "postgresql", category: "database", proficiency: 4 },
+  { name: "MySQL", icon: "mysql", category: "database", proficiency: 5 },
+  { name: "TypeScript", icon: "typescript", category: "backend", proficiency: 4 },
+  { name: "Authentication & RBAC", icon: "shield", category: "backend", proficiency: 4 },
+  { name: "Docker", icon: "docker", category: "devops", proficiency: 4 },
+  { name: "CI/CD", icon: "cicd", category: "devops", proficiency: 3 },
   
-  // Frontend Skills
+  // Frontend Skills  
   { name: "React.js", icon: "react", category: "frontend", proficiency: 4 },
   { name: "JavaScript (ES6+)", icon: "javascript", category: "frontend", proficiency: 5 },
+  { name: "Next.js", icon: "nextjs", category: "frontend", proficiency: 3 },
   { name: "HTML5", icon: "html5", category: "frontend", proficiency: 5 },
   { name: "CSS3", icon: "css3", category: "frontend", proficiency: 4 },
   { name: "Tailwind CSS", icon: "tailwind", category: "frontend", proficiency: 4 },
   { name: "Bootstrap", icon: "bootstrap", category: "frontend", proficiency: 4 },
-  { name: "jQuery", icon: "jquery", category: "frontend", proficiency: 3 },
   
-  // Database Skills
-  { name: "MySQL", icon: "mysql", category: "database", proficiency: 5 },
-  { name: "PostgreSQL", icon: "postgresql", category: "database", proficiency: 3 },
+  // Database & DevOps
   { name: "MongoDB", icon: "mongodb", category: "database", proficiency: 3 },
-  
-  // DevOps Skills
   { name: "Git", icon: "git", category: "devops", proficiency: 4 },
-  { name: "Docker", icon: "docker", category: "devops", proficiency: 4 },
   { name: "GitHub Actions", icon: "github", category: "devops", proficiency: 3 },
-  { name: "CI/CD", icon: "cicd", category: "devops", proficiency: 3 },
   { name: "PHPUnit", icon: "phpunit", category: "devops", proficiency: 4 },
   { name: "Postman", icon: "postman", category: "devops", proficiency: 4 },
   
-  // Other Skills
+  // Other Backend Skills
+  { name: "Python", icon: "python", category: "backend", proficiency: 4 },
+  { name: "Flask", icon: "flask", category: "backend", proficiency: 3 },
+  { name: "SOAP", icon: "soap", category: "backend", proficiency: 3 },
   { name: "Agile (Scrum)", icon: "agile", category: "other", proficiency: 4 },
-  { name: "ITIL", icon: "itil", category: "other", proficiency: 3 }
+  { name: "ITIL", icon: "itil", category: "other", proficiency: 3 },
+  
+  // AI & Productivity Tools (Secondary)
+  { name: "OpenAI API Integration", icon: "Sparkles", category: "ai", proficiency: 3 },
+  { name: "Prompt Engineering", icon: "Brain", category: "ai", proficiency: 3 },
+  { name: "Cursor IDE", icon: "Code2", category: "ai", proficiency: 3 },
+  { name: "AI-Assisted Development", icon: "Sparkles", category: "ai", proficiency: 3 }
 ];
 
 export const education = {
