@@ -207,6 +207,13 @@ export const projects = [
     description: "Comprehensive e-commerce SaaS platform enabling unlimited store creation with 27+ payment gateways, 10+ professional themes, 22+ language support, AI content generation (ChatGPT), multi-tenant isolation, advanced inventory management, POS integration, comprehensive analytics, and enterprise-grade security.",
     technologies: ["Laravel", "React", "TypeScript", "MySQL", "PostgreSQL", "OpenAI API", "Inertia.js", "Tailwind CSS", "Stripe", "PayPal", "Razorpay"],
     githubUrl: "https://github.com/YusufJojeh/matjrii-saas"
+  },
+  {
+    id: "10",
+    title: "Medical Booking System – Enterprise Healthcare Platform",
+    description: "AI-powered medical appointment booking and patient management platform with multi-role workflows, digital payments (Stripe), real-time video consultations (Jitsi), WhatsApp reminders (Twilio), comprehensive clinical decision support, health metrics tracking, subscriptions, referral system, and full HIPAA-compliance infrastructure.",
+    technologies: ["Laravel", "Blade", "Vite", "Tailwind CSS", "MySQL", "Redis", "Stripe", "Twilio", "Jitsi", "OpenAI", "Pest", "Alpine.js"],
+    githubUrl: "https://github.com/YusufJojeh/medical-booking-system"
   }
 ];
 

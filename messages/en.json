@@ -291,6 +291,10 @@
       "project9": {
         "title": "Matjrii – Multi-Store E-Commerce SaaS Platform",
         "description": "Comprehensive SaaS platform for unlimited e-commerce store creation. Includes 27+ payment gateways, 10+ professional themes, 22+ languages, AI-powered content generation, multi-tenant architecture, POS system integration, inventory management, role-based permissions, advanced analytics, and complete security compliance."
+      },
+      "project10": {
+        "title": "Medical Booking System – Enterprise Healthcare Platform",
+        "description": "AI-powered medical appointment booking and patient management system. Features multi-role workflows (admin, doctor, patient), Stripe payment processing, real-time Jitsi video consultations, WhatsApp reminders via Twilio, AI clinical decision support, health metrics tracking, subscription management, referral system, and HIPAA-compliance infrastructure."
       }
     }
   },
