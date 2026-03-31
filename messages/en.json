@@ -299,6 +299,10 @@
       "project11": {
         "title": "Rakez ERP – Enterprise Resource Planning System",
         "description": "Enterprise-grade ERP platform for real estate and sales management. Automates commission management with multi-party distribution, approval workflows, and VAT calculations. Features advanced booking/reservations with waiting list Queue, 67+ role-based permissions, real-time WebSocket notifications, OpenAI-powered AI assistant with Arabic support, comprehensive analytics, marketing budget tracking (Facebook & TikTok integration), media management, and 150+ protected API endpoints for complex business operations."
+      },
+      "project12": {
+        "title": "E-Commerce Platform – Modern Digital Commerce Solution",
+        "description": "Production-ready enterprise e-commerce platform combining Laravel 12 backend with React 18 modern frontend. Features sophisticated product management with unlimited products, premium glassmorphism UI with 3D animations and dark mode, powerful Orchid admin dashboard for content management, multi-level Redis caching (page, fragment, query levels), automatic WebP image optimization, advanced search and filtering, wishlist system, promotional campaigns (banners, slides, offers), complete backup and content versioning system, fully responsive design (320px to 4K+), and optimized performance delivering sub-2-second page loads."
       }
     }
   },

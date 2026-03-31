@@ -221,6 +221,14 @@ export const projects = [
     description: "Enterprise-grade ERP platform for real estate and sales management with automated commission calculation (multi-party distribution, approval workflows, VAT), advanced booking/reservations with waiting list system, 67+ role-based permissions across 9 predefined roles, real-time WebSocket notifications, AI-powered assistant (OpenAI with Arabic support), comprehensive analytics dashboards, marketing budget tracking with platform integrations (Facebook SDK, TikTok API), media management, 150+ protected API endpoints, and production-ready architecture for complex business operations.",
     technologies: ["Laravel 12", "PHP 8.2+", "MySQL", "PostgreSQL", "Redis", "Laravel Reverb", "Sanctum", "Spatie Permission", "Vite", "Vue/React", "OpenAI", "Twilio", "Facebook SDK", "TikTok API", "mPDF"],
     githubUrl: "https://github.com/YusufJojeh/rakez-erp"
+  },
+  {
+    id: "12",
+    title: "E-Commerce Platform – Modern Digital Commerce Solution",
+    description: "Production-ready enterprise e-commerce platform with sophisticated product management, premium glassmorphism UI with 3D animations, powerful Orchid admin dashboard for content management, multi-level caching strategy (page, fragment, query with Redis), automatic image optimization with WebP conversion, advanced product filtering and search, wishlist system, promotional banners/slides, offer management, complete backup/versioning infrastructure, responsive design across all devices, and optimized performance architecture delivering < 2 second page loads.",
+    technologies: ["Laravel 12", "React 18", "PHP 8.2+", "MySQL", "PostgreSQL", "Vite", "Redux Toolkit", "React Router", "React Query", "Tailwind CSS", "Redis", "Intervention Image", "Orchid Platform", "Framer Motion", "React Hook Form"],
+    featured: true,
+    githubUrl: "https://github.com/YusufJojeh/ecommerce-platform"
   }
 ];
 
