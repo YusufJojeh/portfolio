@@ -66,7 +66,7 @@ const FlagshipSystems = () => {
   };
 
   return (
-    <section id="flagship" className="section-padding bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+    <section id="flagship" className="section-padding bg-transparent">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
