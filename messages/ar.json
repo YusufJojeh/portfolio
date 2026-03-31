@@ -88,6 +88,11 @@
     "educationDescription": "ركزت على الأنظمة الموزعة وهندسة البرمجيات وأساسيات تكنولوجيا المعلومات.",
     "certifications": "الشهادات",
     "certificationsList": {
+      "cert0": {
+        "name": "الذكاء الاصطناعي التوليدي: تحسين تطوير البرمجيات",
+        "issuer": "IBM/Coursera",
+        "date": "29 آذار 2026"
+      },
       "cert1": {
         "name": "تطوير تطبيقات الذكاء الاصطناعي بـ Python و Flask",
         "issuer": "IBM/Coursera",

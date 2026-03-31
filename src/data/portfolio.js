@@ -249,6 +249,12 @@ export const education = {
 
 export const certifications = [
   {
+    name: "Generative AI: Elevate your Software Development",
+    issuer: "IBM/Coursera",
+    date: "Mar 29 2026",
+    url: "https://coursera.org/verify/1A4OSELZIBNTdateissuer"
+  },
+  {
     name: "Developing AI Applications with Python and Flask",
     issuer: "IBM/Coursera",
     date: "Jul 15 2025",

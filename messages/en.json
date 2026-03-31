@@ -88,6 +88,11 @@
     "educationDescription": "Focused on distributed systems, software engineering, and information technology fundamentals.",
     "certifications": "Certifications",
     "certificationsList": {
+      "cert0": {
+        "name": "Generative AI: Elevate your Software Development",
+        "issuer": "IBM/Coursera",
+        "date": "Mar 29 2026"
+      },
       "cert1": {
         "name": "Developing AI Applications with Python and Flask",
         "issuer": "IBM/Coursera",
