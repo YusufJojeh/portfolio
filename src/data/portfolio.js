@@ -229,6 +229,14 @@ export const projects = [
     technologies: ["Laravel 12", "React 18", "PHP 8.2+", "MySQL", "PostgreSQL", "Vite", "Redux Toolkit", "React Router", "React Query", "Tailwind CSS", "Redis", "Intervention Image", "Orchid Platform", "Framer Motion", "React Hook Form"],
     featured: true,
     githubUrl: "https://github.com/YusufJojeh/ecommerce-platform"
+  },
+  {
+    id: "13",
+    title: "AI Business OS – NestJS Backend",
+    description: "Production-grade NestJS backend for AI Marketing Agent platform with RESTful APIs for content creation, campaign management, analytics, and AI integrations. Fully TypeScript/Node.js architecture using modular monolith with Clean Architecture principles. Features Prisma ORM with PostgreSQL, Temporal + BullMQ for asynchronous workflow processing, Pino structured logging, Swagger API documentation, and 50+ feature modules organized by domain. Implements Social Media Simulation Mode (regional optimization) with content generation, preview, scheduling, and export capabilities. Designed for independent scaling, fault isolation, and production-ready reliability.",
+    technologies: ["NestJS", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Temporal", "BullMQ", "Redis", "Pino", "Swagger", "Docker", "Docker Compose", "REST APIs", "JWT", "RBAC"],
+    featured: true,
+    githubUrl: null
   }
 ];
 
