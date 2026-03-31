@@ -201,6 +201,29 @@
           "Contributed to full-stack feature delivery while maintaining code quality, performance, and system maintainability",
           "Identified and proposed architectural improvements to enhance scalability and developer efficiency"
         ]
+      },
+      "exp4": {
+        "title": "Full-Stack Developer | Freelance",
+        "company": "Mytrixa",
+        "location": "Remote",
+        "period": "2024 – 2025 | Project-Based",
+        "description": [
+          "Translated business requirements into scalable technical architectures and modular backend solutions for multiple clients",
+          "Designed and delivered custom REST APIs, database schemas, and backend systems for admin panels and reporting tools",
+          "Managed stakeholder communication, feature prioritization, and deployment support",
+          "Delivered custom backend and full-stack solutions including operational dashboards and system integrations"
+        ]
+      },
+      "exp5": {
+        "title": "Systems Analyst",
+        "company": "Self-Employed",
+        "location": "Remote",
+        "period": "2025",
+        "description": [
+          "Gathered and documented business requirements through stakeholder analysis and process interviews",
+          "Developed technical designs, data models, and workflow documentation for system implementation",
+          "Identified architecture improvements and process optimization opportunities"
+        ]
       }
     }
   },
