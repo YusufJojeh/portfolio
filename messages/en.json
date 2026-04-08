@@ -303,6 +303,14 @@
       "project12": {
         "title": "E-Commerce Platform – Modern Digital Commerce Solution",
         "description": "Production-ready enterprise e-commerce platform combining Laravel 12 backend with React 18 modern frontend. Features sophisticated product management with unlimited products, premium glassmorphism UI with 3D animations and dark mode, powerful Orchid admin dashboard for content management, multi-level Redis caching (page, fragment, query levels), automatic WebP image optimization, advanced search and filtering, wishlist system, promotional campaigns (banners, slides, offers), complete backup and content versioning system, fully responsive design (320px to 4K+), and optimized performance delivering sub-2-second page loads."
+      },
+      "project13": {
+        "title": "LeadScope AI (ProspectIQ)",
+        "description": "LeadScope AI product delivered from the ProspectIQ monorepo: FastAPI with Pydantic v2, SQLAlchemy 2, and Alembic on MariaDB; React, TypeScript, Vite, and Tailwind web client. Includes infra for local and compose-based deployment, GHCR container images, GitHub Actions CI (ruff, mypy, pytest, Alembic checks, Playwright E2E), release workflows, and SSH deploy with stack health and login verification."
+      },
+      "project15": {
+        "title": "AI Business OS – NestJS Backend",
+        "description": "Production-grade NestJS backend for AI Marketing Agent platform with RESTful APIs for content creation, campaign management, analytics, and AI integrations. Fully TypeScript/Node.js architecture using modular monolith with Clean Architecture principles. Features Prisma ORM with PostgreSQL, Temporal + BullMQ for asynchronous workflow processing, Pino structured logging, Swagger API documentation, and 50+ feature modules organized by domain. Implements Social Media Simulation Mode (regional optimization) with content generation, preview, scheduling, and export capabilities. Designed for independent scaling, fault isolation, and production-ready reliability."
       }
     }
   },

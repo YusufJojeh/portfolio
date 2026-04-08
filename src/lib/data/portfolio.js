@@ -229,6 +229,14 @@ export const projects = [
     technologies: ["Laravel 12", "React 18", "PHP 8.2+", "MySQL", "PostgreSQL", "Vite", "Redux Toolkit", "React Router", "React Query", "Tailwind CSS", "Redis", "Intervention Image", "Orchid Platform", "Framer Motion", "React Hook Form"],
     featured: true,
     githubUrl: "https://github.com/YusufJojeh/ecommerce-platform"
+  },
+  {
+    id: "13",
+    title: "LeadScope AI (ProspectIQ)",
+    description: "LeadScope AI product delivered from the ProspectIQ monorepo: FastAPI with Pydantic v2, SQLAlchemy 2, and Alembic on MariaDB; React, TypeScript, Vite, and Tailwind web client. Includes infra for local and compose-based deployment, GHCR container images, GitHub Actions CI (ruff, mypy, pytest, Alembic checks, Playwright E2E), release workflows, and SSH deploy with stack health and login verification.",
+    technologies: ["FastAPI", "Python", "Pydantic", "SQLAlchemy", "Alembic", "MariaDB", "React", "TypeScript", "Vite", "Tailwind CSS", "Docker", "GitHub Actions", "Nginx"],
+    featured: true,
+    githubUrl: "https://github.com/YusufJojeh/ProspectIQ"
   }
 ];
 

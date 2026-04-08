@@ -232,6 +232,14 @@ export const projects = [
   },
   {
     id: "13",
+    title: "LeadScope AI (ProspectIQ)",
+    description: "LeadScope AI product delivered from the ProspectIQ monorepo: FastAPI with Pydantic v2, SQLAlchemy 2, and Alembic on MariaDB; React, TypeScript, Vite, and Tailwind web client. Includes infra for local and compose-based deployment, GHCR container images, GitHub Actions CI (ruff, mypy, pytest, Alembic checks, Playwright E2E), release workflows, and SSH deploy with stack health and login verification.",
+    technologies: ["FastAPI", "Python", "Pydantic", "SQLAlchemy", "Alembic", "MariaDB", "React", "TypeScript", "Vite", "Tailwind CSS", "Docker", "GitHub Actions", "Nginx"],
+    featured: true,
+    githubUrl: "https://github.com/YusufJojeh/ProspectIQ"
+  },
+  {
+    id: "15",
     title: "AI Business OS – NestJS Backend",
     description: "Production-grade NestJS backend for AI Marketing Agent platform with RESTful APIs for content creation, campaign management, analytics, and AI integrations. Fully TypeScript/Node.js architecture using modular monolith with Clean Architecture principles. Features Prisma ORM with PostgreSQL, Temporal + BullMQ for asynchronous workflow processing, Pino structured logging, Swagger API documentation, and 50+ feature modules organized by domain. Implements Social Media Simulation Mode (regional optimization) with content generation, preview, scheduling, and export capabilities. Designed for independent scaling, fault isolation, and production-ready reliability.",
     technologies: ["NestJS", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Temporal", "BullMQ", "Redis", "Pino", "Swagger", "Docker", "Docker Compose", "REST APIs", "JWT", "RBAC"],
