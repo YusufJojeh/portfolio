@@ -129,6 +129,36 @@ export const caseStudies = [
     githubUrl: "https://github.com/YusufJojeh/Logistics-MovingBookingSystem",
     demoUrl: DEMO_COMING_SOON,
     stack: ["Laravel", "MySQL", "Redis", "REST APIs", "JWT", "RBAC", "Docker"]
+  },
+  {
+    id: "hirelens",
+    githubUrl: null,
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel 12", "PHP 8.2+", "Inertia.js 2", "React 19", "Tailwind CSS 4", "Radix UI", "Pest/PHPUnit", "Playwright", "PHPStan/Larastan"]
+  },
+  {
+    id: "linguacoach",
+    githubUrl: null,
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Next.js", "TypeScript", "FastAPI", "Pydantic", "SQLAlchemy 2", "Alembic", "PostgreSQL", "Redis", "Docker Compose", "Vitest", "Playwright"]
+  },
+  {
+    id: "dhura",
+    githubUrl: null,
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel", "React", "PostgreSQL", "Redis", "RBAC", "OpenAI API"]
+  },
+  {
+    id: "careerguide",
+    githubUrl: null,
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["React 19", "Vite", "TypeScript", "Tailwind CSS 4", "FastAPI", "SQLAlchemy 2", "Alembic", "ReportLab", "PostgreSQL"]
+  },
+  {
+    id: "mtjri",
+    githubUrl: null,
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel", "React", "MySQL", "RBAC", "Web Installer"]
   }
 ];
 

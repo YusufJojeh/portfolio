@@ -6,7 +6,7 @@ import { Github, ArrowUpRight } from 'lucide-react';
 import ChapterLabel from '../ChapterLabel';
 import { caseStudies } from '@/lib/data/portfolio';
 
-const GALLERY_IDS = ['matjrii', 'restocafe', 'medical', 'ilogistics'];
+const GALLERY_IDS = ['matjrii', 'restocafe', 'medical', 'ilogistics', 'mtjri'];
 
 export default function GalleryChapter() {
   const t = useTranslations('story.gallery');
