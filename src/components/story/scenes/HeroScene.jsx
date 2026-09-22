@@ -58,8 +58,7 @@ export default function HeroScene() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
             className="text-[44px] sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cinema-soft leading-[0.98] md:leading-[1.05] tracking-tight mb-5 md:mb-6"
           >
-            <span className="md:hidden">{t('headlineMobile')}</span>
-            <span className="hidden md:inline">{t('headline')}</span>
+            {t('headlineMobile')}
           </motion.h1>
 
           <motion.p
