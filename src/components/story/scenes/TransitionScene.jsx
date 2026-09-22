@@ -79,7 +79,7 @@ export default function TransitionScene({ variant = 'mid', id }) {
             >
               <a
                 href={`mailto:${personalInfo.contact.email}`}
-                className="inline-flex items-center justify-center rounded-full bg-cinema-accent px-8 py-3.5 text-sm font-semibold text-cinema-bg transition-transform duration-300 ease-cinematic hover:scale-[1.03]"
+                className="inline-flex items-center justify-center rounded-md bg-cinema-soft px-8 py-3.5 text-sm font-semibold text-cinema-bg transition-transform duration-300 ease-cinematic hover:scale-[1.02]"
               >
                 {t('cta')}
               </a>

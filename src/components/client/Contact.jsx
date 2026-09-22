@@ -58,7 +58,7 @@ const Contact = () => {
       label: t('contact.email'),
       value: personalInfo.contact.email,
       href: `mailto:${personalInfo.contact.email}`,
-      color: 'text-blue-600 dark:text-blue-400',
+      color: 'text-cinema-muted',
       primary: true
     },
     {
@@ -66,35 +66,35 @@ const Contact = () => {
       label: t('contact.github'),
       value: personalInfo.contact.github,
       href: `https://${personalInfo.contact.github}`,
-      color: 'text-slate-600 dark:text-slate-400'
+      color: 'text-cinema-muted'
     },
     {
       icon: Linkedin,
       label: t('contact.linkedin'),
       value: 'linkedin.com/in/yusuf-jojeh',
       href: `https://${personalInfo.contact.linkedin}`,
-      color: 'text-blue-700 dark:text-blue-400'
+      color: 'text-cinema-muted'
     },
     {
       icon: MapPin,
       label: t('contact.location'),
       value: personalInfo.location,
       href: null,
-      color: 'text-purple-600 dark:text-purple-400'
+      color: 'text-cinema-muted'
     },
     {
       icon: Phone,
       label: t('contact.phone'),
       value: personalInfo.contact.phone,
       href: `tel:${personalInfo.contact.phone}`,
-      color: 'text-green-600 dark:text-green-400'
+      color: 'text-cinema-muted'
     },
     {
       icon: CreditCard,
       label: t('contact.paymentReady'),
       value: t('contact.paymentMethods'),
       href: null,
-      color: 'text-emerald-600 dark:text-emerald-400'
+      color: 'text-cinema-muted'
     }
   ];
 
@@ -109,10 +109,10 @@ const Contact = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 gradient-text max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-cinema-soft max-w-3xl mx-auto">
               {t('contact.title')}
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base text-cinema-muted max-w-2xl mx-auto leading-relaxed">
               {t('contact.subtitle')}
             </p>
           </motion.div>
@@ -121,9 +121,9 @@ const Contact = () => {
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
             <motion.a
               href={`mailto:${personalInfo.contact.email}`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 bg-primary-600 dark:bg-secondary-600 text-white rounded-lg font-medium hover:bg-primary-700 dark:hover:bg-secondary-700 transition-all shadow-lg"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-2 px-6 py-3 bg-cinema-soft text-cinema-bg rounded-md font-semibold transition-transform duration-300 ease-cinematic"
             >
               <Mail className="w-5 h-5" />
               {t('contact.emailMe')}
@@ -132,9 +132,9 @@ const Contact = () => {
               href={`https://${personalInfo.contact.github}`}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 bg-slate-800 dark:bg-slate-700 text-white rounded-lg font-medium hover:bg-slate-900 dark:hover:bg-slate-600 transition-all shadow-lg"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-2 px-6 py-3 border border-white/20 bg-transparent text-cinema-text rounded-md font-semibold transition-colors duration-300 ease-cinematic hover:border-cinema-text/60"
             >
               <Github className="w-5 h-5" />
               {t('contact.viewGithub')}
@@ -142,9 +142,9 @@ const Contact = () => {
             <motion.a
               href="/cv.pdf"
               download
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 px-6 py-3 glass-card text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:bg-white/30 transition-all border border-primary-400/30"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="flex items-center gap-2 px-6 py-3 border border-white/20 bg-transparent text-cinema-text rounded-md font-semibold transition-colors duration-300 ease-cinematic hover:border-cinema-text/60"
             >
               <Download className="w-5 h-5" />
               {t('hero.downloadCV')}
@@ -154,7 +154,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">
+              <h3 className="text-2xl font-bold mb-6 text-cinema-text">
                 {t('contact.letsConnect')}
               </h3>
 
@@ -167,11 +167,11 @@ const Contact = () => {
                     transition={{ delay: index * 0.08 }}
                     className="flex items-center gap-4"
                   >
-                    <div className={`p-3 rounded-lg glass ${method.color}`}>
+                    <div className={`p-3 rounded-lg bg-cinema-elevated/60 border border-white/10 ${method.color}`}>
                       <method.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-sm text-slate-800 dark:text-slate-200">
+                      <h4 className="font-semibold text-sm text-cinema-text">
                         {method.label}
                       </h4>
                       {method.href ? (
@@ -179,12 +179,12 @@ const Contact = () => {
                           href={method.href}
                           target={method.href.startsWith('http') ? '_blank' : undefined}
                           rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                          className="text-sm text-cinema-muted hover:text-cinema-soft transition-colors"
                         >
                           {method.value}
                         </a>
                       ) : (
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                        <p className="text-sm text-cinema-muted">
                           {method.value}
                         </p>
                       )}
@@ -194,14 +194,14 @@ const Contact = () => {
               </div>
 
               {/* Best Fit Roles */}
-              <div className="mt-8 p-6 glass-card rounded-xl">
-                <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">
+              <div className="mt-8 p-6 bg-cinema-elevated/40 border border-white/10 rounded-xl">
+                <h4 className="font-semibold text-cinema-text mb-3">
                   {t('contact.lookingFor')}
                 </h4>
-                <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+                <ul className="space-y-2 text-cinema-muted">
                   {t.raw('contact.opportunities').map((opportunity, index) => (
                     <li key={index} className="flex items-center gap-2 text-sm">
-                      <span className="w-1.5 h-1.5 bg-primary-400 rounded-full shrink-0"></span>
+                      <span className="w-1.5 h-1.5 bg-cinema-muted rounded-full shrink-0"></span>
                       {opportunity}
                     </li>
                   ))}
@@ -211,14 +211,14 @@ const Contact = () => {
 
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">
+              <h3 className="text-2xl font-bold mb-6 text-cinema-text">
                 {t('contact.sendMessage')}
               </h3>
 
               <form className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-cinema-muted mb-2">
                       {t('contact.name')}
                     </label>
                     <input
@@ -228,12 +228,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all"
+                      className="w-full px-4 py-3 rounded-lg bg-cinema-elevated/40 border border-white/10 text-cinema-text focus:border-cinema-accent/60 focus:outline-none focus:ring-2 focus:ring-cinema-accent/10 transition-all"
                       placeholder={t('contact.namePlaceholder')}
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-cinema-muted mb-2">
                       {t('contact.email')}
                     </label>
                     <input
@@ -243,14 +243,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all"
+                      className="w-full px-4 py-3 rounded-lg bg-cinema-elevated/40 border border-white/10 text-cinema-text focus:border-cinema-accent/60 focus:outline-none focus:ring-2 focus:ring-cinema-accent/10 transition-all"
                       placeholder={t('contact.emailPlaceholder')}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-cinema-muted mb-2">
                     {t('contact.subject')}
                   </label>
                   <input
@@ -260,13 +260,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all"
+                    className="w-full px-4 py-3 rounded-lg bg-cinema-elevated/40 border border-white/10 text-cinema-text focus:border-cinema-accent/60 focus:outline-none focus:ring-2 focus:ring-cinema-accent/10 transition-all"
                     placeholder={t('contact.subjectPlaceholder')}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-cinema-muted mb-2">
                     {t('contact.message')}
                   </label>
                   <textarea
@@ -276,7 +276,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-cinema-elevated/40 border border-white/10 text-cinema-text focus:border-cinema-accent/60 focus:outline-none focus:ring-2 focus:ring-cinema-accent/10 transition-all resize-none"
                     placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
@@ -287,7 +287,7 @@ const Contact = () => {
                     onClick={handleWhatsAppSubmit}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold bg-cinema-soft text-cinema-bg transition-transform duration-300 ease-cinematic"
                   >
                     <MessageCircle className="w-5 h-5" />
                     WhatsApp
@@ -297,7 +297,7 @@ const Contact = () => {
                     onClick={handleEmailSubmit}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-md font-semibold border border-white/20 bg-transparent text-cinema-text transition-colors duration-300 ease-cinematic hover:border-cinema-text/60"
                   >
                     <Mail className="w-5 h-5" />
                     Email
