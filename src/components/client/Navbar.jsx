@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('nav.home'), section: 'home' },
-    { name: t('nav.flagship'), section: 'flagship' },
+    { name: t('nav.caseStudies'), section: 'case-studies' },
     { name: t('nav.about'), section: 'about' },
     { name: t('nav.skills'), section: 'skills' },
     { name: t('nav.experience'), section: 'experience' },
@@ -91,7 +91,7 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('home')} className="flex items-center gap-3">
             <Logo size="md" showText={false} />
             <div>
-              <h1 className="text-xl font-bold gradient-text">{t('hero.shortName')}</h1>
+              <span className="text-xl font-bold gradient-text">{t('hero.shortName')}</span>
               <p className="text-xs text-slate-600 dark:text-slate-400">
                 {t('hero.shortTitle')}
               </p>

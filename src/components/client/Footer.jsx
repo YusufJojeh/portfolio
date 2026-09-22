@@ -34,6 +34,7 @@ const Footer = () => {
 
   const navLinks = [
     { name: t('nav.home'), id: 'home' },
+    { name: t('nav.caseStudies'), id: 'case-studies' },
     { name: t('nav.about'), id: 'about' },
     { name: t('nav.skills'), id: 'skills' },
     { name: t('nav.experience'), id: 'experience' },

@@ -2,22 +2,14 @@ export function generateWebsiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Yusuf Jojeh Portfolio',
-    alternateName: 'Yusuf Mohammad Jojeh - Full-Stack & AI Engineer',
+    name: 'Yusuf Jojeh — Backend Engineer',
+    alternateName: 'Yusuf Mohammad Jojeh — Backend Engineer for SaaS, CRM/ERP & AI Systems',
     url: 'https://yusufjojeh.com',
-    description: 'Professional portfolio showcasing Full-Stack development, AI engineering, and enterprise software solutions. Featuring flagship projects in AI automation and business platforms.',
+    description: 'Portfolio of Yusuf Jojeh — Backend-focused Full-Stack Engineer building production SaaS, CRM/ERP platforms, secure APIs, RBAC workflows, and AI-integrated systems.',
     author: {
       '@type': 'Person',
       name: 'Yusuf Mohammad Jojeh'
     },
-    inLanguage: ['en', 'ar'],
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://yusufjojeh.com/?q={search_term_string}'
-      },
-      'query-input': 'required name=search_term_string'
-    }
+    inLanguage: ['en', 'ar']
   };
 }

@@ -4,15 +4,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useTranslations } from 'next-intl';
-import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle, Download, CreditCard } from 'lucide-react';
 import { personalInfo } from '@/lib/data/portfolio';
 
 const Contact = () => {
   const t = useTranslations();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,12 +20,7 @@ const Contact = () => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const itemVariants = {
@@ -38,53 +30,26 @@ const Contact = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
-    
-    // Format message for WhatsApp
     const whatsappMessage = `*${formData.subject}*\n\nFrom: ${formData.name} (${formData.email})\n\n${formData.message}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappNumber = personalInfo.contact.phone.replace(/\s/g, ''); // Remove spaces
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-    // Open WhatsApp
-    window.open(whatsappUrl, '_blank');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    const whatsappNumber = personalInfo.contact.phone.replace(/\s/g, '');
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
-    
-    // Format email
     const emailSubject = encodeURIComponent(formData.subject);
     const emailBody = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    const emailUrl = `mailto:${personalInfo.contact.email}?subject=${emailSubject}&body=${emailBody}`;
-    
-    // Open email client
-    window.location.href = emailUrl;
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    window.location.href = `mailto:${personalInfo.contact.email}?subject=${emailSubject}&body=${emailBody}`;
+    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const contactMethods = [
@@ -93,14 +58,22 @@ const Contact = () => {
       label: t('contact.email'),
       value: personalInfo.contact.email,
       href: `mailto:${personalInfo.contact.email}`,
-      color: 'text-blue-600 dark:text-blue-400'
+      color: 'text-blue-600 dark:text-blue-400',
+      primary: true
     },
     {
-      icon: Phone,
-      label: t('contact.phone'),
-      value: personalInfo.contact.phone,
-      href: `tel:${personalInfo.contact.phone}`,
-      color: 'text-green-600 dark:text-green-400'
+      icon: Github,
+      label: t('contact.github'),
+      value: personalInfo.contact.github,
+      href: `https://${personalInfo.contact.github}`,
+      color: 'text-slate-600 dark:text-slate-400'
+    },
+    {
+      icon: Linkedin,
+      label: t('contact.linkedin'),
+      value: 'linkedin.com/in/yusuf-jojeh',
+      href: `https://${personalInfo.contact.linkedin}`,
+      color: 'text-blue-700 dark:text-blue-400'
     },
     {
       icon: MapPin,
@@ -110,11 +83,18 @@ const Contact = () => {
       color: 'text-purple-600 dark:text-purple-400'
     },
     {
-      icon: Github,
-      label: 'GitHub',
-      value: personalInfo.contact.github,
-      href: `https://${personalInfo.contact.github}`,
-      color: 'text-slate-600 dark:text-slate-400'
+      icon: Phone,
+      label: t('contact.phone'),
+      value: personalInfo.contact.phone,
+      href: `tel:${personalInfo.contact.phone}`,
+      color: 'text-green-600 dark:text-green-400'
+    },
+    {
+      icon: CreditCard,
+      label: t('contact.paymentReady'),
+      value: t('contact.paymentMethods'),
+      href: null,
+      color: 'text-emerald-600 dark:text-emerald-400'
     }
   ];
 
@@ -129,12 +109,46 @@ const Contact = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 gradient-text">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 gradient-text max-w-3xl mx-auto">
               {t('contact.title')}
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
               {t('contact.subtitle')}
             </p>
+          </motion.div>
+
+          {/* Primary CTAs */}
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
+            <motion.a
+              href={`mailto:${personalInfo.contact.email}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-6 py-3 bg-primary-600 dark:bg-secondary-600 text-white rounded-lg font-medium hover:bg-primary-700 dark:hover:bg-secondary-700 transition-all shadow-lg"
+            >
+              <Mail className="w-5 h-5" />
+              {t('contact.emailMe')}
+            </motion.a>
+            <motion.a
+              href={`https://${personalInfo.contact.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-6 py-3 bg-slate-800 dark:bg-slate-700 text-white rounded-lg font-medium hover:bg-slate-900 dark:hover:bg-slate-600 transition-all shadow-lg"
+            >
+              <Github className="w-5 h-5" />
+              {t('contact.viewGithub')}
+            </motion.a>
+            <motion.a
+              href="/cv.pdf"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-6 py-3 glass-card text-slate-700 dark:text-slate-300 rounded-lg font-medium hover:bg-white/30 transition-all border border-primary-400/30"
+            >
+              <Download className="w-5 h-5" />
+              {t('hero.downloadCV')}
+            </motion.a>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -144,20 +158,20 @@ const Contact = () => {
                 {t('contact.letsConnect')}
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {contactMethods.map((method, index) => (
                   <motion.div
                     key={method.label}
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.08 }}
                     className="flex items-center gap-4"
                   >
                     <div className={`p-3 rounded-lg glass ${method.color}`}>
-                      <method.icon className="w-6 h-6" />
+                      <method.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200">
+                      <h4 className="font-semibold text-sm text-slate-800 dark:text-slate-200">
                         {method.label}
                       </h4>
                       {method.href ? (
@@ -165,12 +179,12 @@ const Contact = () => {
                           href={method.href}
                           target={method.href.startsWith('http') ? '_blank' : undefined}
                           rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                          className="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                         >
                           {method.value}
                         </a>
                       ) : (
-                        <p className="text-slate-600 dark:text-slate-400">
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
                           {method.value}
                         </p>
                       )}
@@ -179,28 +193,18 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Additional Info */}
-              <div className="mt-8 p-6 glass-card">
+              {/* Best Fit Roles */}
+              <div className="mt-8 p-6 glass-card rounded-xl">
                 <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">
                   {t('contact.lookingFor')}
                 </h4>
                 <ul className="space-y-2 text-slate-600 dark:text-slate-400">
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
-                    {t('contact.opportunity1')}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
-                    {t('contact.opportunity2')}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
-                    {t('contact.opportunity3')}
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
-                    {t('contact.opportunity4')}
-                  </li>
+                  {t.raw('contact.opportunities').map((opportunity, index) => (
+                    <li key={index} className="flex items-center gap-2 text-sm">
+                      <span className="w-1.5 h-1.5 bg-primary-400 rounded-full shrink-0"></span>
+                      {opportunity}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </motion.div>
@@ -211,8 +215,8 @@ const Contact = () => {
                 {t('contact.sendMessage')}
               </h3>
 
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+              <form className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       {t('contact.name')}
@@ -224,11 +228,10 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all"
                       placeholder={t('contact.namePlaceholder')}
                     />
                   </div>
-
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       {t('contact.email')}
@@ -240,7 +243,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all"
                       placeholder={t('contact.emailPlaceholder')}
                     />
                   </div>
@@ -257,7 +260,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all"
                     placeholder={t('contact.subjectPlaceholder')}
                   />
                 </div>
@@ -272,8 +275,8 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-200 resize-none"
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-lg glass-card border border-white/20 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all resize-none"
                     placeholder={t('contact.messagePlaceholder')}
                   />
                 </div>
@@ -284,7 +287,7 @@ const Contact = () => {
                     onClick={handleWhatsAppSubmit}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl transition-all"
                   >
                     <MessageCircle className="w-5 h-5" />
                     WhatsApp
@@ -294,7 +297,7 @@ const Contact = () => {
                     onClick={handleEmailSubmit}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all"
                   >
                     <Mail className="w-5 h-5" />
                     Email

@@ -4,10 +4,10 @@ export function generatePersonSchema() {
     '@type': 'Person',
     name: 'Yusuf Mohammad Jojeh',
     alternateName: 'Yusuf Jojeh',
-    jobTitle: 'Full-Stack & AI Systems Engineer',
-    description: 'Full-Stack Developer and AI Engineer specializing in React, Next.js, Laravel, NestJS, and AI-powered business solutions. Expert in prompt engineering and AI automation.',
+    jobTitle: 'Backend Engineer for SaaS, CRM/ERP & AI-Integrated Systems',
+    description: 'Backend-focused Full-Stack Engineer building production SaaS, CRM/ERP platforms, secure APIs, RBAC workflows, and AI-integrated systems with Laravel, FastAPI/NestJS, React, SQL, Redis, and Docker.',
     url: 'https://yusufjojeh.com',
-    email: 'yassaf.jojah@gmail.com',
+    email: 'yassaf.jojeh@gmail.com',
     telephone: '+963980278664',
     address: {
       '@type': 'PostalAddress',
@@ -16,26 +16,26 @@ export function generatePersonSchema() {
     },
     sameAs: [
       'https://github.com/YusufJojeh',
-      'https://linkedin.com/in/yusufjojeh'
+      'https://www.linkedin.com/in/yusuf-jojeh-95835b26b'
     ],
     knowsAbout: [
-      'Full-Stack Development',
-      'AI Engineering',
-      'React',
-      'Next.js',
+      'Backend Engineering',
+      'SaaS Architecture',
+      'CRM/ERP Systems',
+      'REST API Design',
+      'RBAC & Authentication',
       'Laravel',
       'NestJS',
-      'Python',
-      'AI Automation',
-      'Prompt Engineering',
-      'ChatGPT Integration',
-      'Claude AI Integration',
-      'DevOps',
+      'FastAPI',
+      'React',
+      'TypeScript',
+      'PostgreSQL',
+      'MySQL',
+      'Redis',
       'Docker',
-      'CI/CD',
-      'Database Design',
-      'RESTful APIs',
-      'GraphQL'
+      'AI Integration',
+      'OpenAI API',
+      'Multi-tenant Systems'
     ],
     knowsLanguage: [
       {
@@ -52,12 +52,12 @@ export function generatePersonSchema() {
     hasCredential: [
       {
         '@type': 'EducationalOccupationalCredential',
-        name: 'Bachelor of Informatics Engineering',
+        name: 'BSc in Information Engineering & Distributed Systems',
         educationalLevel: 'Bachelor Degree',
-        about: 'Software Engineering',
+        about: 'Information Engineering',
         recognizedBy: {
           '@type': 'Organization',
-          name: 'Aleppo University'
+          name: 'Al-Shahbaa University'
         }
       }
     ]

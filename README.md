@@ -197,7 +197,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📞 Contact
 
-- **Email**: yassaf.jojah@gmail.com
+- **Email**: yassaf.jojeh@gmail.com
 - **Phone**: +963 980 278 664
 - **GitHub**: [github.com/YusufJojeh](https://github.com/YusufJojeh)
 - **LinkedIn**: [linkedin.com/in/yusuf-jojeh](https://linkedin.com/in/yusuf-jojeh)

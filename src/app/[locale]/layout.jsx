@@ -16,26 +16,32 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
+  const seoTitle = 'Yusuf Jojeh — Backend Engineer for SaaS, CRM/ERP & AI Systems';
+  const seoDescription = 'Backend-focused Full-Stack Engineer building production SaaS, CRM/ERP platforms, secure APIs, RBAC workflows, and AI-integrated systems with Laravel, FastAPI/NestJS, React, SQL, Redis, and Docker.';
+
   return {
     title: {
       template: '%s | Yusuf Jojeh',
-      default: 'Yusuf Jojeh - Full-Stack & AI Engineer'
+      default: seoTitle
     },
-    description: t('hero.summary'),
+    description: seoDescription,
     keywords: [
-      'Full-Stack Developer',
-      'AI Engineer',
-      'React Developer',
-      'Next.js Developer',
+      'Backend Engineer',
+      'SaaS Developer',
+      'CRM Developer',
+      'ERP Developer',
       'Laravel Developer',
       'NestJS Developer',
-      'Prompt Engineering',
-      'ChatGPT Integration',
-      'AI Automation',
-      'DevOps Engineer',
-      'Aleppo Developer',
-      'Syria Developer',
-      'Remote Developer'
+      'FastAPI Developer',
+      'React Developer',
+      'REST API',
+      'RBAC',
+      'AI Integration',
+      'Multi-tenant',
+      'Remote Backend Developer',
+      'GCC Developer',
+      'MENA Developer',
+      'Arabic English Developer'
     ],
     authors: [{ name: 'Yusuf Mohammad Jojeh' }],
     creator: 'Yusuf Mohammad Jojeh',
@@ -44,22 +50,22 @@ export async function generateMetadata({ params }) {
       type: 'website',
       locale: locale === 'ar' ? 'ar_SY' : 'en_US',
       url: 'https://yusufjojeh.com',
-      siteName: 'Yusuf Jojeh Portfolio',
-      title: 'Yusuf Jojeh - Full-Stack & AI Engineer',
-      description: t('hero.summary'),
+      siteName: 'Yusuf Jojeh — Backend Engineer',
+      title: seoTitle,
+      description: seoDescription,
       images: [
         {
           url: '/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: 'Yusuf Jojeh Portfolio'
+          alt: 'Yusuf Jojeh — Backend Engineer for SaaS, CRM/ERP & AI Systems'
         }
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Yusuf Jojeh - Full-Stack & AI Engineer',
-      description: t('hero.summary'),
+      title: seoTitle,
+      description: seoDescription,
       images: ['/og-image.jpg'],
     },
     alternates: {
@@ -81,7 +87,7 @@ export async function generateMetadata({ params }) {
       },
     },
     verification: {
-      google: 'your-google-verification-code', // TODO: Add after deployment
+      google: 'your-google-verification-code',
     },
   };
 }

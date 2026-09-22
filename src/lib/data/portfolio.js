@@ -1,12 +1,12 @@
 export const personalInfo = {
   name: "Yusuf Mohammad Jojeh",
-  title: "Backend Developer | SaaS & AI Systems Engineer",
-  location: "Aleppo, Syria | Full Remote | Willing to Relocate",
+  title: "Backend Engineer for SaaS, CRM/ERP & AI-Integrated Systems",
+  location: "Aleppo, Syria | Full Remote",
   summary: "Backend engineer with 3+ years building scalable SaaS systems, AI-integrated platforms, and production-grade APIs. Specialized in Laravel and NestJS backend architecture, secure authentication systems, and complex business logic implementation. Proven ability to design and deliver systems that handle real-world operational complexity—including CRM/ERP functionality, multi-role permission structures, and AI-driven features integrated into product workflows. Comfortable contributing across the stack with strong backend-first mindset focused on performance, maintainability, and shipping reliable systems.",
   tagline: "Scalable Backend Systems → SaaS & AI Products → Production-Ready Architecture",
   contact: {
     phone: "+963 980 278 664",
-    email: "yassaf.jojah@gmail.com",
+    email: "yassaf.jojeh@gmail.com",
     github: "github.com/YusufJojeh",
     linkedin: "www.linkedin.com/in/yusuf-jojeh-95835b26b"
   },
@@ -90,55 +90,45 @@ export const experiences = [
   }
 ];
 
-// Flagship Systems - Core Technical Achievements
-export const flagshipSystems = [
+// TODO: Add live demo URLs when available
+const DEMO_COMING_SOON = null;
+
+export const caseStudies = [
   {
-    id: 1,
-    title: "CRMA — AI-Native CRM Platform",
-    type: "SaaS Business System",
-    stack: ["Laravel 12", "React 19", "PostgreSQL", "Python FastAPI", "LLM APIs", "Docker"],
-    description: "Multi-tenant CRM system with 300+ versioned REST API endpoints. Core features include lead management, customer relationship tracking, and AI-enhanced insights (lead scoring, enrichment, predictions powered by LLM integration). Architecture designed for scale: web client support with preparation for future mobile expansion.",
-    aiFeatures: [
-      "LLM-powered lead scoring and enrichment",
-      "AI-driven predictive insights and recommendations",
-      "Python FastAPI microservices for AI agent workflows"
-    ],
-    role: "Backend architecture, REST API design, database optimization, AI integration, RBAC implementation, production deployment",
-    highlights: ["300+ API Endpoints", "Multi-tenant Architecture", "AI-Integrated CRM", "Production-Ready"],
-    demoUrl: null,
-    githubUrl: null
+    id: "rakez-erp",
+    githubUrl: "https://github.com/YusufJojeh/rakez-erp",
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel 12", "React", "PostgreSQL", "Redis", "OpenAI API", "Laravel Reverb", "Spatie Permission"]
   },
   {
-    id: 2,
-    title: "Logistics & Booking Management System",
-    type: "Operations Platform",
-    stack: ["Laravel", "React", "MySQL", "Redis", "REST APIs", "Docker"],
-    description: "High-scale operational platform with multi-role dashboards, real-time notifications, and complex reporting. Implements secure backend workflows with RBAC, optimized for handling high-volume operations. Features include real-time tracking, operational dashboards, and role-based permission management.",
-    aiFeatures: [
-      "Role-based access control and permission routing",
-      "Real-time notification systems",
-      "Complex business logic for operations management"
-    ],
-    role: "Backend API architecture, RBAC implementation, database optimization, system performance tuning",
-    highlights: ["High-Scale Operations", "Real-Time Updates", "Multi-Role Security", "Performance-Optimized"],
-    demoUrl: null,
-    githubUrl: null
+    id: "matjrii",
+    githubUrl: "https://github.com/YusufJojeh/matjrii-saas",
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel", "React", "Inertia.js", "MySQL", "PostgreSQL", "OpenAI API", "Stripe", "Tailwind CSS"]
   },
   {
-    id: 3,
-    title: "AI Marketing Agent Platform",
-    type: "SaaS Application",
-    stack: ["Next.js", "Flask", "Ollama", "LLM APIs", "PostgreSQL", "Docker"],
-    description: "AI-powered SaaS for content generation, analysis, and campaign planning. Integrated local LLM support (Ollama) with multilingual capabilities (Arabic/English with voice support). Built on reliable backend services to ensure stability and performance at scale. Demonstrates practical AI integration within operational workflows.",
-    aiFeatures: [
-      "Local LLM integration (Ollama) for on-device inference",
-      "Multilingual AI support with voice capabilities",
-      "Content generation and analysis workflows"
-    ],
-    role: "Backend API services, AI workflow integration, system architecture, production reliability",
-    highlights: ["Local LLM Support", "Multilingual", "Voice AI", "SaaS Infrastructure"],
-    demoUrl: null,
-    githubUrl: null
+    id: "restocafe",
+    githubUrl: "https://github.com/YusufJojeh/restocafe-os",
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["NestJS", "React", "TypeScript", "PostgreSQL", "Socket.IO", "Redis", "Docker", "Kubernetes"]
+  },
+  {
+    id: "medical",
+    githubUrl: "https://github.com/YusufJojeh/medical-booking-system",
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel", "MySQL", "Redis", "Stripe", "OpenAI"]
+  },
+  {
+    id: "leadscope",
+    githubUrl: DEMO_COMING_SOON,
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["FastAPI", "Pydantic v2", "SQLAlchemy 2", "Alembic", "MariaDB", "React", "TypeScript", "Vite", "Docker Compose", "GitHub Actions"]
+  },
+  {
+    id: "ilogistics",
+    githubUrl: "https://github.com/YusufJojeh/Logistics-MovingBookingSystem",
+    demoUrl: DEMO_COMING_SOON,
+    stack: ["Laravel", "MySQL", "Redis", "REST APIs", "JWT", "RBAC", "Docker"]
   }
 ];
 
@@ -211,15 +201,15 @@ export const projects = [
   {
     id: "10",
     title: "Medical Booking System – Enterprise Healthcare Platform",
-    description: "AI-powered medical appointment booking and patient management platform with multi-role workflows, digital payments (Stripe), real-time video consultations (Jitsi), WhatsApp reminders (Twilio), comprehensive clinical decision support, health metrics tracking, subscriptions, referral system, and full HIPAA-compliance infrastructure.",
-    technologies: ["Laravel", "Blade", "Vite", "Tailwind CSS", "MySQL", "Redis", "Stripe", "Twilio", "Jitsi", "OpenAI", "Pest", "Alpine.js"],
+    description: "Medical appointment booking and patient management platform with multi-role workflows, payment processing integration, automated reminders, AI-assisted booking and workflow automation, health metrics tracking, subscriptions, referral system, and privacy-aware data handling.",
+    technologies: ["Laravel", "Blade", "Vite", "Tailwind CSS", "MySQL", "Redis", "Stripe", "OpenAI", "Pest", "Alpine.js"],
     githubUrl: "https://github.com/YusufJojeh/medical-booking-system"
   },
   {
     id: "11",
     title: "Rakez ERP – Enterprise Resource Planning System",
     description: "Enterprise-grade ERP platform for real estate and sales management with automated commission calculation (multi-party distribution, approval workflows, VAT), advanced booking/reservations with waiting list system, 67+ role-based permissions across 9 predefined roles, real-time WebSocket notifications, AI-powered assistant (OpenAI with Arabic support), comprehensive analytics dashboards, marketing budget tracking with platform integrations (Facebook SDK, TikTok API), media management, 150+ protected API endpoints, and production-ready architecture for complex business operations.",
-    technologies: ["Laravel 12", "PHP 8.2+", "MySQL", "PostgreSQL", "Redis", "Laravel Reverb", "Sanctum", "Spatie Permission", "Vite", "Vue/React", "OpenAI", "Twilio", "Facebook SDK", "TikTok API", "mPDF"],
+    technologies: ["Laravel 12", "PHP 8.2+", "MySQL", "PostgreSQL", "Redis", "Laravel Reverb", "Sanctum", "Spatie Permission", "Vite", "Vue/React", "OpenAI", "Facebook SDK", "TikTok API", "mPDF"],
     githubUrl: "https://github.com/YusufJojeh/rakez-erp"
   },
   {
@@ -232,47 +222,31 @@ export const projects = [
   }
 ];
 
-export const skills = [
-  // Core Backend Skills
-  { name: "Laravel", icon: "laravel", category: "backend", proficiency: 5 },
-  { name: "NestJS", icon: "nest", category: "backend", proficiency: 4 },
-  { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
-  { name: "REST APIs", icon: "api", category: "backend", proficiency: 5 },
-  { name: "PostgreSQL", icon: "postgresql", category: "database", proficiency: 4 },
-  { name: "MySQL", icon: "mysql", category: "database", proficiency: 5 },
-  { name: "TypeScript", icon: "typescript", category: "backend", proficiency: 4 },
-  { name: "Authentication & RBAC", icon: "shield", category: "backend", proficiency: 4 },
-  { name: "Docker", icon: "docker", category: "devops", proficiency: 4 },
-  { name: "CI/CD", icon: "cicd", category: "devops", proficiency: 3 },
-  
-  // Frontend Skills  
-  { name: "React.js", icon: "react", category: "frontend", proficiency: 4 },
-  { name: "JavaScript (ES6+)", icon: "javascript", category: "frontend", proficiency: 5 },
-  { name: "Next.js", icon: "nextjs", category: "frontend", proficiency: 3 },
-  { name: "HTML5", icon: "html5", category: "frontend", proficiency: 5 },
-  { name: "CSS3", icon: "css3", category: "frontend", proficiency: 4 },
-  { name: "Tailwind CSS", icon: "tailwind", category: "frontend", proficiency: 4 },
-  { name: "Bootstrap", icon: "bootstrap", category: "frontend", proficiency: 4 },
-  
-  // Database & DevOps
-  { name: "MongoDB", icon: "mongodb", category: "database", proficiency: 3 },
-  { name: "Git", icon: "git", category: "devops", proficiency: 4 },
-  { name: "GitHub Actions", icon: "github", category: "devops", proficiency: 3 },
-  { name: "PHPUnit", icon: "phpunit", category: "devops", proficiency: 4 },
-  { name: "Postman", icon: "postman", category: "devops", proficiency: 4 },
-  
-  // Other Backend Skills
-  { name: "Python", icon: "python", category: "backend", proficiency: 4 },
-  { name: "Flask", icon: "flask", category: "backend", proficiency: 3 },
-  { name: "SOAP", icon: "soap", category: "backend", proficiency: 3 },
-  { name: "Agile (Scrum)", icon: "agile", category: "other", proficiency: 4 },
-  { name: "ITIL", icon: "itil", category: "other", proficiency: 3 },
-  
-  // AI & Productivity Tools (Secondary)
-  { name: "OpenAI API Integration", icon: "Sparkles", category: "ai", proficiency: 3 },
-  { name: "Prompt Engineering", icon: "Brain", category: "ai", proficiency: 3 },
-  { name: "Cursor IDE", icon: "Code2", category: "ai", proficiency: 3 },
-  { name: "AI-Assisted Development", icon: "Sparkles", category: "ai", proficiency: 3 }
+export const skillGroups = [
+  {
+    id: "backend",
+    skills: ["Laravel", "FastAPI", "NestJS", "REST APIs", "API versioning", "Validation", "Services", "Queues", "Webhooks"]
+  },
+  {
+    id: "saas",
+    skills: ["CRM", "ERP", "RBAC", "Multi-role workflows", "Tenant isolation", "Reporting dashboards", "Audit logs"]
+  },
+  {
+    id: "database",
+    skills: ["MySQL", "PostgreSQL", "MariaDB", "Redis", "Indexing", "Eager loading", "Query profiling", "Caching"]
+  },
+  {
+    id: "frontend",
+    skills: ["React", "TypeScript", "Inertia.js", "Vite", "Tailwind CSS", "shadcn/ui", "Responsive UI"]
+  },
+  {
+    id: "ai",
+    skills: ["OpenAI API", "Ollama", "LLM workflows", "RAG basics", "AI assistants", "Structured JSON outputs", "Prompt context design"]
+  },
+  {
+    id: "devops",
+    skills: ["Docker", "GitHub Actions", "PHPUnit", "Playwright", "CI/CD checks", "Deployment readiness"]
+  }
 ];
 
 export const education = {
