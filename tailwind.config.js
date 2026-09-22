@@ -49,6 +49,15 @@ export default {
           900: '#263238',
           950: '#1a1a1a',
         },
+        // Cinematic scrollteller palette
+        cinema: {
+          bg: '#090B0F',
+          elevated: '#141820',
+          text: '#F3F1EC',
+          'text-alt': '#F3F3EF',
+          muted: '#898F98',
+          accent: '#5A8CFF',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
@@ -85,6 +94,9 @@ export default {
         'space-gradient': 'radial-gradient(ellipse at top, #1e1b4b, #0f172a, #020617)',
         'cosmic-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
         'nebula-gradient': 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+      },
+      transitionTimingFunction: {
+        cinematic: 'cubic-bezier(0.22, 1, 0.36, 1)',
       },
     },
   },

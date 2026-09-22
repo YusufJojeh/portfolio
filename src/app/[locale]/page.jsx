@@ -1,43 +1,57 @@
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/client/Navbar';
-import Hero from '@/components/client/Hero';
-import FlagshipSystems from '@/components/client/FlagshipSystems';
 import Footer from '@/components/client/Footer';
+import HeroScene from '@/components/story/scenes/HeroScene';
+import TransitionScene from '@/components/story/scenes/TransitionScene';
+import AbstractionScene from '@/components/story/scenes/AbstractionScene';
+import GalleryChapter from '@/components/story/scenes/GalleryChapter';
+import ExperienceTimeline from '@/components/story/scenes/ExperienceTimeline';
+import { caseStudies } from '@/lib/data/portfolio';
 
-const SpaceBackground = dynamic(
-  () => import('@/components/client/SpaceBackground'),
-  { loading: () => <div className="fixed inset-0 bg-gradient-to-b from-slate-900 to-slate-950" /> }
-);
-
-const WhyHireMe = dynamic(() => import('@/components/client/WhyHireMe.jsx'));
-const About = dynamic(() => import('@/components/client/About.jsx'));
-const SkillsModern = dynamic(() => import('@/components/client/SkillsModern.jsx'));
-const Experience = dynamic(() => import('@/components/client/Experience.jsx'));
-const Projects = dynamic(() => import('@/components/client/Projects.jsx'));
-const CurrentlySeeking = dynamic(() => import('@/components/client/CurrentlySeeking.jsx'));
-const Testimonials = dynamic(() => import('@/components/client/Testimonials.jsx'));
+const CaseStudyChapter = dynamic(() => import('@/components/story/scenes/CaseStudyChapter'));
 const Contact = dynamic(() => import('@/components/client/Contact.jsx'));
 
 export default function HomePage() {
+  const rakez = caseStudies.find((c) => c.id === 'rakez-erp');
+  const leadscope = caseStudies.find((c) => c.id === 'leadscope');
+
   return (
-    <>
-      <SpaceBackground />
-      <div className="min-h-screen relative">
-        <Navbar />
-        <main className="relative z-10">
-          <Hero />
-          <FlagshipSystems />
-          <WhyHireMe />
-          <About />
-          <SkillsModern />
-          <Experience />
-          <Projects />
-          <CurrentlySeeking />
-          <Testimonials />
-          <Contact />
-          <Footer />
-        </main>
-      </div>
-    </>
+    <div className="min-h-screen bg-cinema-bg relative">
+      <Navbar />
+      <main className="relative z-10" id="case-studies">
+        <HeroScene />
+
+        <TransitionScene variant="mid" id="story-transition" />
+
+        <CaseStudyChapter
+          caseKey="rakez-erp"
+          chapterLabel="CASE STUDY 01"
+          coverSrc="/portfolio/story/rakez/rakez-cinematic-cover.webp"
+          coverAlt="Cinematic art direction: real-estate office scene with a floating ERP dashboard concept"
+          githubUrl={rakez?.githubUrl}
+          stack={rakez?.stack}
+        />
+
+        <AbstractionScene />
+
+        <CaseStudyChapter
+          caseKey="leadscope"
+          chapterLabel="CASE STUDY 02"
+          coverSrc="/portfolio/story/prospectiq/prospectiq-cinematic-cover.webp"
+          coverAlt="Cinematic art direction: dark business-intelligence workspace concept for LeadScope AI"
+          githubUrl={leadscope?.githubUrl}
+          stack={leadscope?.stack}
+        />
+
+        <GalleryChapter />
+
+        <ExperienceTimeline />
+
+        <TransitionScene variant="closing" id="closing" />
+
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }

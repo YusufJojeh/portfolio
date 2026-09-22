@@ -62,7 +62,12 @@
         "challenges": "Multi-party commission distribution with approval chains and VAT calculation. Concurrent booking conflicts with waiting list queuing. 67+ permissions mapped across 9 roles without performance degradation. Arabic language AI responses with business-context accuracy.",
         "aiFeatures": "OpenAI-powered assistant handles Arabic natural language queries from sales teams. Commission engine automates multi-party split calculations. Marketing budget tracker integrates Facebook SDK and TikTok API spend data.",
         "impact": "150+ protected API endpoints serving complex business operations. Automated commission calculations that previously required manual spreadsheet work. Real-time booking notifications reduced missed follow-ups. AI assistant adopted by sales team for daily Arabic-language queries.",
-        "highlights": ["150+ API Endpoints", "67+ Permissions", "AI Assistant (AR)", "Commission Engine"]
+        "highlights": [
+          "150+ API Endpoints",
+          "67+ Permissions",
+          "AI Assistant (AR)",
+          "Commission Engine"
+        ]
       },
       "matjrii": {
         "title": "Matjrii SaaS",
@@ -74,7 +79,12 @@
         "challenges": "Tenant isolation ensuring no data leakage between stores. Payment gateway abstraction that normalizes 27+ provider APIs into a single interface. Theme engine supporting 10+ designs without code changes per store. Inventory sync across POS and online channels.",
         "aiFeatures": "AI-generated product descriptions reduce store setup time. Automated SEO content for product pages. Multi-language content support across 22+ languages.",
         "impact": "Platform supports unlimited store creation. 22+ language options serve MENA and international merchants. AI content generation cuts initial store setup effort. Role-based permissions allow store owners to delegate staff access.",
-        "highlights": ["27+ Payment Gateways", "Multi-Tenant Isolation", "AI Product Content", "22+ Languages"]
+        "highlights": [
+          "27+ Payment Gateways",
+          "Multi-Tenant Isolation",
+          "AI Product Content",
+          "22+ Languages"
+        ]
       },
       "restocafe": {
         "title": "RestoCafe OS",
@@ -86,7 +96,12 @@
         "challenges": "Offline-first order processing with conflict resolution on reconnect. Optimistic concurrency control preventing double-charges on simultaneous order updates. Real-time kitchen display synchronization across multiple terminals. Branch-level data isolation in a shared database.",
         "aiFeatures": "Real-time order routing to kitchen stations based on item category. QR code self-ordering reduces waiter dependency. Audit logging tracks every order state transition for dispute resolution.",
         "impact": "Offline-capable POS eliminates downtime during internet outages. Real-time kitchen display reduces order preparation errors. Multi-tenant branch isolation enables centralized management. Load-tested for multi-replica Kubernetes deployments.",
-        "highlights": ["Offline-First PWA", "Real-Time Kitchen", "Multi-Tenant Branches", "Kubernetes-Ready"]
+        "highlights": [
+          "Offline-First PWA",
+          "Real-Time Kitchen",
+          "Multi-Tenant Branches",
+          "Kubernetes-Ready"
+        ]
       },
       "medical": {
         "title": "Medical Booking System",
@@ -98,7 +113,12 @@
         "challenges": "Appointment conflict detection across multiple doctors and time zones. Payment state management handling refunds and subscription billing. Multi-role access control ensuring strict data separation between admin, doctor, and patient workflows. Automated reminder scheduling with delivery tracking.",
         "aiFeatures": "AI-assisted administrative summaries, patient communication support, and workflow automation. Automated reminders reduce no-show rates. Subscription management handles recurring appointment packages.",
         "impact": "Automated scheduling eliminates manual coordination overhead. Reminder system measurably reduces patient no-shows. Payment integration supports subscription and one-time billing. AI-assisted workflows support administrative efficiency.",
-        "highlights": ["Scheduling Engine", "Payment Integration", "AI Workflow Assist", "3-Role Access Control"]
+        "highlights": [
+          "Scheduling Engine",
+          "Payment Integration",
+          "AI Workflow Assist",
+          "3-Role Access Control"
+        ]
       },
       "leadscope": {
         "title": "LeadScope AI / ProspectIQ",
@@ -110,7 +130,12 @@
         "challenges": "Async enrichment pipeline that doesn't block the API response cycle. Structured JSON output from LLMs that matches Pydantic schemas reliably. Rate limiting OpenAI calls while maintaining enrichment throughput. Type-safe Python codebase enforced by mypy in CI.",
         "aiFeatures": "AI-powered lead scoring prioritizes high-value prospects. LLM enrichment extracts structured company and contact data. Structured JSON outputs validated against Pydantic schemas. Prompt context design ensures consistent scoring criteria.",
         "impact": "Automated enrichment eliminates manual prospect research. AI scoring provides actionable lead prioritization. Type-safe codebase with full CI pipeline (ruff + mypy + pytest + Playwright). RESTful API integrates cleanly with existing CRM workflows.",
-        "highlights": ["FastAPI + Pydantic v2", "AI Lead Scoring", "Full CI Pipeline", "CRM Integration"]
+        "highlights": [
+          "FastAPI + Pydantic v2",
+          "AI Lead Scoring",
+          "Full CI Pipeline",
+          "CRM Integration"
+        ]
       },
       "ilogistics": {
         "title": "iLogistics SaaS",
@@ -122,7 +147,12 @@
         "challenges": "Query optimization across large tracking datasets (25+ indexes added). Multi-tenant data isolation with shared database architecture. JWT token lifecycle management for mobile and web clients. Complex reporting aggregations that needed to respond within acceptable latency.",
         "aiFeatures": "Business reporting engine with complex aggregation queries. Tracking data pipeline for shipment status updates. Analytics dashboards for operational decision-making. Automated notification workflows for booking status changes.",
         "impact": "Measurable performance improvement across tracking and reporting modules after query optimization (indexing, eager loading). Multi-tenant platform replaced manual spreadsheet workflows. JWT-based auth secured operations across web and mobile clients. Reporting dashboards enabled data-driven operational decisions.",
-        "highlights": ["Query Optimization", "Multi-Tenant SaaS", "Tracking Endpoints", "JWT + RBAC"]
+        "highlights": [
+          "Query Optimization",
+          "Multi-Tenant SaaS",
+          "Tracking Endpoints",
+          "JWT + RBAC"
+        ]
       }
     }
   },
@@ -457,5 +487,76 @@
     "close": "Close",
     "open": "Open",
     "menu": "Menu"
+  },
+  "story": {
+    "hero": {
+      "chapterLabel": "CHAPTER 01",
+      "scrollHint": "Scroll to begin"
+    },
+    "transition": {
+      "chapterLabel": "CHAPTER 02",
+      "heading": "From business problems to production systems.",
+      "body": "Every project below started as an operational bottleneck — a spreadsheet, a manual process, a disconnected tool. What follows is the backend engineering that replaced it.",
+      "signals": [
+        "3+ years building web systems",
+        "150+ protected API endpoints in ERP/CRM work",
+        "Measurable performance gains in logistics/reporting",
+        "Arabic + English bilingual product delivery"
+      ]
+    },
+    "caseStudy": {
+      "coverNote": "Art direction concept — not a product screenshot",
+      "architectureLabel": "System architecture",
+      "realSystemLabel": "The real system"
+    },
+    "abstraction": {
+      "chapterLabel": "CHAPTER 04",
+      "heading": "One pattern, six systems.",
+      "body": "Every platform above reduces to the same backend spine: a business operation, guarded by roles and permissions, modeled as data, exposed through APIs, wired into integrations, and tracked by an audit trail.",
+      "steps": [
+        {
+          "title": "Business operation",
+          "body": "A real workflow — booking, ordering, prescribing, shipping — that used to run on spreadsheets or phone calls."
+        },
+        {
+          "title": "Actors & roles",
+          "body": "Admins, staff, customers, drivers — each with a different view of the same operation."
+        },
+        {
+          "title": "Permissions",
+          "body": "Role-based access control scoping exactly what each actor can see and do."
+        },
+        {
+          "title": "Domain model",
+          "body": "Relational schemas that capture the business rules — bookings, inventory, commissions, appointments."
+        },
+        {
+          "title": "APIs",
+          "body": "REST endpoints that expose the domain model to web and mobile clients securely."
+        },
+        {
+          "title": "Integrations",
+          "body": "Payments, AI assistants, notification and marketing platforms wired into the core flow."
+        },
+        {
+          "title": "Audit trail",
+          "body": "Every state change logged — for disputes, compliance, and operational visibility."
+        }
+      ]
+    },
+    "gallery": {
+      "chapterLabel": "CHAPTER 06",
+      "heading": "Additional systems",
+      "body": "Four more production platforms — same backend-first approach, different domains."
+    },
+    "experience": {
+      "chapterLabel": "CHAPTER 07"
+    },
+    "closing": {
+      "chapterLabel": "CHAPTER 08",
+      "heading": "Building the systems behind the business.",
+      "body": "If your product needs someone who can turn operational complexity into secure, maintainable backend architecture — let's talk.",
+      "cta": "Start a conversation"
+    }
   }
 }
