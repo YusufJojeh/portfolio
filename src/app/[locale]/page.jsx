@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 import Navbar from '@/components/client/Navbar';
 import Footer from '@/components/client/Footer';
-import HeroScene from '@/components/story/scenes/HeroScene';
+import OpeningIdentityScene from '@/components/story/scenes/OpeningIdentityScene';
 import TransitionScene from '@/components/story/scenes/TransitionScene';
 import AbstractionScene from '@/components/story/scenes/AbstractionScene';
 import GalleryChapter from '@/components/story/scenes/GalleryChapter';
@@ -24,7 +24,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-cinema-bg relative">
       <Navbar />
       <main className="relative z-10" id="case-studies">
-        <HeroScene />
+        <OpeningIdentityScene />
 
         <TransitionScene variant="mid" id="story-transition" />
 

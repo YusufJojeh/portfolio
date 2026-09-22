@@ -73,8 +73,13 @@ export default {
         'twinkle': 'twinkle 3s ease-in-out infinite',
         'orbit': 'orbit 20s linear infinite',
         'slide-up': 'slideUp 0.5s ease-out',
+        'marquee': 'marquee 30s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
