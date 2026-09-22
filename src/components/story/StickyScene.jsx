@@ -19,9 +19,9 @@
  * box — preventing it from bleeding into (and stacking additively on top
  * of) neighboring scenes as the page scrolls.
  */
-export default function StickyScene({ children, minHeight = '100vh', className = '', id }) {
+export default function StickyScene({ children, minHeight = '100vh', className = '', id, containerRef }) {
   return (
-    <section id={id} className={`relative ${className}`} style={{ minHeight }}>
+    <section ref={containerRef} id={id} className={`relative ${className}`} style={{ minHeight }}>
       <div
         className="sticky top-0 h-screen w-full overflow-hidden flex items-center isolate"
         style={{ transform: 'translateZ(0)' }}

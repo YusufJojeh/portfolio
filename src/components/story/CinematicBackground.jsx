@@ -19,6 +19,8 @@ export default function CinematicBackground({
   focus = 'center',
   parallax = true,
   containerRef,
+  scaleRange = [1.08, 1.18],
+  yRange = ['-4%', '4%'],
 }) {
   const localRef = useRef(null);
   const ref = containerRef || localRef;
@@ -29,8 +31,8 @@ export default function CinematicBackground({
     offset: ['start end', 'end start'],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], reduced || !parallax ? [1, 1] : [1.08, 1.18]);
-  const y = useTransform(scrollYProgress, [0, 1], reduced || !parallax ? [0, 0] : ['-4%', '4%']);
+  const scale = useTransform(scrollYProgress, [0, 1], reduced || !parallax ? [1, 1] : scaleRange);
+  const y = useTransform(scrollYProgress, [0, 1], reduced || !parallax ? [0, 0] : yRange);
 
   return (
     <div ref={ref} className="absolute inset-0 overflow-hidden">

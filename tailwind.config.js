@@ -52,10 +52,12 @@ export default {
         // Cinematic scrollteller palette
         cinema: {
           bg: '#090B0F',
+          bg2: '#0E1117',
           elevated: '#141820',
           text: '#F3F1EC',
+          soft: '#FAF9F6',
           'text-alt': '#F3F3EF',
-          muted: '#898F98',
+          muted: '#8A9099',
           accent: '#5A8CFF',
         },
       },
