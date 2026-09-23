@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
-import { Architecture, BackLink, Label, NextWork, Section } from './WorkParts';
+import { Architecture, BackLink, Label, NextWork, Section, Evidence } from './WorkParts';
 
 const OVERLAY =
   'linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.82) 38%, rgba(9,11,15,0.35) 75%, rgba(9,11,15,0.6) 100%), rgba(9,11,15,0.25)';
@@ -86,6 +86,7 @@ export default function ProspectIQWork({ locale, work }) {
         </div>
       </Section>
 
+      <Evidence t={t} slug="prospectiq" />
       <Architecture t={t} text={p('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

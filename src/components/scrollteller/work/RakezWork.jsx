@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
-import { Architecture, BackLink, Label, NextWork, Section } from './WorkParts';
+import { Architecture, BackLink, Label, NextWork, Section, Evidence } from './WorkParts';
 
 const OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0.6) 42%, rgba(9,11,15,0.35) 100%), linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.4) 40%, rgba(9,11,15,0.3) 100%)';
@@ -90,6 +90,7 @@ export default function RakezWork({ locale, work }) {
         </ul>
       </Section>
 
+      <Evidence t={t} slug="rakez" />
       <Architecture t={t} text={r('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

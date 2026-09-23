@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Architecture, Label, NextWork, Section, WorkHeader } from './WorkParts';
+import { Architecture, Label, NextWork, Section, WorkHeader, Evidence } from './WorkParts';
 
 /* HireLens: no imagery. The page is a ledger of what the AI may do and what only people do. */
 export default function HireLensWork({ locale, work }) {
@@ -88,6 +88,7 @@ export default function HireLensWork({ locale, work }) {
         </div>
       </Section>
 
+      <Evidence t={t} slug="hirelens" />
       <Architecture t={t} text={h('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

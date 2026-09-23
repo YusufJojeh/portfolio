@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Architecture, BackLink, Label, NextWork, Section } from './WorkParts';
+import { Architecture, BackLink, Label, NextWork, Section, Evidence } from './WorkParts';
 
 /* LinguaCoach: the CEFR ladder is the cover; the runtime rules follow as a spec sheet. */
 export default function LinguaCoachWork({ locale, work }) {
@@ -74,6 +74,7 @@ export default function LinguaCoachWork({ locale, work }) {
         </div>
       </Section>
 
+      <Evidence t={t} slug="linguacoach" />
       <Architecture t={t} text={l('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

@@ -611,6 +611,46 @@
       "status": "Write-up in progress",
       "body": "This case study hasn't been written up yet. Rather than describe the system without the evidence to back it, this page stays short until the documentation is ready.",
       "cta": "Ask me about ALGOAG"
+    },
+    "evidence": {
+      "label": "Real screens",
+      "source": {
+        "rakez": "The live staff login at rakez.com.sa. Everything behind it is internal company data, so it stays private.",
+        "hirelens": "Captured from a local build of the application, unedited.",
+        "linguacoach": "Captured from a local build of the web app, unedited.",
+        "prospectiq": "Captured from a local build of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
+        "careerguide": "Captured from a local build of the web app, unedited.",
+        "algoag": "Captured from a local build of the application, unedited."
+      },
+      "caption": {
+        "home": "Landing screen",
+        "login": "Sign-in screen"
+      },
+      "alt": {
+        "rakez": {
+          "login": "Rakez staff portal sign-in screen with the Rakez Real Estate mark"
+        },
+        "hirelens": {
+          "home": "HireLens AI landing page: Hire from evidence, not impression",
+          "login": "HireLens recruiter sign-in screen"
+        },
+        "linguacoach": {
+          "home": "LinguaCoach AI landing page with a coaching conversation preview",
+          "login": "LinguaCoach sign-in screen"
+        },
+        "prospectiq": {
+          "home": "LeadScope landing page: Evidence-first lead intelligence",
+          "login": "LeadScope workspace sign-in screen"
+        },
+        "careerguide": {
+          "home": "CareerGuide AI landing page: Find the career that fits you",
+          "login": "CareerGuide sign-in screen"
+        },
+        "algoag": {
+          "home": "ALGOAG landing page: Train like a competitive programmer",
+          "login": "ALGOAG assistant workspace sign-in screen"
+        }
+      }
     }
   }
 }

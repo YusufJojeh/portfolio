@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { Architecture, Label, NextWork, Section, WorkHeader } from './WorkParts';
+import { Architecture, Label, NextWork, Section, WorkHeader, Evidence } from './WorkParts';
 
 /*
  * CareerGuide: the scoring rule is the picture. The weights are the rules
@@ -74,6 +74,7 @@ export default function CareerGuideWork({ locale, work }) {
         <p className="mt-6 max-w-[56rem] text-[18px] leading-relaxed text-cinema-text/80 md:text-[21px]">{c('checks')}</p>
       </Section>
 
+      <Evidence t={t} slug="careerguide" />
       <Architecture t={t} text={c('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

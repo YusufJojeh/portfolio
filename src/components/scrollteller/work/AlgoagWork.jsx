@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { CONTACT } from '../contact';
-import { BackLink, NextWork, Section } from './WorkParts';
+import { BackLink, NextWork, Section, Evidence } from './WorkParts';
 
 /* ALGOAG has no documented evidence yet, so the page is short on purpose. */
 export default function AlgoagWork({ locale, work }) {
@@ -28,6 +28,7 @@ export default function AlgoagWork({ locale, work }) {
           </div>
         </div>
       </Section>
+      <Evidence t={t} slug="algoag" />
       <NextWork locale={locale} t={t} next={work.next} />
     </>
   );

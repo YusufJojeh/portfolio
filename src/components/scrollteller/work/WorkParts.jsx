@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { CONTACT } from '../contact';
 
@@ -124,6 +125,51 @@ export function WorkHeader({ locale, t, kicker, title, lede, children }) {
       </h1>
       <p className="mt-8 max-w-[38rem] text-[17px] leading-relaxed text-cinema-text/75 md:text-[20px]">{lede}</p>
       {children}
+    </Section>
+  );
+}
+
+/** Where each project's real screenshots live, and what each one shows. */
+const SCREENS = {
+  rakez: [{ file: 'login', ratio: 1440 / 900 }],
+  hirelens: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
+  linguacoach: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
+  prospectiq: [{ file: 'home', ratio: 1440 / 672 }, { file: 'login', ratio: 1440 / 900 }],
+  careerguide: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
+  algoag: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
+};
+
+/**
+ * Real, unretouched screens from the running product. These are the evidence
+ * layer, so they sit plainly on the page: no blur, no device mockup, no
+ * generated overlay. The caption says where each capture came from.
+ */
+export function Evidence({ t, slug, className = '' }) {
+  const shots = SCREENS[slug];
+  if (!shots) return null;
+  return (
+    <Section className={`py-20 md:py-28 ${className}`}>
+      <Label>{t('evidence.label')}</Label>
+      <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cinema-text/70">{t(`evidence.source.${slug}`)}</p>
+      <div className="mt-12 grid gap-12 md:gap-16">
+        {shots.map((s) => (
+          <figure key={s.file} className="m-0">
+            <div className="overflow-hidden rounded-[3px] border border-white/10 bg-cinema-bg2" style={{ aspectRatio: s.ratio }}>
+              <Image
+                src={`/portfolio/work/${slug}/${s.file}.webp`}
+                alt={t(`evidence.alt.${slug}.${s.file}`)}
+                sizes="(min-width: 1024px) 88vw, 100vw"
+                width={1440}
+                height={Math.round(1440 / s.ratio)}
+                className="block h-full w-full object-cover object-top"
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+              {t(`evidence.caption.${s.file}`)}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
     </Section>
   );
 }
