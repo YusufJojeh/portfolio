@@ -134,7 +134,7 @@ const SCREENS = {
   rakez: [{ file: 'login', ratio: 1440 / 900 }],
   hirelens: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
   linguacoach: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
-  prospectiq: [{ file: 'home', ratio: 1440 / 672 }, { file: 'login', ratio: 1440 / 900 }],
+  prospectiq: [{ file: 'home', ratio: 1440 / 672, mobileRatio: 780 / 1400 }, { file: 'login', ratio: 1440 / 900 }],
   careerguide: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
   dhura: [{ file: 'login', ratio: 1440 / 900 }, { file: 'register', ratio: 1440 / 900 }],
   algoag: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
@@ -148,28 +148,52 @@ const SCREENS = {
 export function Evidence({ t, slug, className = '' }) {
   const shots = SCREENS[slug];
   if (!shots) return null;
+  const caption = (file) => (
+    <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+      {t(`evidence.caption.${file}`)}
+    </figcaption>
+  );
   return (
     <Section className={`py-20 md:py-28 ${className}`}>
       <Label>{t('evidence.label')}</Label>
       <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cinema-text/70">{t(`evidence.source.${slug}`)}</p>
-      <div className="mt-12 grid gap-12 md:gap-16">
+      <div className="mt-12 hidden gap-16 md:grid">
         {shots.map((s) => (
           <figure key={s.file} className="m-0">
             <div className="overflow-hidden rounded-[3px] border border-white/10 bg-cinema-bg2" style={{ aspectRatio: s.ratio }}>
               <Image
                 src={`/portfolio/work/${slug}/${s.file}.webp`}
                 alt={t(`evidence.alt.${slug}.${s.file}`)}
-                sizes="(min-width: 1024px) 88vw, 100vw"
+                sizes="88vw"
                 width={1440}
                 height={Math.round(1440 / s.ratio)}
                 className="block h-full w-full object-cover object-top"
               />
             </div>
-            <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
-              {t(`evidence.caption.${s.file}`)}
-            </figcaption>
+            {caption(s.file)}
           </figure>
         ))}
+      </div>
+      {/* Phones get the app's own phone layout, captured at 390px, two to a row. */}
+      <div className={`mt-10 grid gap-4 md:hidden ${shots.length > 1 ? 'grid-cols-2' : 'mx-auto max-w-[62%]'}`}>
+        {shots.map((s) => {
+          const ratio = s.mobileRatio ?? 780 / 1688;
+          return (
+            <figure key={s.file} className="m-0">
+              <div className="overflow-hidden rounded-[10px] border border-white/10 bg-cinema-bg2" style={{ aspectRatio: ratio }}>
+                <Image
+                  src={`/portfolio/work/${slug}/${s.file}-mobile.webp`}
+                  alt={t(`evidence.alt.${slug}.${s.file}`)}
+                  sizes="(max-width: 767px) 50vw, 1px"
+                  width={780}
+                  height={Math.round(780 / ratio)}
+                  className="block h-full w-full object-cover object-top"
+                />
+              </div>
+              {caption(s.file)}
+            </figure>
+          );
+        })}
       </div>
     </Section>
   );
