@@ -1,0 +1,649 @@
+{
+  "nav": {
+    "home": "Home",
+    "caseStudies": "Case Studies",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to my portfolio",
+    "greeting": "Hi, I'm",
+    "name": "Yusuf Mohammad Jojeh",
+    "shortName": "Yusuf Jojeh",
+    "title": "Backend Engineer for SaaS, CRM/ERP & AI-Integrated Systems",
+    "shortTitle": "Backend Engineer",
+    "headline": "I build the backend systems behind SaaS products, CRM/ERP platforms, and AI-integrated business tools.",
+    "headlineMobile": "I turn business complexity into production systems.",
+    "positioningLabel": "Backend & Business Systems Engineer",
+    "subheadline": "I design backend systems around how real businesses operate — workflows, permissions, data, APIs, integrations, reliability and applied AI.",
+    "tagline1": "Secure REST APIs & RBAC",
+    "tagline2": "Multi-Tenant SaaS Architecture",
+    "tagline3": "AI/LLM Business Integration",
+    "viewCaseStudies": "View Case Studies",
+    "downloadCV": "Download CV",
+    "contactRemote": "Hire for Remote Roles",
+    "location": "Aleppo, Syria · Full Remote · GCC / MENA / Europe"
+  },
+  "proof": {
+    "years": "3+ years building web systems",
+    "projects": "13+ shipped/open projects",
+    "endpoints": "150+ protected API endpoints in ERP/CRM work",
+    "performance": "Measurable performance gains in logistics/reporting",
+    "bilingual": "Arabic + English bilingual product delivery"
+  },
+  "caseStudies": {
+    "title": "Case Studies",
+    "subtitle": "Real systems I built — with the problems, architecture decisions, and measurable outcomes.",
+    "problem": "Problem",
+    "myRole": "My Role",
+    "architecture": "Architecture",
+    "backendChallenges": "Backend Challenges",
+    "aiFeatures": "AI / Business Logic",
+    "businessImpact": "Measurable Impact",
+    "techStack": "Tech Stack",
+    "proofLinks": "Proof Links",
+    "github": "GitHub",
+    "liveDemo": "Live Demo",
+    "demoComingSoon": "Demo coming soon",
+    "screenshots": "Screenshots",
+    "walkthrough": "Video Walkthrough",
+    "privateProject": "Private Project",
+    "getInTouch": "Get In Touch",
+    "wantMore": "Want to see more projects or discuss collaboration?",
+    "cases": {
+      "rakez-erp": {
+        "title": "Rakez ERP",
+        "positioning": "Real estate ERP with CRM, commission automation, and Arabic AI assistant",
+        "type": "Real Estate ERP / CRM / AI Assistant",
+        "problem": "Real estate companies in the region managed sales pipelines, multi-party commissions, booking workflows, and marketing budgets across disconnected tools — with no Arabic-native system available.",
+        "role": "Lead backend engineer. Designed the full REST API architecture (150+ endpoints), RBAC system (67+ permissions across 9 roles), commission calculation engine with VAT, booking/reservation workflow with waiting lists, and integrated the OpenAI-powered AI assistant with Arabic language support.",
+        "architecture": "Laravel 12 monolith. PostgreSQL for relational data. Redis for caching, queues, and session management. Laravel Reverb for real-time WebSocket notifications. Spatie Permission for granular RBAC. OpenAI API integration for the AI assistant module. Sanctum for API authentication.",
+        "challenges": "Multi-party commission distribution with approval chains and VAT calculation. Concurrent booking conflicts with waiting list queuing. 67+ permissions mapped across 9 roles without performance degradation. Arabic language AI responses with business-context accuracy.",
+        "aiFeatures": "OpenAI-powered assistant handles Arabic natural language queries from sales teams. Commission engine automates multi-party split calculations. Marketing budget tracker integrates Facebook SDK and TikTok API spend data.",
+        "impact": "150+ protected API endpoints serving complex business operations. Automated commission calculations that previously required manual spreadsheet work. Real-time booking notifications reduced missed follow-ups. AI assistant adopted by sales team for daily Arabic-language queries.",
+        "highlights": [
+          "150+ API Endpoints",
+          "67+ Permissions",
+          "AI Assistant (AR)",
+          "Commission Engine"
+        ]
+      },
+      "matjrii": {
+        "title": "Matjrii SaaS",
+        "positioning": "Multi-store e-commerce SaaS with 27+ payment gateways and AI content",
+        "type": "Multi-Store E-Commerce SaaS Platform",
+        "problem": "SMBs in the MENA region needed an affordable way to launch online stores without technical expertise — supporting local and international payment gateways, multiple languages, and professional themes out of the box.",
+        "role": "Full-stack development with backend focus. Built the multi-tenant store isolation engine, payment gateway abstraction layer (27+ providers including Stripe, PayPal, Razorpay), inventory management system, POS integration, and AI-powered product content generation via OpenAI API.",
+        "architecture": "Laravel backend with React/Inertia.js frontend. Multi-tenant architecture with row-level store isolation. MySQL/PostgreSQL dual support. 27+ payment gateway integrations through a unified abstraction layer. OpenAI API for automated product descriptions and SEO content.",
+        "challenges": "Tenant isolation ensuring no data leakage between stores. Payment gateway abstraction that normalizes 27+ provider APIs into a single interface. Theme engine supporting 10+ designs without code changes per store. Inventory sync across POS and online channels.",
+        "aiFeatures": "AI-generated product descriptions reduce store setup time. Automated SEO content for product pages. Multi-language content support across 22+ languages.",
+        "impact": "Platform supports unlimited store creation. 22+ language options serve MENA and international merchants. AI content generation cuts initial store setup effort. Role-based permissions allow store owners to delegate staff access.",
+        "highlights": [
+          "27+ Payment Gateways",
+          "Multi-Tenant Isolation",
+          "AI Product Content",
+          "22+ Languages"
+        ]
+      },
+      "restocafe": {
+        "title": "RestoCafe OS",
+        "positioning": "Multi-branch restaurant POS with offline PWA, QR ordering, and real-time kitchen ops",
+        "type": "Restaurant POS / QR Ordering / Kitchen Operations",
+        "problem": "Restaurant chains needed a modern POS that works offline during internet outages, handles real-time kitchen display across branches, and supports QR-based customer ordering — without proprietary hardware lock-in.",
+        "role": "Backend architecture and system design. Built the NestJS API layer with TypeScript, multi-tenant branch isolation, real-time kitchen display system via Socket.IO, offline-first PWA with service workers, and optimistic concurrency control for concurrent order processing.",
+        "architecture": "NestJS 11 with TypeScript across a pnpm monorepo (API, ops dashboard, landing page, shared packages). Prisma ORM against PostgreSQL 16 (44 Prisma models spanning staff, orders, kitchen, sessions, and audit logs) with MySQL supported for local development only. Socket.IO with a Redis adapter for multi-replica real-time updates. Zustand plus TanStack Query for frontend state. Service workers with Dexie IndexedDB for offline PWA capability. Docker/Kubernetes deployment. Prometheus metrics and slow-request tracking.",
+        "challenges": "Offline-first order processing with idempotency-token-based conflict resolution on reconnect. Optimistic concurrency control (`updateMany WHERE status = expected`) preventing double-charges on simultaneous order updates, plus pessimistic `SELECT ... FOR UPDATE` locking for session creation. Real-time kitchen display synchronization across multiple terminals via an eight-event WebSocket protocol. Application-level (not database-level) branch and tenant isolation enforced on every query.",
+        "aiFeatures": "Real-time order routing to kitchen stations based on item category. QR code self-ordering reduces waiter dependency. Audit logging tracks every order state transition for dispute resolution.",
+        "impact": "Offline-capable POS eliminates downtime during internet outages. Real-time kitchen display reduces order preparation errors. Multi-tenant branch isolation enables centralized management. The repo's own load-test suite uses k6 across 8+ scenario scripts, and Playwright covers smoke and critical-path E2E flows.",
+        "highlights": [
+          "Offline-First PWA",
+          "Real-Time Kitchen",
+          "Multi-Tenant Branches",
+          "Kubernetes-Ready"
+        ]
+      },
+      "medical": {
+        "title": "Medical Booking System",
+        "positioning": "Healthcare appointment platform with scheduling, payments, and AI-assisted workflow automation",
+        "type": "Healthcare Booking & Patient Management",
+        "problem": "Healthcare providers needed a unified platform for appointment scheduling, patient records, digital payments, and automated reminders — with strict multi-role access control separating admin, doctor, and patient workflows.",
+        "role": "Backend development. Built the appointment scheduling engine with conflict detection, payment processing integration (Stripe configured), automated reminder infrastructure, AI-assisted booking and communication module, and multi-role access control system.",
+        "architecture": "Laravel backend with MySQL. Redis for session management and caching. Payment processing via Stripe integration. Automated reminder system for appointment follow-ups. AI-assisted booking assistant for patient communication. Role-based middleware for admin/doctor/patient separation.",
+        "challenges": "Appointment conflict detection across multiple doctors and time zones. Payment state management handling refunds and subscription billing. Multi-role access control ensuring strict data separation between admin, doctor, and patient workflows. Automated reminder scheduling with delivery tracking.",
+        "aiFeatures": "AI-assisted administrative summaries, patient communication support, and workflow automation. Automated reminders reduce no-show rates. Subscription management handles recurring appointment packages.",
+        "impact": "Automated scheduling eliminates manual coordination overhead. Reminder system measurably reduces patient no-shows. Payment integration supports subscription and one-time billing. AI-assisted workflows support administrative efficiency.",
+        "highlights": [
+          "Scheduling Engine",
+          "Payment Integration",
+          "AI Workflow Assist",
+          "3-Role Access Control"
+        ]
+      },
+      "leadscope": {
+        "title": "LeadScope AI / ProspectIQ",
+        "positioning": "FastAPI lead intelligence platform with AI scoring and async enrichment pipeline",
+        "type": "AI Lead Intelligence Platform",
+        "problem": "Sales teams spent hours manually researching each prospect across multiple data sources. They needed automated lead enrichment, AI-powered scoring, and a clean API that integrates with existing CRM frontends.",
+        "role": "Designed and built the entire backend: FastAPI with Pydantic v2 for request/response validation, SQLAlchemy 2 ORM with Alembic migrations, OpenAI-powered lead scoring engine, async enrichment pipeline, and RESTful API for CRM integration. Set up CI/CD with GitHub Actions running ruff, mypy, pytest, and Playwright.",
+        "architecture": "Python FastAPI with async endpoints. MariaDB via SQLAlchemy 2 ORM. Pydantic v2 for strict input/output validation. Alembic for database migrations. OpenAI API for lead scoring and enrichment. Redis for caching enrichment results. React/TypeScript/Vite frontend. Docker Compose for local development. GitHub Actions CI with ruff, mypy, pytest, Playwright.",
+        "challenges": "Async enrichment pipeline that doesn't block the API response cycle. Structured JSON output from LLMs that matches Pydantic schemas reliably. Rate limiting OpenAI calls while maintaining enrichment throughput. Type-safe Python codebase enforced by mypy in CI. Explicit runtime-mode gates (`live` / `demo` / `stub`) for both discovery (SerpAPI, optional Tavily) and the AI provider, plus a hard `DISCOVERY_KILL_SWITCH`, so the app never silently falls back to a demo data source in production — it fails closed instead, validating required secrets and origins at startup.",
+        "aiFeatures": "AI-powered lead scoring prioritizes high-value prospects. LLM enrichment extracts structured company and contact data. Structured JSON outputs validated against Pydantic schemas. Prompt context design ensures consistent scoring criteria.",
+        "impact": "Automated enrichment eliminates manual prospect research. AI scoring provides actionable lead prioritization. Type-safe codebase with full CI pipeline (ruff + mypy + pytest + Playwright). RESTful API integrates cleanly with existing CRM workflows.",
+        "highlights": [
+          "FastAPI + Pydantic v2",
+          "AI Lead Scoring",
+          "Full CI Pipeline",
+          "CRM Integration"
+        ]
+      },
+      "ilogistics": {
+        "title": "iLogistics SaaS",
+        "positioning": "Logistics and booking management platform with multi-tenant operations and query-optimized reporting",
+        "type": "Logistics & Moving Booking System",
+        "problem": "A logistics company needed a SaaS platform to manage multi-tenant booking operations, shipment tracking, driver assignments, and business reporting — replacing spreadsheet-based workflows that couldn't scale.",
+        "role": "Backend developer. Designed and built RESTful APIs for the entire platform using Laravel and MySQL. Implemented multi-tenant operations, JWT authentication, RBAC authorization, tracking data endpoints, analytics dashboards, and complex business reporting features. Optimized database queries with 25+ indexes and eager loading for measurable performance gains.",
+        "architecture": "Laravel backend with MySQL. Redis for caching and session management. JWT-based authentication with RBAC middleware. RESTful API serving web and mobile clients. Tracking data endpoints for shipment status. Analytics and reporting engine with optimized queries. The system's later evolution (documented in the source repo as iLogistics OS, Laravel 11+) adds multi-warehouse WMS with stock alerts, fleet/driver assignment, QR-coded shipment tracking, and full Arabic RTL localization on top of the same core.",
+        "challenges": "Query optimization across large tracking datasets (25+ indexes added). Multi-tenant data isolation with shared database architecture. JWT token lifecycle management for mobile and web clients. Complex reporting aggregations that needed to respond within acceptable latency.",
+        "aiFeatures": "Business reporting engine with complex aggregation queries. Tracking data pipeline for shipment status updates. Analytics dashboards for operational decision-making. Automated notification workflows for booking status changes.",
+        "impact": "Measurable performance improvement across tracking and reporting modules after query optimization (indexing, eager loading). Multi-tenant platform replaced manual spreadsheet workflows. JWT-based auth secured operations across web and mobile clients. Reporting dashboards enabled data-driven operational decisions.",
+        "highlights": [
+          "Query Optimization",
+          "Multi-Tenant SaaS",
+          "Tracking Endpoints",
+          "JWT + RBAC"
+        ]
+      },
+      "hirelens": {
+        "title": "HireLens AI",
+        "positioning": "Arabic-first, evidence-based hiring copilot with a governed AI layer and human-only hire/reject decisions",
+        "type": "Evidence-Based Hiring Platform / AI Copilot",
+        "problem": "Recruiting teams needed a documented, defensible hiring pipeline — structured requirements, CV-aware interviews, and evaluation reports grounded in evidence — without letting an AI model quietly become the decision-maker.",
+        "role": "Designed the Laravel 12 monolith architecture end to end: the job/requirements/rubric data model, the candidate-facing interview portal (no recruiter login required), the evidence-based evaluation pipeline, the tenant-scoped AI copilot with prompt-injection and forbidden-decision-language guardrails, and the server-enforced RBAC layer (Admin, Recruiter, Hiring Manager, Compliance, Viewer).",
+        "architecture": "Laravel 12 monolith with Inertia.js 2 and React 19 — no separate frontend service. A local shadcn-style component layer built on Radix primitives. AI provider routing supports a mock provider for tests/demos, an OpenAI-compatible provider, and a local Ollama path — the browser never talks to Ollama directly, every request flows through Laravel's provider router and guardrails. Policies and `abort_unless` enforce roles server-side, mirrored client-side through one shared permission set.",
+        "challenges": "Keeping every hire/reject decision in human hands while still giving hiring managers AI-assisted evidence — the AI copilot is explicitly guardrailed against prompt injection and forbidden decision language. Building a CV-aware adaptive interview flow candidates can complete without an account. Freezing job and CV versions per candidate so a Candidate 360 view stays consistent even as jobs change later. Full bilingual Arabic/English UI with automatic RTL/LTR layout switching.",
+        "aiFeatures": "Structured AI interviews adapt to the candidate's CV. Evaluation reports are generated from interview transcripts and CV claims with cited evidence and skill scores — the AI never renders a final decision. A tenant-scoped AI copilot answers questions grounded in a specific job or application, with guardrails against prompt injection and decision-language leakage.",
+        "impact": "An immutable audit log records every hiring-relevant action, visible to Admin/Compliance roles. Candidate comparison works without 'winner' framing, keeping the human decision explicit. The repo documents a Pest/PHPUnit suite with enforced line coverage plus a Playwright end-to-end suite, PHPStan/Larastan static analysis, and Pint style checks.",
+        "highlights": [
+          "Arabic-First, RTL",
+          "Human-Only Decisions",
+          "Guardrailed AI Copilot",
+          "Evidence-Based Evaluation"
+        ]
+      },
+      "linguacoach": {
+        "title": "LinguaCoach AI",
+        "positioning": "Bilingual AI English-coaching platform for Arabic speakers, with a deterministic curriculum and a governed AI runtime",
+        "type": "AI Language-Learning Platform",
+        "problem": "Arabic-speaking English learners needed adaptive placement, structured practice, and real-time coaching that works even without a paid AI provider connected — and that doesn't quietly invent progress numbers.",
+        "role": "Built out the full-stack monorepo architecture: the FastAPI backend (async SQLAlchemy 2, Alembic), the Next.js frontend, the central AI runtime with provider fallback and cost/usage guardrails, the CEFR-based placement and curriculum system, and the idempotent seed/demo-data tooling.",
+        "architecture": "Monorepo with a Next.js/React/TypeScript web app and a FastAPI + Pydantic + async SQLAlchemy 2 API, Alembic migrations, PostgreSQL in production (SQLite/aiosqlite for tests), a Redis-compatible cache URL, and Docker Compose for local Postgres/Redis/API/web. The AI runtime routes between deterministic dev/test providers and real provider interfaces (OpenAI, Gemini, Ollama, or a custom OpenAI-compatible endpoint) with bounded retry/backoff policies.",
+        "challenges": "Keeping the entire curriculum path (lessons, readings, vocabulary checks, placement) usable with zero paid AI dependency — the catalog is seeded once and courses are derived on the fly by grouping activities by level and topic, so there's no course table to drift out of sync. Realtime coaching over SSE. Structured workflows are persisted as queued runs executed by a bounded in-process worker with durable PostgreSQL row leases, so queued jobs survive restarts.",
+        "aiFeatures": "Realtime AI coach conversation over SSE. Adaptive CEFR placement with skill-score-driven recommendations. Writing feedback and pronunciation/listening/speaking practice, with the AI runtime enforcing monthly budget and per-user daily limits and honest fallback labeling when a provider call is skipped.",
+        "impact": "The project's own final-gate report (dated 2026-08-23) documents 185 backend tests passing against both the default and a clean PostgreSQL database, a passing Alembic upgrade/check cycle, Ruff and frontend lint/typecheck/build, and 34 Playwright end-to-end cases passing across desktop/mobile and an English/Arabic five-viewport matrix. The backend enforces a 100% line-coverage gate in CI.",
+        "highlights": [
+          "Bilingual EN/AR, RTL",
+          "Deterministic AI Runtime",
+          "185 Backend Tests (per repo)",
+          "Realtime SSE Coaching"
+        ]
+      },
+      "dhura": {
+        "title": "Dhura",
+        "positioning": "Arabic-first real-estate CRM/ERP concept — deterministic domain logic with human-approved AI actions",
+        "type": "Real-Estate CRM/ERP Concept",
+        "problem": "Real-estate operations in the region need Arabic-native CRM/ERP tooling where AI can assist day-to-day work — drafting, summarizing, suggesting next actions — without ever silently executing a business decision on its own.",
+        "role": "Architecture and pattern design: a deterministic domain core (listings, deals, commissions, approvals) exposed through role-scoped APIs, with an AI layer that proposes actions a human explicitly approves before anything changes state.",
+        "architecture": "The same backend spine used across the shipped systems above: a business operation modeled as relational data, guarded by role-based permissions, exposed through REST APIs, with AI wired in as an assistive layer rather than a decision-maker. Arabic-first UI with RTL layout as a first-class concern, not a translation afterthought.",
+        "challenges": "Keeping AI-suggested actions strictly proposal-only until a human approves them. Modeling multi-party real-estate workflows — listings, deals, commission splits — as auditable relational data. Arabic-first RTL design across every screen rather than retrofitted localization.",
+        "aiFeatures": "AI drafts and suggestions surface inline with the workflow, but every state-changing action requires explicit human approval — the same human-in-the-loop pattern used in the AI copilots shipped on Rakez ERP and HireLens AI.",
+        "impact": "A concept-stage architecture that carries forward the deterministic-core-plus-human-approved-AI pattern proven in production on the shipped case studies above.",
+        "highlights": [
+          "Arabic-First, RTL",
+          "Deterministic Core",
+          "Human-Approved AI",
+          "Concept Architecture"
+        ]
+      },
+      "careerguide": {
+        "title": "CareerGuide AI",
+        "positioning": "Deterministic career-matching platform where AI assists but never scores",
+        "type": "AI-Assisted Career Guidance Platform",
+        "problem": "University students needed a career-guidance tool that produces defensible, reproducible career matches and roadmaps — without a black-box AI model deciding the score.",
+        "role": "Backend-focused build of the FastAPI service: the fixed, version-controlled career-matching rules engine, the versioned/immutable recommendation records, skill-gap analysis, roadmap generation, PDF export via ReportLab, and the admin tooling for career/skill/requirement management.",
+        "architecture": "FastAPI backend with SQLAlchemy 2, Alembic migrations, Pydantic Settings, JWT auth, and ReportLab for PDF export; SQLite locally, PostgreSQL-compatible in production. React 19 + Vite + TypeScript frontend with TanStack Query, React Hook Form, Zod, and Recharts. Structured AI workflows run as queued, worker-executed jobs with an authenticated SSE progress stream.",
+        "challenges": "Keeping career scores fully deterministic — skills 45%, interests 25%, academic/major relevance 15%, career-goal relevance 15%, reweighted only when fresh market evidence exists — so AI and live web search never directly determine a score. Making every recommendation version immutable and explicitly re-scored rather than silently overwritten. Bounded, retry-aware calls to OpenAI, Gemini, Tavily, and SerpAPI with honest fallback state reporting.",
+        "aiFeatures": "Optional AI-assisted career advice sits alongside the deterministic matching engine, never inside it. Structured AI workflows request schema-constrained JSON; provider selection (mock/OpenAI/Gemini/Ollama) is explicit and production startup fails closed if a selected provider is missing its key.",
+        "impact": "The project's documented quality checks include Ruff, pytest, `alembic check`, a production smoke script, and frontend lint/typecheck/build — with a written smoke-test checklist that verifies one student cannot read another student's profile, recommendation, or PDF.",
+        "highlights": [
+          "Deterministic Scoring",
+          "Immutable Rec. Versions",
+          "Multi-Provider AI (Explicit)",
+          "PDF Export"
+        ]
+      },
+      "mtjri": {
+        "title": "mtjri",
+        "positioning": "Multi-store e-commerce SaaS with a web installer and 10+ storefront themes",
+        "type": "Multi-Store E-Commerce SaaS",
+        "problem": "SMBs needed a self-serve way to stand up an online store — including the install/migration step itself — without shell access or manual database setup.",
+        "role": "Backend-focused build on Laravel and React: the multi-store data model, the web installer (automatic migration detection and one-click schema updates), the theme system, and role-based access across super admin, admin, and store roles.",
+        "architecture": "Laravel backend with a React frontend. A web installer runs migrations and seeders through a guided UI instead of CLI commands, and detects when new migrations need to be applied. Subscription-plan data model for SaaS tiering, with per-store theme selection across 10+ built-in themes.",
+        "challenges": "Making first-run installation self-service (a web installer that runs migrations/seeders and reports status) rather than requiring CLI access. Supporting 10+ distinct storefront themes from one shared data and permission model. Role separation across super admin, store admin, and customer-facing roles.",
+        "aiFeatures": "N/A — this project's AI-generation work lives in the related Matjrii case study above; mtjri's own scope is the multi-store commerce and installer layer.",
+        "impact": "Ships with a guided web installer, update detection, and one-click schema updates as first-class product features rather than deployment scripts.",
+        "highlights": [
+          "Web Installer",
+          "10+ Storefront Themes",
+          "Subscription Tiers",
+          "RBAC"
+        ]
+      }
+    }
+  },
+  "whyHireMe": {
+    "title": "Why Hire Me?",
+    "subtitle": "What I bring to your engineering team",
+    "points": [
+      "I think in systems — data models, permission layers, queue pipelines — not isolated UI features.",
+      "I understand business logic: commissions, approval chains, tenant isolation, audit trails.",
+      "I ship backend-first while delivering functional React interfaces when needed.",
+      "I integrate AI/LLMs into real workflows with structured outputs, not uncontrolled prompt chains.",
+      "I communicate in Arabic and English — effective in GCC, MENA, and international remote teams."
+    ]
+  },
+  "seeking": {
+    "title": "Currently Seeking",
+    "description": "Remote Backend or Backend-focused Full-Stack roles with SaaS, CRM/ERP, AI systems, PropTech, logistics, healthcare, or B2B platforms.",
+    "relocateNote": "Open to relocation for the right opportunity."
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "placeholder": "Recommendations coming soon — available references from collaborators and project owners upon request."
+  },
+  "about": {
+    "title": "About Me",
+    "summary1": "I'm a backend engineer with 3+ years building production systems for SaaS, CRM/ERP, and AI-integrated platforms. My work focuses on REST API design, database architecture, RBAC permission systems, and business logic implementation using Laravel, FastAPI, NestJS, and React. I've shipped 150+ protected API endpoints, built multi-tenant architectures, and integrated LLM-powered modules into real business workflows — across real estate, e-commerce, logistics, healthcare, and lead intelligence domains.",
+    "summary2": "I work remote-first and communicate in both Arabic and English. I'm available for backend and backend-focused full-stack roles with product teams across the GCC, MENA, Europe, and international remote companies. I focus on writing systems that handle real operational complexity — permissions, workflows, data integrity — not just feature checklists.",
+    "summary3": "",
+    "summary4": "",
+    "getInTouch": "Get In Touch",
+    "education": "Education",
+    "educationDegree": "BSc in Information Engineering & Distributed Systems",
+    "educationInstitution": "Al-Shahbaa University",
+    "educationPeriod": "2021 - 2026",
+    "educationGPA": "GPA: 3.10",
+    "educationDescription": "Focused on distributed systems, software engineering, and information technology fundamentals.",
+    "certifications": "Certifications",
+    "certificationsList": {
+      "cert0": {
+        "name": "Generative AI: Elevate your Software Development",
+        "issuer": "IBM/Coursera",
+        "date": "Mar 29 2026"
+      },
+      "cert1": {
+        "name": "Developing AI Applications with Python and Flask",
+        "issuer": "IBM/Coursera",
+        "date": "Jul 15 2025"
+      },
+      "cert2": {
+        "name": "Responsive Web Design",
+        "issuer": "University of London/Coursera",
+        "date": "2024"
+      },
+      "cert3": {
+        "name": "Introduction to Artificial Intelligence",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert4": {
+        "name": "Python for Data Science, AI & Development",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert5": {
+        "name": "Generative AI: Introduction and Applications",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert6": {
+        "name": "Generative AI: Prompt Engineering Basics",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert7": {
+        "name": "Introduction to Software Engineering",
+        "issuer": "IBM AI Developer/Coursera",
+        "date": "2024"
+      },
+      "cert8": {
+        "name": "Responsive Website Basics (HTML, CSS, JavaScript)",
+        "issuer": "University of London/Coursera",
+        "date": "2022"
+      }
+    },
+    "languages": "Languages"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "Grouped by domain — what I use to build and ship production systems",
+    "backend": "Backend Engineering",
+    "backendDesc": "Design and build REST APIs, authentication, authorization, queues, and service layers.",
+    "saas": "SaaS & Business Systems",
+    "saasDesc": "CRM/ERP logic, multi-role workflows, tenant isolation, and operational reporting.",
+    "database": "Databases & Performance",
+    "databaseDesc": "Schema design, query optimization, caching strategies, and migration management.",
+    "frontend": "Frontend Delivery",
+    "frontendDesc": "Build functional React interfaces when the backend needs a UI layer.",
+    "ai": "AI Integration",
+    "aiDesc": "Connect LLMs to real business workflows with structured outputs and reliable prompts.",
+    "devops": "DevOps & Quality",
+    "devopsDesc": "Containerized deployments, CI pipelines, automated testing, and production readiness."
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "Backend-focused roles across SaaS, logistics, CRM, and freelance engineering",
+    "present": "Present",
+    "highlights": "Professional Highlights",
+    "yearsExperience": "Years of Experience",
+    "yearsExp": "Positions",
+    "yearsInDevelopment": "Years in Development",
+    "yearsDev": "Years in Development",
+    "tutoringHours": "Tutoring Hours",
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "technologies": "Technologies Used"
+    },
+    "list": {
+      "exp1": {
+        "title": "Backend Developer | SaaS & AI Systems",
+        "company": "Rakez Company",
+        "location": "Remote",
+        "period": "Dec 2025 – Present",
+        "description": [
+          "Designed REST API architecture for AI-powered CRM modules — 150+ endpoints with Spatie RBAC (67+ permissions, 9 roles)",
+          "Built commission calculation engine with multi-party distribution, approval chains, and VAT computation",
+          "Integrated OpenAI-powered AI assistant with Arabic language support into production CRM workflows",
+          "Implemented real-time WebSocket notifications via Laravel Reverb for booking and sales events",
+          "Maintained production stability through PHPUnit testing, query monitoring, and deployment automation"
+        ]
+      },
+      "exp2": {
+        "title": "Backend Developer | iLogistics SaaS",
+        "company": "Mermez (Creative Digital Solutions)",
+        "location": "Remote",
+        "period": "Jan 2025 – Nov 2025",
+        "description": [
+          "Built RESTful APIs for multi-tenant logistics SaaS platform using Laravel and MySQL",
+          "Optimized database queries and schemas — measurable performance improvement in tracking and reporting modules (25+ indexes, eager loading)",
+          "Implemented JWT authentication and RBAC authorization securing multi-role operational access",
+          "Delivered backend for tracking data endpoints, analytics dashboards, and complex business reporting",
+          "Supported production deployment processes, code reviews, and system stability"
+        ]
+      },
+      "exp3": {
+        "title": "Full-Stack Developer | CRM Systems",
+        "company": "Business Flow",
+        "location": "Remote/Hybrid",
+        "period": "Nov 2025 – Jan 2026",
+        "description": [
+          "Built backend-heavy CRM systems with Laravel — REST APIs, RBAC, input validation, structured business logic",
+          "Delivered operational dashboards with secure API design and role-based data access",
+          "Proposed architectural improvements that improved query performance and developer workflow"
+        ]
+      },
+      "exp4": {
+        "title": "Full-Stack Developer | Freelance",
+        "company": "Mytrixa",
+        "location": "Remote",
+        "period": "2024 – 2025 | Project-Based",
+        "description": [
+          "Translated business requirements into REST APIs, database schemas, and modular backend solutions for multiple clients",
+          "Delivered admin panels, reporting tools, and operational dashboards as backend + full-stack projects",
+          "Managed stakeholder communication, feature scoping, and deployment support"
+        ]
+      },
+      "exp5": {
+        "title": "Systems Analyst",
+        "company": "Self-Employed",
+        "location": "Remote",
+        "period": "2025",
+        "description": [
+          "Documented business requirements through stakeholder analysis and process interviews",
+          "Produced technical designs, data models, and workflow specifications for implementation teams"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "title": "Other Projects",
+    "subtitle": "Additional open-source and client work",
+    "allProjects": "All Projects",
+    "featured": "Featured",
+    "viewGithub": "View on GitHub",
+    "featured_badge": "Featured",
+    "totalProjects": "Total Projects",
+    "featuredProjects": "Featured Projects",
+    "openSource": "Open Source",
+    "statistics": "Project Statistics",
+    "filters": {
+      "all": "All Projects",
+      "featured": "Featured"
+    },
+    "badge": {
+      "featured": "Featured"
+    },
+    "stats": {
+      "total": "Total Projects",
+      "featured": "Featured Projects",
+      "opensource": "Open Source"
+    },
+    "list": {
+      "project1": {
+        "title": "Logistics & Moving Booking System",
+        "description": "Production logistics platform featuring order management, real-time tracking, payment gateway integration, multi-role permissions, and RESTful APIs for mobile and web clients."
+      },
+      "project2": {
+        "title": "IdeaVote – Collaborative Voting Platform",
+        "description": "Real-time collaborative platform with complex voting logic, live analytics, permission structures, and WebSocket integration for instant updates across users."
+      },
+      "project3": {
+        "title": "ExperienceTracker",
+        "description": "Developer portfolio platform with structured data models, performance tracking, experience categorization, and analytics dashboard for professional growth monitoring."
+      },
+      "project4": {
+        "title": "TrainingRequests – HR Operations System",
+        "description": "Enterprise HR workflow system with approval routing, email notifications, PDF document generation, and role-based access control for training approval processes."
+      },
+      "project5": {
+        "title": "BlogCMS – Content Management System",
+        "description": "Full-featured CMS with content versioning, SEO optimization framework, real-time analytics, and REST API for headless publishing across multiple channels."
+      },
+      "project6": {
+        "title": "ProjectTracker – Team Collaboration System",
+        "description": "Project management backend with task routing, team permissions, real-time updates via WebSockets, file attachment handling, and milestone tracking for agile teams."
+      },
+      "project7": {
+        "title": "FBP (DesignHub)",
+        "description": "Asset management platform for creative teams with file versioning, permission-based access control, real-time collaboration features, and bulk asset operations."
+      },
+      "project8": {
+        "title": "RestoCafe OS – Multi-Tenant SaaS POS Platform",
+        "description": "Production-grade Point-of-Sale system for restaurants and cafés. Features multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA with service workers, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments with Kubernetes scaling."
+      },
+      "project9": {
+        "title": "Matjrii – Multi-Store E-Commerce SaaS Platform",
+        "description": "Comprehensive SaaS platform for unlimited e-commerce store creation. Includes 27+ payment gateways, 10+ professional themes, 22+ languages, AI-powered content generation, multi-tenant architecture, POS system integration, inventory management, role-based permissions, advanced analytics, and complete security compliance."
+      },
+      "project10": {
+        "title": "Medical Booking System – Enterprise Healthcare Platform",
+        "description": "Medical appointment booking and patient management system. Features multi-role workflows (admin, doctor, patient), payment processing integration, automated appointment reminders, AI-assisted booking and workflow automation, health metrics tracking, subscription management, referral system, and privacy-aware data handling."
+      },
+      "project11": {
+        "title": "Rakez ERP – Enterprise Resource Planning System",
+        "description": "Enterprise-grade ERP platform for real estate and sales management. Automates commission management with multi-party distribution, approval workflows, and VAT calculations. Features advanced booking/reservations with waiting list Queue, 67+ role-based permissions, real-time WebSocket notifications, OpenAI-powered AI assistant with Arabic support, comprehensive analytics, marketing budget tracking (Facebook & TikTok integration), media management, and 150+ protected API endpoints for complex business operations."
+      },
+      "project12": {
+        "title": "E-Commerce Platform – Modern Digital Commerce Solution",
+        "description": "Production-ready enterprise e-commerce platform combining Laravel 12 backend with React 18 modern frontend. Features sophisticated product management with unlimited products, premium glassmorphism UI with 3D animations and dark mode, powerful Orchid admin dashboard for content management, multi-level Redis caching (page, fragment, query levels), automatic WebP image optimization, advanced search and filtering, wishlist system, promotional campaigns (banners, slides, offers), complete backup and content versioning system, fully responsive design (320px to 4K+), and optimized performance delivering sub-2-second page loads."
+      }
+    }
+  },
+  "contact": {
+    "title": "Need a backend engineer who understands business logic and ships production systems?",
+    "subtitle": "I'm available for remote backend and backend-focused full-stack roles across GCC, MENA, Europe, and international product teams. Best fit: SaaS, CRM/ERP, PropTech, logistics, healthcare, AI-integrated business platforms.",
+    "letsConnect": "Let's Connect",
+    "emailMe": "Email Me",
+    "viewGithub": "View GitHub",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "paymentReady": "Payment Ready",
+    "paymentMethods": "Deel / Wise / Payoneer",
+    "lookingFor": "Best Fit Roles",
+    "opportunities": [
+      "Remote backend & backend-focused full-stack positions",
+      "SaaS, CRM/ERP, and AI-integrated product teams",
+      "GCC, MENA, Europe, and international companies",
+      "PropTech, logistics, healthcare, B2B platforms"
+    ],
+    "sendMessage": "Send Me a Message",
+    "name": "Name",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "your.email@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Backend role / Project inquiry / Collaboration",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about the role or project...",
+    "send": "Send Message",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent!",
+    "messageSent": "Message Sent!",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your Name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your.email@example.com"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Backend role / Project inquiry / Collaboration"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about the role or project..."
+      }
+    },
+    "button": {
+      "sending": "Sending...",
+      "sent": "Message Sent!",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "tagline": "Backend engineer building production SaaS, CRM/ERP platforms, and AI-integrated systems. Available for remote roles.",
+    "quickLinks": "Quick Links",
+    "connectWithMe": "Connect With Me",
+    "rights": "All rights reserved.",
+    "madeWith": "Made with",
+    "using": "using Next.js & Tailwind CSS"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode",
+    "toggle": "Toggle Theme"
+  },
+  "language": {
+    "english": "English",
+    "arabic": "Arabic",
+    "toggle": "Toggle Language"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu"
+  },
+  "story": {
+    "hero": {
+      "chapterLabel": "CHAPTER 01",
+      "scrollHint": "Scroll to begin"
+    },
+    "transition": {
+      "chapterLabel": "CHAPTER 02",
+      "heading": "From business problems to production systems.",
+      "body": "Every project below started as an operational bottleneck — a spreadsheet, a manual process, a disconnected tool. What follows is the backend engineering that replaced it.",
+      "signals": [
+        "3+ years building web systems",
+        "150+ protected API endpoints in ERP/CRM work",
+        "Measurable performance gains in logistics/reporting",
+        "Arabic + English bilingual product delivery"
+      ]
+    },
+    "caseStudy": {
+      "coverNote": "Art direction concept — not a product screenshot",
+      "architectureLabel": "System architecture",
+      "realSystemLabel": "The real system"
+    },
+    "abstraction": {
+      "chapterLabel": "CHAPTER 04",
+      "heading": "One pattern, six systems.",
+      "body": "Every platform above reduces to the same backend spine: a business operation, guarded by roles and permissions, modeled as data, exposed through APIs, wired into integrations, and tracked by an audit trail.",
+      "steps": [
+        {
+          "title": "Business operation",
+          "body": "A real workflow — booking, ordering, prescribing, shipping — that used to run on spreadsheets or phone calls."
+        },
+        {
+          "title": "Actors & roles",
+          "body": "Admins, staff, customers, drivers — each with a different view of the same operation."
+        },
+        {
+          "title": "Permissions",
+          "body": "Role-based access control scoping exactly what each actor can see and do."
+        },
+        {
+          "title": "Domain model",
+          "body": "Relational schemas that capture the business rules — bookings, inventory, commissions, appointments."
+        },
+        {
+          "title": "APIs",
+          "body": "REST endpoints that expose the domain model to web and mobile clients securely."
+        },
+        {
+          "title": "Integrations",
+          "body": "Payments, AI assistants, notification and marketing platforms wired into the core flow."
+        },
+        {
+          "title": "Audit trail",
+          "body": "Every state change logged — for disputes, compliance, and operational visibility."
+        }
+      ]
+    },
+    "gallery": {
+      "chapterLabel": "CHAPTER 06",
+      "heading": "Additional systems",
+      "body": "Five more production platforms — same backend-first approach, different domains."
+    },
+    "experience": {
+      "chapterLabel": "CHAPTER 07"
+    },
+    "closing": {
+      "chapterLabel": "CHAPTER 08",
+      "heading": "Building the systems behind the business.",
+      "body": "If your product needs someone who can turn operational complexity into secure, maintainable backend architecture — let's talk.",
+      "cta": "Start a conversation"
+    }
+  }
+}

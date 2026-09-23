@@ -264,7 +264,7 @@ const Contact = () => {
                   className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                     isSubmitting || isSubmitted
                       ? 'bg-green-600 text-white cursor-not-allowed'
-                      : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
+                      : 'bg-gradient-to-r bg-primary-600 dark:bg-secondary-600 text-white hover:bg-primary-700 dark:hover:bg-secondary-700 shadow-lg hover:shadow-xl'
                   }`}
                 >
                   {isSubmitting ? (

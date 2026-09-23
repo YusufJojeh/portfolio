@@ -1,0 +1,765 @@
+{
+  "meta": {
+    "title": "Yusuf Jojeh — Backend & Business Systems Engineer",
+    "description": "Backend systems designed around how real businesses operate: workflows, permissions, data, APIs, integrations, reliability and applied AI."
+  },
+  "nav": {
+    "name": "Yusuf Jojeh",
+    "work": "Work",
+    "approach": "Approach",
+    "experience": "Experience",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "العربية",
+    "languageShort": "ع",
+    "skip": "Skip to content",
+    "home": "Home",
+    "chapters": "Chapters"
+  },
+  "chapters": {
+    "00": "Opening",
+    "01": "Real operations",
+    "02": "Rakez",
+    "03": "Business → System",
+    "04": "HireLens",
+    "05": "LinguaCoach",
+    "06": "ProspectIQ",
+    "07": "Dhura",
+    "08": "Applied AI",
+    "09": "Experience",
+    "10": "More systems",
+    "11": "Closing"
+  },
+  "art": {
+    "note": "Art direction. Interface and figures are illustrative, not product data."
+  },
+  "opening": {
+    "name": "YUSUF — JOJEH",
+    "role": "Backend & Business Systems Engineer",
+    "headline": "I turn business complexity into production systems.",
+    "headlineLines": [
+      "I turn business complexity",
+      "into production systems."
+    ],
+    "headlineLinesMobile": [
+      "I turn business",
+      "complexity into",
+      "production systems."
+    ],
+    "support": "I design backend systems around how real businesses operate — workflows, permissions, data, APIs, integrations, reliability and applied AI.",
+    "supportShort": "Backend systems built around how real businesses operate.",
+    "ctaPrimary": "Explore systems",
+    "ctaSecondary": "Get in touch",
+    "microcopy": [
+      "Backend Systems",
+      "Business Workflows",
+      "Applied AI"
+    ],
+    "location": "Syria / Remote",
+    "scroll": "Scroll",
+    "portraitAlt": "Yusuf Jojeh at dusk above an old city"
+  },
+  "operations": {
+    "heading": "Businesses don't run on features. They run on operations.",
+    "body": "Sales pipelines, commissions, bookings, approvals, stock, schedules. Every business has rules that decide who can do what, when, and with which data. That is where I work.",
+    "signals": [
+      "Workflows that match how teams actually work",
+      "Permissions enforced on the server, not the screen",
+      "Data modeled so reports can be trusted",
+      "AI that assists without taking the decision"
+    ],
+    "imageAlt": "A city at dusk seen from a terrace"
+  },
+  "rakez": {
+    "title": "Rakez ERP",
+    "kicker": "Real-estate ERP · Arabic-first",
+    "lede": "An operating system for a real-estate business: sales, bookings, commissions and marketing spend in one platform.",
+    "handles": "What the system handles",
+    "items": [
+      {
+        "t": "Bookings",
+        "d": "Reservations with a waiting list for contested units"
+      },
+      {
+        "t": "Commissions",
+        "d": "Multi-party splits, approval chains and VAT"
+      },
+      {
+        "t": "Permissions",
+        "d": "Granular roles, checked on the server"
+      },
+      {
+        "t": "Real-time",
+        "d": "WebSocket notifications through Laravel Reverb"
+      },
+      {
+        "t": "Assistant",
+        "d": "OpenAI-backed answers in Arabic for the sales team"
+      }
+    ],
+    "cta": "Read the Rakez case study",
+    "imageAlt": "Rakez ERP marketing dashboard with demo data",
+    "stackLabel": "Stack",
+    "stack": [
+      "Laravel 12",
+      "PostgreSQL",
+      "Redis",
+      "Reverb",
+      "Sanctum",
+      "Spatie Permission",
+      "OpenAI API"
+    ]
+  },
+  "system": {
+    "heading": "From a business rule to a production system.",
+    "intro": "One commission rule from Rakez, followed down through every layer it touches.",
+    "layers": [
+      {
+        "t": "The rule",
+        "d": "A sale closes. Several parties share the commission, a manager must approve it, and VAT applies."
+      },
+      {
+        "t": "The workflow",
+        "d": "Draft, review, approval, payout — with who can act defined at every step."
+      },
+      {
+        "t": "The data model",
+        "d": "Deals, parties, splits and approvals stored as relational records. Auditable, never recalculated in a spreadsheet."
+      },
+      {
+        "t": "The permissions",
+        "d": "Role-based policies checked on the server for every action, not hidden buttons in the UI."
+      },
+      {
+        "t": "The API",
+        "d": "Validated endpoints that the web app, notifications and integrations all share."
+      },
+      {
+        "t": "The assist",
+        "d": "AI drafts, summarizes and answers questions in Arabic. It does not approve anything."
+      }
+    ]
+  },
+  "hirelens": {
+    "title": "HireLens AI",
+    "kicker": "Evidence-based hiring",
+    "heading": "The AI gathers evidence. A person makes the hire.",
+    "aiTitle": "The copilot may",
+    "ai": [
+      "Run interviews that adapt to the candidate's CV",
+      "Draft evaluation reports that cite their evidence",
+      "Answer questions grounded in one job, inside one tenant"
+    ],
+    "humanTitle": "Only people decide",
+    "human": [
+      "Every hire",
+      "Every rejection"
+    ],
+    "guard": "Guardrailed against prompt injection and forbidden decision language.",
+    "cta": "Read the HireLens case study",
+    "screensTitle": "Inside the product",
+    "screensIntro": "The recruiter workspace, from the evidence dashboard to the human decision.",
+    "screensNote": "Captured by the repo’s own Playwright suite on a seeded local build. Candidates, scores and jobs are demo data.",
+    "screens": {
+      "dashboard": "Evidence dashboard",
+      "evaluation": "Evaluation report",
+      "human-review": "Human decision",
+      "interview-kit": "Approved interview kit",
+      "rubric": "Job requirements rubric",
+      "audit": "Audit log"
+    }
+  },
+  "linguacoach": {
+    "title": "LinguaCoach AI",
+    "kicker": "Language learning · Arabic speakers",
+    "heading": "Coaching that keeps teaching when no AI provider is connected.",
+    "points": [
+      "A seeded CEFR curriculum — courses are derived, so nothing drifts out of sync",
+      "Realtime coaching streamed over Server-Sent Events",
+      "Queued AI workflows on durable PostgreSQL row leases that survive restarts",
+      "Budgets and daily limits enforced; skipped AI calls are labeled, never faked"
+    ],
+    "cta": "Read the LinguaCoach case study",
+    "screensTitle": "Inside the product",
+    "screensIntro": "The learner side and the admin audit trail, on a demo account.",
+    "screensNote": "Captured during a live UI audit of a local build, signed in as a seeded demo learner and admin. Activity and accounts are demo data.",
+    "screens": {
+      "dashboard": "Learner dashboard",
+      "coach": "AI coach conversation",
+      "reading": "Reading practice",
+      "listening": "Listening exercise",
+      "admin-audit": "Admin audit log"
+    }
+  },
+  "prospectiq": {
+    "title": "ProspectIQ",
+    "kicker": "Lead intelligence · FastAPI",
+    "lede": "Prospect research turned into an enrichment and scoring pipeline that fails closed in production.",
+    "steps": [
+      "Discover",
+      "Enrich",
+      "Score",
+      "Hand off to CRM"
+    ],
+    "modes": "Live, demo and stub modes are explicit. Production never silently falls back to demo data.",
+    "cta": "Read the ProspectIQ case study",
+    "imageAlt": "LeadScope lead-intelligence dashboard with demo data"
+  },
+  "dhura": {
+    "title": "Dhura",
+    "arabicTitle": "ذُرى",
+    "kicker": "Concept · Real-estate CRM/ERP",
+    "lede": "An Arabic-first real-estate platform where AI can suggest anything and change nothing on its own.",
+    "points": [
+      "RTL designed in from the first screen",
+      "A deterministic core for listings, deals and commissions",
+      "Every AI action waits for a human approval"
+    ],
+    "status": "Concept architecture — not a shipped product",
+    "cta": "Read the Dhura concept",
+    "imageAlt": "Dhura executive overview with demo data"
+  },
+  "ai": {
+    "heading": "Applied AI, engineered like the rest of the system.",
+    "intro": "The same principles show up in every system where I've put a model into a real workflow.",
+    "seenIn": "Seen in",
+    "principles": [
+      {
+        "t": "AI proposes. People decide.",
+        "d": "Hire and reject decisions in HireLens are human-only. In Dhura, no AI suggestion changes state without approval.",
+        "refs": [
+          "hirelens",
+          "dhura"
+        ]
+      },
+      {
+        "t": "Fail closed, not quietly.",
+        "d": "ProspectIQ refuses to fall back to demo data in production. CareerGuide won't start if its selected provider has no key.",
+        "refs": [
+          "prospectiq",
+          "careerguide"
+        ]
+      },
+      {
+        "t": "A deterministic core.",
+        "d": "CareerGuide's scores come from a fixed, version-controlled rules engine. The model advises beside it, never inside it.",
+        "refs": [
+          "careerguide"
+        ]
+      },
+      {
+        "t": "Honest fallbacks.",
+        "d": "LinguaCoach keeps its whole curriculum usable without a paid provider, and labels any AI call it had to skip.",
+        "refs": [
+          "linguacoach"
+        ]
+      },
+      {
+        "t": "Guardrails live on the server.",
+        "d": "In HireLens every request passes through Laravel's provider router and guardrails. The browser never talks to a model.",
+        "refs": [
+          "hirelens"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "heading": "Where the work happened.",
+    "education": "BSc, Information Engineering & Distributed Systems — Al-Shahbaa University, 2021–2026",
+    "items": [
+      {
+        "period": "Dec 2025 — Present",
+        "role": "Backend Developer, SaaS & AI Systems",
+        "company": "Rakez Company",
+        "d": "Backend services and APIs for AI-assisted CRM modules in Laravel and NestJS, with LLM features wired into production workflows."
+      },
+      {
+        "period": "Nov 2025 — Jan 2026",
+        "role": "Full-Stack Developer, CRM Systems",
+        "company": "Business Flow",
+        "d": "Backend-heavy CRM systems and operational dashboards with role-based access and structured validation."
+      },
+      {
+        "period": "Jan 2025 — Nov 2025",
+        "role": "Backend Developer, iLogistics SaaS",
+        "company": "Mermez",
+        "d": "REST APIs for a multi-tenant logistics platform: JWT authentication, role-based access, tracking, reporting and query tuning."
+      },
+      {
+        "period": "2024 — 2025",
+        "role": "Full-Stack Developer, freelance",
+        "company": "Mytrixa",
+        "d": "Business requirements turned into APIs, schemas, admin panels and reporting tools for several clients."
+      },
+      {
+        "period": "2025",
+        "role": "Systems Analyst",
+        "company": "Self-employed",
+        "d": "Requirements, data models and workflow documentation, written before implementation started."
+      }
+    ]
+  },
+  "more": {
+    "heading": "More systems.",
+    "intro": "Smaller chapters, same discipline.",
+    "caseStudy": "Case study",
+    "source": "Source",
+    "onRequest": "Details on request",
+    "inProgress": "Write-up in progress",
+    "items": [
+      {
+        "id": "careerguide",
+        "t": "CareerGuide AI",
+        "d": "Career matching where the score is deterministic and AI only advises.",
+        "weight": "lead",
+        "href": "careerguide"
+      },
+      {
+        "id": "algoag",
+        "t": "ALGOAG",
+        "weight": "lead",
+        "href": "algoag",
+        "status": "inProgress"
+      },
+      {
+        "id": "restocafe",
+        "t": "RestoCafe OS",
+        "d": "Multi-branch restaurant POS: offline-first PWA, real-time kitchen display, optimistic concurrency.",
+        "weight": "mid"
+      },
+      {
+        "id": "ilogistics",
+        "t": "iLogistics",
+        "d": "Multi-tenant logistics and booking platform with JWT, role-based access and reporting.",
+        "weight": "mid"
+      },
+      {
+        "id": "mtjri",
+        "t": "mtjri",
+        "d": "Multi-store commerce with a self-service web installer.",
+        "weight": "small"
+      },
+      {
+        "id": "businessflow",
+        "t": "Business Flow CRM",
+        "d": "CRM systems and operational dashboards.",
+        "weight": "small"
+      },
+      {
+        "id": "agentos",
+        "t": "AgentOS",
+        "weight": "small",
+        "status": "onRequest"
+      }
+    ],
+    "screens": {
+      "ilogistics": {
+        "note": "Admin and customer screens from a local build. Names, shipments and amounts are seeded test data.",
+        "dashboard": "Admin dashboard",
+        "analytics": "Analytics and reports",
+        "shipments": "Shipment management",
+        "route": "Route with live location",
+        "invoices": "Invoices and payments",
+        "customer-shipments": "Customer shipments with QR tracking"
+      },
+      "mtjri": {
+        "note": "The platform admin, a store's back office and its storefront, from a local build with demo stores and orders.",
+        "storefront": "Storefront",
+        "store-dashboard": "Store dashboard",
+        "pos": "Point of sale",
+        "product-editor": "Product editor",
+        "platform-dashboard": "Platform admin",
+        "roles": "Staff roles and permissions"
+      },
+      "restocafe": {
+        "note": "Captured by the repo's own Playwright visual tests against a seeded local build. Orders, tables and amounts are test data.",
+        "dashboard": "Operations dashboard",
+        "kitchen": "Kitchen board",
+        "order-create": "Order entry",
+        "tables": "Table service board",
+        "invoice": "Paid invoice",
+        "reports": "Daily report"
+      },
+      "careerguide": {
+        "note": "Public screens from a local build.",
+        "home": "Home",
+        "login": "Sign in"
+      },
+      "algoag": {
+        "note": "Public screens from a local build.",
+        "home": "Home",
+        "login": "Sign in"
+      },
+      "agentos": {
+        "note": "Public pages from a local build, captured with Playwright. The workspace itself sits behind sign-in.",
+        "content-studio": "Content creation studio",
+        "social-studio": "Social media studio",
+        "register": "Account and brand setup"
+      }
+    }
+  },
+  "closing": {
+    "statement": "Better systems start with understanding the business.",
+    "body": "Open to remote roles in backend engineering, business systems and applied AI.",
+    "email": "yassaf.jojeh@gmail.com",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "imageAlt": "A city skyline after sunset"
+  },
+  "footer": {
+    "role": "Backend & Business Systems Engineer",
+    "location": "Aleppo, Syria · Remote",
+    "rights": "All rights reserved.",
+    "top": "Back to top"
+  },
+  "work": {
+    "back": "All work",
+    "next": "Next",
+    "role": "Role",
+    "stack": "Stack",
+    "status": "Status",
+    "domain": "Domain",
+    "source": "Source",
+    "private": "Private repository",
+    "viewSource": "View source on GitHub",
+    "discuss": "Discuss this system",
+    "architecture": "Architecture",
+    "rakez": {
+      "kicker": "Case study · Real-estate ERP",
+      "title": "Rakez ERP",
+      "lede": "An operating system for a real-estate business: sales, bookings, commissions and marketing spend in one Arabic-first platform.",
+      "facts": [
+        {
+          "k": "Domain",
+          "v": "Real estate — sales, bookings, commissions"
+        },
+        {
+          "k": "Role",
+          "v": "Backend engineering"
+        },
+        {
+          "k": "Context",
+          "v": "Built during my role at Rakez Company"
+        }
+      ],
+      "problemTitle": "The operation",
+      "problem": "Sales pipelines, multi-party commissions, unit bookings and marketing budgets lived in disconnected tools, and none of them were Arabic-native.",
+      "layersTitle": "How the system is layered",
+      "layers": [
+        {
+          "t": "Bookings & reservations",
+          "d": "Unit reservations with a waiting list, so concurrent requests for the same unit queue instead of colliding."
+        },
+        {
+          "t": "Commission engine",
+          "d": "Multi-party splits with an approval chain and VAT, replacing calculations that used to be done by hand in spreadsheets."
+        },
+        {
+          "t": "Permissions",
+          "d": "Granular role-based access through Spatie Permission, checked on the server for every action."
+        },
+        {
+          "t": "Real-time",
+          "d": "Notifications over Laravel Reverb WebSockets, so the next person in a workflow sees the change immediately."
+        },
+        {
+          "t": "Marketing spend",
+          "d": "Budget tracking that brings in platform spend through the Facebook SDK and TikTok API."
+        },
+        {
+          "t": "Arabic assistant",
+          "d": "An OpenAI-backed assistant that answers the sales team's questions in Arabic, with business context."
+        }
+      ],
+      "hardTitle": "The hard parts",
+      "hard": [
+        "Concurrent booking conflicts, resolved through waiting-list queuing.",
+        "Commission distribution across several parties with approvals and tax — correct every time and auditable afterwards.",
+        "A permission model detailed enough for real roles without slowing every request.",
+        "Arabic AI answers that stay accurate to the business domain."
+      ],
+      "architecture": "A Laravel 12 monolith. PostgreSQL for relational data; Redis for cache, queues and sessions; Sanctum for API authentication; Reverb for WebSockets; Spatie Permission for roles; the OpenAI API for the assistant."
+    },
+    "hirelens": {
+      "kicker": "Case study · Hiring platform",
+      "title": "HireLens AI",
+      "lede": "An Arabic-first hiring copilot built around one rule: the AI gathers evidence, and people make the decision.",
+      "problem": "Recruiting teams wanted a documented, defensible pipeline — structured requirements, CV-aware interviews, evidence-based evaluations — without letting a model quietly become the decision-maker.",
+      "aiTitle": "The copilot may",
+      "ai": [
+        "Run structured interviews that adapt to the candidate's CV",
+        "Draft evaluation reports that cite transcript and CV evidence, with skill scores",
+        "Answer questions grounded in a single job or application, scoped to one tenant"
+      ],
+      "humanTitle": "Only people decide",
+      "human": [
+        "Every hire",
+        "Every rejection"
+      ],
+      "humanNote": "The copilot is guardrailed against forbidden decision language. It can explain the evidence; it cannot render the verdict.",
+      "flowTitle": "The pipeline",
+      "flow": [
+        "Job & rubric",
+        "Candidate portal — no account needed",
+        "CV-aware interview",
+        "Evidence report",
+        "Human decision"
+      ],
+      "versions": "Job and CV versions are frozen per candidate, so the Candidate 360 view stays consistent even when a job changes later.",
+      "guardTitle": "Guardrails",
+      "guard": [
+        "Every AI request passes through Laravel's provider router. The browser never talks to a model directly.",
+        "Prompt-injection and forbidden-decision-language checks on the copilot.",
+        "Five roles — Admin, Recruiter, Hiring Manager, Compliance, Viewer — enforced server-side and mirrored in the UI from one shared permission set.",
+        "Providers are explicit: a mock provider for tests and demos, an OpenAI-compatible provider, or local Ollama."
+      ],
+      "bilingual": "Arabic and English throughout, with automatic RTL/LTR layout switching.",
+      "architecture": "A Laravel 12 monolith with Inertia.js 2 and React 19 — no separate frontend service — and a local component layer on Radix primitives. Tested with Pest and Playwright; analysed with Larastan."
+    },
+    "linguacoach": {
+      "kicker": "Case study · Language learning",
+      "title": "LinguaCoach AI",
+      "lede": "English coaching for Arabic speakers, designed to keep teaching even when no paid AI provider is connected.",
+      "ladderTitle": "A deterministic curriculum",
+      "ladder": "Placement follows the CEFR levels. The catalog is seeded once and courses are derived by grouping activities by level and topic — there is no course table to drift out of sync.",
+      "levels": [
+        {
+          "l": "A1",
+          "n": "Beginner"
+        },
+        {
+          "l": "A2",
+          "n": "Elementary"
+        },
+        {
+          "l": "B1",
+          "n": "Intermediate"
+        },
+        {
+          "l": "B2",
+          "n": "Upper-intermediate"
+        },
+        {
+          "l": "C1",
+          "n": "Advanced"
+        },
+        {
+          "l": "C2",
+          "n": "Proficient"
+        }
+      ],
+      "runtimeTitle": "A governed AI runtime",
+      "runtime": [
+        "Routes between deterministic dev/test providers and OpenAI, Gemini, Ollama or any OpenAI-compatible endpoint.",
+        "Bounded retry and backoff policies.",
+        "A monthly budget and per-user daily limits.",
+        "When a provider call is skipped, the result says so. Progress is never invented."
+      ],
+      "durableTitle": "Work that survives restarts",
+      "durable": "Structured AI workflows are persisted as queued runs and executed by a bounded in-process worker that holds durable PostgreSQL row leases.",
+      "realtime": "Coaching conversations stream over Server-Sent Events.",
+      "architecture": "A monorepo: a Next.js and TypeScript web app; a FastAPI, Pydantic and async SQLAlchemy 2 API with Alembic migrations; PostgreSQL in production; a Redis-compatible cache; Docker Compose for local development."
+    },
+    "prospectiq": {
+      "kicker": "Case study · Lead intelligence",
+      "title": "ProspectIQ",
+      "alias": "Also developed as LeadScope AI",
+      "lede": "Prospect research that took sales teams hours, turned into an enrichment and scoring pipeline — one that refuses to run on sample data in production.",
+      "pipelineTitle": "The pipeline",
+      "pipeline": [
+        {
+          "t": "Discover",
+          "d": "Sources through SerpAPI, with Tavily as an option."
+        },
+        {
+          "t": "Enrich",
+          "d": "LLM extraction into structured company and contact data, kept off the request path."
+        },
+        {
+          "t": "Score",
+          "d": "AI lead scoring against consistent, prompt-defined criteria, validated by Pydantic schemas."
+        },
+        {
+          "t": "Hand off",
+          "d": "A REST API that existing CRM front-ends can consume."
+        }
+      ],
+      "modesTitle": "Explicit runtime modes",
+      "modes": "Discovery and the AI provider each run in an explicitly chosen mode, and a hard kill switch can stop discovery. In production the app validates secrets and origins at startup and fails closed rather than falling back to sample data.",
+      "modeList": [
+        {
+          "m": "live",
+          "d": "Real sources, real provider"
+        },
+        {
+          "m": "demo",
+          "d": "Sample data for walkthroughs"
+        },
+        {
+          "m": "stub",
+          "d": "Deterministic responses for tests"
+        }
+      ],
+      "ciTitle": "Held to a CI gate",
+      "ci": "GitHub Actions runs ruff, mypy, pytest and Playwright on every change.",
+      "architecture": "FastAPI with async endpoints, Pydantic v2, SQLAlchemy 2 and Alembic on MariaDB, Redis caching for enrichment results, a React + TypeScript + Vite frontend, Docker Compose."
+    },
+    "dhura": {
+      "kicker": "Concept · Real-estate CRM/ERP",
+      "title": "Dhura",
+      "arabicTitle": "ذُرى",
+      "status": "Concept architecture — not a shipped product.",
+      "lede": "What an Arabic-first real-estate platform looks like when AI can suggest anything and change nothing on its own.",
+      "principles": [
+        {
+          "t": "Arabic first",
+          "d": "RTL is designed in from the first screen, not retrofitted as a translation."
+        },
+        {
+          "t": "A deterministic core",
+          "d": "Listings, deals, commissions and approvals modeled as auditable relational data behind role-scoped APIs."
+        },
+        {
+          "t": "Human-approved AI",
+          "d": "The AI drafts, summarizes and proposes next actions. Nothing changes state until a person approves it."
+        }
+      ],
+      "lineage": "The same pattern that runs in the Rakez ERP assistant and the HireLens copilot, carried into a new domain.",
+      "stackLabel": "Intended stack"
+    },
+    "careerguide": {
+      "kicker": "Case study · Career guidance",
+      "title": "CareerGuide AI",
+      "lede": "Career matching for university students where the score is reproducible. AI can advise; it never decides the number.",
+      "weightsTitle": "The scoring rule",
+      "weights": "A fixed, version-controlled rules engine produces every score.",
+      "weightList": [
+        {
+          "k": "Skills",
+          "v": 45
+        },
+        {
+          "k": "Interests",
+          "v": 25
+        },
+        {
+          "k": "Academic / major relevance",
+          "v": 15
+        },
+        {
+          "k": "Career-goal relevance",
+          "v": 15
+        }
+      ],
+      "weightsNote": "Weights shift only when fresh market evidence exists — and AI or live web search never set a score directly.",
+      "immutableTitle": "Recommendations never change silently",
+      "immutable": "Every recommendation version is immutable. A new score means an explicit re-score, not an overwrite.",
+      "aiTitle": "AI beside the engine, not inside it",
+      "ai": [
+        "Optional AI career advice alongside the deterministic matching.",
+        "Schema-constrained JSON from queued, worker-executed jobs, with an authenticated SSE progress stream.",
+        "Explicit provider selection — mock, OpenAI, Gemini, Ollama. Production startup fails closed if the selected provider has no key."
+      ],
+      "checksTitle": "Checked before release",
+      "checks": "Ruff, pytest, alembic check, a production smoke script, and frontend lint, typecheck and build — plus a written checklist confirming one student cannot read another student's profile, recommendation or PDF.",
+      "architecture": "FastAPI, SQLAlchemy 2, Alembic, Pydantic Settings, JWT and ReportLab PDF export; React 19, Vite, TypeScript, TanStack Query, React Hook Form and Zod."
+    },
+    "algoag": {
+      "kicker": "Case study",
+      "title": "ALGOAG",
+      "status": "Write-up in progress",
+      "body": "This case study hasn't been written up yet. Rather than describe the system without the evidence to back it, this page stays short until the documentation is ready.",
+      "cta": "Ask me about ALGOAG"
+    },
+    "evidence": {
+      "label": "Real screens",
+      "source": {
+        "rakez": "The staff login is live at rakez.com.sa. The screens below come from a local build with seeded demo data; the company's own records stay private.",
+        "hirelens": "Captured from a local build of the application, unedited.",
+        "linguacoach": "Captured from a local build of the web app, unedited.",
+        "prospectiq": "Captured from a local build of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
+        "careerguide": "Captured from a local build of the web app, unedited.",
+        "algoag": "Captured from a local build of the application, unedited.",
+        "dhura": "Captured from a local build of the V1 release candidate. Dhura is not a shipped product."
+      },
+      "caption": {
+        "home": "Landing screen",
+        "login": "Sign-in screen",
+        "register": "Workspace creation"
+      },
+      "alt": {
+        "rakez": {
+          "login": "Rakez staff portal sign-in screen with the Rakez Real Estate mark"
+        },
+        "hirelens": {
+          "home": "HireLens AI landing page: Hire from evidence, not impression",
+          "login": "HireLens recruiter sign-in screen"
+        },
+        "linguacoach": {
+          "home": "LinguaCoach AI landing page with a coaching conversation preview",
+          "login": "LinguaCoach sign-in screen"
+        },
+        "prospectiq": {
+          "home": "LeadScope landing page: Evidence-first lead intelligence",
+          "login": "LeadScope workspace sign-in screen"
+        },
+        "careerguide": {
+          "home": "CareerGuide AI landing page: Find the career that fits you",
+          "login": "CareerGuide sign-in screen"
+        },
+        "algoag": {
+          "home": "ALGOAG landing page: Train like a competitive programmer",
+          "login": "ALGOAG assistant workspace sign-in screen"
+        },
+        "dhura": {
+          "login": "Dhura sign-in screen, Arabic, right-to-left",
+          "register": "Dhura workspace creation form"
+        }
+      },
+      "app": {
+        "label": "Inside the product",
+        "demo": "Logged-in screens from a local build running on the project's own demo seed. The names, units and amounts are fictional test data, not production figures.",
+        "rakez": {
+          "marketing-performance-dashboard": "Marketing dashboard",
+          "unit-inventory-search": "Unit inventory search",
+          "sales-reservation-operations": "Reservation operations",
+          "accounting-finance-dashboard": "Accounting dashboard",
+          "credit-booking-pipeline": "Credit booking pipeline",
+          "workforce-analytics": "Workforce analytics"
+        },
+        "prospectiq": {
+          "operational-lead-intelligence-dashboard": "Lead intelligence desk",
+          "evidence-first-lead-portfolio": "Lead workspace",
+          "lead-intelligence-detail": "Lead detail with evidence",
+          "evidence-grounded-ai-analysis": "Evidence-grounded AI analysis",
+          "ai-outreach-drafts": "AI outreach drafts",
+          "crm-sales-pipeline": "CRM pipeline"
+        },
+        "dhura": {
+          "executive-overview": "Executive overview",
+          "unit-inventory": "Unit inventory",
+          "crm-lead-workspace": "CRM lead workspace",
+          "finance-reporting": "Finance reports",
+          "governed-ai-control-room": "AI control room with human approval",
+          "customer-portal-dashboard": "Customer portal"
+        },
+        "hirelens": {
+          "dashboard": "Evidence dashboard",
+          "evaluation": "Evaluation report",
+          "human-review": "Human decision",
+          "interview-kit": "Approved interview kit",
+          "rubric": "Job requirements rubric",
+          "audit": "Audit log"
+        },
+        "linguacoach": {
+          "dashboard": "Learner dashboard",
+          "coach": "AI coach conversation",
+          "reading": "Reading practice",
+          "listening": "Listening exercise",
+          "admin-audit": "Admin audit log"
+        }
+      }
+    }
+  }
+}

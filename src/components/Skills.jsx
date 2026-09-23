@@ -10,6 +10,7 @@ const Skills = () => {
   });
 
   const categories = {
+    ai: { title: 'AI & Automation', color: 'indigo', icon: '🤖' },
     backend: { title: 'Back-End', color: 'blue', icon: '⚙️' },
     frontend: { title: 'Front-End', color: 'purple', icon: '🎨' },
     database: { title: 'Database', color: 'green', icon: '🗄️' },

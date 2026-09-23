@@ -5,13 +5,13 @@ export const personalInfo = {
   summary: "Backend-focused Full-Stack Developer with more than 3 years of hands-on experience designing, developing, and maintaining scalable, secure, and high-performance web applications. Strong expertise in NestJS, Node.js (TypeScript), Laravel, RESTful API design, database optimization, and AI-powered systems. Actively building AGentoos, an AI-driven business automation platform based on intelligent agents, workflow orchestration, and external API integrations. Experienced in using AI-powered development tools to accelerate delivery while maintaining clean, testable, and production-ready code.",
   contact: {
     phone: "+963 980 278 664",
-    email: "yassaf.jojah@gmail.com",
+    email: "yassaf.jojeh@gmail.com",
     github: "github.com/YusufJojeh",
     linkedin: "www.linkedin.com/in/yusuf-jojeh-95835b26b"
   },
   languages: [
     { name: "Arabic", level: "Native" },
-    { name: "English", level: "Intermediate" }
+    { name: "English", level: "Professional Working Proficiency" }
   ]
 };
 
@@ -81,7 +81,7 @@ export const experiences = [
     title: "Freelance Full-Stack Developer & Technical Tutor",
     company: "Self-Employed",
     location: "Remote",
-    period: "Sep 2022 – Present",
+    period: "2025",
     description: [
       "Developed multiple production-ready systems using Laravel and custom PHP architectures",
       "Built React.js frontend demos integrated with backend APIs",
@@ -121,15 +121,15 @@ export const projects = [
   {
     id: "3",
     title: "ExperienceTracker",
-    description: "A personal experience tracking application for developers to log and categorize their professional experiences and skills.",
-    technologies: ["Laravel", "Bootstrap", "MySQL", "Chart.js"],
-    githubUrl: "https://github.com/YusufJojeh/ProfessionalExperienceTracker "
+    description: "Developer portfolio platform with structured data models, performance tracking, experience categorization, and analytics dashboard for professional growth monitoring.",
+    technologies: ["Laravel", "MySQL", "Data Modeling", "Analytics", "Chart.js"],
+    githubUrl: "https://github.com/YusufJojeh/ProfessionalExperienceTracker"
   },
   {
     id: "4",
-    title: "TrainingRequests",
-    description: "An internal training management system for organizations to handle employee training requests and approvals.",
-    technologies: ["Laravel", "MySQL", "Email Notifications", "PDF Generation"],
+    title: "TrainingRequests – HR Operations System",
+    description: "Enterprise HR workflow system with approval routing, email notifications, PDF document generation, and role-based access control for training approval processes.",
+    technologies: ["Laravel", "MySQL", "Workflow Logic", "Email Integration", "PDF"],
     githubUrl: "https://github.com/YusufJojeh/TrainingApplyPlatform"
   },
   {
@@ -141,9 +141,9 @@ export const projects = [
   },
   {
     id: "6",
-    title: "ProjectTracker",
-    description: "A project management tool for tracking tasks, milestones, and team collaboration with real-time updates.",
-    technologies: ["Laravel", "React", "MySQL", "WebSockets", "File Upload"],
+    title: "ProjectTracker – Team Collaboration System",
+    description: "Project management backend with task routing, team permissions, real-time updates via WebSockets, file attachment handling, and milestone tracking for agile teams.",
+    technologies: ["Laravel", "MySQL", "WebSockets", "File Management", "REST API"],
     githubUrl: "https://github.com/YusufJojeh/project-tracker"
   },
   {
@@ -152,6 +152,50 @@ export const projects = [
     description: "Multi-vendor marketplace connecting clients and designers. Supports service listings, booking workflows, real-time order tracking, and secure transactions.",
     technologies: ["Laravel", "Vue.js", "MySQL", "Multi-vendor", "Real-time Tracking"],
     githubUrl: "https://github.com/YusufJojeh/FBP"
+  },
+  {
+    id: "8",
+    title: "RestoCafe OS – Multi-Tenant SaaS POS Platform",
+    description: "Production-grade Point-of-Sale system for restaurants and cafés with multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments.",
+    technologies: ["NestJS", "React", "TypeScript", "PostgreSQL", "WebSocket", "Socket.IO", "Redux", "Service Workers", "Docker", "Kubernetes", "Redis", "Prometheus"],
+    githubUrl: "https://github.com/YusufJojeh/restocafe-os"
+  },
+  {
+    id: "9",
+    title: "Matjrii – Multi-Store E-Commerce SaaS Platform",
+    description: "Comprehensive e-commerce SaaS platform enabling unlimited store creation with 27+ payment gateways, 10+ professional themes, 22+ language support, AI content generation (ChatGPT), multi-tenant isolation, advanced inventory management, POS integration, comprehensive analytics, and enterprise-grade security.",
+    technologies: ["Laravel", "React", "TypeScript", "MySQL", "PostgreSQL", "OpenAI API", "Inertia.js", "Tailwind CSS", "Stripe", "PayPal", "Razorpay"],
+    githubUrl: "https://github.com/YusufJojeh/matjrii-saas"
+  },
+  {
+    id: "10",
+    title: "Medical Booking System – Enterprise Healthcare Platform",
+    description: "Medical appointment booking and patient management platform with multi-role workflows, payment processing integration, automated reminders, AI-assisted booking and workflow automation, health metrics tracking, subscriptions, referral system, and privacy-aware data handling.",
+    technologies: ["Laravel", "Blade", "Vite", "Tailwind CSS", "MySQL", "Redis", "Stripe", "OpenAI", "Pest", "Alpine.js"],
+    githubUrl: "https://github.com/YusufJojeh/medical-booking-system"
+  },
+  {
+    id: "11",
+    title: "Rakez ERP – Enterprise Resource Planning System",
+    description: "Enterprise-grade ERP platform for real estate and sales management with automated commission calculation (multi-party distribution, approval workflows, VAT), advanced booking/reservations with waiting list system, 67+ role-based permissions across 9 predefined roles, real-time WebSocket notifications, AI-powered assistant (OpenAI with Arabic support), comprehensive analytics dashboards, marketing budget tracking with platform integrations (Facebook SDK, TikTok API), media management, 150+ protected API endpoints, and production-ready architecture for complex business operations.",
+    technologies: ["Laravel 12", "PHP 8.2+", "MySQL", "PostgreSQL", "Redis", "Laravel Reverb", "Sanctum", "Spatie Permission", "Vite", "Vue/React", "OpenAI", "Facebook SDK", "TikTok API", "mPDF"],
+    githubUrl: "https://github.com/YusufJojeh/rakez-erp"
+  },
+  {
+    id: "12",
+    title: "E-Commerce Platform – Modern Digital Commerce Solution",
+    description: "Production-ready enterprise e-commerce platform with sophisticated product management, premium glassmorphism UI with 3D animations, powerful Orchid admin dashboard for content management, multi-level caching strategy (page, fragment, query with Redis), automatic image optimization with WebP conversion, advanced product filtering and search, wishlist system, promotional banners/slides, offer management, complete backup/versioning infrastructure, responsive design across all devices, and optimized performance architecture delivering < 2 second page loads.",
+    technologies: ["Laravel 12", "React 18", "PHP 8.2+", "MySQL", "PostgreSQL", "Vite", "Redux Toolkit", "React Router", "React Query", "Tailwind CSS", "Redis", "Intervention Image", "Orchid Platform", "Framer Motion", "React Hook Form"],
+    featured: true,
+    githubUrl: "https://github.com/YusufJojeh/ecommerce-platform"
+  },
+  {
+    id: "13",
+    title: "AI Business OS – NestJS Backend",
+    description: "Production-grade NestJS backend for AI Marketing Agent platform with RESTful APIs for content creation, campaign management, analytics, and AI integrations. Fully TypeScript/Node.js architecture using modular monolith with Clean Architecture principles. Features Prisma ORM with PostgreSQL, Temporal + BullMQ for asynchronous workflow processing, Pino structured logging, Swagger API documentation, and 50+ feature modules organized by domain. Implements Social Media Simulation Mode (regional optimization) with content generation, preview, scheduling, and export capabilities. Designed for independent scaling, fault isolation, and production-ready reliability.",
+    technologies: ["NestJS", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Temporal", "BullMQ", "Redis", "Pino", "Swagger", "Docker", "Docker Compose", "REST APIs", "JWT", "RBAC"],
+    featured: true,
+    githubUrl: null
   }
 ];
 
@@ -162,26 +206,24 @@ export const skills = [
   { name: "TypeScript", icon: "typescript", category: "backend", proficiency: 4 },
   { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
   { name: "Laravel", icon: "laravel", category: "backend", proficiency: 5 },
-  { name: "Python", icon: "python", category: "backend", proficiency: 4 },
-  { name: "Flask", icon: "flask", category: "backend", proficiency: 4 },
+  { name: "NestJS", icon: "nest", category: "backend", proficiency: 4 },
+  { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
   { name: "REST APIs", icon: "api", category: "backend", proficiency: 5 },
   { name: "Webhooks", icon: "webhook", category: "backend", proficiency: 4 },
   { name: "SOAP", icon: "soap", category: "backend", proficiency: 3 },
   { name: "JWT", icon: "jwt", category: "backend", proficiency: 4 },
   { name: "OAuth2", icon: "oauth", category: "backend", proficiency: 4 },
   
-  // Frontend Skills
+  // Frontend Skills  
   { name: "React.js", icon: "react", category: "frontend", proficiency: 4 },
   { name: "JavaScript (ES6+)", icon: "javascript", category: "frontend", proficiency: 5 },
+  { name: "Next.js", icon: "nextjs", category: "frontend", proficiency: 3 },
   { name: "HTML5", icon: "html5", category: "frontend", proficiency: 5 },
   { name: "CSS3", icon: "css3", category: "frontend", proficiency: 4 },
   { name: "Tailwind CSS", icon: "tailwind", category: "frontend", proficiency: 4 },
   { name: "Bootstrap", icon: "bootstrap", category: "frontend", proficiency: 4 },
-  { name: "jQuery", icon: "jquery", category: "frontend", proficiency: 3 },
   
-  // Database Skills
-  { name: "MySQL", icon: "mysql", category: "database", proficiency: 5 },
-  { name: "PostgreSQL", icon: "postgresql", category: "database", proficiency: 3 },
+  // Database & DevOps
   { name: "MongoDB", icon: "mongodb", category: "database", proficiency: 3 },
   { name: "Redis", icon: "redis", category: "database", proficiency: 3 },
   
@@ -190,7 +232,6 @@ export const skills = [
   { name: "GitHub", icon: "github", category: "devops", proficiency: 4 },
   { name: "Docker", icon: "docker", category: "devops", proficiency: 4 },
   { name: "GitHub Actions", icon: "github", category: "devops", proficiency: 3 },
-  { name: "CI/CD", icon: "cicd", category: "devops", proficiency: 3 },
   { name: "PHPUnit", icon: "phpunit", category: "devops", proficiency: 4 },
   { name: "Jest", icon: "jest", category: "devops", proficiency: 3 },
   { name: "Postman", icon: "postman", category: "devops", proficiency: 4 },
@@ -216,6 +257,12 @@ export const education = {
 };
 
 export const certifications = [
+  {
+    name: "Generative AI: Elevate your Software Development",
+    issuer: "IBM/Coursera",
+    date: "Mar 29 2026",
+    url: "https://coursera.org/verify/1A4OSELZIBNTdateissuer"
+  },
   {
     name: "Developing AI Applications with Python and Flask",
     issuer: "IBM/Coursera",

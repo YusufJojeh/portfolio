@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 import { personalInfo } from '../data/portfolio.js';
 import Logo from './Logo';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -18,18 +20,41 @@ const Footer = () => {
       icon: Linkedin,
       href: `https://${personalInfo.contact.linkedin}`,
       label: 'LinkedIn',
-      color: 'hover:text-blue-600 dark:hover:text-blue-400'
+      color: 'hover:text-primary-600 dark:hover:text-primary-400'
     },
     {
       icon: Mail,
       href: `mailto:${personalInfo.contact.email}`,
       label: 'Email',
-      color: 'hover:text-red-600 dark:hover:text-red-400'
+      color: 'hover:text-secondary-600 dark:hover:text-secondary-400'
     }
   ];
 
+  const navLinks = [
+    { name: t('nav.home'), id: 'home' },
+    { name: t('nav.about'), id: 'about' },
+    { name: t('nav.skills'), id: 'skills' },
+    { name: t('nav.experience'), id: 'experience' },
+    { name: t('nav.projects'), id: 'projects' },
+    { name: t('nav.contact'), id: 'contact' }
+  ];
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <footer className="bg-slate-900/50 backdrop-blur-lg border-t border-white/10">
+    <footer className="bg-slate-50 dark:bg-slate-900/50 backdrop-blur-lg border-t border-slate-200 dark:border-primary-800/10">
       <div className="container-custom py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Logo and Description */}
@@ -41,12 +66,12 @@ const Footer = () => {
               className="mb-4"
             >
               <Logo size="lg" showText={true} className="justify-center md:justify-start" />
-              <p className="text-slate-400 mt-2 text-center md:text-left">
-                {personalInfo.title}
+              <p className="text-slate-600 dark:text-slate-400 mt-2 text-center md:text-left">
+                {t('hero.title')}
               </p>
             </motion.div>
-            <p className="text-slate-500 text-sm">
-              Passionate about creating innovative web solutions and sharing knowledge with the developer community.
+            <p className="text-slate-600 dark:text-slate-500 text-sm">
+              {t('footer.tagline')}
             </p>
           </div>
 
@@ -57,20 +82,20 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-lg font-semibold text-slate-200 mb-4">
-                Quick Links
+              <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                {t('footer.quickLinks')}
               </h4>
               <div className="flex flex-wrap justify-center gap-4">
-                {['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'].map((link) => (
-                  <motion.a
-                    key={link}
-                    href={`#${link.toLowerCase()}`}
+                {navLinks.map((link) => (
+                  <motion.span
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-slate-400 hover:text-blue-400 transition-colors duration-200 text-sm"
+                    className="text-slate-600 dark:text-slate-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 text-sm cursor-pointer"
                   >
-                    {link}
-                  </motion.a>
+                    {link.name}
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
@@ -83,8 +108,8 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h4 className="text-lg font-semibold text-slate-200 mb-4">
-                Connect With Me
+              <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4">
+                {t('footer.connectWithMe')}
               </h4>
               <div className="flex justify-center md:justify-end gap-4">
                 {socialLinks.map((social) => (
@@ -95,7 +120,7 @@ const Footer = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className={`p-3 rounded-lg glass-card text-slate-400 transition-colors duration-200 ${social.color}`}
+                    className={`p-3 rounded-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 transition-colors duration-200 ${social.color}`}
                     title={social.label}
                   >
                     <social.icon className="w-5 h-5" />
@@ -111,26 +136,26 @@ const Footer = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="border-t border-white/10 mt-8 pt-8 text-center"
+          className="border-t border-slate-200 dark:border-white/10 mt-8 pt-8 text-center"
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-slate-500 text-sm">
-              © {currentYear} {personalInfo.name}. All rights reserved.
+            <p className="text-slate-600 dark:text-slate-500 text-sm">
+              © {currentYear} {personalInfo.name}. {t('footer.rights')}
             </p>
-            
-            <div className="flex items-center gap-2 text-slate-500 text-sm">
-              <span>Made with</span>
+
+            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-500 text-sm">
+              <span>{t('footer.madeWith')}</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
-                <Heart className="w-4 h-4 text-red-500" />
+                <Heart className="w-4 h-4 text-primary-600 dark:text-secondary-500" />
               </motion.div>
-              <span>using React & Tailwind CSS</span>
+              <span>{t('footer.using')}</span>
             </div>
 
-            <div className="text-slate-500 text-sm">
-              <span>📍 {personalInfo.location}</span>
+            <div className="text-slate-600 dark:text-slate-500 text-sm">
+              <span>📍 {t('hero.location')}</span>
             </div>
           </div>
         </motion.div>
@@ -139,4 +164,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
