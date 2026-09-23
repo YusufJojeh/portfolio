@@ -194,15 +194,19 @@
   },
   "prospectiq": {
     "title": "ProspectIQ",
-    "kicker": "Lead intelligence · FastAPI",
-    "lede": "Prospect research turned into an enrichment and scoring pipeline that fails closed in production.",
-    "steps": [
-      "Discover",
-      "Enrich",
-      "Score",
-      "Hand off to CRM"
-    ],
-    "modes": "Live, demo and stub modes are explicit. Production never silently falls back to demo data.",
+    "kicker": "Sales intelligence · FastAPI",
+    "lede": "Research → evidence → deterministic scoring → grounded AI → human-approved action.",
+    "detailsTitle": "AI can propose. The backend executes.",
+    "states": {
+      "queued": "Queued",
+      "running": "Running",
+      "waiting": "Waiting for approval",
+      "resumed": "Running",
+      "completed": "Completed"
+    },
+    "paused": "Paused for a human decision",
+    "resumed": "The same run resumes",
+    "note": "A consequential action stops the run. After approval the backend reauthorizes the current user, verifies the payload hash and executes once. Then the same AgentRun carries on.",
     "cta": "Read the ProspectIQ case study",
     "imageAlt": "LeadScope lead-intelligence dashboard with demo data"
   },
@@ -227,10 +231,11 @@
     "principles": [
       {
         "t": "AI proposes. People decide.",
-        "d": "Hire and reject decisions in HireLens are human-only. In Dhura, no AI suggestion changes state without approval.",
+        "d": "Hire and reject decisions in HireLens are human-only. In Dhura, no AI suggestion changes state without approval. In ProspectIQ an approved action is reauthorized against the current user before it runs.",
         "refs": [
           "hirelens",
-          "dhura"
+          "dhura",
+          "prospectiq"
         ]
       },
       {
@@ -562,48 +567,259 @@
       "architecture": "A monorepo: a Next.js and TypeScript web app; a FastAPI, Pydantic and async SQLAlchemy 2 API with Alembic migrations; PostgreSQL in production; a Redis-compatible cache; Docker Compose for local development."
     },
     "prospectiq": {
-      "kicker": "Case study · Lead intelligence",
+      "kicker": "Case study · Sales intelligence",
       "title": "ProspectIQ",
       "alias": "Also developed as LeadScope AI",
-      "lede": "Prospect research that took sales teams hours, turned into an enrichment and scoring pipeline — one that refuses to run on sample data in production.",
-      "pipelineTitle": "The pipeline",
-      "pipeline": [
-        {
-          "t": "Discover",
-          "d": "Sources through SerpAPI, with Tavily as an option."
-        },
-        {
-          "t": "Enrich",
-          "d": "LLM extraction into structured company and contact data, kept off the request path."
-        },
-        {
-          "t": "Score",
-          "d": "AI lead scoring against consistent, prompt-defined criteria, validated by Pydantic schemas."
-        },
-        {
-          "t": "Hand off",
-          "d": "A REST API that existing CRM front-ends can consume."
-        }
+      "lede": "Evidence-grounded B2B research and sales intelligence.",
+      "summary": "ProspectIQ is an evidence-grounded B2B research and sales intelligence system. It combines multi-source research, deterministic scoring, Evidence Graphs, Delta Intelligence, internal Sales Knowledge retrieval and a bounded model-directed agent runtime. Consequential actions are proposed first, explicitly approved, reauthorized at execution time, executed atomically, audited, and resumed within the same AgentRun.",
+      "pathTitle": "The system path",
+      "path": [
+        "External research",
+        "Normalization",
+        "Evidence Graph",
+        "Deterministic signals & ICP",
+        "Deterministic scoring",
+        "Delta Intelligence",
+        "Sales Knowledge RAG",
+        "Model-directed tool runtime",
+        "Capability matching",
+        "Sales Copilot",
+        "Write proposal",
+        "Human approval",
+        "Atomic execution",
+        "Same AgentRun resume",
+        "Grounded final result"
       ],
-      "modesTitle": "Explicit runtime modes",
-      "modes": "Discovery and the AI provider each run in an explicitly chosen mode, and a hard kill switch can stop discovery. In production the app validates secrets and origins at startup and fails closed rather than falling back to sample data.",
-      "modeList": [
-        {
-          "m": "live",
-          "d": "Real sources, real provider"
+      "evidence": {
+        "t": "Research is evidence, not prose",
+        "d": "Every provider result is normalized into claims that carry a source, a time and a confidence. The Evidence Graph resolves those claims into facts, and FactResolver weighs sources with fixed, auditable quality weights: a crawl of the company’s own site outranks a directory listing.",
+        "providers": "Providers",
+        "chain": [
+          "Normalization",
+          "Evidence Graph",
+          "FactResolver"
+        ],
+        "checks": [
+          "Source quality",
+          "Freshness",
+          "Contradictions",
+          "Coverage"
+        ],
+        "note": "Apify only runs actors the backend allowlists. The model cannot pass an actor ID, and there is no tool for fetching an arbitrary URL."
+      },
+      "score": {
+        "t": "The score belongs to the backend",
+        "d": "ICP fit, signals, digital maturity, the score breakdown and deltas are all computed in code. The model interprets the result. It never computes the facts it is interpreting.",
+        "items": [
+          "ICP match",
+          "Signals",
+          "Digital maturity",
+          "Score breakdown",
+          "Deltas"
+        ],
+        "formulaTitle": "Digital maturity, as the code computes it",
+        "formula": [
+          [
+            "Official website",
+            "20"
+          ],
+          [
+            "Mobile responsive",
+            "10"
+          ],
+          [
+            "Online booking",
+            "15"
+          ],
+          [
+            "E-commerce",
+            "15"
+          ],
+          [
+            "WhatsApp",
+            "10"
+          ],
+          [
+            "Social presence",
+            "≤ 15"
+          ],
+          [
+            "Contact channels",
+            "≤ 15"
+          ],
+          [
+            "Review volume",
+            "5"
+          ],
+          [
+            "Structured services",
+            "5"
+          ]
+        ],
+        "cap": "Capped at 100. Low below 40, medium from 40, high from 70."
+      },
+      "delta": {
+        "t": "What changed?",
+        "d": "A new research run is compared with the last one, fact by fact. Only a real change in a canonical fact becomes a change event, and its effect on the score is recalculated by the same deterministic rules.",
+        "chain": [
+          "Previous research",
+          "Current research",
+          "FactDiffEngine",
+          "ResearchChangeEvent",
+          "Deterministic score impact",
+          "Optional explanation"
+        ],
+        "kindsLabel": "Changes it tracks",
+        "kinds": [
+          "Online booking added",
+          "Branch count changed",
+          "Rating moved",
+          "New service listed",
+          "WhatsApp added",
+          "Hiring activity"
+        ],
+        "note": "The model never decides whether something changed. It can only explain a change the diff engine has already recorded."
+      },
+      "knowledge": {
+        "t": "Two kinds of knowledge",
+        "evidenceT": "Lead evidence",
+        "evidenceQ": "What is true about the prospect?",
+        "evidenceD": "Tavily, SerpAPI and Apify research, plus earlier runs.",
+        "salesT": "Sales knowledge",
+        "salesQ": "What can we credibly sell them?",
+        "salesD": "Services, case studies, playbooks, past proposals and internal docs.",
+        "chain": [
+          "Capability match",
+          "Supported opportunity",
+          "Grounded outreach"
+        ],
+        "none": "No supported match",
+        "noneD": "When nothing in the knowledge base fits, the Copilot says so. It does not invent a service to make the answer look better.",
+        "ragT": "Retrieval sized to the corpus",
+        "rag": "Sales knowledge lives in MariaDB. Tenancy is filtered inside the query, then cosine similarity runs in Python over a bounded candidate set. The retrieval architecture is sized to the current corpus instead of adding vector infrastructure without a measured need. Retrieved text is always treated as untrusted."
+      },
+      "runtime": {
+        "t": "A real agent runtime",
+        "d": "The model picks each tool based on what the previous tool returned. The backend validates the arguments against the tool’s schema, checks workspace and permissions, runs it and hands the result back. The order of calls is never scripted.",
+        "loop": [
+          "Model chooses a tool",
+          "Schema validation",
+          "ToolRegistry",
+          "Permission and workspace checks",
+          "Read or research tool runs",
+          "Result returns to the model",
+          "Model decides the next step"
+        ],
+        "classesTitle": "Tool classes",
+        "classes": [
+          {
+            "t": "Read",
+            "d": "Lead, evidence, score, history and deltas"
+          },
+          {
+            "t": "Research",
+            "d": "Tavily, SerpAPI and allowlisted Apify crawls"
+          },
+          {
+            "t": "RAG",
+            "d": "Sales knowledge, playbooks and case studies"
+          },
+          {
+            "t": "Write proposal",
+            "d": "Notes, follow-ups, tasks, stage, tags and drafts, as previews"
+          },
+          {
+            "t": "Action",
+            "d": "Deep-research requests and external sends. Sending is high risk and off by default"
+          }
+        ],
+        "count": "34 registered tools across five classes.",
+        "bounds": "Server-side budgets cap steps, tool calls, searches, crawls and runtime, and identical repeated calls are blocked. One shared runtime serves every agent profile: research, sales copilot, read-only and admin."
+      },
+      "approval": {
+        "t": "AI can propose. The backend executes.",
+        "quote": "Proposal-time permission is never trusted at execution time.",
+        "chain": [
+          "LLM proposal",
+          "AgentAction",
+          "Exact preview",
+          "Human approval",
+          "Current-user reauthorization",
+          "Payload hash verification",
+          "Atomic claim",
+          "Domain service",
+          "Execute once",
+          "Audit"
+        ],
+        "d": "Expired, rejected or tampered actions cannot run, and approving an action that has already executed changes nothing."
+      },
+      "resume": {
+        "t": "Same-run resume",
+        "d": "When the run reaches a consequential action it stops and waits. After the backend confirms the approval, the same AgentRun continues on the same live stream. No new workflow is started.",
+        "states": {
+          "queued": "Queued",
+          "running": "Running",
+          "waiting": "Waiting for approval",
+          "resumed": "Running",
+          "completed": "Completed"
         },
-        {
-          "m": "demo",
-          "d": "Sample data for walkthroughs"
-        },
-        {
-          "m": "stub",
-          "d": "Deterministic responses for tests"
-        }
-      ],
-      "ciTitle": "Held to a CI gate",
-      "ci": "GitHub Actions runs ruff, mypy, pytest and Playwright on every change.",
-      "architecture": "FastAPI with async endpoints, Pydantic v2, SQLAlchemy 2 and Alembic on MariaDB, Redis caching for enrichment results, a React + TypeScript + Vite frontend, Docker Compose."
+        "stream": "Live stream",
+        "run": "AgentRun",
+        "same": "same run",
+        "approve": "Approve",
+        "replay": "Replay",
+        "waiting": "Waiting for a human decision",
+        "illustrative": "An interactive replay of the lifecycle and its real event names, not a recording of a run.",
+        "sse": "Live event streaming with persisted replay and reconnect support."
+      },
+      "verification": {
+        "t": "Release verification",
+        "d": "Gates from the latest release run.",
+        "rows": [
+          {
+            "g": "Backend",
+            "items": [
+              "Ruff · clean",
+              "mypy strict · 235 source files, no issues",
+              "pytest · 519 passed, 0 failures"
+            ]
+          },
+          {
+            "g": "Frontend",
+            "items": [
+              "TypeScript · 0 errors",
+              "ESLint · clean",
+              "Vitest · 52 passed",
+              "Production build · passed"
+            ]
+          },
+          {
+            "g": "End-to-end",
+            "items": [
+              "Playwright · 202 passed",
+              "19 intentional skips",
+              "0 unexpected failures"
+            ]
+          }
+        ],
+        "modes": "Live, demo and stub modes are explicit, and production fails closed instead of falling back to demo data."
+      },
+      "a11y": {
+        "t": "Accessibility, in specifics",
+        "items": [
+          "Dialogs return focus to the control that opened them",
+          "Focus stays trapped inside open dialogs",
+          "Copilot, Evidence Graph and Research History are labelled regions",
+          "Every select on the lead page has an accessible name",
+          "Map markers are named after the company",
+          "Live regions stay bounded during a Copilot run",
+          "Statuses carry text, not only colour",
+          "Arabic right-to-left",
+          "390px mobile without horizontal overflow"
+        ],
+        "note": "Audited with axe-core against WCAG 2.1 A and AA on the new surfaces and the lead page. Contrast was checked against the design tokens."
+      },
+      "architecture": "FastAPI, Pydantic v2, SQLAlchemy 2 and Alembic on MariaDB. Research through Tavily, SerpAPI and allowlisted Apify actors. A single agent runtime with a typed ToolRegistry, an approval gate and live event streaming. A React, TypeScript and Vite frontend, Docker Compose."
     },
     "dhura": {
       "kicker": "Concept · Real-estate CRM/ERP",
