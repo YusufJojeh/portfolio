@@ -8,7 +8,6 @@ import { useSceneProgress } from '../engine/sceneProgress';
 import StoryFrame from '../engine/StoryFrame';
 import CinematicBackground from '../engine/CinematicBackground';
 import ChapterLabel from '../engine/ChapterLabel';
-import ArtNote from '../engine/ArtNote';
 import { useIsMobile, useReducedMotionPref, useStage } from '../engine/useMedia';
 import { EASE } from '../engine/motion';
 
@@ -38,7 +37,8 @@ const CITY = '/portfolio/story/transitions/transition-city-sunset.webp';
 const CITY_OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.88) 0%, rgba(9,11,15,0.6) 30%, rgba(9,11,15,0.12) 60%, rgba(9,11,15,0.3) 86%, rgba(9,11,15,0.82) 100%), linear-gradient(0deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0) 38%)';
 
-const RAKEZ = '/portfolio/story/rakez/rakez-cinematic-cover.webp';
+// The brand panel of the live Rakez staff login: a real capture, not generated art.
+const RAKEZ = '/portfolio/work/rakez/cover.webp';
 const RAKEZ_OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0.7) 34%, rgba(9,11,15,0.3) 64%, rgba(9,11,15,0.45) 100%), linear-gradient(0deg, rgba(9,11,15,0.85) 0%, rgba(9,11,15,0) 40%), rgba(9,11,15,0.25)';
 
@@ -331,16 +331,15 @@ function RakezBackground({ p }) {
     <motion.div style={{ opacity }} className="absolute inset-0">
       <motion.div
         className="absolute inset-x-0 top-0 h-[calc(100%+48px)] will-change-transform"
-        style={{ scale, y, transformOrigin: '66% 42%' }}
+        style={{ scale, y, transformOrigin: '50% 42%' }}
       >
         <StoryFrame
           src={RAKEZ}
           alt={t('imageAlt')}
-          aspect={1672 / 941}
-          focus={[62, 45]}
-          mobileFocus={[58, 45]}
+          aspect={736 / 900}
+          focus={[50, 42]}
+          mobileFocus={[50, 42]}
           bleed={0}
-          className="blur-[2px] max-md:blur-[3px]"
         />
       </motion.div>
       <div className="absolute inset-0" style={{ background: RAKEZ_OVERLAY }} />
@@ -414,11 +413,6 @@ function RakezCopy({ p }) {
   );
 }
 
-function RakezNote({ p }) {
-  const opacity = useStage(p, [0.64, 0.7, 0.955, 0.99], [0, 1, 1, 0], 1);
-  return <ArtNote opacity={opacity} />;
-}
-
 /* ------------------------------- Stage ------------------------------ */
 
 function Stage() {
@@ -432,7 +426,6 @@ function Stage() {
       <HeroBaseline p={p} />
       <OperationsCopy p={p} />
       <RakezCopy p={p} />
-      <RakezNote p={p} />
     </>
   );
 }
@@ -457,18 +450,15 @@ function StillSequence() {
         </div>
       </section>
       <section id="rakez" data-chapter="02" aria-label={c('02')} className="relative min-h-[100svh] overflow-hidden">
-        {/* Generated interface art: softened and dimmed so its invented figures stay atmosphere. */}
         <CinematicBackground
           src={RAKEZ}
           alt={r('imageAlt')}
           overlay={`linear-gradient(90deg, rgba(9,11,15,0.9) 0%, rgba(9,11,15,0.55) 55%, rgba(9,11,15,0.35) 100%), rgba(9,11,15,0.5)`}
-          focus="62% 45%"
-          imageClassName="blur-[8px]"
+          focus="50% 42%"
         />
         <div className="relative px-6 py-28 md:px-12 lg:px-16">
           <RakezStill />
         </div>
-        <ArtNote />
       </section>
     </>
   );
