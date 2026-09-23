@@ -1,8 +1,9 @@
 export const personalInfo = {
   name: "Yusuf Mohammad Jojeh",
-  title: "Backend / Full-Stack Developer",
-  location: "Aleppo, Syria | Remote / Willing to Relocate",
-  summary: "Backend-focused Full-Stack Developer with more than 3 years of hands-on experience designing, developing, and maintaining scalable, secure, and high-performance web applications. Strong expertise in NestJS, Node.js (TypeScript), Laravel, RESTful API design, database optimization, and AI-powered systems. Actively building AGentoos, an AI-driven business automation platform based on intelligent agents, workflow orchestration, and external API integrations. Experienced in using AI-powered development tools to accelerate delivery while maintaining clean, testable, and production-ready code.",
+  title: "Backend Developer | SaaS & AI Systems Engineer",
+  location: "Aleppo, Syria | Full Remote",
+  summary: "Backend engineer with 3+ years building scalable SaaS systems, AI-integrated platforms, and production-grade APIs. Specialized in Laravel and NestJS backend architecture, secure authentication systems, and complex business logic implementation. Proven ability to design and deliver systems that handle real-world operational complexity—including CRM/ERP functionality, multi-role permission structures, and AI-driven features integrated into product workflows. Comfortable contributing across the stack with strong backend-first mindset focused on performance, maintainability, and shipping reliable systems.",
+  tagline: "Scalable Backend Systems → SaaS & AI Products → Production-Ready Architecture",
   contact: {
     phone: "+963 980 278 664",
     email: "yassaf.jojeh@gmail.com",
@@ -18,103 +19,143 @@ export const personalInfo = {
 export const experiences = [
   {
     id: "1",
-    title: "Full-Stack Developer",
-    company: "business flow",
-    location: "Hybrid (Remote/On-site)",
-    period: "Nov 2025 – Present",
+    title: "Backend Developer | SaaS & AI Systems",
+    company: "Rakez Company",
+    location: "Remote",
+    period: "Dec 2025 – Present",
     description: [
-      "Developing full-stack web applications using modern technologies",
-      "Working in a hybrid environment combining remote and on-site collaboration",
-      "Building scalable and maintainable solutions for business processes",
-      "Collaborating with cross-functional teams to deliver high-quality products"
+      "Designed and built backend services for AI-powered CRM modules, translating product requirements into secure, scalable API architectures",
+      "Developed RESTful APIs and business logic using Laravel and NestJS to support complex CRM workflows and data operations",
+      "Integrated AI-driven features (LLM APIs, agents, lead enrichment) into production CRM workflows with focus on reliability",
+      "Maintained code quality, system performance, and production readiness through testing, monitoring, and continuous optimization",
+      "Collaborated with product and engineering teams to deliver scalable features and system improvements"
     ],
-    technologies: ["Full-Stack", "Web Development", "Collaboration", "Agile"]
+    technologies: ["Laravel", "NestJS", "PostgreSQL", "REST APIs", "LLM Integration", "Docker", "CI/CD", "Python"]
   },
   {
     id: "2",
-    title: "Full-Stack Developer",
-    company: "Mytrixa",
-    location: "Aleppo, Syria - Remote",
-    period: "Jul 2025 – Present",
-    description: [
-      "Freelance full-stack development projects",
-      "Developing custom web applications and solutions",
-      "Working with clients to deliver tailored software solutions",
-      "Remote collaboration and project management"
-    ],
-    technologies: ["Full-Stack", "Freelance", "Remote Work", "Client Management"]
-  },
-  {
-    id: "3",
-    title: "Backend Developer",
-    company: "Mermez - Creative Digital Solutions",
+    title: "Backend Developer | iLogistics SaaS",
+    company: "Mermez (Creative Digital Solutions)",
     location: "Remote",
     period: "Jan 2025 – Nov 2025",
     description: [
-      "Designed and developed RESTful backend services using Laravel and MySQL",
-      "Collaborated with frontend teams to integrate APIs with responsive user interfaces",
-      "Optimized complex SQL queries and database schemas, improving performance by approximately 25%",
-      "Implemented automated testing pipelines using PHPUnit, increasing code coverage to 85%",
-      "Contributed core backend features to the iLogistics shipping management system",
-      "Implemented real-time tracking, secure authentication, authorization layers, and performance-critical API endpoints"
+      "Designed and developed RESTful APIs for iLogistics SaaS platform using Laravel and MySQL, handling multi-tenant operations",
+      "Optimized database queries and schemas, resulting in approximately 25% performance improvement across tracking and reporting modules",
+      "Implemented secure multi-user authentication, JWT-based authorization, and role-based access control for operational security",
+      "Delivered backend functionality for real-time tracking, analytics dashboards, and complex business reporting features",
+      "Supported system stability, code reviews, and production deployment processes"
     ],
-    technologies: ["Laravel", "MySQL", "PHPUnit", "REST APIs", "Authentication", "Authorization"]
+    technologies: ["Laravel", "MySQL", "Redis", "REST APIs", "JWT", "RBAC", "Docker", "Git"]
+  },
+  {
+    id: "3",
+    title: "Full-Stack Developer | CRM Systems",
+    company: "Business Flow",
+    location: "Remote/Hybrid",
+    period: "Nov 2025 – Jan 2026",
+    description: [
+      "Developed backend-heavy CRM systems and operational dashboards using Laravel with emphasis on secure API design",
+      "Built REST APIs with comprehensive RBAC implementation, input validation, and structured business logic workflows",
+      "Contributed to full-stack feature delivery while maintaining code quality, performance, and system maintainability",
+      "Identified and proposed architectural improvements to enhance scalability and developer efficiency"
+    ],
+    technologies: ["Laravel", "React", "PostgreSQL", "REST APIs", "RBAC", "Git"]
   },
   {
     id: "4",
-    title: "Backend Developer & System Architect",
-    company: "AGentoos",
-    location: "Ongoing Project",
-    period: "2024 – Present",
+    title: "Full-Stack Developer | Freelance",
+    company: "Mytrixa",
+    location: "Remote",
+    period: "2024 – 2025 | Project-Based",
     description: [
-      "Architecting and developing a scalable backend system using NestJS and TypeScript",
-      "Building modular architecture to support AI agents, workflow orchestration, and multi-tenant business logic",
-      "Integrating external APIs, AI services, and automation platforms",
-      "Implementing authentication and authorization using JWT and role-based access control",
-      "Applying AI-powered development tools to speed up development and improve code quality",
-      "Designing the system for future enterprise scalability and advanced agent orchestration"
+      "Translated business requirements into scalable technical architectures and modular backend solutions for multiple clients",
+      "Designed and delivered custom REST APIs, database schemas, and backend systems for admin panels and reporting tools",
+      "Managed stakeholder communication, feature prioritization, and deployment support",
+      "Delivered custom backend and full-stack solutions including operational dashboards and system integrations"
     ],
-    technologies: ["NestJS", "Node.js", "TypeScript", "JWT", "AI Integration", "Workflow Orchestration", "Multi-tenant Architecture"]
+    technologies: ["Laravel", "NestJS", "React", "MySQL", "PostgreSQL", "REST APIs", "Docker"]
   },
   {
     id: "5",
-    title: "Freelance Full-Stack Developer & Technical Tutor",
+    title: "Systems Analyst",
     company: "Self-Employed",
     location: "Remote",
     period: "2025",
     description: [
-      "Developed multiple production-ready systems using Laravel and custom PHP architectures",
-      "Built React.js frontend demos integrated with backend APIs",
-      "Delivered more than 150 hours of one-to-one tutoring in web development, AI, and algorithms (C++, Java, Python)",
-      "Mentored over 100 students and authored reusable semester project templates",
-      "Improved practical full-stack engineering skills through hands-on teaching"
+      "Gathered and documented business requirements through stakeholder analysis and process interviews",
+      "Developed technical designs, data models, and workflow documentation for system implementation",
+      "Identified architecture improvements and process optimization opportunities"
     ],
-    technologies: ["Laravel", "React", "PHP", "JavaScript", "MySQL", "REST APIs", "Git"]
+    technologies: ["Business Analysis", "System Design", "Documentation", "Data Modeling"]
+  }
+];
+
+// Flagship Systems - Core Technical Achievements
+export const flagshipSystems = [
+  {
+    id: 1,
+    title: "CRMA — AI-Native CRM Platform",
+    type: "SaaS Business System",
+    stack: ["Laravel 12", "React 19", "PostgreSQL", "Python FastAPI", "LLM APIs", "Docker"],
+    description: "Multi-tenant CRM system with 300+ versioned REST API endpoints. Core features include lead management, customer relationship tracking, and AI-enhanced insights (lead scoring, enrichment, predictions powered by LLM integration). Architecture designed for scale: web client support with preparation for future mobile expansion.",
+    aiFeatures: [
+      "LLM-powered lead scoring and enrichment",
+      "AI-driven predictive insights and recommendations",
+      "Python FastAPI microservices for AI agent workflows"
+    ],
+    role: "Backend architecture, REST API design, database optimization, AI integration, RBAC implementation, production deployment",
+    highlights: ["300+ API Endpoints", "Multi-tenant Architecture", "AI-Integrated CRM", "Production-Ready"],
+    demoUrl: null,
+    githubUrl: null
+  },
+  {
+    id: 2,
+    title: "Logistics & Booking Management System",
+    type: "Operations Platform",
+    stack: ["Laravel", "React", "MySQL", "Redis", "REST APIs", "Docker"],
+    description: "High-scale operational platform with multi-role dashboards, real-time notifications, and complex reporting. Implements secure backend workflows with RBAC, optimized for handling high-volume operations. Features include real-time tracking, operational dashboards, and role-based permission management.",
+    aiFeatures: [
+      "Role-based access control and permission routing",
+      "Real-time notification systems",
+      "Complex business logic for operations management"
+    ],
+    role: "Backend API architecture, RBAC implementation, database optimization, system performance tuning",
+    highlights: ["High-Scale Operations", "Real-Time Updates", "Multi-Role Security", "Performance-Optimized"],
+    demoUrl: null,
+    githubUrl: null
+  },
+  {
+    id: 3,
+    title: "AI Marketing Agent Platform",
+    type: "SaaS Application",
+    stack: ["Next.js", "Flask", "Ollama", "LLM APIs", "PostgreSQL", "Docker"],
+    description: "AI-powered SaaS for content generation, analysis, and campaign planning. Integrated local LLM support (Ollama) with multilingual capabilities (Arabic/English with voice support). Built on reliable backend services to ensure stability and performance at scale. Demonstrates practical AI integration within operational workflows.",
+    aiFeatures: [
+      "Local LLM integration (Ollama) for on-device inference",
+      "Multilingual AI support with voice capabilities",
+      "Content generation and analysis workflows"
+    ],
+    role: "Backend API services, AI workflow integration, system architecture, production reliability",
+    highlights: ["Local LLM Support", "Multilingual", "Voice AI", "SaaS Infrastructure"],
+    demoUrl: null,
+    githubUrl: null
   }
 ];
 
 export const projects = [
   {
-    id: "0",
-    title: "CRM Systems Analysis & Strategic Consulting",
-    description: "Comprehensive analysis and strategic consulting for CRM system with 45+ core features across 8 major modules. Performed detailed comparison with global CRM leaders (Salesforce, HubSpot, Zoho, Pipedrive), identified 15 advanced features and strategic gaps, and developed 3-phase implementation roadmap with ROI projections of 300-400%.",
-    technologies: ["Technical Analysis", "Strategic Planning", "System Architecture", "Business Intelligence", "Market Research", "ROI Analysis"],
-    githubUrl: "",
-    featured: true
-  },
-  {
     id: "1",
     title: "Logistics & Moving Booking System",
-    description: "Multi-role booking platform built with PHP 8 and MySQL. Includes Google Maps integration, real-time notifications, review management, bilingual (AR/EN) support, and full protection against CSRF, XSS, and SQL injection attacks.",
-    technologies: ["PHP 8", "MySQL", "Google Maps", "Real-time Notifications", "Security"],
+    description: "Production logistics platform featuring order management, real-time tracking, payment gateway integration, multi-role permissions, and RESTful APIs for mobile and web clients.",
+    technologies: ["Laravel", "REST API", "MySQL", "Payment Gateway", "Real-time Updates"],
     githubUrl: "https://github.com/YusufJojeh/Logistics-MovingBookingSystem",
     featured: true
   },
   {
     id: "2",
-    title: "IdeaVote – Idea Voting Platform",
-    description: "Secure PHP/MySQL application allowing users to submit, vote, and comment on ideas with admin moderation, authentication, and secure frontend UI.",
-    technologies: ["PHP", "MySQL", "Authentication", "Security", "Moderation"],
+    title: "IdeaVote – Collaborative Voting Platform",
+    description: "Real-time collaborative platform with complex voting logic, live analytics, permission structures, and WebSocket integration for instant updates across users.",
+    technologies: ["Laravel", "Redis", "MySQL", "WebSockets", "Real-time Analytics"],
     githubUrl: "https://github.com/YusufJojeh/ideavote",
     featured: true
   },
@@ -134,9 +175,9 @@ export const projects = [
   },
   {
     id: "5",
-    title: "Blog Management System",
-    description: "Laravel-based CMS with role-based access control, SEO-friendly routing, content moderation, and flexible theming architecture.",
-    technologies: ["Laravel", "MySQL", "RBAC", "SEO", "Content Moderation"],
+    title: "BlogCMS – Content Management System",
+    description: "Full-featured CMS with content versioning, SEO optimization framework, real-time analytics, and REST API for headless publishing across multiple channels.",
+    technologies: ["Laravel", "MySQL", "REST API", "SEO Architecture", "Analytics"],
     githubUrl: "https://github.com/YusufJojeh/Blog"
   },
   {
@@ -148,9 +189,9 @@ export const projects = [
   },
   {
     id: "7",
-    title: "FBP – DesignHub Freelance Platform",
-    description: "Multi-vendor marketplace connecting clients and designers. Supports service listings, booking workflows, real-time order tracking, and secure transactions.",
-    technologies: ["Laravel", "Vue.js", "MySQL", "Multi-vendor", "Real-time Tracking"],
+    title: "FBP (DesignHub)",
+    description: "Asset management platform for creative teams with file versioning, permission-based access control, real-time collaboration features, and bulk asset operations.",
+    technologies: ["Laravel", "MySQL", "File Management", "RBAC", "Real-time"],
     githubUrl: "https://github.com/YusufJojeh/FBP"
   },
   {
@@ -200,19 +241,17 @@ export const projects = [
 ];
 
 export const skills = [
-  // Backend Skills
-  { name: "NestJS", icon: "nestjs", category: "backend", proficiency: 4 },
-  { name: "Node.js", icon: "nodejs", category: "backend", proficiency: 4 },
-  { name: "TypeScript", icon: "typescript", category: "backend", proficiency: 4 },
-  { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
+  // Core Backend Skills
   { name: "Laravel", icon: "laravel", category: "backend", proficiency: 5 },
   { name: "NestJS", icon: "nest", category: "backend", proficiency: 4 },
   { name: "PHP", icon: "php", category: "backend", proficiency: 5 },
   { name: "REST APIs", icon: "api", category: "backend", proficiency: 5 },
-  { name: "Webhooks", icon: "webhook", category: "backend", proficiency: 4 },
-  { name: "SOAP", icon: "soap", category: "backend", proficiency: 3 },
-  { name: "JWT", icon: "jwt", category: "backend", proficiency: 4 },
-  { name: "OAuth2", icon: "oauth", category: "backend", proficiency: 4 },
+  { name: "PostgreSQL", icon: "postgresql", category: "database", proficiency: 4 },
+  { name: "MySQL", icon: "mysql", category: "database", proficiency: 5 },
+  { name: "TypeScript", icon: "typescript", category: "backend", proficiency: 4 },
+  { name: "Authentication & RBAC", icon: "shield", category: "backend", proficiency: 4 },
+  { name: "Docker", icon: "docker", category: "devops", proficiency: 4 },
+  { name: "CI/CD", icon: "cicd", category: "devops", proficiency: 3 },
   
   // Frontend Skills  
   { name: "React.js", icon: "react", category: "frontend", proficiency: 4 },
@@ -225,27 +264,23 @@ export const skills = [
   
   // Database & DevOps
   { name: "MongoDB", icon: "mongodb", category: "database", proficiency: 3 },
-  { name: "Redis", icon: "redis", category: "database", proficiency: 3 },
-  
-  // DevOps Skills
   { name: "Git", icon: "git", category: "devops", proficiency: 4 },
-  { name: "GitHub", icon: "github", category: "devops", proficiency: 4 },
-  { name: "Docker", icon: "docker", category: "devops", proficiency: 4 },
   { name: "GitHub Actions", icon: "github", category: "devops", proficiency: 3 },
   { name: "PHPUnit", icon: "phpunit", category: "devops", proficiency: 4 },
-  { name: "Jest", icon: "jest", category: "devops", proficiency: 3 },
   { name: "Postman", icon: "postman", category: "devops", proficiency: 4 },
   
-  // AI & Automation Skills
-  { name: "LLM Integration", icon: "ai", category: "ai", proficiency: 4 },
-  { name: "AI Agents", icon: "ai", category: "ai", proficiency: 4 },
-  { name: "Prompt Engineering", icon: "ai", category: "ai", proficiency: 4 },
-  { name: "AI Workflows", icon: "ai", category: "ai", proficiency: 4 },
-  
-  // Other Skills
+  // Other Backend Skills
+  { name: "Python", icon: "python", category: "backend", proficiency: 4 },
+  { name: "Flask", icon: "flask", category: "backend", proficiency: 3 },
+  { name: "SOAP", icon: "soap", category: "backend", proficiency: 3 },
   { name: "Agile (Scrum)", icon: "agile", category: "other", proficiency: 4 },
   { name: "ITIL", icon: "itil", category: "other", proficiency: 3 },
-  { name: "RBAC", icon: "security", category: "other", proficiency: 4 }
+  
+  // AI & Productivity Tools (Secondary)
+  { name: "OpenAI API Integration", icon: "Sparkles", category: "ai", proficiency: 3 },
+  { name: "Prompt Engineering", icon: "Brain", category: "ai", proficiency: 3 },
+  { name: "Cursor IDE", icon: "Code2", category: "ai", proficiency: 3 },
+  { name: "AI-Assisted Development", icon: "Sparkles", category: "ai", proficiency: 3 }
 ];
 
 export const education = {
