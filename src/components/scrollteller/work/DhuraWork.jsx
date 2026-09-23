@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
 import { workTitle } from '../projects';
-import { Arrow, BackLink, Label, NextWork, Section, StackLine } from './WorkParts';
+import { Arrow, BackLink, Evidence, Label, NextWork, Section, StackLine } from './WorkParts';
 
 const OVERLAY =
   'linear-gradient(270deg, rgba(9,11,15,0.9) 0%, rgba(9,11,15,0.55) 45%, rgba(9,11,15,0.35) 100%), linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.35) 45%, rgba(9,11,15,0.45) 100%)';
@@ -23,11 +23,11 @@ export default function DhuraWork({ locale, work }) {
       <WorkCover
         overlay={OVERLAY}
         image={{
-          src: '/portfolio/story/dhura/dhura-cinematic-cover.webp',
+          src: '/portfolio/work/dhura/login.webp',
+          aspect: 1440 / 900,
           alt: home('imageAlt'),
-          focus: [45, 50],
-          mobileFocus: [40, 50],
-          illustrative: true,
+          focus: [50, 50],
+          mobileFocus: [50, 50],
         }}
       >
         <BackLink locale={locale} label={t('back')} />
@@ -85,6 +85,7 @@ export default function DhuraWork({ locale, work }) {
         </div>
       </Section>
 
+      <Evidence t={t} slug="dhura" />
       <NextWork locale={locale} t={t} next={work.next} />
     </>
   );

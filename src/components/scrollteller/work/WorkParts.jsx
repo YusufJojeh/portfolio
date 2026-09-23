@@ -136,6 +136,7 @@ const SCREENS = {
   linguacoach: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
   prospectiq: [{ file: 'home', ratio: 1440 / 672 }, { file: 'login', ratio: 1440 / 900 }],
   careerguide: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
+  dhura: [{ file: 'login', ratio: 1440 / 900 }, { file: 'register', ratio: 1440 / 900 }],
   algoag: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
 };
 

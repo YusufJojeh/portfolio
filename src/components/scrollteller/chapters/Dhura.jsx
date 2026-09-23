@@ -14,12 +14,12 @@ export default function Dhura() {
       chapterName={c('07')}
       variant="arabic"
       image={{
-        src: '/portfolio/story/dhura/dhura-cinematic-cover.webp',
+        src: '/portfolio/work/dhura/login.webp',
+        aspect: 1440 / 900,
         alt: t('imageAlt'),
-        focus: [42, 50],
-        mobileFocus: [38, 50],
-        origin: '40% 55%',
-        illustrative: true,
+        focus: [50, 50],
+        mobileFocus: [50, 50],
+        origin: '50% 50%',
       }}
       kicker={t('kicker')}
       title={t('title')}

@@ -87,7 +87,7 @@ test.describe('work routes', () => {
   }
 
   test('real screenshots load on every page that has them', async ({ page }) => {
-    for (const slug of ['rakez', 'hirelens', 'linguacoach', 'prospectiq', 'careerguide', 'algoag']) {
+    for (const slug of ['rakez', 'hirelens', 'linguacoach', 'prospectiq', 'dhura', 'careerguide', 'algoag']) {
       await page.goto(`/en/work/${slug}`);
       const img = page.locator(`figure img[src*="${slug}"]`).first();
       await img.scrollIntoViewIfNeeded();

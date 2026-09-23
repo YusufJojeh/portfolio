@@ -19,10 +19,11 @@ export default function ProspectIQWork({ locale, work }) {
         overlay={OVERLAY}
         className="min-h-[84svh]"
         image={{
-          src: '/portfolio/story/prospectiq/prospectiq-cinematic-cover.webp',
+          src: '/portfolio/work/prospectiq/hero-dark.webp',
+          aspect: 1440 / 690,
           alt: home('imageAlt'),
-          focus: [55, 40],
-          illustrative: true,
+          focus: [50, 45],
+          mobileFocus: [12, 45],
         }}
       >
         <BackLink locale={locale} label={t('back')} />

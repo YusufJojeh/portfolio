@@ -183,7 +183,7 @@
     ],
     "modes": "Live, demo and stub modes are explicit. Production never silently falls back to demo data.",
     "cta": "Read the ProspectIQ case study",
-    "imageAlt": "Art direction: a dark desk with a lead-intelligence interface concept"
+    "imageAlt": "The ProspectIQ landing hero from a local build of the web app"
   },
   "dhura": {
     "title": "Dhura",
@@ -197,7 +197,7 @@
     ],
     "status": "Concept architecture — not a shipped product",
     "cta": "Read the Dhura concept",
-    "imageAlt": "Art direction: an Arabic real-estate interface concept on a terrace at night"
+    "imageAlt": "The Dhura sign-in screen from a local build of the V1 release candidate"
   },
   "ai": {
     "heading": "Applied AI, engineered like the rest of the system.",
@@ -620,11 +620,13 @@
         "linguacoach": "Captured from a local build of the web app, unedited.",
         "prospectiq": "Captured from a local build of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
         "careerguide": "Captured from a local build of the web app, unedited.",
-        "algoag": "Captured from a local build of the application, unedited."
+        "algoag": "Captured from a local build of the application, unedited.",
+        "dhura": "Captured from a local build of the V1 release candidate. Dhura is not a shipped product."
       },
       "caption": {
         "home": "Landing screen",
-        "login": "Sign-in screen"
+        "login": "Sign-in screen",
+        "register": "Workspace creation"
       },
       "alt": {
         "rakez": {
@@ -649,6 +651,10 @@
         "algoag": {
           "home": "ALGOAG landing page: Train like a competitive programmer",
           "login": "ALGOAG assistant workspace sign-in screen"
+        },
+        "dhura": {
+          "login": "Dhura sign-in screen, Arabic, right-to-left",
+          "register": "Dhura workspace creation form"
         }
       }
     }

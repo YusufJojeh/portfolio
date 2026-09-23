@@ -14,12 +14,12 @@ export default function ProspectIQ() {
       chapterName={c('06')}
       variant="lower"
       image={{
-        src: '/portfolio/story/prospectiq/prospectiq-cinematic-cover.webp',
+        src: '/portfolio/work/prospectiq/hero-dark.webp',
+        aspect: 1440 / 690,
         alt: t('imageAlt'),
-        focus: [58, 42],
-        mobileFocus: [55, 42],
-        origin: '62% 40%',
-        illustrative: true,
+        focus: [50, 45],
+        mobileFocus: [12, 45],
+        origin: '50% 45%',
       }}
       kicker={t('kicker')}
       title={t('title')}
