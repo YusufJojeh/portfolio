@@ -4,6 +4,30 @@
 
 This file replaces the QA doc for the earlier hero/nav rebuild. That version is still in git history.
 
+## Review — 2026-09-23 (full site, after the project-card and product-screen work)
+
+Full scroll walks of the home page at 1440 and 390 in `en` and `ar`. Work pages checked: rakez and linguacoach at 1440 (`en`), dhura at 390 (`en`), and hirelens at 390 (`ar`).
+
+### P1 — fixed
+
+1. **Black frames between chapters.** A pinned scene's progress sits at 0 while it scrolls in and at 1 while it scrolls out. Several scenes were fully black at those ends. Fixes:
+   - Project scenes now open at half opacity and settle to 0.72 dim.
+   - The Rakez background ends at 0.72 instead of 1.
+   - The Business → System scene keeps 0.35 of its content at both ends.
+   - The closing city starts at 0.45.
+
+### P2 — fixed
+
+2. **The light ProspectIQ dashboard washed the scene out to gray.** Project images now take `dim: [under details, mobile, under title]`. ProspectIQ uses `[0.6, 0.7, 0.5]`.
+3. **The ProspectIQ and Dhura phone captures ghosted through the details on mobile.** The details dim on mobile is now 0.7.
+4. **Arabic lines were set in faux italic** ("كل قرار توظيف"): the browser slanted a font that has no italic. Fixed with `rtl:not-italic` on the chapter and on the work page.
+
+### P3 — open, accepted for now
+
+- The city → Rakez handoff has one dark frame around 0.62–0.66 of the opening sequence. It reads as a cut rather than a gap.
+- Applied AI and More systems open with a tall empty band above their headings, which comes from the `py-40` chapter padding.
+- The fixed "N" circle in captures is the Next.js dev indicator. It does not ship.
+
 ## Scope checked
 
 | Area | What was checked |

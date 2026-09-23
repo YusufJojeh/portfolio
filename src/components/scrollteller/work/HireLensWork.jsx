@@ -37,7 +37,7 @@ export default function HireLensWork({ locale, work }) {
           </div>
           <div className="border-t border-white/15 py-12 lg:border-t-0 lg:ps-14 lg:py-16">
             <Label>{h('humanTitle')}</Label>
-            <p className="mt-8 font-display text-[56px] italic leading-[0.98] text-cinema-soft md:text-[clamp(72px,7vw,112px)]">
+            <p className="mt-8 font-display text-[56px] italic leading-[0.98] rtl:not-italic text-cinema-soft md:text-[clamp(72px,7vw,112px)]">
               {human.map((line) => (
                 <span key={line} className="block">
                   {line}.

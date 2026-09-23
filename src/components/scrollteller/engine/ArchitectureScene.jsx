@@ -39,9 +39,10 @@ function LiveStage({ chapter, chapterName, heading, intro, layers }) {
     setActive(i);
   });
   const fill = useStage(p, [0.12, 0.9], [0, 1], 1);
-  const enter = useStage(p, [0, 0.1], [0, 1], 1);
+  // Half-visible at both ends so the scene never scrolls in or out as an empty black frame.
+  const enter = useStage(p, [0, 0.1], [0.35, 1], 1);
   const enterY = useStage(p, [0, 0.12], [28, 0], 0);
-  const out = useStage(p, [0.92, 1], [1, 0], 1);
+  const out = useStage(p, [0.92, 1], [1, 0.35], 1);
 
   return (
     <motion.div

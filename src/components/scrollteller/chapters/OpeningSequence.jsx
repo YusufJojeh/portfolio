@@ -325,7 +325,7 @@ function RakezBackground({ p }) {
   // Settle as it arrives, then a slow push toward the system panels.
   const scale = useStage(p, [0.6, 0.72, 0.8, 0.94], [1.05, 1, 1, mobile ? 1.1 : 1.14], 1);
   const y = useStage(p, [0.6, 0.72], [0, mobile ? -15 : -30], 0);
-  const dim = useStage(p, [0.8, 0.86, 0.95, 1], [mobile ? 0.25 : 0, mobile ? 0.55 : 0.35, mobile ? 0.55 : 0.35, 1], 0.35);
+  const dim = useStage(p, [0.8, 0.86, 0.95, 1], [mobile ? 0.25 : 0, mobile ? 0.55 : 0.35, mobile ? 0.55 : 0.35, 0.72], 0.35);
 
   return (
     <motion.div style={{ opacity }} className="absolute inset-0">

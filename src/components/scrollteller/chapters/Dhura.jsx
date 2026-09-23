@@ -22,6 +22,7 @@ export default function Dhura() {
         focus: [50, 50],
         mobileFocus: [50, 50],
         origin: '50% 50%',
+        dim: [0.28, 0.7],
       }}
       kicker={t('kicker')}
       title={t('title')}

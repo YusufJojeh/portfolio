@@ -22,6 +22,7 @@ export default function ProspectIQ() {
         focus: [50, 45],
         mobileFocus: [12, 45],
         origin: '50% 45%',
+        dim: [0.6, 0.7, 0.5],
       }}
       kicker={t('kicker')}
       title={t('title')}

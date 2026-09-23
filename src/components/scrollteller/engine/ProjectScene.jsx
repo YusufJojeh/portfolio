@@ -38,7 +38,10 @@ function Frame({ p, image, variant }) {
   const fadeIn = useStage(p, [0, 0.06], [0.5, 1], 1);
   const scale = useStage(p, [0, 0.26, 0.4, 0.88], [1.05, 1, 1, mobile ? 1.08 : 1.12], 1);
   const y = useStage(p, [0, 0.3], [0, mobile ? -15 : -30], 0);
-  const dim = useStage(p, [0.4, 0.5, 0.92, 1], [0, mobile ? 0.55 : 0.28, mobile ? 0.55 : 0.28, 0.72], 0.4);
+  // Light captures need more shade than dark ones: image.dim = [under details, on mobile, under the title].
+  const [held, heldMobile, base = 0] = image.dim ?? [0.28, 0.55];
+  const hold = mobile ? heldMobile : held;
+  const dim = useStage(p, [0.4, 0.5, 0.92, 1], [base, hold, hold, Math.max(hold, 0.72)], 0.4);
 
   return (
     <motion.div style={{ opacity: fadeIn }} className="absolute inset-0">

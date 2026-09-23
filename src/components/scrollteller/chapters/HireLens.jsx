@@ -52,7 +52,7 @@ export default function HireLens() {
           <div className="mt-6">
             {human.map((line, i) => (
               <Reveal key={line} delay={0.1 + 0.1 * i}>
-                <p className="font-display text-[56px] italic leading-[1.02] text-cinema-soft md:text-[clamp(64px,6vw,96px)]">{line}.</p>
+                <p className="font-display text-[56px] italic leading-[1.02] rtl:not-italic text-cinema-soft md:text-[clamp(64px,6vw,96px)]">{line}.</p>
               </Reveal>
             ))}
           </div>
