@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import StoryChapter from '../engine/StoryChapter';
@@ -11,6 +12,42 @@ const TITLE = {
   mid: 'font-display text-[30px] leading-[1.02] md:text-[40px]',
   small: 'text-[17px] font-medium md:text-[18px]',
 };
+
+// Screens from local builds on each project's demo data, in index order.
+const SHOTS = {
+  ilogistics: ['dashboard', 'analytics', 'shipments', 'route', 'invoices', 'customer-shipments'],
+  mtjri: ['storefront', 'store-dashboard', 'pos', 'product-editor', 'platform-dashboard', 'roles'],
+};
+
+function Screens({ id, title, t }) {
+  return (
+    <Reveal className="border-b border-white/10 py-10 md:py-14">
+      <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
+        <h3 dir="ltr" className={`${TITLE.mid} text-cinema-soft rtl:text-right`}>{title}</h3>
+        <p className="max-w-xl text-[13.5px] leading-relaxed text-cinema-text/55">{t(`screens.${id}.note`)}</p>
+      </div>
+      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
+        {SHOTS[id].map((file) => (
+          <figure key={file} className="m-0">
+            <div className="overflow-hidden rounded-[3px] border border-white/10 bg-cinema-bg2" style={{ aspectRatio: 1.6 }}>
+              <Image
+                src={`/portfolio/more/${id}/${file}.webp`}
+                alt={t(`screens.${id}.${file}`)}
+                sizes="(min-width: 768px) 30vw, 46vw"
+                width={1600}
+                height={1000}
+                className="block h-full w-full object-cover object-top"
+              />
+            </div>
+            <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-cinema-muted">
+              {t(`screens.${id}.${file}`)}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </Reveal>
+  );
+}
 
 function Meta({ item, t, locale }) {
   if (item.status) {
@@ -100,6 +137,10 @@ export default function MoreSystems() {
           </Reveal>
         ))}
       </div>
+
+      {Object.keys(SHOTS).map((id) => (
+        <Screens key={id} id={id} title={items.find((i) => i.id === id)?.t ?? id} t={t} />
+      ))}
 
       <ul>
         {small.map((it) => (

@@ -337,7 +337,27 @@
         "weight": "small",
         "status": "onRequest"
       }
-    ]
+    ],
+    "screens": {
+      "ilogistics": {
+        "note": "Admin and customer screens from a local build. Names, shipments and amounts are seeded test data.",
+        "dashboard": "Admin dashboard",
+        "analytics": "Analytics and reports",
+        "shipments": "Shipment management",
+        "route": "Route with live location",
+        "invoices": "Invoices and payments",
+        "customer-shipments": "Customer shipments with QR tracking"
+      },
+      "mtjri": {
+        "note": "The platform admin, a store's back office and its storefront, from a local build with demo stores and orders.",
+        "storefront": "Storefront",
+        "store-dashboard": "Store dashboard",
+        "pos": "Point of sale",
+        "product-editor": "Product editor",
+        "platform-dashboard": "Platform admin",
+        "roles": "Staff roles and permissions"
+      }
+    }
   },
   "closing": {
     "statement": "Better systems start with understanding the business.",
