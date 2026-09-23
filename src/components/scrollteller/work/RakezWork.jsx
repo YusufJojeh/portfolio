@@ -9,7 +9,6 @@ const OVERLAY =
 export default function RakezWork({ locale, work }) {
   const t = useTranslations('final.work');
   const r = useTranslations('final.work.rakez');
-  const a = useTranslations('final.rakez');
   const facts = r.raw('facts');
   const layers = r.raw('layers');
   const hard = r.raw('hard');
@@ -19,11 +18,12 @@ export default function RakezWork({ locale, work }) {
       <WorkCover
         overlay={OVERLAY}
         image={{
-          src: '/portfolio/story/rakez/rakez-cinematic-cover.webp',
-          alt: a('imageAlt'),
-          focus: [62, 45],
-          mobileFocus: [70, 45],
-          illustrative: true,
+          // Real capture of the live staff login (its brand panel), not generated art.
+          src: '/portfolio/work/rakez/cover.webp',
+          alt: t('evidence.alt.rakez.login'),
+          aspect: 736 / 900,
+          focus: [50, 42],
+          mobileFocus: [50, 42],
         }}
       >
         <BackLink locale={locale} label={t('back')} />
