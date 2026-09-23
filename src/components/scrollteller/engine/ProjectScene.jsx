@@ -11,9 +11,9 @@ import { useIsMobile, useStage } from './useMedia';
 import ReducedMotionFallback from './ReducedMotionFallback';
 
 /*
- * An image-led project chapter. It opens from black, lets the frame settle,
+ * An image-led project chapter. It opens from shadow, lets the frame settle,
  * brings the title in, then pushes the camera toward `origin` while the
- * title gives way to the details, and closes back to black so the next
+ * title gives way to the details, and settles into shadow so the next
  * chapter can open from the same darkness.
  *
  * Variants change the composition, not the timing:
@@ -33,10 +33,12 @@ const OVERLAY = {
 
 function Frame({ p, image, variant }) {
   const mobile = useIsMobile();
-  const fadeIn = useStage(p, [0, 0.06], [0, 1], 1);
+  // Never fully black at either end: progress sits at 0 while the scene scrolls in
+  // and at 1 while it scrolls out, so a black frame there reads as an empty gap.
+  const fadeIn = useStage(p, [0, 0.06], [0.5, 1], 1);
   const scale = useStage(p, [0, 0.26, 0.4, 0.88], [1.05, 1, 1, mobile ? 1.08 : 1.12], 1);
   const y = useStage(p, [0, 0.3], [0, mobile ? -15 : -30], 0);
-  const dim = useStage(p, [0.4, 0.5, 0.92, 1], [0, mobile ? 0.55 : 0.28, mobile ? 0.55 : 0.28, 1], 0.4);
+  const dim = useStage(p, [0.4, 0.5, 0.92, 1], [0, mobile ? 0.55 : 0.28, mobile ? 0.55 : 0.28, 0.72], 0.4);
 
   return (
     <motion.div style={{ opacity: fadeIn }} className="absolute inset-0">

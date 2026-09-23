@@ -157,7 +157,18 @@
       "Every rejection"
     ],
     "guard": "Guardrailed against prompt injection and forbidden decision language.",
-    "cta": "Read the HireLens case study"
+    "cta": "Read the HireLens case study",
+    "screensTitle": "Inside the product",
+    "screensIntro": "The recruiter workspace, from the evidence dashboard to the human decision.",
+    "screensNote": "Captured by the repo’s own Playwright suite on a seeded local build. Candidates, scores and jobs are demo data.",
+    "screens": {
+      "dashboard": "Evidence dashboard",
+      "evaluation": "Evaluation report",
+      "human-review": "Human decision",
+      "interview-kit": "Approved interview kit",
+      "rubric": "Job requirements rubric",
+      "audit": "Audit log"
+    }
   },
   "linguacoach": {
     "title": "LinguaCoach AI",
@@ -169,7 +180,17 @@
       "Queued AI workflows on durable PostgreSQL row leases that survive restarts",
       "Budgets and daily limits enforced; skipped AI calls are labeled, never faked"
     ],
-    "cta": "Read the LinguaCoach case study"
+    "cta": "Read the LinguaCoach case study",
+    "screensTitle": "Inside the product",
+    "screensIntro": "The learner side and the admin audit trail, on a demo account.",
+    "screensNote": "Captured during a live UI audit of a local build, signed in as a seeded demo learner and admin. Activity and accounts are demo data.",
+    "screens": {
+      "dashboard": "Learner dashboard",
+      "coach": "AI coach conversation",
+      "reading": "Reading practice",
+      "listening": "Listening exercise",
+      "admin-audit": "Admin audit log"
+    }
   },
   "prospectiq": {
     "title": "ProspectIQ",

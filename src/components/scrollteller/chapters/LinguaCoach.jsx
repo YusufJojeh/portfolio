@@ -3,7 +3,10 @@ import { useLocale, useTranslations } from 'next-intl';
 import StoryChapter from '../engine/StoryChapter';
 import ChapterLabel from '../engine/ChapterLabel';
 import Reveal from '../engine/Reveal';
+import ProjectCard from './ProjectCard';
 
+// Real screens from the repo's own captures, on demo data.
+const LINGUACOACH_SCREENS = ['dashboard', 'coach', 'reading', 'listening', 'admin-audit'];
 /* The CEFR ladder as the chapter's image: six steps, set in type. */
 export default function LinguaCoach() {
   const t = useTranslations('final.linguacoach');
@@ -66,6 +69,20 @@ export default function LinguaCoach() {
           ))}
         </div>
       </div>
+
+      <Reveal>
+        <div className="mt-20 border-t border-white/15 md:mt-28">
+          <ProjectCard
+            index={t('title')}
+            title={t('screensTitle')}
+            titleDir="auto"
+            description={t('screensIntro')}
+            note={t('screensNote')}
+            flip
+            screens={LINGUACOACH_SCREENS.map((f) => ({ src: `/portfolio/work/linguacoach/app/${f}.webp`, caption: t(`screens.${f}`) }))}
+          />
+        </div>
+      </Reveal>
     </StoryChapter>
   );
 }

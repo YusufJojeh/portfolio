@@ -74,7 +74,7 @@ function Stage() {
   const p = useSceneProgress();
   // The one chapter that closes in rather than settling: 1.00 → 1.035.
   const scale = useStage(p, [0, 1], [1, 1.035], 1);
-  const bg = useStage(p, [0, 0.25], [0, 1], 1);
+  const bg = useStage(p, [0, 0.25], [0.45, 1], 1);
   const textIn = useStage(p, [0.14, 0.36], [0, 1], 1);
   const textY = useStage(p, [0.14, 0.4], [40, 0], 0);
   return (

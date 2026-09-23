@@ -13,7 +13,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 
 const EASE = [0.22, 1, 0.36, 1];
 
-export default function ProjectCard({ index, title, description, note, meta, screens, flip = false }) {
+export default function ProjectCard({ index, title, titleDir = 'ltr', description, note, meta, screens, flip = false }) {
   const [active, setActive] = useState(0);
   const reduce = useReducedMotion();
   const stageId = useId();
@@ -46,7 +46,7 @@ export default function ProjectCard({ index, title, description, note, meta, scr
     <article className="group/card grid gap-6 border-b border-white/10 py-12 md:grid-cols-12 md:grid-rows-[auto_1fr] md:gap-x-10 md:gap-y-0 md:py-16 lg:gap-x-14">
       <header className={`md:col-span-5 md:row-start-1 lg:col-span-4 ${flip ? 'md:col-start-8 lg:col-start-9' : ''}`}>
         <span className="font-mono text-[11px] tracking-[0.2em] text-cinema-muted">{index}</span>
-        <h3 dir="ltr" className="mt-4 font-display text-[40px] leading-[0.98] text-cinema-soft md:text-[clamp(44px,4.2vw,64px)] rtl:text-right">
+        <h3 dir={titleDir} className="mt-4 font-display text-[40px] leading-[0.98] text-cinema-soft md:text-[clamp(44px,4.2vw,64px)] rtl:text-right">
           {title}
         </h3>
         {description && (
