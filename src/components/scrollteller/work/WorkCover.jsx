@@ -11,6 +11,9 @@ import { useIsMobile, useStage } from '../engine/useMedia';
  * the camera settles (scale → 1), drifts up and the frame sinks into the
  * page colour, so the page below reads as the same scene continuing.
  */
+// Phone captures are read at native size, so their UI text needs extra cover under the copy.
+const MOBILE_SCRIM = 'linear-gradient(0deg, rgba(9,11,15,0.95) 0%, rgba(9,11,15,0.86) 50%, rgba(9,11,15,0.35) 78%, rgba(9,11,15,0.2) 100%)';
+
 export default function WorkCover({
   image,
   overlay,
@@ -36,6 +39,8 @@ export default function WorkCover({
         >
           <StoryFrame
             src={image.src}
+            mobileSrc={image.mobileSrc}
+            mobileAspect={image.mobileAspect}
             alt={image.alt}
             aspect={image.aspect ?? 1672 / 941}
             focus={image.focus ?? [60, 45]}
@@ -46,6 +51,9 @@ export default function WorkCover({
           />
         </motion.div>
         <div className="absolute inset-0" style={{ background: overlay }} />
+        {image.mobileSrc && (
+          <div className="absolute inset-0 md:hidden" style={{ background: MOBILE_SCRIM }} />
+        )}
         <motion.div className="absolute inset-0 bg-cinema-bg" style={{ opacity: dim }} />
       </div>
       <motion.div style={{ y: textY, opacity: textOut }} className="relative z-10 w-full px-6 pb-16 pt-32 md:px-12 md:pb-24 lg:px-16">

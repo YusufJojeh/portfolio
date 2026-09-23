@@ -8,6 +8,8 @@ import Image from 'next/image';
  * `bleed` adds extra height so a parent camera can drift upward without
  * exposing an edge. Focus values are percentages; `mobileFocus` applies
  * below the md breakpoint through CSS, so there is no hydration jump.
+ * `mobileSrc` (with its own `mobileAspect`) swaps in a phone-sized capture
+ * below md; both frames are in the markup and CSS picks one.
  */
 export default function StoryFrame({
   src,
@@ -15,6 +17,8 @@ export default function StoryFrame({
   aspect,
   focus = [50, 50],
   mobileFocus,
+  mobileSrc,
+  mobileAspect,
   bleed = 48,
   priority = false,
   quality = 85,
@@ -23,28 +27,21 @@ export default function StoryFrame({
 }) {
   const [fx, fy] = focus;
   const [mx, my] = mobileFocus ?? focus;
-
-  return (
+  const vars = { '--fx': `${fx}%`, '--fy': `${fy}%`, '--mx': `${mx}%`, '--my': `${my}%` };
+  const frame = (source, ratio, extra, frameSizes) => (
     <div
-      className={`story-frame absolute ${className}`}
-      style={{
-        aspectRatio: aspect,
-        width: `max(100%, calc((100svh + ${bleed}px) * ${aspect}))`,
-        '--fx': `${fx}%`,
-        '--fy': `${fy}%`,
-        '--mx': `${mx}%`,
-        '--my': `${my}%`,
-      }}
+      className={`story-frame absolute ${extra} ${className}`}
+      style={{ aspectRatio: ratio, width: `max(100%, calc((100svh + ${bleed}px) * ${ratio}))`, ...vars }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority={priority}
-        quality={quality}
-        sizes={sizes}
-        className="object-cover"
-      />
+      <Image src={source} alt={alt} fill priority={priority} quality={quality} sizes={frameSizes} className="object-cover" />
     </div>
+  );
+
+  if (!mobileSrc) return frame(src, aspect, '', sizes);
+  return (
+    <>
+      {frame(src, aspect, 'hidden md:block', '125vw')}
+      {frame(mobileSrc, mobileAspect ?? aspect, 'md:hidden', '(max-width: 767px) 150vw, 1px')}
+    </>
   );
 }

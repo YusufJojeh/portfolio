@@ -337,6 +337,8 @@ function RakezBackground({ p }) {
           src={RAKEZ}
           alt={t('imageAlt')}
           aspect={736 / 900}
+          mobileSrc="/portfolio/work/rakez/mobile.webp"
+          mobileAspect={780 / 800}
           focus={[50, 42]}
           mobileFocus={[50, 42]}
           bleed={0}

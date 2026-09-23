@@ -21,6 +21,8 @@ export default function ProspectIQWork({ locale, work }) {
         image={{
           src: '/portfolio/work/prospectiq/hero-dark.webp',
           aspect: 1440 / 690,
+          mobileSrc: '/portfolio/work/prospectiq/mobile.webp',
+          mobileAspect: 780 / 1390,
           alt: home('imageAlt'),
           focus: [50, 45],
           mobileFocus: [12, 45],

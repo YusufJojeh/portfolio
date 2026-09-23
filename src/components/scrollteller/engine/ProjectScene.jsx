@@ -22,6 +22,9 @@ import ReducedMotionFallback from './ReducedMotionFallback';
  *   arabic  an oversized Arabic title set against the frame
  */
 
+// Phone captures are read at native size, so their UI text needs extra cover under the copy.
+const MOBILE_SCRIM = 'linear-gradient(0deg, rgba(9,11,15,0.95) 0%, rgba(9,11,15,0.86) 50%, rgba(9,11,15,0.35) 78%, rgba(9,11,15,0.2) 100%)';
+
 const OVERLAY = {
   left: 'linear-gradient(90deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0.66) 36%, rgba(9,11,15,0.28) 66%, rgba(9,11,15,0.5) 100%), linear-gradient(0deg, rgba(9,11,15,0.85) 0%, rgba(9,11,15,0) 42%), rgba(9,11,15,0.2)',
   lower: 'linear-gradient(0deg, rgba(9,11,15,0.96) 0%, rgba(9,11,15,0.78) 34%, rgba(9,11,15,0.18) 70%, rgba(9,11,15,0.45) 100%), rgba(9,11,15,0.22)',
@@ -43,6 +46,8 @@ function Frame({ p, image, variant }) {
       >
         <StoryFrame
           src={image.src}
+          mobileSrc={image.mobileSrc}
+          mobileAspect={image.mobileAspect}
           alt={image.alt}
           aspect={image.aspect ?? 1672 / 941}
           focus={image.focus ?? [60, 45]}
@@ -53,6 +58,9 @@ function Frame({ p, image, variant }) {
         />
       </motion.div>
       <div className="absolute inset-0" style={{ background: image.overlay ?? OVERLAY[variant] }} />
+      {image.mobileSrc && (
+        <div className="absolute inset-0 md:hidden" style={{ background: MOBILE_SCRIM }} />
+      )}
       <motion.div className="absolute inset-0 bg-cinema-bg" style={{ opacity: dim }} />
     </motion.div>
   );
@@ -155,6 +163,8 @@ function StillScene({ id, chapter, chapterName, variant, image, titleProps, deta
       <div className="absolute inset-0">
         <StoryFrame
           src={image.src}
+          mobileSrc={image.mobileSrc}
+          mobileAspect={image.mobileAspect}
           alt={image.alt}
           aspect={image.aspect ?? 1672 / 941}
           focus={image.focus ?? [60, 45]}
@@ -163,6 +173,9 @@ function StillScene({ id, chapter, chapterName, variant, image, titleProps, deta
           className={image.illustrative ? 'blur-[3px]' : ''}
         />
         <div className="absolute inset-0" style={{ background: image.overlay ?? OVERLAY[variant] }} />
+        {image.mobileSrc && (
+          <div className="absolute inset-0 md:hidden" style={{ background: MOBILE_SCRIM }} />
+        )}
         <div className="absolute inset-0 bg-cinema-bg/50" />
       </div>
       <div className="relative px-6 py-28 md:px-12 lg:px-16">

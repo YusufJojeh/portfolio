@@ -16,6 +16,8 @@ export default function Dhura() {
       image={{
         src: '/portfolio/work/dhura/login.webp',
         aspect: 1440 / 900,
+        mobileSrc: '/portfolio/work/dhura/mobile.webp',
+        mobileAspect: 780 / 1688,
         alt: t('imageAlt'),
         focus: [50, 50],
         mobileFocus: [50, 50],

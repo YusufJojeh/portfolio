@@ -18,7 +18,7 @@ export default function AbstractionScene() {
     <section className="relative bg-cinema-bg px-6 md:px-16 lg:px-24 py-24 md:py-36 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.08]">
         <Image
-          src="/portfolio/story/dhura/dhura-cinematic-cover.webp"
+          src="/portfolio/work/dhura/login.webp"
           alt=""
           aria-hidden="true"
           fill
