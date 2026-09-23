@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
-import { Inter } from 'next/font/google';
+import { getMessages, setRequestLocale } from 'next-intl/server';
+import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic } from 'next/font/google';
 import { ClientProviders } from '@/providers/ClientProviders';
 import StructuredData from '@/components/server/StructuredData';
 import '@/styles/globals.css';
@@ -12,9 +12,30 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const display = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+});
+
+const grotesk = Inter_Tight({
+  subsets: ['latin'],
+  weight: ['500', '600'],
+  display: 'swap',
+  variable: '--font-grotesk',
+});
+
+const arabic = IBM_Plex_Sans_Arabic({
+  subsets: ['arabic'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-arabic',
+});
+
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale });
 
   const seoTitle = 'Yusuf Jojeh — Backend Engineer for SaaS, CRM/ERP & AI Systems';
   const seoDescription = 'Backend-focused Full-Stack Engineer building production SaaS, CRM/ERP platforms, secure APIs, RBAC workflows, and AI-integrated systems with Laravel, FastAPI/NestJS, React, SQL, Redis, and Docker.';
@@ -94,6 +115,7 @@ export async function generateMetadata({ params }) {
 
 export default async function RootLayout({ children, params }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages({ locale });
   const direction = locale === 'ar' ? 'rtl' : 'ltr';
 
@@ -102,9 +124,9 @@ export default async function RootLayout({ children, params }) {
       <head>
         <StructuredData locale={locale} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <meta name="theme-color" content="#3B82F6" />
+        <meta name="theme-color" content="#090B0F" />
       </head>
-      <body className={`${inter.variable} font-sans`}>
+      <body className={`${inter.variable} ${display.variable} ${grotesk.variable} ${arabic.variable} font-sans bg-cinema-bg`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ClientProviders>{children}</ClientProviders>
         </NextIntlClientProvider>

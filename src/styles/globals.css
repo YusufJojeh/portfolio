@@ -92,3 +92,59 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-primary-700 dark:bg-secondary-700;
 }
+
+/* Cinematic scrollteller */
+@layer base {
+  .cinema-root {
+    color-scheme: dark;
+  }
+  .cinema-root ::selection {
+    background: rgba(239, 238, 233, 0.92);
+    color: #090b0f;
+  }
+  .cinema-root :focus-visible {
+    outline: 1px solid #efeee9;
+    outline-offset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* StoryFrame focal-point positioning (see scrollteller/engine/StoryFrame.jsx) */
+.story-frame {
+  left: var(--mx);
+  top: var(--my);
+  transform: translate(calc(var(--mx) * -1), calc(var(--my) * -1));
+}
+@media (min-width: 768px) {
+  .story-frame {
+    left: var(--fx);
+    top: var(--fy);
+    transform: translate(calc(var(--fx) * -1), calc(var(--fy) * -1));
+  }
+}
+
+/* Letter-spacing pulls Arabic letters apart and breaks their joins, so the
+   tracked mono labels set Arabic without it. Latin runs marked ltr keep it. */
+html[dir='rtl'] .cinema-root .font-mono:not([dir='ltr']) {
+  letter-spacing: 0;
+}
+
+/* The legacy scrollbar thumb uses the old brand colours; cinematic pages get steel on black. */
+html:has(.cinema-root) {
+  scrollbar-color: #3a3f47 #090b0f;
+}
+html:has(.cinema-root) ::-webkit-scrollbar-track {
+  background: #090b0f;
+}
+html:has(.cinema-root) ::-webkit-scrollbar-thumb,
+html:has(.cinema-root) ::-webkit-scrollbar-thumb:hover {
+  background: #3a3f47;
+}
