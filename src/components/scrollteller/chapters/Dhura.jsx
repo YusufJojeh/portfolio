@@ -14,8 +14,8 @@ export default function Dhura() {
       chapterName={c('07')}
       variant="arabic"
       image={{
-        src: '/portfolio/work/dhura/login.webp',
-        aspect: 1440 / 900,
+        src: '/portfolio/work/dhura/app/executive-overview.webp',
+        aspect: 1600 / 1000,
         mobileSrc: '/portfolio/work/dhura/mobile.webp',
         mobileAspect: 780 / 1688,
         alt: t('imageAlt'),

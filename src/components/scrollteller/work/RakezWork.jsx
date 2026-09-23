@@ -19,9 +19,9 @@ export default function RakezWork({ locale, work }) {
         overlay={OVERLAY}
         image={{
           // Real capture of the live staff login (its brand panel), not generated art.
-          src: '/portfolio/work/rakez/cover.webp',
-          alt: t('evidence.alt.rakez.login'),
-          aspect: 736 / 900,
+          src: '/portfolio/work/rakez/app/marketing-performance-dashboard.webp',
+          alt: t('evidence.app.rakez.marketing-performance-dashboard'),
+          aspect: 1600 / 1000,
           mobileSrc: '/portfolio/work/rakez/mobile.webp',
           mobileAspect: 780 / 800,
           focus: [50, 42],

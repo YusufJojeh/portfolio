@@ -99,7 +99,7 @@
       }
     ],
     "cta": "Read the Rakez case study",
-    "imageAlt": "The Rakez Real Estate mark from the live Rakez staff login",
+    "imageAlt": "Rakez ERP marketing dashboard with demo data",
     "stackLabel": "Stack",
     "stack": [
       "Laravel 12",
@@ -183,7 +183,7 @@
     ],
     "modes": "Live, demo and stub modes are explicit. Production never silently falls back to demo data.",
     "cta": "Read the ProspectIQ case study",
-    "imageAlt": "The ProspectIQ landing hero from a local build of the web app"
+    "imageAlt": "LeadScope lead-intelligence dashboard with demo data"
   },
   "dhura": {
     "title": "Dhura",
@@ -197,7 +197,7 @@
     ],
     "status": "Concept architecture — not a shipped product",
     "cta": "Read the Dhura concept",
-    "imageAlt": "The Dhura sign-in screen from a local build of the V1 release candidate"
+    "imageAlt": "Dhura executive overview with demo data"
   },
   "ai": {
     "heading": "Applied AI, engineered like the rest of the system.",
@@ -615,7 +615,7 @@
     "evidence": {
       "label": "Real screens",
       "source": {
-        "rakez": "The live staff login at rakez.com.sa. Everything behind it is internal company data, so it stays private.",
+        "rakez": "The staff login is live at rakez.com.sa. The screens below come from a local build with seeded demo data; the company's own records stay private.",
         "hirelens": "Captured from a local build of the application, unedited.",
         "linguacoach": "Captured from a local build of the web app, unedited.",
         "prospectiq": "Captured from a local build of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
@@ -655,6 +655,34 @@
         "dhura": {
           "login": "Dhura sign-in screen, Arabic, right-to-left",
           "register": "Dhura workspace creation form"
+        }
+      },
+      "app": {
+        "label": "Inside the product",
+        "demo": "Logged-in screens from a local build running on the project's own demo seed. The names, units and amounts are fictional test data, not production figures.",
+        "rakez": {
+          "marketing-performance-dashboard": "Marketing dashboard",
+          "unit-inventory-search": "Unit inventory search",
+          "sales-reservation-operations": "Reservation operations",
+          "accounting-finance-dashboard": "Accounting dashboard",
+          "credit-booking-pipeline": "Credit booking pipeline",
+          "workforce-analytics": "Workforce analytics"
+        },
+        "prospectiq": {
+          "operational-lead-intelligence-dashboard": "Lead intelligence desk",
+          "evidence-first-lead-portfolio": "Lead workspace",
+          "lead-intelligence-detail": "Lead detail with evidence",
+          "evidence-grounded-ai-analysis": "Evidence-grounded AI analysis",
+          "ai-outreach-drafts": "AI outreach drafts",
+          "crm-sales-pipeline": "CRM pipeline"
+        },
+        "dhura": {
+          "executive-overview": "Executive overview",
+          "unit-inventory": "Unit inventory",
+          "crm-lead-workspace": "CRM lead workspace",
+          "finance-reporting": "Finance reports",
+          "governed-ai-control-room": "AI control room with human approval",
+          "customer-portal-dashboard": "Customer portal"
         }
       }
     }

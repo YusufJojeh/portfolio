@@ -145,6 +145,43 @@ const SCREENS = {
  * layer, so they sit plainly on the page: no blur, no device mockup, no
  * generated overlay. The caption says where each capture came from.
  */
+// Logged-in screens from local builds running on each repo's own demo seed.
+const APP = {
+  rakez: { ratio: 1600 / 1000, files: ['marketing-performance-dashboard', 'unit-inventory-search', 'sales-reservation-operations', 'accounting-finance-dashboard', 'credit-booking-pipeline', 'workforce-analytics'] },
+  prospectiq: { ratio: 1600 / 882, files: ['operational-lead-intelligence-dashboard', 'evidence-first-lead-portfolio', 'lead-intelligence-detail', 'evidence-grounded-ai-analysis', 'ai-outreach-drafts', 'crm-sales-pipeline'] },
+  dhura: { ratio: 1600 / 1000, files: ['executive-overview', 'unit-inventory', 'crm-lead-workspace', 'finance-reporting', 'governed-ai-control-room', 'customer-portal-dashboard'] },
+};
+
+function AppGallery({ t, slug }) {
+  const app = APP[slug];
+  if (!app) return null;
+  return (
+    <div className="mt-20 md:mt-28">
+      <Label>{t('evidence.app.label')}</Label>
+      <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cinema-text/70">{t('evidence.app.demo')}</p>
+      <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-14">
+        {app.files.map((file) => (
+          <figure key={file} className="m-0">
+            <div className="overflow-hidden rounded-[3px] border border-white/10 bg-cinema-bg2" style={{ aspectRatio: app.ratio }}>
+              <Image
+                src={`/portfolio/work/${slug}/app/${file}.webp`}
+                alt={t(`evidence.app.${slug}.${file}`)}
+                sizes="(min-width: 768px) 44vw, 100vw"
+                width={1600}
+                height={Math.round(1600 / app.ratio)}
+                className="block h-full w-full object-cover object-top"
+              />
+            </div>
+            <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+              {t(`evidence.app.${slug}.${file}`)}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function Evidence({ t, slug, className = '' }) {
   const shots = SCREENS[slug];
   if (!shots) return null;
@@ -195,6 +232,7 @@ export function Evidence({ t, slug, className = '' }) {
           );
         })}
       </div>
+      <AppGallery t={t} slug={slug} />
     </Section>
   );
 }

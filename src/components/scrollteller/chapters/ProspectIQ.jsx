@@ -14,8 +14,8 @@ export default function ProspectIQ() {
       chapterName={c('06')}
       variant="lower"
       image={{
-        src: '/portfolio/work/prospectiq/hero-dark.webp',
-        aspect: 1440 / 690,
+        src: '/portfolio/work/prospectiq/app/operational-lead-intelligence-dashboard.webp',
+        aspect: 1600 / 882,
         mobileSrc: '/portfolio/work/prospectiq/mobile.webp',
         mobileAspect: 780 / 1390,
         alt: t('imageAlt'),
