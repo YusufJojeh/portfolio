@@ -13,8 +13,10 @@ const TITLE = {
   small: 'text-[17px] font-medium md:text-[18px]',
 };
 
-// Screens from local builds on each project's demo data, in index order.
+// Screens from local builds and each repo's own Playwright visual suite, on demo data, in index order.
 const SHOTS = {
+  restocafe: ['dashboard', 'kitchen', 'order-create', 'tables', 'invoice', 'reports'],
+  medical: ['home', 'services', 'availability', 'ai-guest', 'health-tips', 'login'],
   ilogistics: ['dashboard', 'analytics', 'shipments', 'route', 'invoices', 'customer-shipments'],
   mtjri: ['storefront', 'store-dashboard', 'pos', 'product-editor', 'platform-dashboard', 'roles'],
 };

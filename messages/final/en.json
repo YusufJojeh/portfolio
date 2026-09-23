@@ -356,6 +356,24 @@
         "product-editor": "Product editor",
         "platform-dashboard": "Platform admin",
         "roles": "Staff roles and permissions"
+      },
+      "restocafe": {
+        "note": "Captured by the repo's own Playwright visual tests against a seeded local build. Orders, tables and amounts are test data.",
+        "dashboard": "Operations dashboard",
+        "kitchen": "Kitchen board",
+        "order-create": "Order entry",
+        "tables": "Table service board",
+        "invoice": "Paid invoice",
+        "reports": "Daily report"
+      },
+      "medical": {
+        "note": "Public pages captured by the repo's own Playwright visual tests. Doctor names and slots are demo content.",
+        "home": "Home",
+        "services": "Services",
+        "availability": "Public availability preview",
+        "ai-guest": "Guest AI assistant",
+        "health-tips": "Health tips",
+        "login": "Sign in"
       }
     }
   },
