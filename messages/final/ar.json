@@ -743,6 +743,21 @@
           "finance-reporting": "التقارير المالية",
           "governed-ai-control-room": "غرفة تحكم الذكاء الاصطناعي بموافقة بشرية",
           "customer-portal-dashboard": "بوابة العملاء"
+        },
+        "hirelens": {
+          "dashboard": "لوحة الأدلة",
+          "evaluation": "تقرير التقييم",
+          "human-review": "القرار البشري",
+          "interview-kit": "حزمة مقابلة معتمدة",
+          "rubric": "معايير متطلبات الوظيفة",
+          "audit": "سجل التدقيق"
+        },
+        "linguacoach": {
+          "dashboard": "لوحة المتعلم",
+          "coach": "محادثة المدرب الذكي",
+          "reading": "تمرين القراءة",
+          "listening": "تمرين الاستماع",
+          "admin-audit": "سجل تدقيق المشرف"
         }
       }
     }

@@ -149,6 +149,8 @@ const SCREENS = {
 const APP = {
   rakez: { ratio: 1600 / 1000, files: ['marketing-performance-dashboard', 'unit-inventory-search', 'sales-reservation-operations', 'accounting-finance-dashboard', 'credit-booking-pipeline', 'workforce-analytics'] },
   prospectiq: { ratio: 1600 / 882, files: ['operational-lead-intelligence-dashboard', 'evidence-first-lead-portfolio', 'lead-intelligence-detail', 'evidence-grounded-ai-analysis', 'ai-outreach-drafts', 'crm-sales-pipeline'] },
+  hirelens: { ratio: 1280 / 800, files: ['dashboard', 'evaluation', 'human-review', 'interview-kit', 'rubric', 'audit'] },
+  linguacoach: { ratio: 1280 / 800, files: ['dashboard', 'coach', 'reading', 'listening', 'admin-audit'] },
   dhura: { ratio: 1600 / 1000, files: ['executive-overview', 'unit-inventory', 'crm-lead-workspace', 'finance-reporting', 'governed-ai-control-room', 'customer-portal-dashboard'] },
 };
 

@@ -743,6 +743,21 @@
           "finance-reporting": "Finance reports",
           "governed-ai-control-room": "AI control room with human approval",
           "customer-portal-dashboard": "Customer portal"
+        },
+        "hirelens": {
+          "dashboard": "Evidence dashboard",
+          "evaluation": "Evaluation report",
+          "human-review": "Human decision",
+          "interview-kit": "Approved interview kit",
+          "rubric": "Job requirements rubric",
+          "audit": "Audit log"
+        },
+        "linguacoach": {
+          "dashboard": "Learner dashboard",
+          "coach": "AI coach conversation",
+          "reading": "Reading practice",
+          "listening": "Listening exercise",
+          "admin-audit": "Admin audit log"
         }
       }
     }
