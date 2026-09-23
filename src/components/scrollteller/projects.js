@@ -36,5 +36,4 @@ export function workTitle(slug) {
 export const SOURCE_LINKS = {
   restocafe: byId('restocafe')?.githubUrl ?? null,
   ilogistics: byId('ilogistics')?.githubUrl ?? null,
-  medical: byId('medical')?.githubUrl ?? null,
 };

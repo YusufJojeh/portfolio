@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import StoryChapter from '../engine/StoryChapter';
@@ -6,50 +5,18 @@ import ChapterLabel from '../engine/ChapterLabel';
 import Reveal from '../engine/Reveal';
 import { SOURCE_LINKS } from '../projects';
 
-/* An editorial index. Weight follows how much there is to say, not a grid of cards. */
-const TITLE = {
-  lead: 'font-display text-[44px] leading-[0.98] md:text-[clamp(56px,5.6vw,88px)]',
-  mid: 'font-display text-[30px] leading-[1.02] md:text-[40px]',
-  small: 'text-[17px] font-medium md:text-[18px]',
-};
+import ProjectCard from './ProjectCard';
 
-// Screens from local builds and each repo's own Playwright visual suite, on demo data, in index order.
+// Real screens, in card order. Case-study projects reuse their work captures;
+// the rest come from local builds and each repo's own Playwright visual suite, on demo data.
 const SHOTS = {
-  restocafe: ['dashboard', 'kitchen', 'order-create', 'tables', 'invoice', 'reports'],
-  medical: ['home', 'services', 'availability', 'ai-guest', 'health-tips', 'login'],
-  ilogistics: ['dashboard', 'analytics', 'shipments', 'route', 'invoices', 'customer-shipments'],
-  mtjri: ['storefront', 'store-dashboard', 'pos', 'product-editor', 'platform-dashboard', 'roles'],
+  careerguide: { dir: 'work/careerguide', files: ['home', 'login'] },
+  algoag: { dir: 'work/algoag', files: ['home', 'login'] },
+  restocafe: { dir: 'more/restocafe', files: ['dashboard', 'kitchen', 'order-create', 'tables', 'invoice', 'reports'] },
+  ilogistics: { dir: 'more/ilogistics', files: ['dashboard', 'analytics', 'shipments', 'route', 'invoices', 'customer-shipments'] },
+  agentos: { dir: 'more/agentos', files: ['content-studio', 'social-studio', 'register'] },
+  mtjri: { dir: 'more/mtjri', files: ['storefront', 'store-dashboard', 'pos', 'product-editor', 'platform-dashboard', 'roles'] },
 };
-
-function Screens({ id, title, t }) {
-  return (
-    <Reveal className="border-b border-white/10 py-10 md:py-14">
-      <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-        <h3 dir="ltr" className={`${TITLE.mid} text-cinema-soft rtl:text-right`}>{title}</h3>
-        <p className="max-w-xl text-[13.5px] leading-relaxed text-cinema-text/55">{t(`screens.${id}.note`)}</p>
-      </div>
-      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
-        {SHOTS[id].map((file) => (
-          <figure key={file} className="m-0">
-            <div className="overflow-hidden rounded-[3px] border border-white/10 bg-cinema-bg2" style={{ aspectRatio: 1.6 }}>
-              <Image
-                src={`/portfolio/more/${id}/${file}.webp`}
-                alt={t(`screens.${id}.${file}`)}
-                sizes="(min-width: 768px) 30vw, 46vw"
-                width={1600}
-                height={1000}
-                className="block h-full w-full object-cover object-top"
-              />
-            </div>
-            <figcaption className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-cinema-muted">
-              {t(`screens.${id}.${file}`)}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </Reveal>
-  );
-}
 
 function Meta({ item, t, locale }) {
   if (item.status) {
@@ -88,9 +55,10 @@ export default function MoreSystems() {
   const c = useTranslations('final.chapters');
   const locale = useLocale();
   const items = t.raw('items');
-  const lead = items.filter((i) => i.weight === 'lead');
-  const mid = items.filter((i) => i.weight === 'mid');
-  const small = items.filter((i) => i.weight === 'small');
+  const cards = Object.keys(SHOTS)
+    .map((id) => items.find((i) => i.id === id))
+    .filter(Boolean);
+  const rest = items.filter((i) => !SHOTS[i.id]);
 
   return (
     <StoryChapter id="more-systems" chapter="10" label={c('10')}>
@@ -106,52 +74,36 @@ export default function MoreSystems() {
         </Reveal>
       </div>
 
-      <div className="mt-14 grid border-t border-white/15 md:mt-20 md:grid-cols-2">
-        {lead.map((it, i) => (
-          <Reveal
-            key={it.id}
-            delay={0.06 * i}
-            className={`border-b border-white/10 py-10 md:py-14 ${i === 0 ? 'md:border-e md:pe-12' : 'md:ps-12'}`}
-          >
-            <h3 dir="ltr" className={`${TITLE.lead} text-cinema-soft rtl:text-right`}>{it.t}</h3>
-            {it.d && (
-              <p className="mt-4 max-w-[30rem] text-[15px] leading-relaxed text-cinema-text/70 md:text-[16px]">{it.d}</p>
-            )}
-            <div className="mt-6">
-              <Meta item={it} t={t} locale={locale} />
-            </div>
-          </Reveal>
-        ))}
+      <div className="mt-14 border-t border-white/15 md:mt-20">
+        {cards.map((it, i) => {
+          const { dir, files } = SHOTS[it.id];
+          return (
+            <Reveal key={it.id}>
+              <ProjectCard
+                index={String(i + 1).padStart(2, '0')}
+                title={it.t}
+                description={it.d}
+                note={t(`screens.${it.id}.note`)}
+                meta={<Meta item={it} t={t} locale={locale} />}
+                flip={i % 2 === 1}
+                screens={files.map((f) => ({
+                  src: `/portfolio/${dir}/${f}.webp`,
+                  caption: t(`screens.${it.id}.${f}`),
+                }))}
+              />
+            </Reveal>
+          );
+        })}
       </div>
-
-      <div className="grid md:grid-cols-3">
-        {mid.map((it, i) => (
-          <Reveal
-            key={it.id}
-            delay={0.05 * i}
-            className="border-b border-white/10 py-8 md:border-e md:px-8 md:py-10 md:first:ps-0 md:last:border-e-0 md:last:pe-0"
-          >
-            <h3 dir="ltr" className={`${TITLE.mid} text-cinema-soft rtl:text-right`}>{it.t}</h3>
-            <p className="mt-3 text-[14.5px] leading-relaxed text-cinema-text/65">{it.d}</p>
-            <div className="mt-5">
-              <Meta item={it} t={t} locale={locale} />
-            </div>
-          </Reveal>
-        ))}
-      </div>
-
-      {Object.keys(SHOTS).map((id) => (
-        <Screens key={id} id={id} title={items.find((i) => i.id === id)?.t ?? id} t={t} />
-      ))}
 
       <ul>
-        {small.map((it) => (
+        {rest.map((it) => (
           <Reveal
             as="li"
             key={it.id}
             className="flex flex-col gap-1 border-b border-white/10 py-5 md:flex-row md:items-baseline md:gap-8"
           >
-            <span dir="ltr" className={`${TITLE.small} text-cinema-text md:w-56 rtl:text-right`}>{it.t}</span>
+            <span dir="ltr" className="text-[17px] font-medium text-cinema-text md:w-56 md:text-[18px] rtl:text-right">{it.t}</span>
             <span className="flex-1 text-[14.5px] text-cinema-text/60">{it.d}</span>
             <Meta item={it} t={t} locale={locale} />
           </Reveal>

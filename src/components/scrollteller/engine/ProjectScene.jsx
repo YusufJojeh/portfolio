@@ -33,10 +33,10 @@ const OVERLAY = {
 
 function Frame({ p, image, variant }) {
   const mobile = useIsMobile();
-  const fadeIn = useStage(p, [0, 0.14], [0, 1], 1);
-  const scale = useStage(p, [0, 0.3, 0.4, 0.86], [1.05, 1, 1, mobile ? 1.08 : 1.12], 1);
+  const fadeIn = useStage(p, [0, 0.06], [0, 1], 1);
+  const scale = useStage(p, [0, 0.26, 0.4, 0.88], [1.05, 1, 1, mobile ? 1.08 : 1.12], 1);
   const y = useStage(p, [0, 0.3], [0, mobile ? -15 : -30], 0);
-  const dim = useStage(p, [0.4, 0.5, 0.9, 1], [0, mobile ? 0.55 : 0.4, mobile ? 0.55 : 0.4, 1], 0.45);
+  const dim = useStage(p, [0.4, 0.5, 0.92, 1], [0, mobile ? 0.55 : 0.28, mobile ? 0.55 : 0.28, 1], 0.4);
 
   return (
     <motion.div style={{ opacity: fadeIn }} className="absolute inset-0">
@@ -116,13 +116,13 @@ function CtaLink({ href, children }) {
 
 function Stage({ variant, image, titleProps, details, cta }) {
   const p = useSceneProgress();
-  const titleIn = useStage(p, [0.1, 0.22], [0, 1], 1);
-  const titleY = useStage(p, [0.1, 0.24, 0.4, 0.48], [36, 0, 0, -28], 0);
+  const titleIn = useStage(p, [0.05, 0.16], [0, 1], 1);
+  const titleY = useStage(p, [0.05, 0.18, 0.4, 0.48], [36, 0, 0, -28], 0);
   const titleOut = useStage(p, [0.4, 0.48], [1, 0], 1);
   const detailsIn = useStage(p, [0.48, 0.58], [0, 1], 1);
   const detailsY = useStage(p, [0.48, 0.6], [24, 0], 0);
-  const out = useStage(p, [0.88, 0.97], [1, 0], 1);
-  const note = useStage(p, [0.06, 0.14, 0.88, 0.97], [0, 1, 1, 0], 1);
+  const out = useStage(p, [0.9, 0.97], [1, 0], 1);
+  const note = useStage(p, [0.03, 0.1, 0.9, 0.97], [0, 1, 1, 0], 1);
 
   const lower = variant === 'lower';
   const arabic = variant === 'arabic';

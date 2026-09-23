@@ -314,12 +314,6 @@
         "weight": "mid"
       },
       {
-        "id": "medical",
-        "t": "Medical Booking",
-        "d": "Scheduling with conflict detection, payments and role-separated workflows.",
-        "weight": "mid"
-      },
-      {
         "id": "mtjri",
         "t": "mtjri",
         "d": "Multi-store commerce with a self-service web installer.",
@@ -366,14 +360,21 @@
         "invoice": "Paid invoice",
         "reports": "Daily report"
       },
-      "medical": {
-        "note": "Public pages captured by the repo's own Playwright visual tests. Doctor names and slots are demo content.",
+      "careerguide": {
+        "note": "Public screens from a local build.",
         "home": "Home",
-        "services": "Services",
-        "availability": "Public availability preview",
-        "ai-guest": "Guest AI assistant",
-        "health-tips": "Health tips",
         "login": "Sign in"
+      },
+      "algoag": {
+        "note": "Public screens from a local build.",
+        "home": "Home",
+        "login": "Sign in"
+      },
+      "agentos": {
+        "note": "Public pages from a local build, captured with Playwright. The workspace itself sits behind sign-in.",
+        "content-studio": "Content creation studio",
+        "social-studio": "Social media studio",
+        "register": "Account and brand setup"
       }
     }
   },
