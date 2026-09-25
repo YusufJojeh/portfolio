@@ -137,6 +137,14 @@ html[dir='rtl'] .cinema-root .font-mono:not([dir='ltr']) {
   letter-spacing: 0;
 }
 
+/* Arabic headings use Amiri. It goes ahead of Instrument Serif because that
+   font's metric fallback is Times New Roman, whose own Arabic glyphs would win. */
+html[dir='rtl'] .font-display {
+  font-family: var(--font-arabic-display), var(--font-display), serif;
+  /* Naskh ascenders and descenders run deep; the tight Latin leading makes lines collide. */
+  line-height: 1.5 !important;
+}
+
 /* The legacy scrollbar thumb uses the old brand colours; cinematic pages get steel on black. */
 html:has(.cinema-root) {
   scrollbar-color: #3a3f47 #090b0f;

@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic, Amiri } from 'next/font/google';
 import { ClientProviders } from '@/providers/ClientProviders';
 import StructuredData from '@/components/server/StructuredData';
 import '@/styles/globals.css';
@@ -32,6 +32,17 @@ const arabic = IBM_Plex_Sans_Arabic({
   weight: ['400', '500', '600'],
   display: 'swap',
   variable: '--font-arabic',
+});
+
+// Arabic display face: classical Naskh with the same high-contrast calligraphic
+// stroke as Instrument Serif, so Arabic headings read as editorial too. Applied
+// to RTL pages only (globals.css); its stylesheet also carries a Latin face.
+const arabicDisplay = Amiri({
+  subsets: ['arabic'],
+  weight: ['400', '700'],
+  display: 'swap',
+  adjustFontFallback: false,
+  variable: '--font-arabic-display',
 });
 
 export async function generateMetadata({ params }) {
@@ -126,7 +137,7 @@ export default async function RootLayout({ children, params }) {
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="theme-color" content="#090B0F" />
       </head>
-      <body className={`${inter.variable} ${display.variable} ${grotesk.variable} ${arabic.variable} font-sans bg-cinema-bg`}>
+      <body className={`${inter.variable} ${display.variable} ${grotesk.variable} ${arabic.variable} ${arabicDisplay.variable} font-sans bg-cinema-bg`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ClientProviders>{children}</ClientProviders>
         </NextIntlClientProvider>
