@@ -1,6 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic, Amiri } from 'next/font/google';
+import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic, Aref_Ruqaa } from 'next/font/google';
 import { ClientProviders } from '@/providers/ClientProviders';
 import StructuredData from '@/components/server/StructuredData';
 import '@/styles/globals.css';
@@ -34,10 +34,9 @@ const arabic = IBM_Plex_Sans_Arabic({
   variable: '--font-arabic',
 });
 
-// Arabic display face: classical Naskh with the same high-contrast calligraphic
-// stroke as Instrument Serif, so Arabic headings read as editorial too. Applied
-// to RTL pages only (globals.css); its stylesheet also carries a Latin face.
-const arabicDisplay = Amiri({
+// Arabic display face: Ruq'ah calligraphy, the decorative counterpart to
+// Instrument Serif. Applied to RTL pages only (globals.css).
+const arabicDisplay = Aref_Ruqaa({
   subsets: ['arabic'],
   weight: ['400', '700'],
   display: 'swap',

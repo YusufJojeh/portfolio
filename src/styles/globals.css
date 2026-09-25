@@ -137,12 +137,15 @@ html[dir='rtl'] .cinema-root .font-mono:not([dir='ltr']) {
   letter-spacing: 0;
 }
 
-/* Arabic headings use Amiri. It goes ahead of Instrument Serif because that
-   font's metric fallback is Times New Roman, whose own Arabic glyphs would win. */
+/* Arabic headings use Aref Ruqaa. Latin words inside them stay in Instrument
+   Serif (its webfont covers Latin only); the Ruqaa face must come before
+   Instrument Serif's metric fallback, Times New Roman, which has Arabic glyphs. */
 html[dir='rtl'] .font-display {
-  font-family: var(--font-arabic-display), var(--font-display), serif;
-  /* Naskh ascenders and descenders run deep; the tight Latin leading makes lines collide. */
+  font-family: 'Instrument Serif', var(--font-arabic-display), serif;
+  /* Ruq'ah ascenders and descenders run deep; the tight Latin leading makes lines collide. */
   line-height: 1.5 !important;
+  /* Any tracking breaks Ruq'ah's contextual joins (e.g. the medial ain in تعقيد). */
+  letter-spacing: 0 !important;
 }
 
 /* The legacy scrollbar thumb uses the old brand colours; cinematic pages get steel on black. */
