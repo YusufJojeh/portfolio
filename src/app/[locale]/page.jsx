@@ -21,7 +21,7 @@ export default async function HomePage({ params }) {
   const { locale } = await params;
   setRequestLocale(locale);
   return (
-    <StoryShell locale={locale}>
+    <StoryShell locale={locale} rail={false}>
       {/* 00 Opening · 01 Real operations · 02 Rakez — one pinned sequence */}
       <OpeningSequence />
       <BusinessToSystem />
