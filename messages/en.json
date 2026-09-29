@@ -28,7 +28,7 @@
     "location": "Aleppo, Syria · Full Remote · GCC / MENA / Europe"
   },
   "proof": {
-    "years": "3+ years building web systems",
+    "years": "4+ years building web systems",
     "projects": "13+ shipped/open projects",
     "endpoints": "150+ protected API endpoints in ERP/CRM work",
     "performance": "Measurable performance gains in logistics/reporting",
@@ -265,7 +265,7 @@
   },
   "about": {
     "title": "About Me",
-    "summary1": "I'm a backend engineer with 3+ years building production systems for SaaS, CRM/ERP, and AI-integrated platforms. My work focuses on REST API design, database architecture, RBAC permission systems, and business logic implementation using Laravel, FastAPI, NestJS, and React. I've shipped 150+ protected API endpoints, built multi-tenant architectures, and integrated LLM-powered modules into real business workflows — across real estate, e-commerce, logistics, healthcare, and lead intelligence domains.",
+    "summary1": "I'm a backend engineer with 4+ years building production systems for SaaS, CRM/ERP, and AI-integrated platforms. My work focuses on REST API design, database architecture, RBAC permission systems, and business logic implementation using Laravel, FastAPI, NestJS, and React. I've shipped 150+ protected API endpoints, built multi-tenant architectures, and integrated LLM-powered modules into real business workflows — across real estate, e-commerce, logistics, healthcare, and lead intelligence domains.",
     "summary2": "I work remote-first and communicate in both Arabic and English. I'm available for backend and backend-focused full-stack roles with product teams across the GCC, MENA, Europe, and international remote companies. I focus on writing systems that handle real operational complexity — permissions, workflows, data integrity — not just feature checklists.",
     "summary3": "",
     "summary4": "",
@@ -585,7 +585,7 @@
       "heading": "From business problems to production systems.",
       "body": "Every project below started as an operational bottleneck — a spreadsheet, a manual process, a disconnected tool. What follows is the backend engineering that replaced it.",
       "signals": [
-        "3+ years building web systems",
+        "4+ years building web systems",
         "150+ protected API endpoints in ERP/CRM work",
         "Measurable performance gains in logistics/reporting",
         "Arabic + English bilingual product delivery"
