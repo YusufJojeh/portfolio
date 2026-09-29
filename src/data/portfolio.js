@@ -22,7 +22,7 @@ export const experiences = [
     title: "Backend Developer | SaaS & AI Systems",
     company: "Rakez Company",
     location: "Remote",
-    period: "Dec 2025 – Present",
+    period: "Dec 2025 – Aug 2026",
     description: [
       "Designed and built backend services for AI-powered CRM modules, translating product requirements into secure, scalable API architectures",
       "Developed RESTful APIs and business logic using Laravel and NestJS to support complex CRM workflows and data operations",
@@ -80,7 +80,7 @@ export const experiences = [
     title: "Systems Analyst",
     company: "Self-Employed",
     location: "Remote",
-    period: "2025",
+    period: "2022 – Present",
     description: [
       "Gathered and documented business requirements through stakeholder analysis and process interviews",
       "Developed technical designs, data models, and workflow documentation for system implementation",
