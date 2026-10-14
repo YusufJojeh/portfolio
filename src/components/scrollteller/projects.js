@@ -8,6 +8,7 @@ const WORK = [
   { slug: 'hirelens', title: 'HireLens AI', source: 'hirelens' },
   { slug: 'linguacoach', title: 'LinguaCoach AI', source: 'linguacoach' },
   { slug: 'prospectiq', title: 'ProspectIQ', source: 'leadscope' },
+  { slug: 'crma', title: 'CRMA', source: null },
   { slug: 'dhura', title: 'Dhura', source: 'dhura' },
   { slug: 'careerguide', title: 'CareerGuide AI', source: 'careerguide' },
   { slug: 'algoag', title: 'ALGOAG', source: null },

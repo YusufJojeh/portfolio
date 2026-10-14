@@ -9,12 +9,15 @@ import ChapterLabel from './ChapterLabel';
 import ArtNote from './ArtNote';
 import { useIsMobile, useStage } from './useMedia';
 import ReducedMotionFallback from './ReducedMotionFallback';
+import { useRevealOnFocus } from './useRevealOnFocus';
+import { usePointerWhenVisible } from './useWhileVisible';
 
 /*
  * An image-led project chapter. It opens from shadow, lets the frame settle,
  * brings the title in, then pushes the camera toward `origin` while the
- * title gives way to the details, and settles into shadow so the next
- * chapter can open from the same darkness.
+ * title gives way to the details. The frame settles into shadow at the end,
+ * but the details stay put and leave with the page, so the scroll out is
+ * never an empty dark screen.
  *
  * Variants change the composition, not the timing:
  *   left    title low-left, details centred left (default)
@@ -99,7 +102,7 @@ function Title({ chapter, chapterName, kicker, title, arabicTitle, lede, status,
         </p>
       )}
       {status && (
-        <p className="mt-5 inline-block border border-white/15 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-cinema-cream/80">
+        <p className="mt-5 inline-block border border-white/15 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-cream/80">
           {status}
         </p>
       )}
@@ -111,7 +114,7 @@ function CtaLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="mt-6 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60 md:mt-8"
+      className="lean mt-6 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60 md:mt-8"
     >
       {children}
       <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
@@ -126,8 +129,11 @@ function Stage({ variant, image, titleProps, details, cta }) {
   const titleOut = useStage(p, [0.4, 0.48], [1, 0], 1);
   const detailsIn = useStage(p, [0.48, 0.58], [0, 1], 1);
   const detailsY = useStage(p, [0.48, 0.6], [24, 0], 0);
-  const out = useStage(p, [0.9, 0.97], [1, 0], 1);
-  const note = useStage(p, [0.03, 0.1, 0.9, 0.97], [0, 1, 1, 0], 1);
+  const detailsPointer = usePointerWhenVisible(detailsIn);
+  // The art disclosure stays for as long as the art is on screen.
+  const note = useStage(p, [0.03, 0.1], [0, 1], 1);
+  // The details link is only readable in the later part of the track; keyboard focus jumps there.
+  const revealDetails = useRevealOnFocus(p, [0.58, 1], 0.72);
 
   const lower = variant === 'lower';
   const arabic = variant === 'arabic';
@@ -135,10 +141,10 @@ function Stage({ variant, image, titleProps, details, cta }) {
   return (
     <>
       <Frame p={p} image={image} variant={variant} />
-      <motion.div style={{ opacity: out }} className="absolute inset-0 z-30 px-6 md:px-12 lg:px-16">
+      <div className="absolute inset-0 z-30 px-6 md:px-12 lg:px-16">
         <motion.div
           style={{ opacity: titleIn, y: titleY }}
-          className="absolute inset-x-6 bottom-[13svh] md:inset-x-12 lg:inset-x-16"
+          className="pointer-events-none absolute inset-x-6 bottom-[13svh] md:inset-x-12 lg:inset-x-16"
         >
           <motion.div style={{ opacity: titleOut }}>
             <Title {...titleProps} variant={variant} />
@@ -146,7 +152,8 @@ function Stage({ variant, image, titleProps, details, cta }) {
         </motion.div>
 
         <motion.div
-          style={{ opacity: detailsIn, y: detailsY }}
+          style={{ opacity: detailsIn, y: detailsY, pointerEvents: detailsPointer }}
+          onFocus={revealDetails}
           className={`absolute inset-0 flex px-6 pb-12 pt-24 md:px-12 md:pb-16 lg:px-16 ${
             lower ? 'items-end' : 'items-center'
           }`}
@@ -156,7 +163,7 @@ function Stage({ variant, image, titleProps, details, cta }) {
             {cta && <CtaLink href={cta.href}>{cta.label}</CtaLink>}
           </div>
         </motion.div>
-      </motion.div>
+      </div>
       {image.illustrative && <ArtNote opacity={note} />}
     </>
   );
@@ -200,7 +207,7 @@ export default function ProjectScene({
   chapter,
   chapterName,
   variant = 'left',
-  length = 3.2,
+  length = 2.8,
   image,
   kicker,
   title,

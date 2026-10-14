@@ -58,7 +58,7 @@ export default {
           soft: '#FAF9F6',
           'text-alt': '#F3F3EF',
           muted: '#8A9099',
-          steel: '#5B626C',
+          steel: '#7A818B',
           cream: '#EFEEE9',
           accent: '#5A8CFF',
         },

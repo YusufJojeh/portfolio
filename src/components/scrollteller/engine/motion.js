@@ -5,3 +5,6 @@ export const DURATION = {
   reveal: 0.6,
   scene: 1,
 };
+
+/** Gap between siblings in a staggered entrance, in seconds. */
+export const STAGGER = 0.06;

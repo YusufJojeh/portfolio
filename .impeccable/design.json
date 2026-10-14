@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T00:00:00Z",
+  "title": "Design System: Yusuf Jojeh Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "night-bg": { "role": "neutral", "displayName": "Night Black", "canonical": "#090B0F", "tonalRamp": ["#090B0F", "#0E1117", "#141820", "#3A3F47", "#5B626C", "#7A818B", "#8A9099", "#EFEEE9"] },
+      "cream": { "role": "primary", "displayName": "Cream", "canonical": "#EFEEE9", "tonalRamp": ["#3A3F47", "#5B626C", "#7A818B", "#8A9099", "#B9BDC4", "#D6D6D2", "#EFEEE9", "#FAF9F6"] },
+      "signal-blue": { "role": "secondary", "displayName": "Signal Blue", "canonical": "#5A8CFF", "tonalRamp": ["#0F1F45", "#1B3A85", "#2B55C2", "#4271E8", "#5A8CFF", "#86A9FF", "#B4C9FF", "#E1E9FF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Case-study titles and the opening headline." },
+      "label": { "displayName": "Label", "purpose": "Mono caps captions, indices and source lines." }
+    },
+    "shadows": [
+      { "name": "frame-ambient", "value": "0 40px 80px -40px rgba(0,0,0,0.9)", "purpose": "Single soft darkness under screenshot frames." }
+    ],
+    "motion": [
+      { "name": "ease-cinematic", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default easing for reveals, arrow lean and scene fades." },
+      { "name": "ease-arrival", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Case-study cover develop and copy rise." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cream fill action; arrow leans toward its destination on hover.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Explore systems <span class=\"ds-arrow\" aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:8px;background:#EFEEE9;color:#090B0F;border-radius:3px;padding:12px 20px;font:500 13.5px Inter,system-ui,sans-serif;text-decoration:none;transition:background 200ms}.ds-btn-primary:hover{background:#FAF9F6}.ds-btn-primary:focus-visible{outline:2px solid #EFEEE9;outline-offset:4px}.ds-btn-primary:active{transform:translateY(1px)}.ds-arrow{display:inline-block;transition:translate 220ms cubic-bezier(0.22,1,0.36,1)}.ds-btn-primary:hover .ds-arrow{translate:3px 0}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined companion action.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Get in touch</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,0.25);color:#F3F1EC;border-radius:3px;padding:12px 20px;font:500 13.5px Inter,system-ui,sans-serif;text-decoration:none;transition:border-color 200ms}.ds-btn-secondary:hover{border-color:rgba(255,255,255,0.6)}.ds-btn-secondary:focus-visible{outline:2px solid #EFEEE9;outline-offset:4px}"
+    },
+    {
+      "name": "Label",
+      "kind": "chip",
+      "refersTo": "label",
+      "description": "Mono caps caption for sections and sources.",
+      "html": "<p class=\"ds-label\">Architecture</p>",
+      "css": ".ds-label{margin:0;font:400 11px 'JetBrains Mono',ui-monospace,monospace;letter-spacing:0.22em;text-transform:uppercase;color:#8A9099}"
+    },
+    {
+      "name": "Screenshot Frame",
+      "kind": "card",
+      "refersTo": "frame",
+      "description": "Hairline frame with ambient darkness for real product screens.",
+      "html": "<div class=\"ds-frame\"><div class=\"ds-shot\"></div></div>",
+      "css": ".ds-frame{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.1);border-radius:4px;background:#0E1117;box-shadow:0 40px 80px -40px rgba(0,0,0,0.9);aspect-ratio:1.6;transition:border-color 300ms}.ds-frame:hover{border-color:rgba(255,255,255,0.2)}.ds-shot{position:absolute;inset:0;background:linear-gradient(180deg,#141820,#0E1117)}"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Quiet top-nav link over photography.",
+      "html": "<a class=\"ds-nav\" href=\"#\">Work</a>",
+      "css": ".ds-nav{font:400 13px Inter,system-ui,sans-serif;color:rgba(243,241,236,0.8);text-decoration:none;transition:color 200ms}.ds-nav:hover{color:#EFEEE9}.ds-nav:focus-visible{outline:2px solid #EFEEE9;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Projection Room",
+    "overview": "The page is a darkened screening room. Photography and real product screens are the only light source; the interface is the slate and the caption beneath them. Depth is flat and photography-lit, with hairlines and tonal layers instead of shadow. Arabic is a first-class voice.",
+    "keyCharacteristics": [
+      "Near-black field with cream and soft-white type; one cool blue held in reserve.",
+      "Instrument Serif for display, tracked mono caps for captions.",
+      "Hairline borders at 10% white; tonal layering instead of shadow.",
+      "Small 3-4px corners; no pills or rounded cards.",
+      "Real unretouched screenshots as evidence; generated art disclosed."
+    ],
+    "rules": [
+      { "name": "The Light Is Photography Rule", "body": "Chromatic color belongs to imagery. UI never adds a hue to look branded.", "section": "colors" },
+      { "name": "The 4.5 Floor Rule", "body": "Text on night black never falls below 4.5:1.", "section": "colors" },
+      { "name": "The No-Tracking-In-Arabic Rule", "body": "Any letter-spacing breaks Arabic joins; RTL text sets tracking to 0.", "section": "typography" },
+      { "name": "The Floor Size Rule", "body": "No text under 11px.", "section": "typography" },
+      { "name": "The Hairline Rule", "body": "Separation is a 1px line or a tonal step.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do let photography and real screenshots carry color; keep UI cream, soft white and slate.",
+      "Do use 1px white/10 hairlines and tonal layers for separation.",
+      "Do keep every nonessential loop paused when offscreen and removed under reduced motion.",
+      "Do give every control a 44px hit area and a cream focus ring.",
+      "Do mirror layout and flip arrows in Arabic, with no letter-spacing."
+    ],
+    "donts": [
+      "Don't add gradients on text, glow shadows, glass blur, or colored side borders.",
+      "Don't put rounded cards, pills or icon-grid card rows on the page.",
+      "Don't put text under 11px or below 4.5:1 contrast.",
+      "Don't retouch or mock up real screenshots; disclose generated art with the art note.",
+      "Don't repeat one scroll-reveal on every section; motion is authored moments, not a default."
+    ]
+  }
+}

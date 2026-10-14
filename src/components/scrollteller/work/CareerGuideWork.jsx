@@ -17,7 +17,7 @@ export default function CareerGuideWork({ locale, work }) {
 
       <Section className="py-16 md:py-24">
         <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between">
-          <Label>{c('weightsTitle')}</Label>
+          <Label as="h2">{c('weightsTitle')}</Label>
           <p className="max-w-[32rem] text-[15px] text-cinema-text/65">{c('weights')}</p>
         </div>
 
@@ -32,7 +32,7 @@ export default function CareerGuideWork({ locale, work }) {
               style={{ flexGrow: w.v, flexBasis: 0 }}
             >
               <span className="font-display text-[34px] leading-none md:text-[72px]">{w.v}</span>
-              <span className={`hidden font-mono text-[10px] uppercase tracking-[0.14em] md:block ${i === 0 ? 'text-cinema-bg/70' : 'text-cinema-muted'}`}>
+              <span className={`hidden font-mono text-[11px] uppercase tracking-[0.14em] md:block ${i === 0 ? 'text-cinema-bg/70' : 'text-cinema-muted'}`}>
                 {w.k}
               </span>
             </div>
@@ -53,11 +53,11 @@ export default function CareerGuideWork({ locale, work }) {
       <Section className="py-16 md:py-24">
         <div className="grid gap-12 border-t border-white/15 pt-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <Label>{c('immutableTitle')}</Label>
+            <Label as="h2">{c('immutableTitle')}</Label>
             <p className="mt-6 font-display text-[30px] leading-[1.12] text-cinema-soft md:text-[42px]">{c('immutable')}</p>
           </div>
           <div>
-            <Label>{c('aiTitle')}</Label>
+            <Label as="h2">{c('aiTitle')}</Label>
             <ul className="mt-6">
               {ai.map((a) => (
                 <li key={a} className="border-b border-white/10 py-5 text-[16px] leading-relaxed text-cinema-text/80 first:pt-0">
@@ -70,7 +70,7 @@ export default function CareerGuideWork({ locale, work }) {
       </Section>
 
       <Section className="bg-cinema-bg2 py-20 md:py-28">
-        <Label>{c('checksTitle')}</Label>
+        <Label as="h2">{c('checksTitle')}</Label>
         <p className="mt-6 max-w-[56rem] text-[18px] leading-relaxed text-cinema-text/80 md:text-[21px]">{c('checks')}</p>
       </Section>
 

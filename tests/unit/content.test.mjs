@@ -85,3 +85,10 @@ test('Dhura is labelled as a concept, not a product', () => {
   assert.match(en.work.dhura.status, /not a shipped product/i);
   assert.match(en.dhura.status, /not a shipped product/i);
 });
+
+test('CRMA is labelled pre-launch and discloses its scripted copilot turns', () => {
+  assert.match(en.work.crma.status, /pre-launch/i);
+  assert.match(en.more.items.find((i) => i.id === 'crma').d, /pre-launch/i);
+  assert.match(en.work.crma.ai.disclosure, /Fake model driver/);
+  assert.match(en.work.crma.ai.disclosure, /No live model call/);
+});

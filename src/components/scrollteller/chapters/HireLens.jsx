@@ -39,7 +39,7 @@ export default function HireLens() {
           <ol className="mt-6">
             {ai.map((line, i) => (
               <Reveal as="li" key={line} delay={0.06 * i} className="flex gap-5 border-t border-white/[0.07] py-4 first:border-t-0">
-                <span dir="ltr" className="pt-1 font-mono text-[10.5px] tracking-[0.2em] text-cinema-steel">0{i + 1}</span>
+                <span dir="ltr" className="pt-1 font-mono text-[11px] tracking-[0.2em] text-cinema-steel">0{i + 1}</span>
                 <span className="text-[16px] leading-relaxed text-cinema-text/80 md:text-[18px]">{line}</span>
               </Reveal>
             ))}
@@ -66,7 +66,7 @@ export default function HireLens() {
         <Reveal delay={0.1}>
           <Link
             href={`/${locale}/work/hirelens`}
-            className="inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
+            className="lean inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
           >
             {t('cta')}
             <span aria-hidden="true" className="rtl:-scale-x-100">→</span>

@@ -20,7 +20,7 @@ export default function RakezWork({ locale, work }) {
         image={{
           // Real capture of the live staff login (its brand panel), not generated art.
           src: '/portfolio/work/rakez/app/marketing-performance-dashboard.webp',
-          alt: t('evidence.app.rakez.marketing-performance-dashboard'),
+          alt: '', // decorative: the same capture is captioned in the gallery below
           aspect: 1600 / 1000,
           mobileSrc: '/portfolio/work/rakez/mobile.webp',
           mobileAspect: 780 / 800,
@@ -40,7 +40,7 @@ export default function RakezWork({ locale, work }) {
         <dl className="grid gap-8 border-y border-white/10 py-10 md:grid-cols-3">
           {facts.map((f) => (
             <div key={f.k}>
-              <dt className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-cinema-muted">{f.k}</dt>
+              <dt className="font-mono text-[11px] uppercase tracking-[0.2em] text-cinema-muted">{f.k}</dt>
               <dd className="mt-3 text-[15px] leading-relaxed text-cinema-text/85">{f.v}</dd>
             </div>
           ))}
@@ -48,7 +48,7 @@ export default function RakezWork({ locale, work }) {
       </Section>
 
       <Section className="py-20 md:py-32">
-        <Label>{r('problemTitle')}</Label>
+        <Label as="h2">{r('problemTitle')}</Label>
         <p className="mt-8 max-w-[62rem] font-display text-[34px] leading-[1.08] text-cinema-soft md:text-[clamp(44px,4.6vw,72px)]">
           {r('problem')}
         </p>
@@ -57,7 +57,7 @@ export default function RakezWork({ locale, work }) {
       <Section className="py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <Label>{r('layersTitle')}</Label>
+            <Label as="h2">{r('layersTitle')}</Label>
           </div>
           <ol className="border-t border-white/15">
             {layers.map((l, i) => (
@@ -79,11 +79,11 @@ export default function RakezWork({ locale, work }) {
       </Section>
 
       <Section className="bg-cinema-bg2 py-20 md:py-32">
-        <Label>{r('hardTitle')}</Label>
+        <Label as="h2">{r('hardTitle')}</Label>
         <ul className="mt-12 grid gap-x-16 gap-y-12 md:grid-cols-2">
           {hard.map((h, i) => (
             <li key={h} className="border-s border-white/15 ps-6">
-              <span dir="ltr" className="font-mono text-[10.5px] tracking-[0.2em] text-cinema-muted">
+              <span dir="ltr" className="font-mono text-[11px] tracking-[0.2em] text-cinema-muted">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <p className="mt-3 text-[18px] leading-relaxed text-cinema-text/85 md:text-[21px]">{h}</p>

@@ -16,14 +16,15 @@ export default function AlgoagWork({ locale, work }) {
           {a('title')}
         </h1>
         <div className="mt-10 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[14rem_minmax(0,1fr)]">
-          <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-cinema-cream/80">{a('status')}</p>
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-cinema-cream/80">{a('status')}</p>
           <div>
             <p className="max-w-[40rem] text-[17px] leading-relaxed text-cinema-text/75 md:text-[19px]">{a('body')}</p>
             <a
               href={`mailto:${CONTACT.email}`}
-              className="mt-8 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
+              className="lean mt-8 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
             >
               {a('cta')}
+              <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
             </a>
           </div>
         </div>

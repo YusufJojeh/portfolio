@@ -43,7 +43,7 @@ export default function DhuraWork({ locale, work }) {
               {d('title')}
             </span>
           </h1>
-          <p className="mt-8 inline-block border border-white/20 px-3 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-cream/85">
+          <p className="mt-8 inline-block border border-white/20 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-cream/85">
             {d('status')}
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function DhuraWork({ locale, work }) {
         <ol className="grid gap-px bg-white/10 md:grid-cols-3">
           {principles.map((p, i) => (
             <li key={p.t} className="bg-cinema-bg p-8 md:p-10">
-              <span dir="ltr" className="font-mono text-[10.5px] tracking-[0.18em] text-cinema-muted">
+              <span dir="ltr" className="font-mono text-[11px] tracking-[0.18em] text-cinema-muted">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <h2 className="mt-6 font-display text-[30px] leading-tight text-cinema-soft md:text-[36px]">{p.t}</h2>
@@ -71,9 +71,9 @@ export default function DhuraWork({ locale, work }) {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-20">
           <div>
             <p className="max-w-[40rem] text-[18px] leading-relaxed text-cinema-text/80 md:text-[21px]">{d('lineage')}</p>
-            <div className="mt-8 flex flex-wrap gap-6 font-mono text-[10.5px] uppercase tracking-[0.18em]">
+            <div className="mt-8 flex flex-wrap gap-6 font-mono text-[11px] uppercase tracking-[0.18em]">
               {['rakez', 'hirelens'].map((slug) => (
-                <Link key={slug} href={`/${locale}/work/${slug}`} className="text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft">
+                <Link key={slug} href={`/${locale}/work/${slug}`} className="hit text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft">
                   {workTitle(slug)} <Arrow />
                 </Link>
               ))}

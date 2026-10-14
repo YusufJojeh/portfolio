@@ -2,20 +2,21 @@
 
 import { useCallback, useId, useRef, useState } from 'react';
 import Image from 'next/image';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 /*
  * A wide project card: the copy and a screen list on one side, a large stage
  * on the other. Hovering or focusing a screen name swaps the stage with a
  * short crossfade; the active screen drifts slowly so it reads as footage,
  * not a thumbnail. Even cards mirror the layout so the list has a rhythm.
+ * Reduced motion comes from MotionConfig (MotionRoot): scale and y are
+ * skipped there, so the markup is identical on server and client.
  */
 
 const EASE = [0.22, 1, 0.36, 1];
 
 export default function ProjectCard({ index, title, titleDir = 'ltr', description, note, meta, screens, flip = false }) {
   const [active, setActive] = useState(0);
-  const reduce = useReducedMotion();
   const stageId = useId();
   const tabs = useRef([]);
   const count = screens.length;
@@ -67,13 +68,13 @@ export default function ProjectCard({ index, title, titleDir = 'ltr', descriptio
             <motion.div
               key={shot.src}
               className="absolute inset-0"
-              initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 1.025 }}
-              animate={{ opacity: 1, scale: 1, transition: { duration: reduce ? 0.2 : 0.55, ease: EASE } }}
-              exit={{ opacity: 0, transition: { duration: reduce ? 0.15 : 0.3, ease: EASE } }}
+              initial={{ opacity: 0, scale: 1.025 }}
+              animate={{ opacity: 1, scale: 1, transition: { duration: 0.55, ease: EASE } }}
+              exit={{ opacity: 0, transition: { duration: 0.3, ease: EASE } }}
             >
               <motion.div
-                className="h-full w-full"
-                animate={reduce ? undefined : { scale: [1, 1.035], y: ['0%', '-1.2%'] }}
+                className="relative h-full w-full"
+                animate={{ scale: [1, 1.035], y: ['0%', '-1.2%'] }}
                 transition={{ duration: 9, ease: 'linear' }}
               >
                 <Image
@@ -87,11 +88,11 @@ export default function ProjectCard({ index, title, titleDir = 'ltr', descriptio
             </motion.div>
           </AnimatePresence>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-cinema-bg/70 to-transparent" />
-          <span dir="ltr" className="pointer-events-none absolute bottom-3 end-4 font-mono text-[10.5px] tracking-[0.18em] text-cinema-soft/80">
+          <span dir="ltr" className="pointer-events-none absolute bottom-3 end-4 font-mono text-[11px] tracking-[0.18em] text-cinema-soft/80">
             {String(active + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}
           </span>
         </div>
-        {note && <p className="mt-4 max-w-2xl text-[12.5px] leading-relaxed text-cinema-text/45">{note}</p>}
+        {note && <p className="mt-4 max-w-2xl text-[12.5px] leading-relaxed text-cinema-text/60">{note}</p>}
       </div>
 
       <div

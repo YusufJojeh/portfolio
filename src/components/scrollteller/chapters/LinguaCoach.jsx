@@ -43,7 +43,7 @@ export default function LinguaCoach() {
           <Reveal>
             <Link
               href={`/${locale}/work/linguacoach`}
-              className="mt-8 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
+              className="lean mt-8 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
             >
               {t('cta')}
               <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
@@ -61,7 +61,7 @@ export default function LinguaCoach() {
                 <span className={`font-display leading-none ${i === 5 ? 'text-cinema-soft' : 'text-cinema-text/80'} text-[34px] md:text-[clamp(40px,4.4vw,72px)]`}>
                   {lv.l}
                 </span>
-                <span className="mt-2 truncate font-mono text-[9px] uppercase tracking-[0.14em] text-cinema-muted md:text-[10px]">
+                <span className="mt-2 truncate font-mono text-[11px] uppercase tracking-[0.14em] text-cinema-muted">
                   {lv.n}
                 </span>
               </div>

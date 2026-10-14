@@ -6,6 +6,7 @@ import RakezWork from '@/components/scrollteller/work/RakezWork';
 import HireLensWork from '@/components/scrollteller/work/HireLensWork';
 import LinguaCoachWork from '@/components/scrollteller/work/LinguaCoachWork';
 import ProspectIQWork from '@/components/scrollteller/work/ProspectIQWork';
+import CrmaWork from '@/components/scrollteller/work/CrmaWork';
 import DhuraWork from '@/components/scrollteller/work/DhuraWork';
 import CareerGuideWork from '@/components/scrollteller/work/CareerGuideWork';
 import AlgoagWork from '@/components/scrollteller/work/AlgoagWork';
@@ -15,6 +16,7 @@ const PAGES = {
   hirelens: HireLensWork,
   linguacoach: LinguaCoachWork,
   prospectiq: ProspectIQWork,
+  crma: CrmaWork,
   dhura: DhuraWork,
   careerguide: CareerGuideWork,
   algoag: AlgoagWork,

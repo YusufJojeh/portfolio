@@ -10,6 +10,7 @@ import ProjectCard from './ProjectCard';
 // Real screens, in card order. Case-study projects reuse their work captures;
 // the rest come from local builds and each repo's own Playwright visual suite, on demo data.
 const SHOTS = {
+  crma: { dir: 'work/crma', files: ['pipeline', 'copilot-approval', 'action-center', 'workflow-builder', 'rtl-pipeline'] },
   careerguide: { dir: 'work/careerguide', files: ['home', 'login'] },
   algoag: { dir: 'work/algoag', files: ['home', 'login'] },
   restocafe: { dir: 'more/restocafe', files: ['dashboard', 'kitchen', 'order-create', 'tables', 'invoice', 'reports'] },
@@ -21,17 +22,17 @@ const SHOTS = {
 function Meta({ item, t, locale }) {
   if (item.status) {
     return (
-      <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">{t(item.status)}</span>
+      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">{t(item.status)}</span>
     );
   }
   const source = SOURCE_LINKS[item.id];
   if (!item.href && !source) return null;
   return (
-    <span className="flex gap-5 font-mono text-[10.5px] uppercase tracking-[0.18em]">
+    <span className="flex gap-5 font-mono text-[11px] uppercase tracking-[0.18em]">
       {item.href && (
         <Link
           href={`/${locale}/work/${item.href}`}
-          className="text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft"
+          className="hit text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft"
         >
           {t('caseStudy')} <span aria-hidden="true" className="inline-block rtl:-scale-x-100">→</span>
         </Link>
@@ -41,7 +42,7 @@ function Meta({ item, t, locale }) {
           href={source}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
+          className="hit text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
         >
           {t('source')} <span aria-hidden="true">↗</span>
         </a>

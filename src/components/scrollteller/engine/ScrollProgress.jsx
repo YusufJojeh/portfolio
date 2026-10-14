@@ -55,7 +55,7 @@ export default function ScrollProgress({ showRail = true }) {
                     type="button"
                     onClick={() => jump(c.id)}
                     aria-current={on ? 'step' : undefined}
-                    className="group flex w-full items-center justify-end gap-2 font-mono text-[10px] tracking-[0.2em] text-cinema-steel transition-colors duration-200 hover:text-cinema-cream"
+                    className="group flex w-full items-center justify-end gap-2 font-mono text-[11px] tracking-[0.2em] text-cinema-steel transition-colors duration-200 hover:text-cinema-cream"
                   >
                     <span className="whitespace-nowrap opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
                       {t(`chapters.${c.key}`)}

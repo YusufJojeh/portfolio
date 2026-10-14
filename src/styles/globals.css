@@ -103,8 +103,108 @@
     color: #090b0f;
   }
   .cinema-root :focus-visible {
-    outline: 1px solid #efeee9;
+    outline: 2px solid #efeee9;
     outline-offset: 4px;
+  }
+}
+
+/* Inline links and small controls keep their drawn size; the hit area grows past it to 44px. */
+.cinema-root .hit {
+  position: relative;
+}
+.cinema-root .hit::after {
+  content: '';
+  position: absolute;
+  inset: -0.9rem -0.6rem;
+}
+
+/* Primary and secondary buttons: the arrow leans toward its destination, the press settles.
+   Movement is opt-in (no-preference), so no more specific rule can leak it past reduced motion. */
+.cinema-root .lean:active {
+  transform: translateY(1px);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cinema-root .lean > [aria-hidden='true'] {
+    display: inline-block;
+    transition: translate 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cinema-root .lean:hover > [aria-hidden='true'],
+  .cinema-root .lean:focus-visible > [aria-hidden='true'] {
+    translate: 3px 0;
+  }
+  [dir='rtl'] .cinema-root .lean:hover > [aria-hidden='true'],
+  [dir='rtl'] .cinema-root .lean:focus-visible > [aria-hidden='true'] {
+    translate: -3px 0;
+  }
+}
+
+/* The hairline under SCROLL draws downward once per second or so, then rests. */
+@keyframes scroll-cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cinema-root .scroll-cue {
+    animation: scroll-cue 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+  .cinema-root .scroll-cue[data-paused='true'] {
+    animation-play-state: paused;
+  }
+}
+
+/* A case study opens like a lens finding focus: the frame resolves from soft and dim,
+   then the copy settles in (fill is backwards only, so scroll-driven inline styles take over after). CSS only, so it plays without JS, and it runs once per visit.
+   Reduced motion keeps a plain fade of the copy and drops the rest. */
+@keyframes work-develop {
+  from {
+    filter: blur(10px) brightness(0.55);
+  }
+  to {
+    filter: blur(0) brightness(1);
+  }
+}
+@keyframes work-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes work-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cinema-root .work-develop {
+    animation: work-develop 1100ms cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  }
+  .cinema-root .work-rise {
+    animation: work-rise 700ms cubic-bezier(0.16, 1, 0.3, 1) 180ms backwards;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinema-root .work-rise {
+    animation: work-fade 300ms ease-out backwards;
   }
 }
 
@@ -115,6 +215,25 @@
   .animate-marquee {
     animation: none;
   }
+}
+
+/* The site's own motion switch (site/MotionToggle) mirrors prefers-reduced-motion: reduce
+   for everything CSS drives. Framer-motion and the pinned scenes read the same switch in JS. */
+html[data-reduce-motion] {
+  scroll-behavior: auto;
+}
+html[data-reduce-motion] .animate-marquee,
+html[data-reduce-motion] .cinema-root .scroll-cue,
+html[data-reduce-motion] .cinema-root .work-develop {
+  animation: none;
+}
+html[data-reduce-motion] .cinema-root .work-rise {
+  animation: work-fade 300ms ease-out backwards;
+}
+html[data-reduce-motion] .cinema-root .lean > [aria-hidden='true'],
+html[data-reduce-motion] [class*='motion-safe:'] {
+  animation: none !important;
+  translate: none !important;
 }
 
 /* StoryFrame focal-point positioning (see scrollteller/engine/StoryFrame.jsx) */
@@ -136,6 +255,10 @@
 html[dir='rtl'] .cinema-root .font-mono:not([dir='ltr']) {
   letter-spacing: 0;
 }
+/* Arabic script reads smaller than Latin at the same size, so the 11px labels step up. */
+html[dir='rtl'] .cinema-root .font-mono[class*='text-[11px]']:not([dir='ltr']) {
+  font-size: 12.5px;
+}
 
 /* Arabic headings use Aref Ruqaa. Latin words inside them stay in Instrument
    Serif (its webfont covers Latin only); the Ruqaa face must come before
@@ -146,6 +269,18 @@ html[dir='rtl'] .font-display {
   line-height: 1.5 !important;
   /* Any tracking breaks Ruq'ah's contextual joins (e.g. the medial ain in تعقيد). */
   letter-spacing: 0 !important;
+}
+
+/* Your name in Arabic is set in the same Ruq'ah hand as the Arabic headings. */
+html[dir='rtl'] .name-script {
+  font-family: var(--font-arabic-display), 'IBM Plex Sans Arabic', serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+/* Ruq'ah reads small at the 15px wordmark size, so the nav and footer name step up. */
+html[dir='rtl'] .name-script[class*='text-[15px]'] {
+  font-size: 19px;
 }
 
 /* The legacy scrollbar thumb uses the old brand colours; cinematic pages get steel on black. */

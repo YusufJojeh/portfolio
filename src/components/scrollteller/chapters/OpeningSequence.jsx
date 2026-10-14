@@ -10,6 +10,8 @@ import CinematicBackground from '../engine/CinematicBackground';
 import ChapterLabel from '../engine/ChapterLabel';
 import { useIsMobile, useReducedMotionPref, useStage } from '../engine/useMedia';
 import { EASE } from '../engine/motion';
+import { useRevealOnFocus } from '../engine/useRevealOnFocus';
+import { usePointerWhenVisible, useWhileVisible } from '../engine/useWhileVisible';
 
 /*
  * Chapters 00–02 share one pinned stage, so every change of scene is a real
@@ -18,7 +20,11 @@ import { EASE } from '../engine/motion';
  *   00 Opening     portrait + name → copy leaves → camera push → Yusuf fades
  *   01 Operations  the city settles in, signals appear one by one, city dims
  *   02 Rakez       the Rakez frame crossfades over the dimmed city, the camera
- *                  pushes toward the system, then the stage fades to black
+ *                  pushes toward the system, then the frame dims while the
+ *                  list stays readable and leaves with the page
+ *
+ * The gap between the hero copy leaving and the next heading arriving is
+ * kept short: a beat of image alone, not a screen of it.
  *
  * All values below are positions on the sequence's 0→1 scroll progress.
  */
@@ -43,14 +49,14 @@ const RAKEZ_OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0.7) 34%, rgba(9,11,15,0.3) 64%, rgba(9,11,15,0.45) 100%), linear-gradient(0deg, rgba(9,11,15,0.85) 0%, rgba(9,11,15,0) 40%), rgba(9,11,15,0.25)';
 
 const MARKERS = [
-  { id: 'opening', chapter: '00', from: 0, to: 0.24 },
-  { id: 'real-operations', chapter: '01', from: 0.24, to: 0.62 },
+  { id: 'opening', chapter: '00', from: 0, to: 0.18 },
+  { id: 'real-operations', chapter: '01', from: 0.18, to: 0.62 },
   { id: 'rakez', chapter: '02', from: 0.7, to: 1 },
 ];
 
 /* ------------------------------------------------------------------ */
 
-function Marquee({ text, className = '' }) {
+function Marquee({ text, paused = false, className = '' }) {
   const run = (
     <span className="flex shrink-0 items-center">
       {[0, 1].map((i) => (
@@ -63,7 +69,7 @@ function Marquee({ text, className = '' }) {
   );
   return (
     <div dir="ltr" aria-hidden="true" className={`pointer-events-none select-none overflow-hidden ${className}`}>
-      <div className="animate-marquee flex w-max whitespace-nowrap">
+      <div className="animate-marquee flex w-max whitespace-nowrap" style={{ animationPlayState: paused ? 'paused' : 'running' }}>
         {run}
         {run}
       </div>
@@ -76,7 +82,7 @@ function Enter({ delay = 0, className = '', children }) {
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: EASE, delay }}
+      transition={{ duration: 0.7, ease: EASE, delay }}
       className={className}
     >
       {children}
@@ -91,21 +97,22 @@ function HeroCopy({ p }) {
   const locale = useLocale();
   const opacity = useStage(p, [0, 0.07], [1, 0], 1);
   const y = useStage(p, [0, 0.07], [0, -24], 0);
+  const pointerEvents = usePointerWhenVisible(opacity);
   const lines = t.raw('headlineLines');
   const mobileLines = t.raw('headlineLinesMobile');
 
   return (
     <motion.div
-      style={{ opacity, y }}
+      style={{ opacity, y, pointerEvents }}
       className="absolute inset-x-0 bottom-0 z-30 px-6 pb-20 md:px-12 md:pb-[15svh] lg:px-16"
     >
       <div className="mr-auto max-w-[36rem]">
-        <Enter delay={0.5}>
-          <p className="font-mono text-[10.5px] uppercase tracking-[0.26em] text-cinema-cream/75 md:text-[11px]">
+        <Enter delay={0.2}>
+          <p className="font-mono text-[11px] uppercase tracking-[0.26em] text-cinema-cream/75">
             {t('role')}
           </p>
         </Enter>
-        <Enter delay={0.65}>
+        <Enter delay={0.3}>
           <h1 className="mt-4 font-display text-[46px] font-normal leading-[0.98] tracking-[-0.01em] text-cinema-soft md:mt-5 md:text-[clamp(52px,4.6vw,68px)]">
             <span className="md:hidden">
               {mobileLines.map((l) => (
@@ -119,23 +126,23 @@ function HeroCopy({ p }) {
             </span>
           </h1>
         </Enter>
-        <Enter delay={0.8}>
+        <Enter delay={0.42}>
           <p className="mt-4 max-w-[30rem] text-[14.5px] leading-relaxed text-cinema-text/70 md:mt-6 md:text-[16px]">
             <span className="md:hidden">{t('supportShort')}</span>
             <span className="hidden md:inline">{t('support')}</span>
           </p>
         </Enter>
-        <Enter delay={0.95} className="mt-6 flex flex-wrap items-center gap-3 md:mt-8">
+        <Enter delay={0.54} className="mt-6 flex flex-wrap items-center gap-3 md:mt-8">
           <Link
             href={`/${locale}#rakez`}
-            className="inline-flex items-center gap-2 rounded-[3px] bg-cinema-cream px-5 py-3 text-[13.5px] font-medium text-cinema-bg transition-colors duration-200 hover:bg-cinema-soft"
+            className="lean inline-flex items-center gap-2 rounded-[3px] bg-cinema-cream px-5 py-3 text-[13.5px] font-medium text-cinema-bg transition-colors duration-200 hover:bg-cinema-soft"
           >
             {t('ctaPrimary')}
             <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
           </Link>
           <Link
             href={`/${locale}#closing`}
-            className="inline-flex items-center rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
+            className="lean inline-flex items-center rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
           >
             {t('ctaSecondary')}
           </Link>
@@ -148,14 +155,15 @@ function HeroCopy({ p }) {
 function HeroBaseline({ p }) {
   const t = useTranslations('final.opening');
   const opacity = useStage(p, [0, 0.05], [1, 0], 1);
+  const showing = useWhileVisible(opacity);
   const micro = t.raw('microcopy');
   return (
     <motion.div
       style={{ opacity }}
-      className="absolute inset-x-0 bottom-0 z-30 px-6 pb-6 md:px-12 md:pb-7 lg:px-16"
+      className="pointer-events-none absolute inset-x-0 bottom-0 z-30 px-6 pb-6 md:px-12 md:pb-7 lg:px-16"
     >
-      <Enter delay={1.2}>
-        <div className="flex items-center justify-between gap-6 border-t border-white/10 pt-4 font-mono text-[10px] uppercase tracking-[0.22em] text-cinema-muted">
+      <Enter delay={0.8}>
+        <div className="flex items-center justify-between gap-6 border-t border-white/10 pt-4 font-mono text-[11px] uppercase tracking-[0.22em] text-cinema-muted">
           <span className="hidden md:inline">
             {micro.map((m, i) => (
               <span key={m}>
@@ -167,7 +175,7 @@ function HeroBaseline({ p }) {
           <span className="hidden lg:inline">{t('location')}</span>
           <span className="flex items-center gap-2.5">
             {t('scroll')}
-            <span aria-hidden="true" className="block h-3 w-px bg-cinema-cream/50" />
+            <span aria-hidden="true" data-paused={!showing} className="scroll-cue block h-3 w-px bg-cinema-cream/50" />
           </span>
         </div>
       </Enter>
@@ -179,11 +187,12 @@ function HeroBaseline({ p }) {
 function HeroPortrait({ p, reduced }) {
   const t = useTranslations('final.opening');
   const mobile = useIsMobile();
-  const scale = useStage(p, [0, 0.1, 0.24], [1.06, 1, 1.045], 1);
-  const y = useStage(p, [0, 0.1], [0, mobile ? -15 : -40], 0);
-  const marquee = useStage(p, [0.03, 0.12], [1, 0], 1);
-  const dim = useStage(p, [0.1, 0.19], [0, 0.55], 0);
-  const fade = useStage(p, [0.15, 0.23], [1, 0], 1);
+  const scale = useStage(p, [0, 0.08, 0.2], [1.06, 1, 1.045], 1);
+  const y = useStage(p, [0, 0.08], [0, mobile ? -15 : -40], 0);
+  const marquee = useStage(p, [0.02, 0.09], [1, 0], 1);
+  const marqueeOn = useWhileVisible(marquee);
+  const dim = useStage(p, [0.07, 0.15], [0, 0.55], 0);
+  const fade = useStage(p, [0.12, 0.19], [1, 0], 1);
 
   const camera = { scale, y, transformOrigin: '72% 30%' };
   const cameraClass = 'absolute inset-x-0 top-0 h-[calc(100%+48px)] will-change-transform';
@@ -197,8 +206,9 @@ function HeroPortrait({ p, reduced }) {
 
       <motion.div style={{ opacity: marquee }} className="absolute inset-x-0 top-[15svh] z-10 md:top-[15svh]">
         <Marquee
+          paused={!marqueeOn}
           text={t('name')}
-          className="font-grotesk text-[26vw] font-semibold leading-none tracking-[-0.035em] text-cinema-cream md:text-[clamp(88px,15.5vw,280px)]"
+          className="name-script font-grotesk text-[26vw] font-semibold leading-none tracking-[-0.035em] text-cinema-cream md:text-[clamp(88px,15.5vw,280px)]"
         />
       </motion.div>
 
@@ -231,10 +241,10 @@ function HeroPortrait({ p, reduced }) {
 function CityBackground({ p }) {
   const t = useTranslations('final.operations');
   const mobile = useIsMobile();
-  const scale = useStage(p, [0.14, 0.26, 0.52], [1.1, 1.05, 1], 1);
+  const scale = useStage(p, [0.11, 0.22, 0.52], [1.1, 1.05, 1], 1);
   const y = useStage(p, [0.26, 0.52], [0, mobile ? -15 : -40], 0);
   // Arrives from dark as Yusuf leaves, dims again before Rakez.
-  const dim = useStage(p, [0.17, 0.3, 0.5, 0.62], [0.7, 0, 0, 0.72], 0);
+  const dim = useStage(p, [0.13, 0.24, 0.5, 0.62], [0.7, 0, 0, 0.72], 0);
 
   return (
     <div className="absolute inset-0">
@@ -265,12 +275,12 @@ function CityImage({ alt }) {
 }
 
 function Signal({ p, i, children }) {
-  const at = 0.34 + i * 0.035;
+  const at = 0.27 + i * 0.04;
   const opacity = useStage(p, [at, at + 0.03], [0, 1], 1);
   const x = useStage(p, [at, at + 0.03], [-12, 0], 0);
   return (
     <motion.li style={{ opacity, x }} className="flex gap-4 border-t border-white/10 py-3.5 md:py-4">
-      <span dir="ltr" className="pt-0.5 font-mono text-[10.5px] tracking-[0.2em] text-cinema-steel">
+      <span dir="ltr" className="pt-0.5 font-mono text-[11px] tracking-[0.2em] text-cinema-steel">
         0{i + 1}
       </span>
       <span className="text-[15px] leading-snug text-cinema-text/85 md:text-[16px]">{children}</span>
@@ -281,9 +291,9 @@ function Signal({ p, i, children }) {
 function OperationsCopy({ p }) {
   const t = useTranslations('final.operations');
   const c = useTranslations('final.chapters');
-  const headIn = useStage(p, [0.27, 0.32], [0, 1], 1);
-  const headY = useStage(p, [0.27, 0.33], [28, 0], 0);
-  const bodyIn = useStage(p, [0.3, 0.35], [0, 1], 1);
+  const headIn = useStage(p, [0.18, 0.23], [0, 1], 1);
+  const headY = useStage(p, [0.18, 0.24], [28, 0], 0);
+  const bodyIn = useStage(p, [0.21, 0.26], [0, 1], 1);
   const out = useStage(p, [0.53, 0.58], [1, 0], 1);
   const outY = useStage(p, [0.53, 0.58], [0, -24], 0);
   const signals = t.raw('signals');
@@ -291,7 +301,7 @@ function OperationsCopy({ p }) {
   return (
     <motion.div
       style={{ opacity: out, y: outY }}
-      className="absolute inset-0 z-30 flex items-center px-6 pt-16 md:px-12 lg:px-16"
+      className="pointer-events-none absolute inset-0 z-30 flex items-center px-6 pt-16 md:px-12 lg:px-16"
     >
       <div className="mr-auto w-full max-w-[34rem]">
         <motion.div style={{ opacity: headIn, y: headY }}>
@@ -359,16 +369,18 @@ function RakezCopy({ p }) {
   const titleOut = useStage(p, [0.82, 0.86], [1, 0], 1);
   const listIn = useStage(p, [0.85, 0.89], [0, 1], 1);
   const listY = useStage(p, [0.85, 0.9], [24, 0], 0);
-  const out = useStage(p, [0.955, 0.99], [1, 0], 1);
+  // Only the list layer holds a link; the layers above the hero must not swallow its clicks.
+  const listPointer = usePointerWhenVisible(listIn);
   const items = t.raw('items');
   const stack = t.raw('stack');
+  const revealList = useRevealOnFocus(p, [0.89, 1], 0.92);
 
   return (
-    <motion.div style={{ opacity: out }} className="absolute inset-0 z-30 px-6 md:px-12 lg:px-16">
+    <div className="pointer-events-none absolute inset-0 z-30 px-6 md:px-12 lg:px-16">
       {/* Arrival: the title over the full frame. */}
       <motion.div
         style={{ opacity: titleIn, y: titleY }}
-        className="absolute inset-x-6 bottom-[14svh] md:inset-x-12 lg:inset-x-16"
+        className="pointer-events-none absolute inset-x-6 bottom-[14svh] md:inset-x-12 lg:inset-x-16"
       >
         <motion.div style={{ opacity: titleOut }} className="mr-auto max-w-[36rem]">
           <ChapterLabel index="02">{c('02')}</ChapterLabel>
@@ -382,7 +394,8 @@ function RakezCopy({ p }) {
 
       {/* After the push: what the system handles. */}
       <motion.div
-        style={{ opacity: listIn, y: listY }}
+        style={{ opacity: listIn, y: listY, pointerEvents: listPointer }}
+        onFocus={revealList}
         className="absolute inset-0 flex items-center px-6 pb-10 pt-20 md:px-12 md:pb-16 lg:px-16"
       >
         <div className="mr-auto w-full max-w-[34rem]">
@@ -399,19 +412,19 @@ function RakezCopy({ p }) {
               </li>
             ))}
           </ul>
-          <p dir="ltr" className="mt-4 font-mono text-[10px] leading-relaxed tracking-[0.1em] text-cinema-muted md:mt-5 md:text-[10.5px] md:tracking-[0.12em] rtl:text-right">
+          <p dir="ltr" className="mt-4 font-mono text-[11px] leading-relaxed tracking-[0.1em] text-cinema-muted md:mt-5 md:tracking-[0.12em] rtl:text-right">
             {stack.join('  ·  ')}
           </p>
           <Link
             href={`/${locale}/work/rakez`}
-            className="mt-5 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60 md:mt-7"
+            className="lean mt-5 inline-flex items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60 md:mt-7"
           >
             {t('cta')}
             <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
           </Link>
         </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -486,7 +499,7 @@ function RakezStill() {
           </li>
         ))}
       </ul>
-      <Link href={`/${locale}/work/rakez`} className="mt-8 inline-flex rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] text-cinema-text">
+      <Link href={`/${locale}/work/rakez`} className="lean mt-8 inline-flex rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] text-cinema-text">
         {t('cta')}
       </Link>
     </div>

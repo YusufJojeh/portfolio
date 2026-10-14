@@ -18,6 +18,8 @@
     "chapters": "Chapters"
   },
   "chapters": {
+    "10": "More systems",
+    "11": "Closing",
     "00": "Opening",
     "01": "Real operations",
     "02": "Rakez",
@@ -27,9 +29,7 @@
     "06": "ProspectIQ",
     "07": "Dhura",
     "08": "Applied AI",
-    "09": "Experience",
-    "10": "More systems",
-    "11": "Closing"
+    "09": "Experience"
   },
   "art": {
     "note": "Art direction. Interface and figures are illustrative, not product data."
@@ -274,34 +274,34 @@
     "education": "BSc, Information Engineering & Distributed Systems — Al-Shahbaa University, 2021–2026",
     "items": [
       {
-        "period": "Dec 2025 — Aug 2026",
-        "role": "Backend Developer, SaaS & AI Systems",
-        "company": "Rakez Company",
-        "d": "Backend services and APIs for AI-assisted CRM modules in Laravel and NestJS, with LLM features wired into production workflows."
+        "period": "Sep 2026 — Present",
+        "role": "Backend Developer",
+        "company": "ArchitWeb",
+        "d": "PHP/MySQL and GraphQL work on operational commerce and POS systems: payment-gateway modernization, refund-error handling, safer wallet-refund retries, and idempotent, indexed reporting APIs."
       },
       {
-        "period": "Nov 2025 — Jan 2026",
-        "role": "Full-Stack Developer, CRM Systems",
+        "period": "Jan 2025 — Aug 2026",
+        "role": "AI & CRM Specialist / Full-Stack Developer",
+        "company": "Rakez Real Estate Company",
+        "d": "Laravel/Vue features and backend APIs for a Saudi real-estate ERP/CRM covering leads, sales, contracts, commissions and reporting, with authorization, background processing, integrations and AI-assisted workflows."
+      },
+      {
+        "period": "2025 — 2026",
+        "role": "Full-Stack Developer",
         "company": "Business Flow",
-        "d": "Backend-heavy CRM systems and operational dashboards with role-based access and structured validation."
+        "d": "NestJS/TypeScript tenant-aware SaaS APIs, role-based business workflows, validation, database structures and integrations with React dashboards."
       },
       {
         "period": "Jan 2025 — Nov 2025",
-        "role": "Backend Developer, iLogistics SaaS",
+        "role": "Backend Developer, iLogistics",
         "company": "Mermez",
-        "d": "REST APIs for a multi-tenant logistics platform: JWT authentication, role-based access, tracking, reporting and query tuning."
-      },
-      {
-        "period": "2024 — 2025",
-        "role": "Full-Stack Developer, freelance",
-        "company": "Mytrixa",
-        "d": "Business requirements turned into APIs, schemas, admin panels and reporting tools for several clients."
+        "d": "Laravel/MySQL logistics APIs and workflows for shipment tracking, authentication and reporting, with faster recurring queries through indexing, query refinement and Redis caching."
       },
       {
         "period": "2022 — Present",
-        "role": "Systems Analyst",
-        "company": "Self-employed",
-        "d": "Requirements, data models and workflow documentation, written before implementation started."
+        "role": "Independent Software Engineer",
+        "company": "Independent",
+        "d": "Custom applications and technical prototypes across SaaS, business operations and AI-enabled workflows, from backend design and APIs through testing and integration."
       }
     ]
   },
@@ -313,6 +313,13 @@
     "onRequest": "Details on request",
     "inProgress": "Write-up in progress",
     "items": [
+      {
+        "id": "crma",
+        "t": "CRMA",
+        "d": "A multi-tenant CRM where AI agents propose and people approve. Pre-launch.",
+        "weight": "lead",
+        "href": "crma"
+      },
       {
         "id": "careerguide",
         "t": "CareerGuide AI",
@@ -401,6 +408,14 @@
         "content-studio": "Content creation studio",
         "social-studio": "Social media studio",
         "register": "Account and brand setup"
+      },
+      "crma": {
+        "note": "Captured from a local build on seeded, sanitised demo data. Not deployed to production.",
+        "pipeline": "Deal pipeline",
+        "copilot-approval": "Copilot approval",
+        "action-center": "AI Action Center",
+        "workflow-builder": "Workflow builder",
+        "rtl-pipeline": "Arabic pipeline"
       }
     }
   },
@@ -416,7 +431,9 @@
     "role": "Backend & Business Systems Engineer",
     "location": "Aleppo, Syria · Remote",
     "rights": "All rights reserved.",
-    "top": "Back to top"
+    "top": "Back to top",
+    "motion": "Reduce motion",
+    "motionSystem": "Your system already asks for reduced motion"
   },
   "work": {
     "back": "All work",
@@ -976,6 +993,352 @@
           "admin-audit": "Admin audit log"
         }
       }
+    },
+    "crma": {
+      "kicker": "Case study · Multi-tenant SaaS",
+      "title": "CRMA",
+      "lede": "A multi-tenant CRM where AI agents propose and people approve.",
+      "status": "Pre-launch · not in production",
+      "heroAlt": "CRMA copilot paused on a proposed deal stage change, with the field diff, the reason, and Approve and Reject buttons",
+      "calloutLabel": "The run is paused here",
+      "summary": "CRMA is a multi-tenant CRM built on Laravel 12 and React 19. AI agents can search, research and draft, but they can never change data on their own. Every write becomes a proposal with a field-level diff, a stated reason and a risk class, and the agent run pauses until a person approves, edits or rejects it.",
+      "facts": [
+        {
+          "k": "Role",
+          "v": "Repository owner and engineering lead, with AI pair programming"
+        },
+        {
+          "k": "Domain",
+          "v": "B2B sales CRM in Arabic and English"
+        },
+        {
+          "k": "Surfaces",
+          "v": "Web app, versioned REST API and an MCP server"
+        },
+        {
+          "k": "Status",
+          "v": "Pre-launch. Not deployed to production"
+        }
+      ],
+      "problemTitle": "The problem",
+      "problem": [
+        "Sales teams want AI help, but a model with write access to shared customer records is a liability. One wrong stage change or outbound message reaches real people.",
+        "Most AI features in a CRM either stay read-only and add little, or act on their own and add risk.",
+        "Teams in the Gulf need a native Arabic, right-to-left interface, not a translated afterthought."
+      ],
+      "modules": {
+        "t": "Core modules",
+        "d": "One workspace for the whole pipeline. Every screen here is the running application on seeded demo data.",
+        "tablist": "CRMA modules",
+        "items": {
+          "pipeline": {
+            "t": "Deal pipeline",
+            "d": "Kanban stages with a rule-based health score on every card, and a review strip that counts stale, stuck and unscheduled deals.",
+            "alt": "Deal pipeline with Kanban stages, health scores on each card and the pipeline review strip"
+          },
+          "deal-workspace": {
+            "t": "Deal workspace",
+            "d": "Key facts, stage history and next steps, with a health score that lists each rule that cost points.",
+            "alt": "Deal workspace with deal health, key facts and next steps"
+          },
+          "contacts": {
+            "t": "Contacts",
+            "d": "People and companies, scoped to the organisation that owns them.",
+            "alt": "Contacts list"
+          },
+          "leads": {
+            "t": "Leads",
+            "d": "Scored leads from every intake channel, ready to qualify or convert.",
+            "alt": "Leads list with scores and sources"
+          },
+          "tasks": {
+            "t": "Tasks",
+            "d": "Follow-ups linked to the deal, lead or contact they belong to.",
+            "alt": "Tasks list"
+          },
+          "workflows": {
+            "t": "Workflows",
+            "d": "Automations built in a visual builder and validated before they can go live.",
+            "alt": "Workflows list"
+          }
+        }
+      },
+      "flow": {
+        "t": "How work moves through the system",
+        "d": "Event-driven. A record change can start a workflow, the AI reads freely, and every write it wants waits for a person.",
+        "step": "Step",
+        "steps": [
+          {
+            "t": "Intake",
+            "d": "Leads arrive from Meta lead ads, WhatsApp, web forms and CSV import.",
+            "alt": "Leads list"
+          },
+          {
+            "t": "Record and score",
+            "d": "Each lead becomes a record with a rule-based score, and every deal carries a health score. The numbers come from CRM data, not from a model.",
+            "alt": "Pipeline with deal health scores"
+          },
+          {
+            "t": "Automate",
+            "d": "A record event starts a workflow. The graph is validated before it can be activated, and its expressions use a typed DSL instead of eval().",
+            "alt": "Workflow builder: trigger, condition, two task branches"
+          },
+          {
+            "t": "Propose",
+            "d": "The copilot reads and searches freely. Anything that would change data becomes a proposal with a diff, a reason and a risk class, and it expires after 72 hours by default.",
+            "alt": "Copilot proposing a new task"
+          },
+          {
+            "t": "Decide",
+            "d": "A person approves, edits or rejects it in the AI Action Center. Only low and medium risk proposals can be approved together.",
+            "alt": "AI Action Center with two proposals waiting for review"
+          },
+          {
+            "t": "Execute and resume",
+            "d": "Only an approved action runs. The paused agent run then resumes with its context intact, and the proposal moves to its final tab in the Action Center."
+          }
+        ]
+      },
+      "arch": {
+        "t": "System architecture",
+        "d": "A modular monolith. Every box maps to code or configuration in the repository.",
+        "tiers": {
+          "surfaces": {
+            "t": "Surfaces",
+            "d": "One codebase, four ways in.",
+            "items": [
+              "Inertia v2 · React 19",
+              "REST /api/v1 · 244 routes",
+              "AI API · 41 routes",
+              "MCP server · OAuth 2.1"
+            ]
+          },
+          "edge": {
+            "t": "Edge and policy",
+            "d": "Scoped to a tenant and checked against a policy before any domain code runs.",
+            "items": [
+              "nginx",
+              "26 middleware",
+              "Organisation scope",
+              "49 policies",
+              "Rate limits",
+              "Idempotency keys"
+            ]
+          },
+          "app": {
+            "t": "Application",
+            "d": "Laravel 12 on PHP 8.3, split by domain.",
+            "items": [
+              "CRM domains",
+              "Workflow engine",
+              "Pipeline intelligence",
+              "Agent runtime · 19 tools",
+              "Model router",
+              "Hybrid knowledge retrieval"
+            ]
+          },
+          "async": {
+            "t": "Async and realtime",
+            "d": "Queues split by workload, a scheduler and WebSockets.",
+            "items": [
+              "Redis 7",
+              "Horizon queues",
+              "Reverb WebSockets",
+              "Scheduler"
+            ]
+          },
+          "data": {
+            "t": "Data",
+            "d": "One relational store, scoped by organisation.",
+            "items": [
+              "MySQL 8",
+              "150 models",
+              "168 migrations"
+            ]
+          }
+        },
+        "deliveryT": "Delivery",
+        "delivery": "Docker Compose services, a GitHub Actions pipeline for tests, lint and deploy, and a release script that switches an atomic symlink and rolls back when the health check fails."
+      },
+      "ai": {
+        "t": "Governed AI: propose, review, execute",
+        "d": "The agent runtime pauses the run, shows a field-level diff with the reason and the risk, and resumes only after a human decision.",
+        "quote": "Reads run immediately. Writes wait for a person.",
+        "gate": {
+          "agent": "Deal & Pipeline agent",
+          "replayOf": "Illustrative replay",
+          "runLabel": "Agent run",
+          "steps": {
+            "started": "Started",
+            "searched": "Searched the CRM",
+            "proposed": "Proposed a stage change",
+            "waiting": "Waiting for your approval",
+            "approved": "Approved · stage changed",
+            "resumed": "Run resumed with its context",
+            "rejected": "Rejected · nothing changed"
+          },
+          "proposed": "Proposed action",
+          "changesData": "Changes data",
+          "needsReview": "Needs review",
+          "done": "Approved",
+          "rejected": "Rejected",
+          "field": "Field",
+          "current": "Current",
+          "proposedCol": "Proposed",
+          "approve": "Approve",
+          "reject": "Reject",
+          "replay": "Replay",
+          "illustrative": "An illustrative replay of the copilot screen below. The proposal, its fields and its reason are copied from that screen; the timing is not. Record content stays in English, as it does in the app."
+        },
+        "risk": {
+          "t": "Risk classes",
+          "d": "Every tool is classed by its consequence, not by its name.",
+          "classes": [
+            "Runs immediately",
+            "Becomes a proposal",
+            "Becomes a proposal",
+            "Always needs approval",
+            "Needs approval, never in bulk"
+          ],
+          "note": "Bulk approval is offered only for low and medium risk. Proposals expire after 72 hours by default."
+        },
+        "screens": {
+          "approval": "Copilot paused on a proposed stage change",
+          "actions": "AI Action Center with risk labels and expiry",
+          "inbox": "AI Inbox, filled by the hourly proactive scanner",
+          "mcp": "MCP connectors for external AI tools"
+        },
+        "disclosureT": "How these screens were made",
+        "disclosure": "The copilot screens use the project’s deterministic Fake model driver, the same approach as its end-to-end tests. Only the model’s choice of tool calls was scripted. Tool execution, policy checks, risk classification, proposal creation and the run pause are the real application code. No live model call was made."
+      },
+      "analytics": {
+        "t": "Analytics that are computed, not guessed",
+        "d": "Deal health, pipeline review and lead scores are deterministic rules over CRM data. The AI can explain a number; it does not invent one.",
+        "calloutLabel": "Stated on the screen",
+        "signalsT": "Pipeline review",
+        "signalsD": "Eight rule-based signals, recounted over the open deals each time the review runs.",
+        "signals": [
+          "Close date passed",
+          "Stale",
+          "Stuck in stage",
+          "No next step",
+          "Commitments due",
+          "Closing soon",
+          "No contact",
+          "Recently advanced"
+        ],
+        "screens": {
+          "deal": "Deal workspace: the health score and the rule that cost points",
+          "dashboard": "Dashboard",
+          "reports": "Reports"
+        },
+        "note": "Figures in these screens are seeded demo values, not business results."
+      },
+      "security": {
+        "t": "Security, tenancy and access control",
+        "d": "Defence in depth, enforced at the middleware, policy and validation layers, and covered by tests.",
+        "core": "Data",
+        "layers": [
+          {
+            "t": "Identity",
+            "d": "TOTP two-factor sign-in, OIDC single sign-on, SCIM provisioning, session management and IP allowlists."
+          },
+          {
+            "t": "Request hygiene",
+            "d": "Rate limiting, idempotency keys and security headers."
+          },
+          {
+            "t": "Tenant isolation",
+            "d": "Organisation scoping, plus validation rules that reject a reference to another tenant’s records."
+          },
+          {
+            "t": "Authorisation",
+            "d": "Roles per organisation and Laravel policies, with tests that keep the API and the interface in parity."
+          },
+          {
+            "t": "Outbound calls",
+            "d": "An SSRF-safe fetcher: public addresses only, the connection pinned to the validated address, and every redirect checked again."
+          }
+        ],
+        "screens": {
+          "roles": "Roles and team permissions",
+          "audit": "Activity history"
+        }
+      },
+      "mobile": {
+        "t": "Responsive by default",
+        "d": "The same React components adapt to a 390 px viewport, approvals and the deal workspace included.",
+        "screens": {
+          "dashboard": "Dashboard",
+          "pipeline": "Pipeline",
+          "ai-actions": "AI approvals",
+          "deal-workspace": "Deal workspace"
+        }
+      },
+      "rtl": {
+        "t": "Arabic and English, one codebase",
+        "d": "The same pipeline in both reading directions. Drag across it to compare.",
+        "compare": {
+          "en": "English · LTR",
+          "ar": "العربية · RTL",
+          "slider": "Compare the English and Arabic layouts",
+          "valueText": "{value} percent English",
+          "altEn": "Deal pipeline in English, laid out left to right",
+          "altAr": "The same deal pipeline in Arabic, mirrored right to left"
+        },
+        "points": [
+          "Each page loads its own translation namespace.",
+          "Layouts mirror through logical CSS properties, not hard-coded left and right.",
+          "Record content stays in the language it was entered in. It is data, not interface."
+        ]
+      },
+      "evidence": {
+        "t": "Engineering evidence",
+        "d": "Counts measured from the repository on 14 Oct 2026.",
+        "metrics": {
+          "routes": "Routes",
+          "models": "Models",
+          "migrations": "Migrations",
+          "controllers": "Controllers",
+          "policies": "Policies",
+          "middleware": "Middleware",
+          "jobs": "Jobs",
+          "pages": "Inertia pages",
+          "tools": "AI tools",
+          "profiles": "Agent profiles",
+          "actions": "Governed actions",
+          "php": "PHP test files",
+          "frontend": "Frontend test files",
+          "e2e": "Playwright specs"
+        },
+        "tests": "Executed: 66 targeted Pest tests passed with 309 assertions, covering the AI runtime, approved communications, tenant isolation, RBAC and the workflow engine. The full suite was not run in that session.",
+        "highlights": [
+          {
+            "t": "No eval()",
+            "d": "Workflow expressions moved to a typed DSL, and an audit command finds legacy definitions and pauses them."
+          },
+          {
+            "t": "Measured retrieval",
+            "d": "Knowledge search fuses BM25 and vector results with Reciprocal Rank Fusion, and an eval harness reports recall@k and MRR."
+          },
+          {
+            "t": "MCP with OAuth 2.1",
+            "d": "PKCE S256, hashed audience-bound tokens and rotating refresh tokens with reuse detection. External agents can read or propose, never write."
+          }
+        ]
+      },
+      "honest": {
+        "t": "Where it stands",
+        "d": "What this case study does not claim.",
+        "items": [
+          "Pre-launch. The repository’s own production plan scores readiness at 47/100 and marks it NO-GO.",
+          "There are no customers, revenue or usage figures, and none are implied.",
+          "Stripe, Twilio, WhatsApp, Meta and model providers were not exercised live; some are partial.",
+          "No load tests have been run, so scalability is an architectural property only.",
+          "Every record on screen is seeded or fictional demo data."
+        ]
+      },
+      "architecture": "A modular Laravel 12 monolith serving an Inertia and React 19 app, a versioned REST API, an AI API and an MCP server. MySQL 8 and Redis 7 with Horizon queues, Reverb WebSockets and a scheduler, packaged as Docker Compose services and shipped through GitHub Actions."
     }
   }
 }

@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { CONTACT } from '../contact';
+import MotionToggle from './MotionToggle';
 
 export default async function SiteFooter({ locale }) {
   const t = await getTranslations({ locale, namespace: 'final' });
@@ -14,7 +15,7 @@ export default async function SiteFooter({ locale }) {
     <footer className="relative border-t border-white/10 bg-cinema-bg px-6 py-10 md:px-12 lg:px-16">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-grotesk text-[15px] font-medium text-cinema-cream">{t('nav.name')}</p>
+          <p className="name-script font-grotesk text-[15px] font-medium text-cinema-cream">{t('nav.name')}</p>
           <p className="mt-1.5 text-[13px] text-cinema-muted">{t('footer.role')}</p>
           <p className="mt-0.5 text-[13px] text-cinema-muted">{t('footer.location')}</p>
         </div>
@@ -24,7 +25,7 @@ export default async function SiteFooter({ locale }) {
               <a
                 href={l.href}
                 {...(l.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="text-cinema-text/80 transition-colors duration-200 hover:text-cinema-cream"
+                className="hit text-cinema-text/80 transition-colors duration-200 hover:text-cinema-cream"
               >
                 {l.label}
               </a>
@@ -32,11 +33,14 @@ export default async function SiteFooter({ locale }) {
           ))}
         </ul>
       </div>
-      <div className="mt-10 flex items-center justify-between border-t border-white/5 pt-6 font-mono text-[10.5px] tracking-[0.14em] text-cinema-steel">
+      <div className="mt-10 flex flex-wrap items-center justify-between gap-x-7 gap-y-4 border-t border-white/5 pt-6 font-mono text-[11px] tracking-[0.14em] text-cinema-muted">
         <span dir="ltr">© {year} Yusuf Mohammad Jojeh</span>
-        <a href="#content" className="uppercase transition-colors duration-200 hover:text-cinema-cream">
-          {t('footer.top')}
-        </a>
+        <div className="flex items-center gap-7">
+          <MotionToggle label={t('footer.motion')} systemNote={t('footer.motionSystem')} />
+          <a href="#content" className="hit uppercase transition-colors duration-200 hover:text-cinema-cream">
+            {t('footer.top')}
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -57,7 +57,7 @@ export default function ApprovalRail({ labels, paused, resumed }) {
               />
               <span
                 className={`font-mono text-[11px] uppercase tracking-[0.16em] transition-colors duration-300 md:text-[11.5px] ${
-                  now ? 'text-cinema-soft' : done ? 'text-cinema-text/60' : 'text-cinema-text/35'
+                  now ? 'text-cinema-soft' : done ? 'text-cinema-text/60' : 'text-cinema-text/50'
                 }`}
               >
                 {labels[s]}

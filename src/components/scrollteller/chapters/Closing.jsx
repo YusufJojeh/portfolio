@@ -32,7 +32,7 @@ function Content() {
         <a
           href={`mailto:${CONTACT.email}`}
           dir="ltr"
-          className="font-display text-[26px] text-cinema-soft underline decoration-white/25 underline-offset-[6px] transition-colors duration-200 hover:decoration-cinema-cream md:text-[34px]"
+          className="hit font-display text-[26px] text-cinema-soft underline decoration-white/25 underline-offset-[6px] transition-colors duration-200 hover:decoration-cinema-cream md:text-[34px]"
         >
           {t('email')}
         </a>
@@ -43,7 +43,7 @@ function Content() {
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cinema-text/75 transition-colors duration-200 hover:text-cinema-cream"
+                className="hit text-cinema-text/75 transition-colors duration-200 hover:text-cinema-cream"
               >
                 {l.label} <span aria-hidden="true">↗</span>
               </a>
