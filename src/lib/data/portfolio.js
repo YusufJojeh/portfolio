@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Yusuf Mohammad Jojeh",
   title: "Backend Engineer for SaaS, CRM/ERP & AI-Integrated Systems",
   location: "Aleppo, Syria | Full Remote",
-  summary: "Backend engineer with 3+ years building scalable SaaS systems, AI-integrated platforms, and production-grade APIs. Specialized in Laravel and NestJS backend architecture, secure authentication systems, and complex business logic implementation. Proven ability to design and deliver systems that handle real-world operational complexity—including CRM/ERP functionality, multi-role permission structures, and AI-driven features integrated into product workflows. Comfortable contributing across the stack with strong backend-first mindset focused on performance, maintainability, and shipping reliable systems.",
+  summary: "Backend engineer with 4+ years building scalable SaaS systems, AI-integrated platforms, and production-grade APIs. Specialized in Laravel and NestJS backend architecture, secure authentication systems, and complex business logic implementation. Proven ability to design and deliver systems that handle real-world operational complexity—including CRM/ERP functionality, multi-role permission structures, and AI-driven features integrated into product workflows. Comfortable contributing across the stack with strong backend-first mindset focused on performance, maintainability, and shipping reliable systems.",
   tagline: "Scalable Backend Systems → SaaS & AI Products → Production-Ready Architecture",
   contact: {
     phone: "+963 980 278 664",
@@ -22,7 +22,7 @@ export const experiences = [
     title: "Backend Developer | SaaS & AI Systems",
     company: "Rakez Company",
     location: "Remote",
-    period: "Dec 2025 – Present",
+    period: "Dec 2025 – Aug 2026",
     description: [
       "Designed and built backend services for AI-powered CRM modules, translating product requirements into secure, scalable API architectures",
       "Developed RESTful APIs and business logic using Laravel and NestJS to support complex CRM workflows and data operations",
@@ -80,7 +80,7 @@ export const experiences = [
     title: "Systems Analyst",
     company: "Self-Employed",
     location: "Remote",
-    period: "2025",
+    period: "2022 – Present",
     description: [
       "Gathered and documented business requirements through stakeholder analysis and process interviews",
       "Developed technical designs, data models, and workflow documentation for system implementation",
@@ -336,4 +336,4 @@ export const certifications = [
     date: "2022",
     url: "https://www.coursera.org"
   }
-]; 
+];

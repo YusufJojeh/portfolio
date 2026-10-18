@@ -10,28 +10,26 @@ import ProjectCard from './ProjectCard';
 // Real screens, in card order. Case-study projects reuse their work captures;
 // the rest come from local builds and each repo's own Playwright visual suite, on demo data.
 const SHOTS = {
-  careerguide: { dir: 'work/careerguide', files: ['home', 'login'] },
-  algoag: { dir: 'work/algoag', files: ['home', 'login'] },
-  restocafe: { dir: 'more/restocafe', files: ['dashboard', 'kitchen', 'order-create', 'tables', 'invoice', 'reports'] },
+  mtjri: { dir: 'more/mtjri', files: ['store-dashboard', 'storefront', 'product-editor', 'pos', 'roles', 'platform-dashboard'] },
   ilogistics: { dir: 'more/ilogistics', files: ['dashboard', 'analytics', 'shipments', 'route', 'invoices', 'customer-shipments'] },
-  agentos: { dir: 'more/agentos', files: ['content-studio', 'social-studio', 'register'] },
-  mtjri: { dir: 'more/mtjri', files: ['storefront', 'store-dashboard', 'pos', 'product-editor', 'platform-dashboard', 'roles'] },
+  hirelens: { dir: 'work/hirelens/app', files: ['dashboard', 'evaluation', 'human-review', 'interview-kit', 'rubric', 'audit'] },
+  linguacoach: { dir: 'work/linguacoach/app', files: ['dashboard', 'coach', 'reading', 'listening', 'admin-audit'] },
 };
 
 function Meta({ item, t, locale }) {
   if (item.status) {
     return (
-      <span className="font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">{t(item.status)}</span>
+      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">{t(item.status)}</span>
     );
   }
   const source = SOURCE_LINKS[item.id];
   if (!item.href && !source) return null;
   return (
-    <span className="flex gap-5 font-mono text-[10.5px] uppercase tracking-[0.18em]">
+    <span className="flex gap-5 font-mono text-[11px] uppercase tracking-[0.18em]">
       {item.href && (
         <Link
           href={`/${locale}/work/${item.href}`}
-          className="text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft"
+          className="hit text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft"
         >
           {t('caseStudy')} <span aria-hidden="true" className="inline-block rtl:-scale-x-100">→</span>
         </Link>
@@ -41,7 +39,7 @@ function Meta({ item, t, locale }) {
           href={source}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
+          className="hit text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
         >
           {t('source')} <span aria-hidden="true">↗</span>
         </a>
@@ -61,10 +59,10 @@ export default function MoreSystems() {
   const rest = items.filter((i) => !SHOTS[i.id]);
 
   return (
-    <StoryChapter id="more-systems" chapter="10" label={c('10')}>
+    <StoryChapter id="more-systems" chapter="09" label={c('09')}>
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <Reveal>
-          <ChapterLabel index="10">{c('10')}</ChapterLabel>
+          <ChapterLabel index="09">{c('09')}</ChapterLabel>
           <h2 className="mt-6 font-display text-[44px] leading-none text-cinema-soft md:text-[clamp(60px,6vw,96px)]">
             {t('heading')}
           </h2>

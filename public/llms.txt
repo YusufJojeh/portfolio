@@ -4,7 +4,7 @@
 
 ## About
 
-Yusuf Mohammad Jojeh is a Full-Stack Developer and AI Systems Engineer specializing in React, Next.js, NestJS, Laravel, and AI-powered business solutions. Based in Aleppo, Syria, with 3+ years of professional experience and open to remote work or relocation.
+Yusuf Mohammad Jojeh is a Full-Stack Developer and AI Systems Engineer specializing in React, Next.js, NestJS, Laravel, and AI-powered business solutions. Based in Aleppo, Syria, with 4+ years of professional experience and open to remote work or relocation.
 
 ## Core Expertise
 
@@ -82,7 +82,7 @@ Yusuf Mohammad Jojeh is a Full-Stack Developer and AI Systems Engineer specializ
 ## Professional Experience
 
 ### Full-Stack Developer & AI Engineer (Freelance)
-**Duration**: 3+ years
+**Duration**: 4+ years
 **Highlights**:
 - Developed 15+ enterprise-grade applications
 - Integrated AI capabilities into 8+ business platforms

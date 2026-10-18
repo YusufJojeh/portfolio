@@ -31,28 +31,38 @@ export default function LinguaCoachWork({ locale, work }) {
               style={{ height: `${6 + i * 2.6}rem` }}
             >
               <span className="block font-display text-[28px] leading-none text-cinema-soft md:text-[56px]">{v.l}</span>
-              <span className="mt-2 block truncate font-mono text-[8.5px] uppercase tracking-[0.14em] text-cinema-muted md:text-[10px]">
+              {/* Names need more room than a six-way phone split gives them; phones read them in the list below. */}
+              <span className="mt-2 hidden break-words font-mono text-[11px] uppercase tracking-[0.14em] text-cinema-muted md:block">
                 {v.n}
               </span>
             </div>
           ))}
         </div>
+        {/* Same names as the labelled ladder above, so assistive tech skips this copy. */}
+        <ul aria-hidden="true" className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 pb-10 md:hidden">
+          {levels.map((v) => (
+            <li key={v.l} className="flex items-baseline gap-3 font-mono text-[11px] uppercase tracking-[0.14em] text-cinema-muted">
+              <span dir="ltr" className="text-cinema-soft">{v.l}</span>
+              <span>{v.n}</span>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section className="py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:gap-20">
-          <Label>{l('ladderTitle')}</Label>
+          <Label as="h2">{l('ladderTitle')}</Label>
           <p className="max-w-[48rem] font-display text-[28px] leading-[1.15] text-cinema-soft md:text-[40px]">{l('ladder')}</p>
         </div>
       </Section>
 
       <Section className="border-t border-white/10 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:gap-20">
-          <Label>{l('runtimeTitle')}</Label>
+          <Label as="h2">{l('runtimeTitle')}</Label>
           <dl className="border-t border-white/15">
             {runtime.map((r, i) => (
               <div key={r} className="grid grid-cols-[3rem_minmax(0,1fr)] border-b border-white/10 py-6 md:grid-cols-[5rem_minmax(0,1fr)]">
-                <dt dir="ltr" className="font-mono text-[10.5px] tracking-[0.18em] text-cinema-muted">
+                <dt dir="ltr" className="font-mono text-[11px] tracking-[0.18em] text-cinema-muted">
                   R{i + 1}
                 </dt>
                 <dd className="text-[16px] leading-relaxed text-cinema-text/85 md:text-[18px]">{r}</dd>
@@ -65,7 +75,7 @@ export default function LinguaCoachWork({ locale, work }) {
       <Section className="py-20 md:py-28">
         <div className="grid gap-px bg-white/10 md:grid-cols-2">
           <div className="bg-cinema-bg p-8 md:p-12">
-            <Label>{l('durableTitle')}</Label>
+            <Label as="h2">{l('durableTitle')}</Label>
             <p className="mt-6 text-[17px] leading-relaxed text-cinema-text/80 md:text-[19px]">{l('durable')}</p>
           </div>
           <div className="flex items-end bg-cinema-bg p-8 md:p-12">

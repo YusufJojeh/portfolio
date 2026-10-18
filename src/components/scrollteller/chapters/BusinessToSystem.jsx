@@ -7,8 +7,8 @@ export default function BusinessToSystem() {
   return (
     <ArchitectureScene
       id="business-to-system"
-      chapter="03"
-      chapterName={c('03')}
+      chapter="07"
+      chapterName={c('07')}
       heading={t('heading')}
       intro={t('intro')}
       layers={t.raw('layers')}

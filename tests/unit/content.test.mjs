@@ -81,7 +81,40 @@ test('the generated-art disclosure exists in both locales', () => {
   assert.ok(ar.art.note.length > 10);
 });
 
-test('Dhura is labelled as a concept, not a product', () => {
-  assert.match(en.work.dhura.status, /not a shipped product/i);
-  assert.match(en.dhura.status, /not a shipped product/i);
+test('Dhura is labelled as a release candidate, not a live product', () => {
+  for (const m of [en, ar]) assert.ok(m.work.dhura.status.length > 0);
+  assert.match(en.work.dhura.status, /release candidate/i);
+  assert.match(en.work.dhura.status, /not in production/i);
+  assert.match(en.dhura.status, /release candidate/i);
+});
+
+test('CRMA is labelled pre-launch and discloses its scripted copilot turns', () => {
+  assert.match(en.work.crma.status, /pre-launch/i);
+  assert.match(en.work.crma.ai.disclosure, /Fake model driver/);
+  assert.match(en.work.crma.ai.disclosure, /No live model call/);
+});
+
+test('flagship and major case studies state what was verified and what is not claimed', () => {
+  for (const slug of ['crma', 'dhura', 'prospectiq', 'restocafe', 'rakez', 'mtjri']) {
+    for (const m of [en, ar]) {
+      assert.ok(m.work[slug].verified?.length > 0, `${slug}: verified`);
+      const notClaimed = slug === 'crma' ? m.work.crma.honest.items : m.work[slug].notClaimed;
+      assert.ok(notClaimed?.length > 0, `${slug}: notClaimed`);
+    }
+  }
+});
+
+test('no internal URLs, retired projects or wrong stacks in the copy', () => {
+  const all = JSON.stringify([en, ar]);
+  assert.doesNotMatch(all, /rakez\.com\.sa/i);
+  assert.doesNotMatch(all, /ALGOAG|AgentOS/);
+  assert.doesNotMatch(all, /enterprise-grade|highly scalable/i);
+  assert.doesNotMatch(JSON.stringify(en.work.rakez), /PostgreSQL/);
+  assert.match(en.work.rakez.architecture, /MySQL/);
+  for (const m of [en, ar]) assert.ok(!m.rakez.stack.includes('PostgreSQL'));
+});
+
+test('employer systems are never named', () => {
+  const all = JSON.stringify([en, ar]);
+  assert.doesNotMatch(all, /\bOT2\b|Alaya|Nizwa|Waqf/i);
 });

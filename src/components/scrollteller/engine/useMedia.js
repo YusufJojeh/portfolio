@@ -2,6 +2,7 @@
 
 import { useMemo, useSyncExternalStore } from 'react';
 import { useMotionValue, useTransform } from 'framer-motion';
+import { useForcedReducedMotion } from './motionPref';
 
 function subscribeTo(query) {
   return (callback) => {
@@ -21,8 +22,11 @@ export function useMediaQuery(query) {
   );
 }
 
+/** The system setting or the site's own motion switch, whichever asks for less. */
 export function useReducedMotionPref() {
-  return useMediaQuery('(prefers-reduced-motion: reduce)');
+  const system = useMediaQuery('(prefers-reduced-motion: reduce)');
+  const forced = useForcedReducedMotion();
+  return system || forced;
 }
 
 export function useIsMobile() {

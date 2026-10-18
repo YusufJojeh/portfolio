@@ -31,13 +31,13 @@ export default function AppliedAI() {
           {principles.map((pr, i) => (
             <Reveal as="li" key={pr.t} className="border-t border-white/10 py-8 md:py-10">
               <div className="flex gap-5">
-                <span dir="ltr" className="pt-2 font-mono text-[10.5px] tracking-[0.2em] text-cinema-steel">
+                <span dir="ltr" className="pt-2 font-mono text-[11px] tracking-[0.2em] text-cinema-steel">
                   0{i + 1}
                 </span>
                 <div>
                   <h3 className="font-display text-[28px] leading-[1.05] text-cinema-soft md:text-[36px]">{pr.t}</h3>
                   <p className="mt-3 max-w-[36rem] text-[15px] leading-relaxed text-cinema-text/70 md:text-[16px]">{pr.d}</p>
-                  <p className="mt-4 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+                  <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">
                     {t('seenIn')}
                     {pr.refs.map((r, j) => (
                       <span key={r}>
@@ -47,7 +47,7 @@ export default function AppliedAI() {
                         <Link
                           href={`/${locale}/work/${r}`}
                           dir="ltr"
-                          className="normal-case tracking-[0.06em] text-cinema-cream/85 underline decoration-white/20 underline-offset-4 transition-colors duration-200 hover:decoration-cinema-cream"
+                          className="hit normal-case tracking-[0.06em] text-cinema-cream/85 underline decoration-white/20 underline-offset-4 transition-colors duration-200 hover:decoration-cinema-cream"
                         >
                           {workTitle(r)}
                         </Link>

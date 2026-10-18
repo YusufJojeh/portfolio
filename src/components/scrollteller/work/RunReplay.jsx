@@ -1,7 +1,8 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useReducedMotionPref } from '../engine/useMedia';
 
 /*
  * An interactive replay of one ProspectIQ AgentRun. The run plays up to the
@@ -19,14 +20,16 @@ const PHASES = [
 ];
 
 const STEP_MS = 420;
+const EASE = [0.22, 1, 0.36, 1];
 
 export default function RunReplay({ labels }) {
-  const reduce = useReducedMotion();
+  const reduce = useReducedMotionPref();
   const [phase, setPhase] = useState(0);
   const [shown, setShown] = useState(0); // events shown within the current phase
   const [log, setLog] = useState([]);
   const [started, setStarted] = useState(false);
   const root = useRef(null);
+  const replayBtn = useRef(null);
 
   // Start once the replay scrolls into view.
   useEffect(() => {
@@ -69,6 +72,8 @@ export default function RunReplay({ labels }) {
   const approve = useCallback(() => {
     setPhase(3);
     setShown(0);
+    // Approve disables itself once the gate is passed; hand focus on so a keyboard user is not dropped onto <body>.
+    replayBtn.current?.focus();
   }, []);
 
   const replay = useCallback(() => {
@@ -102,7 +107,7 @@ export default function RunReplay({ labels }) {
                 />
                 <span
                   className={`font-mono text-[12px] uppercase tracking-[0.16em] transition-colors duration-300 ${
-                    now ? 'text-cinema-soft' : past ? 'text-cinema-text/60' : 'text-cinema-text/35'
+                    now ? 'text-cinema-soft' : past ? 'text-cinema-text/60' : 'text-cinema-text/50'
                   }`}
                 >
                   {labels.states[ph.state]}
@@ -119,14 +124,15 @@ export default function RunReplay({ labels }) {
             type="button"
             onClick={approve}
             disabled={!atGate}
-            className="inline-flex min-h-[44px] items-center rounded-[3px] bg-cinema-soft px-5 text-[13.5px] font-medium text-cinema-bg transition-opacity duration-200 disabled:cursor-not-allowed disabled:opacity-30"
+            className="inline-flex min-h-[44px] items-center rounded-[3px] bg-cinema-soft px-5 text-[13.5px] font-medium text-cinema-bg transition-[opacity,background-color,transform] duration-200 ease-cinematic enabled:hover:bg-cinema-cream motion-safe:enabled:active:translate-y-px disabled:cursor-not-allowed disabled:opacity-30"
           >
             {labels.approve}
           </button>
           <button
+            ref={replayBtn}
             type="button"
             onClick={replay}
-            className="inline-flex min-h-[44px] items-center rounded-[3px] border border-white/25 px-5 text-[13.5px] text-cinema-text transition-colors duration-200 hover:border-white/60"
+            className="inline-flex min-h-[44px] items-center rounded-[3px] border border-white/25 px-5 text-[13.5px] text-cinema-text transition-[color,background-color,border-color,transform] duration-200 ease-cinematic hover:border-white/60 hover:bg-white/[0.05] motion-safe:active:translate-y-px"
           >
             {labels.replay}
           </button>
@@ -137,7 +143,7 @@ export default function RunReplay({ labels }) {
       </div>
 
       <div className="rounded-[4px] border border-white/10 bg-cinema-bg">
-        <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+        <div className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">
           <span className="flex items-center gap-2">
             <span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${done ? 'bg-cinema-steel' : 'bg-cinema-cream'}`} />
             {labels.stream}
@@ -146,13 +152,17 @@ export default function RunReplay({ labels }) {
         </div>
         <ol dir="ltr" className="flex h-[300px] flex-col justify-end overflow-hidden px-4 py-3 font-mono text-[12px] leading-[1.9] md:h-[340px]">
           {log.slice(-12).map((e, k) => (
-            <li
+            // Keys are absolute positions in the log, so only a newly arrived event mounts and enters.
+            <motion.li
               key={`${e.name}-${log.length - Math.min(log.length, 12) + k}`}
+              initial={{ opacity: 0, y: reduce ? 0 : 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.16, ease: EASE }}
               className={`flex justify-between gap-4 ${e.name === 'waiting_for_approval' ? 'text-cinema-cream' : 'text-cinema-text/70'}`}
             >
               <span>{e.name}</span>
               {e.resumed && <span className="text-cinema-muted">{labels.same}</span>}
-            </li>
+            </motion.li>
           ))}
         </ol>
       </div>

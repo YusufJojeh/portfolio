@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Yusuf Jojeh — Backend & Business Systems Engineer",
-    "description": "Backend systems designed around how real businesses operate: workflows, permissions, data, APIs, integrations, reliability and applied AI."
+    "description": "Backend and business systems engineer. Multi-tenant SaaS, workflows, permissions, concurrency and applied AI, shown with the evidence behind each claim."
   },
   "nav": {
     "name": "Yusuf Jojeh",
@@ -18,18 +18,19 @@
     "chapters": "Chapters"
   },
   "chapters": {
+    "10": "Experience",
+    "11": "About",
+    "12": "Contact",
     "00": "Opening",
-    "01": "Real operations",
+    "01": "Engineering signals",
     "02": "Rakez",
-    "03": "Business → System",
-    "04": "HireLens",
-    "05": "LinguaCoach",
-    "06": "ProspectIQ",
-    "07": "Dhura",
+    "03": "CRMA",
+    "04": "Dhura",
+    "05": "ProspectIQ",
+    "06": "RestoCafe OS",
+    "07": "How I engineer business systems",
     "08": "Applied AI",
-    "09": "Experience",
-    "10": "More systems",
-    "11": "Closing"
+    "09": "Additional systems"
   },
   "art": {
     "note": "Art direction. Interface and figures are illustrative, not product data."
@@ -64,80 +65,40 @@
     "heading": "Businesses don't run on features. They run on operations.",
     "body": "Sales pipelines, commissions, bookings, approvals, stock, schedules. Every business has rules that decide who can do what, when, and with which data. That is where I work.",
     "signals": [
-      "Workflows that match how teams actually work",
-      "Permissions enforced on the server, not the screen",
-      "Data modeled so reports can be trusted",
-      "AI that assists without taking the decision"
+      "Workflows modeled on how teams actually work",
+      "Tenancy and permissions enforced on the server",
+      "Concurrency handled with locks, versions and idempotency keys",
+      "AI that proposes, with a person approving the change"
     ],
     "imageAlt": "A city at dusk seen from a terrace"
   },
-  "rakez": {
-    "title": "Rakez ERP",
-    "kicker": "Real-estate ERP · Arabic-first",
-    "lede": "An operating system for a real-estate business: sales, bookings, commissions and marketing spend in one platform.",
-    "handles": "What the system handles",
-    "items": [
-      {
-        "t": "Bookings",
-        "d": "Reservations with a waiting list for contested units"
-      },
-      {
-        "t": "Commissions",
-        "d": "Multi-party splits, approval chains and VAT"
-      },
-      {
-        "t": "Permissions",
-        "d": "Granular roles, checked on the server"
-      },
-      {
-        "t": "Real-time",
-        "d": "WebSocket notifications through Laravel Reverb"
-      },
-      {
-        "t": "Assistant",
-        "d": "OpenAI-backed answers in Arabic for the sales team"
-      }
-    ],
-    "cta": "Read the Rakez case study",
-    "imageAlt": "Rakez ERP marketing dashboard with demo data",
-    "stackLabel": "Stack",
-    "stack": [
-      "Laravel 12",
-      "PostgreSQL",
-      "Redis",
-      "Reverb",
-      "Sanctum",
-      "Spatie Permission",
-      "OpenAI API"
-    ]
-  },
   "system": {
-    "heading": "From a business rule to a production system.",
-    "intro": "One commission rule from Rakez, followed down through every layer it touches.",
+    "heading": "From a business operation to a production system.",
+    "intro": "How I take one real operation, such as a sale that pays several people, down through every layer it touches.",
     "layers": [
       {
-        "t": "The rule",
-        "d": "A sale closes. Several parties share the commission, a manager must approve it, and VAT applies."
+        "t": "The operation",
+        "d": "Who does what, in which order, and what must never happen twice. Written down before any table exists."
       },
       {
         "t": "The workflow",
-        "d": "Draft, review, approval, payout — with who can act defined at every step."
+        "d": "Explicit states and transitions, with who may act at each step."
       },
       {
         "t": "The data model",
-        "d": "Deals, parties, splits and approvals stored as relational records. Auditable, never recalculated in a spreadsheet."
+        "d": "Relational records scoped to a tenant, with constraints and an audit trail instead of a spreadsheet."
       },
       {
         "t": "The permissions",
-        "d": "Role-based policies checked on the server for every action, not hidden buttons in the UI."
+        "d": "Policies checked on the server for every action, not buttons hidden in the UI."
       },
       {
         "t": "The API",
-        "d": "Validated endpoints that the web app, notifications and integrations all share."
+        "d": "Validated endpoints with locks, versions or idempotency keys where two people can race."
       },
       {
         "t": "The assist",
-        "d": "AI drafts, summarizes and answers questions in Arabic. It does not approve anything."
+        "d": "AI drafts, retrieves and proposes. A person approves anything that changes state."
       }
     ]
   },
@@ -213,58 +174,63 @@
   "dhura": {
     "title": "Dhura",
     "arabicTitle": "ذُرى",
-    "kicker": "Concept · Real-estate CRM/ERP",
-    "lede": "An Arabic-first real-estate platform where AI can suggest anything and change nothing on its own.",
+    "kicker": "Selected system · Real-estate SaaS",
+    "lede": "An Arabic-first, multi-tenant real-estate platform: CRM, sales, finance and a customer portal, with AI that recommends and never acts alone.",
     "points": [
-      "RTL designed in from the first screen",
-      "A deterministic core for listings, deals and commissions",
-      "Every AI action waits for a human approval"
+      "Around thirty FastAPI modules, each scoped by tenant",
+      "Deterministic AI agents with read-only, allowlisted tools",
+      "Approved actions run through the same domain use cases as the UI"
     ],
-    "status": "Concept architecture — not a shipped product",
-    "cta": "Read the Dhura concept",
+    "status": "V1 release candidate · not in production",
+    "cta": "Read the Dhura case study",
     "imageAlt": "Dhura executive overview with demo data"
   },
   "ai": {
     "heading": "Applied AI, engineered like the rest of the system.",
-    "intro": "The same principles show up in every system where I've put a model into a real workflow.",
+    "intro": "Patterns I can point to in the code of each system, not slogans.",
     "seenIn": "Seen in",
     "principles": [
       {
         "t": "AI proposes. People decide.",
-        "d": "Hire and reject decisions in HireLens are human-only. In Dhura, no AI suggestion changes state without approval. In ProspectIQ an approved action is reauthorized against the current user before it runs.",
+        "d": "In CRMA an AI write becomes a proposal that expires after 72 hours unless approved. In Dhura agents emit actions that a person approves before a domain use case runs. In ProspectIQ the approved action is reauthorized at execution time.",
         "refs": [
-          "hirelens",
+          "crma",
           "dhura",
           "prospectiq"
         ]
       },
       {
-        "t": "Fail closed, not quietly.",
-        "d": "ProspectIQ refuses to fall back to demo data in production. CareerGuide won't start if its selected provider has no key.",
+        "t": "A real loop, with limits.",
+        "d": "CRMA and ProspectIQ run model-directed tool loops: the model picks the next tool from the last result, inside server-side budgets for steps and calls. Dhura deliberately does not: its agents are deterministic.",
         "refs": [
+          "crma",
           "prospectiq",
-          "careerguide"
+          "dhura"
         ]
       },
       {
-        "t": "A deterministic core.",
-        "d": "CareerGuide's scores come from a fixed, version-controlled rules engine. The model advises beside it, never inside it.",
+        "t": "Retrieval, named honestly.",
+        "d": "CRMA fuses lexical and vector results with Reciprocal Rank Fusion, filtered by organization. ProspectIQ mixes keyword and embedding scores, with a local hashing embedding by default.",
         "refs": [
-          "careerguide"
+          "crma",
+          "prospectiq"
         ]
       },
       {
-        "t": "Honest fallbacks.",
-        "d": "LinguaCoach keeps its whole curriculum usable without a paid provider, and labels any AI call it had to skip.",
+        "t": "Validate what the model returns.",
+        "d": "Dhura routes every model call through a provider-neutral gateway with schema-validated output. Mtjri validates generated store content before it is saved.",
         "refs": [
-          "linguacoach"
+          "dhura",
+          "mtjri"
         ]
       },
       {
-        "t": "Guardrails live on the server.",
-        "d": "In HireLens every request passes through Laravel's provider router and guardrails. The browser never talks to a model.",
+        "t": "Tenancy reaches the AI layer.",
+        "d": "Tools, retrieval and generated content are scoped to the same tenant as the rest of the data: by organization in CRMA, by tenant in Dhura, by store in Mtjri.",
         "refs": [
-          "hirelens"
+          "crma",
+          "dhura",
+          "mtjri"
         ]
       }
     ]
@@ -274,88 +240,77 @@
     "education": "BSc, Information Engineering & Distributed Systems — Al-Shahbaa University, 2021–2026",
     "items": [
       {
-        "period": "Dec 2025 — Present",
-        "role": "Backend Developer, SaaS & AI Systems",
-        "company": "Rakez Company",
-        "d": "Backend services and APIs for AI-assisted CRM modules in Laravel and NestJS, with LLM features wired into production workflows."
+        "period": "Sep 2026 — Present",
+        "role": "Backend Developer",
+        "company": "ArchitWeb",
+        "d": "Backend work on employer and client systems in PHP/MySQL and GraphQL: payments, refunds and reporting APIs, with idempotent operations and safer retries. Product and client details stay with the employer."
       },
       {
-        "period": "Nov 2025 — Jan 2026",
-        "role": "Full-Stack Developer, CRM Systems",
+        "period": "Jan 2025 — Aug 2026",
+        "role": "AI & CRM Specialist / Full-Stack Developer",
+        "company": "Rakez Real Estate Company",
+        "d": "Part of the team building a Saudi real-estate ERP/CRM (Laravel API, Vue 3 SPA): ad-platform lead attribution, sales reservations, contract permissions, integrations and AI-assisted workflows."
+      },
+      {
+        "period": "2025 — 2026",
+        "role": "Full-Stack Developer",
         "company": "Business Flow",
-        "d": "Backend-heavy CRM systems and operational dashboards with role-based access and structured validation."
+        "d": "NestJS/TypeScript tenant-aware SaaS APIs, role-based business workflows, validation, database structures and integrations with React dashboards."
       },
       {
         "period": "Jan 2025 — Nov 2025",
-        "role": "Backend Developer, iLogistics SaaS",
+        "role": "Backend Developer, iLogistics",
         "company": "Mermez",
-        "d": "REST APIs for a multi-tenant logistics platform: JWT authentication, role-based access, tracking, reporting and query tuning."
+        "d": "Laravel/MySQL logistics APIs and workflows for shipment tracking, authentication and reporting, with indexing, query refinement and Redis caching on recurring queries."
       },
       {
-        "period": "2024 — 2025",
-        "role": "Full-Stack Developer, freelance",
-        "company": "Mytrixa",
-        "d": "Business requirements turned into APIs, schemas, admin panels and reporting tools for several clients."
-      },
-      {
-        "period": "2025",
-        "role": "Systems Analyst",
-        "company": "Self-employed",
-        "d": "Requirements, data models and workflow documentation, written before implementation started."
+        "period": "2022 — Present",
+        "role": "Independent Software Engineer",
+        "company": "Independent",
+        "d": "Custom applications and technical prototypes across SaaS, business operations and AI-enabled workflows, from backend design and APIs through testing and integration."
       }
     ]
   },
   "more": {
-    "heading": "More systems.",
-    "intro": "Smaller chapters, same discipline.",
+    "heading": "Additional systems.",
+    "intro": "Team, earlier and smaller work, labelled for what it is.",
     "caseStudy": "Case study",
     "source": "Source",
-    "onRequest": "Details on request",
-    "inProgress": "Write-up in progress",
     "items": [
       {
-        "id": "careerguide",
-        "t": "CareerGuide AI",
-        "d": "Career matching where the score is deterministic and AI only advises.",
-        "weight": "lead",
-        "href": "careerguide"
-      },
-      {
-        "id": "algoag",
-        "t": "ALGOAG",
-        "weight": "lead",
-        "href": "algoag",
-        "status": "inProgress"
-      },
-      {
-        "id": "restocafe",
-        "t": "RestoCafe OS",
-        "d": "Multi-branch restaurant POS: offline-first PWA, real-time kitchen display, optimistic concurrency.",
-        "weight": "mid"
+        "id": "mtjri",
+        "t": "Mtjri",
+        "d": "Multi-store commerce where AI drafts a store’s content in queued jobs and a validator checks it before it is saved.",
+        "href": "mtjri"
       },
       {
         "id": "ilogistics",
         "t": "iLogistics",
-        "d": "Multi-tenant logistics and booking platform with JWT, role-based access and reporting.",
-        "weight": "mid"
+        "d": "Logistics and booking platform with shipment tracking, invoices and reports. Built with a teammate; started during my work at Mermez."
       },
       {
-        "id": "mtjri",
-        "t": "mtjri",
-        "d": "Multi-store commerce with a self-service web installer.",
-        "weight": "small"
+        "id": "hirelens",
+        "t": "HireLens AI",
+        "d": "Recruiting copilot: AI scores evidence against a rubric, and hire or reject decisions stay human-only.",
+        "href": "hirelens"
       },
       {
-        "id": "businessflow",
-        "t": "Business Flow CRM",
-        "d": "CRM systems and operational dashboards.",
-        "weight": "small"
+        "id": "linguacoach",
+        "t": "LinguaCoach AI",
+        "d": "Language-learning prototype that stays usable without a paid model provider.",
+        "href": "linguacoach"
       },
       {
-        "id": "agentos",
-        "t": "AgentOS",
-        "weight": "small",
-        "status": "onRequest"
+        "id": "careerguide",
+        "t": "CareerGuide AI",
+        "d": "Graduation project: career matching where the score is deterministic and AI only advises.",
+        "href": "careerguide"
+      },
+      {
+        "id": "hexaterminal",
+        "t": "HexaTerminal",
+        "d": "Company website, co-developed with another engineer who wrote most of it.",
+        "status": "coDeveloped"
       }
     ],
     "screens": {
@@ -377,32 +332,25 @@
         "platform-dashboard": "Platform admin",
         "roles": "Staff roles and permissions"
       },
-      "restocafe": {
-        "note": "Captured by the repo's own Playwright visual tests against a seeded local build. Orders, tables and amounts are test data.",
-        "dashboard": "Operations dashboard",
-        "kitchen": "Kitchen board",
-        "order-create": "Order entry",
-        "tables": "Table service board",
-        "invoice": "Paid invoice",
-        "reports": "Daily report"
+      "hirelens": {
+        "note": "Logged-in screens from a local build on the project’s demo seed.",
+        "dashboard": "Evidence dashboard",
+        "evaluation": "Evaluation report",
+        "human-review": "Human decision",
+        "interview-kit": "Approved interview kit",
+        "rubric": "Job requirements rubric",
+        "audit": "Audit log"
       },
-      "careerguide": {
-        "note": "Public screens from a local build.",
-        "home": "Home",
-        "login": "Sign in"
-      },
-      "algoag": {
-        "note": "Public screens from a local build.",
-        "home": "Home",
-        "login": "Sign in"
-      },
-      "agentos": {
-        "note": "Public pages from a local build, captured with Playwright. The workspace itself sits behind sign-in.",
-        "content-studio": "Content creation studio",
-        "social-studio": "Social media studio",
-        "register": "Account and brand setup"
+      "linguacoach": {
+        "note": "Logged-in screens from a local build on the project’s demo seed.",
+        "dashboard": "Learner dashboard",
+        "coach": "AI coach conversation",
+        "reading": "Reading practice",
+        "listening": "Listening exercise",
+        "admin-audit": "Admin audit log"
       }
-    }
+    },
+    "coDeveloped": "Co-developed"
   },
   "closing": {
     "statement": "Better systems start with understanding the business.",
@@ -416,7 +364,9 @@
     "role": "Backend & Business Systems Engineer",
     "location": "Aleppo, Syria · Remote",
     "rights": "All rights reserved.",
-    "top": "Back to top"
+    "top": "Back to top",
+    "motion": "Reduce motion",
+    "motionSystem": "Your system already asks for reduced motion"
   },
   "work": {
     "back": "All work",
@@ -431,21 +381,21 @@
     "discuss": "Discuss this system",
     "architecture": "Architecture",
     "rakez": {
-      "kicker": "Case study · Real-estate ERP",
+      "kicker": "Case study · Team-built real-estate ERP",
       "title": "Rakez ERP",
-      "lede": "An operating system for a real-estate business: sales, bookings, commissions and marketing spend in one Arabic-first platform.",
+      "lede": "A real-estate ERP for a Saudi company: sales, reservations, contracts, commissions and marketing in one Arabic-first platform, built by a small team.",
       "facts": [
         {
           "k": "Domain",
-          "v": "Real estate — sales, bookings, commissions"
+          "v": "Real estate: sales, reservations, contracts, commissions"
         },
         {
-          "k": "Role",
-          "v": "Backend engineering"
+          "k": "My role",
+          "v": "Backend and full-stack engineer on a small team, and its largest committer"
         },
         {
           "k": "Context",
-          "v": "Built during my role at Rakez Company"
+          "v": "Employer work at Rakez Real Estate Company"
         }
       ],
       "problemTitle": "The operation",
@@ -453,38 +403,50 @@
       "layersTitle": "How the system is layered",
       "layers": [
         {
-          "t": "Bookings & reservations",
-          "d": "Unit reservations with a waiting list, so concurrent requests for the same unit queue instead of colliding."
+          "t": "Reservations",
+          "d": "Unit reservations with a waiting list and row locks, so two requests for the same unit cannot both succeed."
         },
         {
-          "t": "Commission engine",
-          "d": "Multi-party splits with an approval chain and VAT, replacing calculations that used to be done by hand in spreadsheets."
+          "t": "Commissions",
+          "d": "Commission and distribution records with project-level policies, replacing hand-kept spreadsheets."
         },
         {
           "t": "Permissions",
-          "d": "Granular role-based access through Spatie Permission, checked on the server for every action."
+          "d": "Role-based access through Spatie Permission, checked on the server, including draft-contract states."
         },
         {
           "t": "Real-time",
-          "d": "Notifications over Laravel Reverb WebSockets, so the next person in a workflow sees the change immediately."
+          "d": "Notifications over Laravel Reverb WebSockets, so the next person in a workflow sees the change."
         },
         {
-          "t": "Marketing spend",
-          "d": "Budget tracking that brings in platform spend through the Facebook SDK and TikTok API."
+          "t": "Ad attribution",
+          "d": "Leads and spend from Meta, Google and TikTok mapped to the project they were paid for, with retries on transient provider failures."
         },
         {
           "t": "Arabic assistant",
-          "d": "An OpenAI-backed assistant that answers the sales team's questions in Arabic, with business context."
+          "d": "An OpenAI-backed assistant that answers the sales team’s questions in Arabic."
         }
       ],
       "hardTitle": "The hard parts",
       "hard": [
-        "Concurrent booking conflicts, resolved through waiting-list queuing.",
-        "Commission distribution across several parties with approvals and tax — correct every time and auditable afterwards.",
-        "A permission model detailed enough for real roles without slowing every request.",
-        "Arabic AI answers that stay accurate to the business domain."
+        "Concurrent reservations of the same unit, resolved with locks and a waiting list.",
+        "Attributing ad spend and leads to the right project when platforms return partial failures.",
+        "Draft-contract permissions that hold on the server, not only in the UI.",
+        "Keeping a shared codebase consistent across several engineers."
       ],
-      "architecture": "A Laravel 12 monolith. PostgreSQL for relational data; Redis for cache, queues and sessions; Sanctum for API authentication; Reverb for WebSockets; Spatie Permission for roles; the OpenAI API for the assistant."
+      "architecture": "A Laravel 12 API on MySQL, with Redis for cache and queues, Sanctum for API authentication, Reverb for WebSockets and Spatie Permission for roles. The frontend is a separate Vue 3, TypeScript and Pinia SPA. The OpenAI API powers the assistant.",
+      "verified": [
+        "Laravel API on MySQL with a separate Vue 3 and TypeScript SPA (read from the repository config).",
+        "Row locking (lockForUpdate) in sixteen backend files, and a waiting-list flow for units.",
+        "Meta, Google and TikTok ad integrations, and Reverb, Sanctum, Spatie Permission and OpenAI packages.",
+        "My commits: about 350 of roughly 610, mostly ads attribution, architecture fixes, sales, contracts and integrations."
+      ],
+      "notClaimed": [
+        "I did not build it alone: it is a team repository with several contributors.",
+        "No company data, internal URLs or source code are shown or linked.",
+        "No business results, usage or revenue figures are claimed."
+      ],
+      "tests": "The repository has about 320 test files. They were not run for this page."
     },
     "hirelens": {
       "kicker": "Case study · Hiring platform",
@@ -774,7 +736,7 @@
       },
       "verification": {
         "t": "Release verification",
-        "d": "Gates from the latest release run.",
+        "d": "Gates as recorded in the repository’s latest release report. Documented there, not rerun for this page; see below for what was executed.",
         "rows": [
           {
             "g": "Backend",
@@ -819,30 +781,124 @@
         ],
         "note": "Audited with axe-core against WCAG 2.1 A and AA on the new surfaces and the lead page. Contrast was checked against the design tokens."
       },
-      "architecture": "FastAPI, Pydantic v2, SQLAlchemy 2 and Alembic on MariaDB. Research through Tavily, SerpAPI and allowlisted Apify actors. A single agent runtime with a typed ToolRegistry, an approval gate and live event streaming. A React, TypeScript and Vite frontend, Docker Compose."
+      "architecture": "FastAPI, Pydantic v2, SQLAlchemy 2 and Alembic on MariaDB. Research through Tavily, SerpAPI and allowlisted Apify actors. A single agent runtime with a typed ToolRegistry, an approval gate and live event streaming. A React, TypeScript and Vite frontend, Docker Compose.",
+      "verified": [
+        "A model-directed runtime: the model returns tool calls, the backend validates and runs them, within budgets.",
+        "The approval gate checks expiry, workspace membership and a SHA-256 payload hash, then claims the action atomically.",
+        "Approval is idempotent, and the same AgentRun resumes after the decision.",
+        "Hybrid retrieval of keyword and embedding scores; the default embedding is a local hashing model."
+      ],
+      "notClaimed": [
+        "It is not deployed, and has no customers or usage figures.",
+        "Retrieval quality has not been benchmarked against a hosted embedding model.",
+        "External providers (Tavily, SerpAPI, Apify, model APIs) were not called during this audit.",
+        "The release-report figures above were not reproduced here."
+      ],
+      "tests": "Executed on 18 Oct 2026 with SQLite and provider keys blanked: 567 passed, 3 failed, 6 skipped. The 3 failures are production-config checks that require a search API key, which was removed on purpose."
     },
     "dhura": {
-      "kicker": "Concept · Real-estate CRM/ERP",
+      "kicker": "Case study · Multi-tenant real-estate SaaS",
       "title": "Dhura",
       "arabicTitle": "ذُرى",
-      "status": "Concept architecture — not a shipped product.",
-      "lede": "What an Arabic-first real-estate platform looks like when AI can suggest anything and change nothing on its own.",
-      "principles": [
+      "status": "V1 release candidate · not in production",
+      "lede": "An Arabic-first real-estate platform where every module is scoped by tenant, and AI can recommend anything but changes nothing without a person.",
+      "facts": [
         {
-          "t": "Arabic first",
-          "d": "RTL is designed in from the first screen, not retrofitted as a translation."
+          "k": "Role",
+          "v": "Sole author: architecture, backend and frontend"
         },
         {
-          "t": "A deterministic core",
-          "d": "Listings, deals, commissions and approvals modeled as auditable relational data behind role-scoped APIs."
+          "k": "Domain",
+          "v": "Real-estate CRM, sales, finance and customer portal"
         },
         {
-          "t": "Human-approved AI",
-          "d": "The AI drafts, summarizes and proposes next actions. Nothing changes state until a person approves it."
+          "k": "Shape",
+          "v": "Around thirty FastAPI modules, one PostgreSQL schema"
+        },
+        {
+          "k": "Status",
+          "v": "V1 release candidate, not deployed"
         }
       ],
-      "lineage": "The same pattern that runs in the Rakez ERP assistant and the HireLens copilot, carried into a new domain.",
-      "stackLabel": "Intended stack"
+      "journeyTitle": "The business journey",
+      "journeyIntro": "The modules follow one customer from first contact to paid installments.",
+      "journey": [
+        {
+          "t": "Lead",
+          "d": "Captured and assigned in the CRM."
+        },
+        {
+          "t": "Unit",
+          "d": "Matched against live inventory."
+        },
+        {
+          "t": "Reservation",
+          "d": "Held while the deal is agreed."
+        },
+        {
+          "t": "Contract",
+          "d": "Terms, parties and schedule."
+        },
+        {
+          "t": "Payments",
+          "d": "Installments posted to finance."
+        },
+        {
+          "t": "Portal",
+          "d": "The customer follows it all."
+        }
+      ],
+      "aiTitle": "How the AI layer is held back",
+      "principles": [
+        {
+          "t": "Deterministic agents",
+          "d": "Agents follow fixed logic. They are not autonomous loops, and the page does not call them that."
+        },
+        {
+          "t": "Read-only, allowlisted tools",
+          "d": "Each agent may call only the tools on its allowlist, scoped to the tenant, and none of them write."
+        },
+        {
+          "t": "Approval, then a use case",
+          "d": "An agent emits an action. A person approves it, and apply_action runs it through the same domain use case the UI calls."
+        }
+      ],
+      "decisionsTitle": "Engineering decisions",
+      "decisions": [
+        {
+          "t": "Tenant scoping everywhere",
+          "d": "tenant_id is carried through models, repositories and queries across the codebase, not added in one middleware.",
+          "code": "tenant_id"
+        },
+        {
+          "t": "A provider-neutral AI gateway",
+          "d": "Model calls go through one gateway, and output is validated against a schema before anything reads it."
+        },
+        {
+          "t": "Migrations as history",
+          "d": "Schema changes live in Alembic revisions, so the database can be rebuilt from scratch.",
+          "code": "alembic upgrade head"
+        },
+        {
+          "t": "Domain modules, not layers",
+          "d": "Each business area owns its domain, application and infrastructure code."
+        }
+      ],
+      "verified": [
+        "Around thirty backend modules, from tenants and CRM to finance, accounting, portal and AI.",
+        "tenant_id referenced across hundreds of backend files.",
+        "Agent tools restricted to a read-only, tenant-scoped allowlist; actions applied only after approval.",
+        "A provider-neutral AI gateway with schema-validated output.",
+        "Alembic migration history and a Playwright end-to-end suite in the repository."
+      ],
+      "notClaimed": [
+        "It is not live: it is a V1 release candidate.",
+        "The agents are deterministic, not autonomous.",
+        "No customers, users or business results.",
+        "The README’s test totals are older than the current code and are not repeated here."
+      ],
+      "tests": "Executed on 18 Oct 2026 with SQLite and model keys blanked: 644 backend tests passed, none failed. One module (background jobs) could not be collected because the local environment lacks the Redis Python package. The Playwright suite was not rerun.",
+      "architecture": "FastAPI with Pydantic v2, SQLAlchemy 2 and Alembic on PostgreSQL, with Redis for background jobs. A React and TypeScript frontend, Arabic-first and right-to-left, with Playwright end-to-end tests."
     },
     "careerguide": {
       "kicker": "Case study · Career guidance",
@@ -881,23 +937,15 @@
       "checks": "Ruff, pytest, alembic check, a production smoke script, and frontend lint, typecheck and build — plus a written checklist confirming one student cannot read another student's profile, recommendation or PDF.",
       "architecture": "FastAPI, SQLAlchemy 2, Alembic, Pydantic Settings, JWT and ReportLab PDF export; React 19, Vite, TypeScript, TanStack Query, React Hook Form and Zod."
     },
-    "algoag": {
-      "kicker": "Case study",
-      "title": "ALGOAG",
-      "status": "Write-up in progress",
-      "body": "This case study hasn't been written up yet. Rather than describe the system without the evidence to back it, this page stays short until the documentation is ready.",
-      "cta": "Ask me about ALGOAG"
-    },
     "evidence": {
       "label": "Real screens",
       "source": {
-        "rakez": "The staff login is live at rakez.com.sa. The screens below come from a local build with seeded demo data; the company's own records stay private.",
+        "rakez": "The screens below come from a local build with seeded demo data. The company’s records, URLs and source stay private.",
         "hirelens": "Captured from a local build of the application, unedited.",
         "linguacoach": "Captured from a local build of the web app, unedited.",
         "prospectiq": "Captured from a local build of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
         "careerguide": "Captured from a local build of the web app, unedited.",
-        "algoag": "Captured from a local build of the application, unedited.",
-        "dhura": "Captured from a local build of the V1 release candidate. Dhura is not a shipped product."
+        "dhura": "Captured from a local build of the V1 release candidate on demo data. Dhura is not deployed to production."
       },
       "caption": {
         "home": "Landing screen",
@@ -923,10 +971,6 @@
         "careerguide": {
           "home": "CareerGuide AI landing page: Find the career that fits you",
           "login": "CareerGuide sign-in screen"
-        },
-        "algoag": {
-          "home": "ALGOAG landing page: Train like a competitive programmer",
-          "login": "ALGOAG assistant workspace sign-in screen"
         },
         "dhura": {
           "login": "Dhura sign-in screen, Arabic, right-to-left",
@@ -976,6 +1020,664 @@
           "admin-audit": "Admin audit log"
         }
       }
+    },
+    "crma": {
+      "kicker": "Case study · Multi-tenant SaaS",
+      "title": "CRMA",
+      "lede": "A multi-tenant CRM where AI agents propose and people approve.",
+      "status": "Pre-launch · not in production",
+      "heroAlt": "CRMA copilot paused on a proposed deal stage change, with the field diff, the reason, and Approve and Reject buttons",
+      "calloutLabel": "The run is paused here",
+      "summary": "CRMA is a multi-tenant CRM built on Laravel 12 and React 19. AI agents can search, research and draft, but they can never change data on their own. Every write becomes a proposal with a field-level diff, a stated reason and a risk class, and the agent run pauses until a person approves, edits or rejects it.",
+      "facts": [
+        {
+          "k": "Role",
+          "v": "Repository owner and engineering lead, with AI pair programming"
+        },
+        {
+          "k": "Domain",
+          "v": "B2B sales CRM in Arabic and English"
+        },
+        {
+          "k": "Surfaces",
+          "v": "Web app, versioned REST API and an MCP server"
+        },
+        {
+          "k": "Status",
+          "v": "Pre-launch. Not deployed to production"
+        }
+      ],
+      "problemTitle": "The problem",
+      "problem": [
+        "Sales teams want AI help, but a model with write access to shared customer records is a liability. One wrong stage change or outbound message reaches real people.",
+        "Most AI features in a CRM either stay read-only and add little, or act on their own and add risk.",
+        "Teams in the Gulf need a native Arabic, right-to-left interface, not a translated afterthought."
+      ],
+      "modules": {
+        "t": "Core modules",
+        "d": "One workspace for the whole pipeline. Every screen here is the running application on seeded demo data.",
+        "tablist": "CRMA modules",
+        "items": {
+          "pipeline": {
+            "t": "Deal pipeline",
+            "d": "Kanban stages with a rule-based health score on every card, and a review strip that counts stale, stuck and unscheduled deals.",
+            "alt": "Deal pipeline with Kanban stages, health scores on each card and the pipeline review strip"
+          },
+          "deal-workspace": {
+            "t": "Deal workspace",
+            "d": "Key facts, stage history and next steps, with a health score that lists each rule that cost points.",
+            "alt": "Deal workspace with deal health, key facts and next steps"
+          },
+          "contacts": {
+            "t": "Contacts",
+            "d": "People and companies, scoped to the organisation that owns them.",
+            "alt": "Contacts list"
+          },
+          "leads": {
+            "t": "Leads",
+            "d": "Scored leads from every intake channel, ready to qualify or convert.",
+            "alt": "Leads list with scores and sources"
+          },
+          "tasks": {
+            "t": "Tasks",
+            "d": "Follow-ups linked to the deal, lead or contact they belong to.",
+            "alt": "Tasks list"
+          },
+          "workflows": {
+            "t": "Workflows",
+            "d": "Automations built in a visual builder and validated before they can go live.",
+            "alt": "Workflows list"
+          }
+        }
+      },
+      "flow": {
+        "t": "How work moves through the system",
+        "d": "Event-driven. A record change can start a workflow, the AI reads freely, and every write it wants waits for a person.",
+        "step": "Step",
+        "steps": [
+          {
+            "t": "Intake",
+            "d": "Leads arrive from Meta lead ads, WhatsApp, web forms and CSV import.",
+            "alt": "Leads list"
+          },
+          {
+            "t": "Record and score",
+            "d": "Each lead becomes a record with a rule-based score, and every deal carries a health score. The numbers come from CRM data, not from a model.",
+            "alt": "Pipeline with deal health scores"
+          },
+          {
+            "t": "Automate",
+            "d": "A record event starts a workflow. The graph is validated before it can be activated, and its expressions use a typed DSL instead of eval().",
+            "alt": "Workflow builder: trigger, condition, two task branches"
+          },
+          {
+            "t": "Propose",
+            "d": "The copilot reads and searches freely. Anything that would change data becomes a proposal with a diff, a reason and a risk class, and it expires after 72 hours by default.",
+            "alt": "Copilot proposing a new task"
+          },
+          {
+            "t": "Decide",
+            "d": "A person approves, edits or rejects it in the AI Action Center. Only low and medium risk proposals can be approved together.",
+            "alt": "AI Action Center with two proposals waiting for review"
+          },
+          {
+            "t": "Execute and resume",
+            "d": "Only an approved action runs. The paused agent run then resumes with its context intact, and the proposal moves to its final tab in the Action Center."
+          }
+        ]
+      },
+      "arch": {
+        "t": "System architecture",
+        "d": "A modular monolith. Every box maps to code or configuration in the repository.",
+        "tiers": {
+          "surfaces": {
+            "t": "Surfaces",
+            "d": "One codebase, four ways in.",
+            "items": [
+              "Inertia v2 · React 19",
+              "REST /api/v1 · 244 routes",
+              "AI API · 41 routes",
+              "MCP server · OAuth 2.1"
+            ]
+          },
+          "edge": {
+            "t": "Edge and policy",
+            "d": "Scoped to a tenant and checked against a policy before any domain code runs.",
+            "items": [
+              "nginx",
+              "26 middleware",
+              "Organisation scope",
+              "49 policies",
+              "Rate limits",
+              "Idempotency keys"
+            ]
+          },
+          "app": {
+            "t": "Application",
+            "d": "Laravel 12 on PHP 8.3, split by domain.",
+            "items": [
+              "CRM domains",
+              "Workflow engine",
+              "Pipeline intelligence",
+              "Agent runtime · 19 tools",
+              "Model router",
+              "Hybrid knowledge retrieval"
+            ]
+          },
+          "async": {
+            "t": "Async and realtime",
+            "d": "Queues split by workload, a scheduler and WebSockets.",
+            "items": [
+              "Redis 7",
+              "Horizon queues",
+              "Reverb WebSockets",
+              "Scheduler"
+            ]
+          },
+          "data": {
+            "t": "Data",
+            "d": "One relational store, scoped by organisation.",
+            "items": [
+              "MySQL 8",
+              "150 models",
+              "168 migrations"
+            ]
+          }
+        },
+        "deliveryT": "Delivery",
+        "delivery": "Docker Compose services, a GitHub Actions pipeline for tests, lint and deploy, and a release script that switches an atomic symlink and rolls back when the health check fails."
+      },
+      "ai": {
+        "t": "Governed AI: propose, review, execute",
+        "d": "The agent runtime pauses the run, shows a field-level diff with the reason and the risk, and resumes only after a human decision.",
+        "quote": "Reads run immediately. Writes wait for a person.",
+        "gate": {
+          "agent": "Deal & Pipeline agent",
+          "replayOf": "Illustrative replay",
+          "runLabel": "Agent run",
+          "steps": {
+            "started": "Started",
+            "searched": "Searched the CRM",
+            "proposed": "Proposed a stage change",
+            "waiting": "Waiting for your approval",
+            "approved": "Approved · stage changed",
+            "resumed": "Run resumed with its context",
+            "rejected": "Rejected · nothing changed"
+          },
+          "proposed": "Proposed action",
+          "changesData": "Changes data",
+          "needsReview": "Needs review",
+          "done": "Approved",
+          "rejected": "Rejected",
+          "field": "Field",
+          "current": "Current",
+          "proposedCol": "Proposed",
+          "approve": "Approve",
+          "reject": "Reject",
+          "replay": "Replay",
+          "illustrative": "An illustrative replay of the copilot screen below. The proposal, its fields and its reason are copied from that screen; the timing is not. Record content stays in English, as it does in the app."
+        },
+        "risk": {
+          "t": "Risk classes",
+          "d": "Every tool is classed by its consequence, not by its name.",
+          "classes": [
+            "Runs immediately",
+            "Becomes a proposal",
+            "Becomes a proposal",
+            "Always needs approval",
+            "Needs approval, never in bulk"
+          ],
+          "note": "Bulk approval is offered only for low and medium risk. Proposals expire after 72 hours by default."
+        },
+        "screens": {
+          "approval": "Copilot paused on a proposed stage change",
+          "actions": "AI Action Center with risk labels and expiry",
+          "inbox": "AI Inbox, filled by the hourly proactive scanner",
+          "mcp": "MCP connectors for external AI tools"
+        },
+        "disclosureT": "How these screens were made",
+        "disclosure": "The copilot screens use the project’s deterministic Fake model driver, the same approach as its end-to-end tests. Only the model’s choice of tool calls was scripted. Tool execution, policy checks, risk classification, proposal creation and the run pause are the real application code. No live model call was made."
+      },
+      "analytics": {
+        "t": "Analytics that are computed, not guessed",
+        "d": "Deal health, pipeline review and lead scores are deterministic rules over CRM data. The AI can explain a number; it does not invent one.",
+        "calloutLabel": "Stated on the screen",
+        "signalsT": "Pipeline review",
+        "signalsD": "Eight rule-based signals, recounted over the open deals each time the review runs.",
+        "signals": [
+          "Close date passed",
+          "Stale",
+          "Stuck in stage",
+          "No next step",
+          "Commitments due",
+          "Closing soon",
+          "No contact",
+          "Recently advanced"
+        ],
+        "screens": {
+          "deal": "Deal workspace: the health score and the rule that cost points",
+          "dashboard": "Dashboard",
+          "reports": "Reports"
+        },
+        "note": "Figures in these screens are seeded demo values, not business results."
+      },
+      "security": {
+        "t": "Security, tenancy and access control",
+        "d": "Defence in depth, enforced at the middleware, policy and validation layers, and covered by tests.",
+        "core": "Data",
+        "layers": [
+          {
+            "t": "Identity",
+            "d": "TOTP two-factor sign-in, OIDC single sign-on, SCIM provisioning, session management and IP allowlists."
+          },
+          {
+            "t": "Request hygiene",
+            "d": "Rate limiting, idempotency keys and security headers."
+          },
+          {
+            "t": "Tenant isolation",
+            "d": "Organisation scoping, plus validation rules that reject a reference to another tenant’s records."
+          },
+          {
+            "t": "Authorisation",
+            "d": "Roles per organisation and Laravel policies, with tests that keep the API and the interface in parity."
+          },
+          {
+            "t": "Outbound calls",
+            "d": "An SSRF-safe fetcher: public addresses only, the connection pinned to the validated address, and every redirect checked again."
+          }
+        ],
+        "screens": {
+          "roles": "Roles and team permissions",
+          "audit": "Activity history"
+        }
+      },
+      "mobile": {
+        "t": "Responsive by default",
+        "d": "The same React components adapt to a 390 px viewport, approvals and the deal workspace included.",
+        "screens": {
+          "dashboard": "Dashboard",
+          "pipeline": "Pipeline",
+          "ai-actions": "AI approvals",
+          "deal-workspace": "Deal workspace"
+        }
+      },
+      "rtl": {
+        "t": "Arabic and English, one codebase",
+        "d": "The same pipeline in both reading directions. Drag across it to compare.",
+        "compare": {
+          "en": "English · LTR",
+          "ar": "العربية · RTL",
+          "slider": "Compare the English and Arabic layouts",
+          "valueText": "{value} percent English",
+          "altEn": "Deal pipeline in English, laid out left to right",
+          "altAr": "The same deal pipeline in Arabic, mirrored right to left"
+        },
+        "points": [
+          "Each page loads its own translation namespace.",
+          "Layouts mirror through logical CSS properties, not hard-coded left and right.",
+          "Record content stays in the language it was entered in. It is data, not interface."
+        ]
+      },
+      "evidence": {
+        "t": "Engineering evidence",
+        "d": "Counts measured from the repository on 14 Oct 2026.",
+        "metrics": {
+          "routes": "Routes",
+          "models": "Models",
+          "migrations": "Migrations",
+          "controllers": "Controllers",
+          "policies": "Policies",
+          "middleware": "Middleware",
+          "jobs": "Jobs",
+          "pages": "Inertia pages",
+          "tools": "AI tools",
+          "profiles": "Agent profiles",
+          "actions": "Governed actions",
+          "php": "PHP test files",
+          "frontend": "Frontend test files",
+          "e2e": "Playwright specs"
+        },
+        "tests": "Executed on 18 Oct 2026: 139 targeted Pest tests passed with 578 assertions (AI, RBAC, workflows and tenant isolation), on SQLite in memory. The full suite was not run; the repository’s own plan lists failing backend tests.",
+        "highlights": [
+          {
+            "t": "No eval()",
+            "d": "Workflow expressions moved to a typed DSL, and an audit command finds legacy definitions and pauses them."
+          },
+          {
+            "t": "Measured retrieval",
+            "d": "Knowledge search fuses BM25 and vector results with Reciprocal Rank Fusion, and an eval harness reports recall@k and MRR."
+          },
+          {
+            "t": "MCP with OAuth 2.1",
+            "d": "PKCE S256, hashed audience-bound tokens and rotating refresh tokens with reuse detection. External agents can read or propose, never write."
+          }
+        ]
+      },
+      "honest": {
+        "t": "Where it stands",
+        "d": "What this case study does not claim.",
+        "items": [
+          "Pre-launch. The repository’s own production plan scores readiness at 47/100 and marks it NO-GO.",
+          "There are no customers, revenue or usage figures, and none are implied.",
+          "Stripe, Twilio, WhatsApp, Meta and model providers were not exercised live; some are partial.",
+          "No load tests have been run, so scalability is an architectural property only.",
+          "Every record on screen is seeded or fictional demo data."
+        ]
+      },
+      "architecture": "A modular Laravel 12 monolith serving an Inertia and React 19 app, a versioned REST API, an AI API and an MCP server. MySQL 8 and Redis 7 with Horizon queues, Reverb WebSockets and a scheduler, packaged as Docker Compose services and shipped through GitHub Actions.",
+      "verified": [
+        "A model-directed agent loop with server-side step and tool-call limits (AgentRuntime).",
+        "AI writes stored as proposals with a 72-hour expiry, executed only after approval (ActionEngine).",
+        "Hybrid retrieval: lexical and vector results fused with RRF, filtered by organization.",
+        "An MCP server behind OAuth, exposing read and propose tools to external agents.",
+        "Organization-scoped data with tenant-isolation tests."
+      ]
+    },
+    "step": "Step",
+    "claims": {
+      "verified": "What was verified",
+      "notClaimed": "What I do not claim"
+    },
+    "restocafe": {
+      "kicker": "Case study · Restaurant operations platform",
+      "title": "RestoCafe OS",
+      "lede": "A multi-branch restaurant platform built around one hard problem: keeping an order correct while tills, a kitchen screen and a patchy connection all touch it.",
+      "status": "In development · not deployed",
+      "facts": [
+        {
+          "k": "Role",
+          "v": "Sole author"
+        },
+        {
+          "k": "Domain",
+          "v": "Restaurant POS, kitchen and table service"
+        },
+        {
+          "k": "Shape",
+          "v": "NestJS API, Prisma schema, ops PWA"
+        },
+        {
+          "k": "Status",
+          "v": "In development, early commit history"
+        }
+      ],
+      "problemTitle": "The operation",
+      "problem": "A waiter adds a dish while the cashier splits the bill and the kitchen marks it ready. Every one of them must see the same order, and none of them may overwrite the others.",
+      "flowTitle": "One order, every state",
+      "flowIntro": "The order moves through explicit states. Each transition is checked on the server and broadcast to every screen that shows it.",
+      "flow": [
+        {
+          "t": "Draft",
+          "d": "Items added at the table or the till."
+        },
+        {
+          "t": "Confirmed",
+          "d": "Sent to the kitchen; the order is now shared."
+        },
+        {
+          "t": "In preparation",
+          "d": "The kitchen board picks it up in real time."
+        },
+        {
+          "t": "Ready",
+          "d": "Marked from the kitchen; the floor is notified."
+        },
+        {
+          "t": "Served",
+          "d": "Closed at the table."
+        },
+        {
+          "t": "Paid",
+          "d": "Invoiced and settled, once."
+        }
+      ],
+      "decisionsTitle": "What keeps it correct",
+      "decisions": [
+        {
+          "t": "Idempotency keys",
+          "d": "A retried request with the same key returns the first result instead of applying twice.",
+          "code": "idempotency-key.store.ts"
+        },
+        {
+          "t": "Optimistic versions",
+          "d": "Updates carry the version they were based on; a stale write is rejected, not merged.",
+          "code": "expectedVersion"
+        },
+        {
+          "t": "Row locks for tables",
+          "d": "Seating and moving orders between tables runs under SELECT … FOR UPDATE.",
+          "code": "FOR UPDATE"
+        },
+        {
+          "t": "An offline queue",
+          "d": "The ops app queues actions while offline and replays them on reconnect, with tests for the queue.",
+          "code": "offline-queue.test.ts"
+        },
+        {
+          "t": "Real-time with auth",
+          "d": "Socket.IO with a Redis adapter, and a short-lived socket token instead of the session cookie."
+        }
+      ],
+      "screensNote": "Captured by the repository’s own Playwright visual tests against a seeded local build. Orders, tables and amounts are test data.",
+      "screens": {
+        "kitchen": "Kitchen board",
+        "order-create": "Order entry",
+        "tables": "Table service board",
+        "dashboard": "Operations dashboard",
+        "invoice": "Paid invoice",
+        "reports": "Daily report"
+      },
+      "verified": [
+        "NestJS, Prisma and PostgreSQL, with a schema of around forty models.",
+        "An idempotency-key store and version checks (expectedVersion) on order updates.",
+        "Row locking in the table service.",
+        "Socket.IO with a Redis adapter and a dedicated socket token.",
+        "An offline queue in the ops web app, with its own tests."
+      ],
+      "notClaimed": [
+        "It is not deployed and has no restaurants using it.",
+        "k6 load scripts and Kubernetes manifests exist, but no load results or production cluster are claimed.",
+        "The history is short: most of the work is still uncommitted."
+      ],
+      "tests": "Executed on 18 Oct 2026 against the working tree: 112 passed, 6 failed, 3 skipped (Jest, 2 of 33 suites failing, including the order-lifecycle suite).",
+      "architecture": "A NestJS and TypeScript API with Prisma on PostgreSQL, Redis for the Socket.IO adapter and caching, and a React PWA for operations with an offline queue."
+    },
+    "mtjri": {
+      "kicker": "Case study · Multi-store commerce",
+      "title": "Mtjri",
+      "lede": "Multi-store commerce where AI drafts each store’s landing content in the background, and a validator decides whether it is fit to save.",
+      "status": "Working build · not deployed",
+      "facts": [
+        {
+          "k": "Role",
+          "v": "Repository owner"
+        },
+        {
+          "k": "Domain",
+          "v": "Store builder, back office, POS and storefront"
+        },
+        {
+          "k": "Stack",
+          "v": "Laravel, Inertia and React, queued jobs"
+        }
+      ],
+      "flowTitle": "The content pipeline",
+      "flowIntro": "Generating a store’s content is a job, not a request.",
+      "flow": [
+        {
+          "t": "Request",
+          "d": "A merchant asks for content."
+        },
+        {
+          "t": "Queue",
+          "d": "A job is dispatched for the store."
+        },
+        {
+          "t": "Generate",
+          "d": "The provider manager calls a model."
+        },
+        {
+          "t": "Validate",
+          "d": "The output is checked against rules."
+        },
+        {
+          "t": "Save",
+          "d": "Only valid sections are stored."
+        }
+      ],
+      "decisionsTitle": "Engineering decisions",
+      "decisions": [
+        {
+          "t": "Jobs, not requests",
+          "d": "Whole-store generation and single-section regeneration run as separate queued jobs.",
+          "code": "GenerateStoreContentJob · RegenerateSectionJob"
+        },
+        {
+          "t": "A provider manager",
+          "d": "Ollama by default, with an optional OpenAI fallback behind one interface.",
+          "code": "AIProviderManager"
+        },
+        {
+          "t": "Validate before saving",
+          "d": "Generated landing content must pass a validator before it reaches the store.",
+          "code": "LandingPageContentValidator"
+        },
+        {
+          "t": "Store-scoped AI records",
+          "d": "AI models belong to a store through a shared trait, so one store never reads another’s drafts.",
+          "code": "BelongsToStore"
+        }
+      ],
+      "screensNote": "The platform admin, a store’s back office and its storefront, from a local build with demo stores and orders.",
+      "verified": [
+        "Queued jobs for store and section generation.",
+        "A provider manager with Ollama and an optional OpenAI fallback.",
+        "A validator for generated landing content, and store-scoped AI models.",
+        "Around three dozen test files in the repository (not run for this page)."
+      ],
+      "notClaimed": [
+        "The source arrived in a single commit, so the history does not show how it was built.",
+        "It is not deployed and has no merchants.",
+        "Generation quality has not been measured."
+      ],
+      "architecture": "Laravel with Inertia and React, queued jobs for AI generation, an AI provider manager over Ollama and OpenAI, and store-scoped models.",
+      "screens": {
+        "storefront": "Storefront",
+        "store-dashboard": "Store dashboard",
+        "pos": "Point of sale",
+        "product-editor": "Product editor",
+        "platform-dashboard": "Platform admin",
+        "roles": "Staff roles and permissions"
+      }
     }
+  },
+  "crmaTeaser": {
+    "title": "CRMA",
+    "kicker": "Selected system · Multi-tenant CRM",
+    "lede": "A bilingual B2B CRM where AI agents can read, search and propose, and every consequential change waits for a person.",
+    "handles": "What the system handles",
+    "items": [
+      {
+        "t": "Tenancy",
+        "d": "Every record scoped to an organization, with isolation tests"
+      },
+      {
+        "t": "Pipeline",
+        "d": "Deals, contacts, leads, tasks and a typed workflow engine"
+      },
+      {
+        "t": "AI agents",
+        "d": "A bounded, model-directed tool loop with step and call budgets"
+      },
+      {
+        "t": "Approvals",
+        "d": "AI writes become proposals that expire unless a person approves"
+      },
+      {
+        "t": "Retrieval",
+        "d": "Hybrid lexical and vector search, filtered by organization"
+      }
+    ],
+    "cta": "Read the CRMA case study",
+    "imageAlt": "CRMA deal pipeline with seeded demo data",
+    "stackLabel": "Stack",
+    "stack": [
+      "Laravel 12",
+      "PHP 8.3",
+      "React 19",
+      "TypeScript",
+      "MySQL 8",
+      "Redis",
+      "Reverb"
+    ],
+    "status": "Pre-launch · not in production"
+  },
+  "restocafe": {
+    "title": "RestoCafe OS",
+    "kicker": "Selected system · Restaurant operations",
+    "lede": "One order, followed from the till to the kitchen to the invoice, without two terminals or a dropped connection corrupting it.",
+    "points": [
+      "Idempotency keys so a retried request applies once",
+      "Version checks and row locks where staff can race",
+      "An offline queue in the ops app, replayed on reconnect"
+    ],
+    "status": "In development · not deployed",
+    "cta": "Read the RestoCafe case study",
+    "imageAlt": "RestoCafe kitchen board with seeded test orders"
+  },
+  "about": {
+    "heading": "About.",
+    "body": [
+      "I am a backend engineer who starts with the business: how a sale is approved, how a booking is held, how money is split. The code comes after the operation is clear.",
+      "Most of my work is Laravel, FastAPI and NestJS on relational databases, with the AI layer built as part of the system rather than beside it."
+    ],
+    "focus": [
+      "Backend architecture",
+      "Multi-tenant SaaS",
+      "Workflows & permissions",
+      "Arabic-first products",
+      "Applied AI"
+    ]
+  },
+  "rakez": {
+    "title": "Rakez ERP",
+    "kicker": "Selected system · Real-estate ERP · Team-built",
+    "lede": "An ERP built for a Saudi real-estate company: sales, reservations, contracts, commissions and marketing in one Arabic-first platform, built with a small team.",
+    "handles": "What the system handles",
+    "items": [
+      {
+        "t": "Reservations",
+        "d": "A waiting list and row locks for contested units"
+      },
+      {
+        "t": "Commissions",
+        "d": "Commission and distribution records with project policies"
+      },
+      {
+        "t": "Permissions",
+        "d": "Role-based access checked on the server"
+      },
+      {
+        "t": "Ad attribution",
+        "d": "Meta, Google and TikTok leads mapped to their project"
+      },
+      {
+        "t": "Assistant",
+        "d": "OpenAI-backed answers in Arabic for the sales team"
+      }
+    ],
+    "cta": "Read the Rakez case study",
+    "imageAlt": "Rakez ERP marketing dashboard with demo data",
+    "stackLabel": "Stack",
+    "stack": [
+      "Laravel 12",
+      "MySQL",
+      "Redis",
+      "Reverb",
+      "Sanctum",
+      "Spatie Permission",
+      "Vue 3"
+    ]
   }
 }

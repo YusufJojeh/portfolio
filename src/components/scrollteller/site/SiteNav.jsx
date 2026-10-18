@@ -22,6 +22,7 @@ export default function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const menuButton = useRef(null);
   const firstLink = useRef(null);
+  const drawer = useRef(null);
 
   const other = locale === 'ar' ? 'en' : 'ar';
   const switchHref = pathname.replace(/^\/(en|ar)(?=\/|$)/, `/${other}`);
@@ -39,7 +40,26 @@ export default function SiteNav() {
     document.body.style.overflow = 'hidden';
     firstLink.current?.focus();
     const onKey = (e) => {
-      if (e.key === 'Escape') setOpen(false);
+      if (e.key === 'Escape') {
+        setOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      // aria-modal does not stop Tab, so keep focus inside the drawer.
+      const stops = drawer.current?.querySelectorAll('a[href], button:not([disabled])');
+      if (!stops?.length) return;
+      const first = stops[0];
+      const last = stops[stops.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      } else if (!drawer.current.contains(document.activeElement)) {
+        e.preventDefault();
+        first.focus();
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => {
@@ -58,17 +78,18 @@ export default function SiteNav() {
         {t('skip')}
       </a>
       <header className="fixed inset-x-0 top-0 z-40">
-        {/* A soft falloff instead of a bar, so the photography runs to the top edge. */}
+        {/* A soft falloff instead of a bar, so the photography runs to the top edge.
+            Over the sunset hero it stays at half strength so the links keep their contrast. */}
         <div
           aria-hidden="true"
-          className={`pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-cinema-bg/85 via-cinema-bg/40 to-transparent transition-opacity duration-500 ease-cinematic ${
-            scrolled ? 'opacity-100' : 'opacity-0'
+          className={`pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-cinema-bg/95 via-cinema-bg/85 to-transparent transition-opacity duration-500 ease-cinematic ${
+            scrolled ? 'opacity-100' : 'opacity-60'
           }`}
         />
         <div className="relative flex h-16 items-center justify-between px-6 md:px-12 lg:px-16">
           <Link
             href={`/${locale}`}
-            className="font-grotesk text-[15px] font-medium tracking-tight text-cinema-cream"
+            className="name-script hit font-grotesk text-[15px] font-medium tracking-tight text-cinema-cream"
           >
             {t('name')}
           </Link>
@@ -78,7 +99,7 @@ export default function SiteNav() {
               <Link
                 key={l.key}
                 href={`/${locale}#${l.hash}`}
-                className="text-[13px] text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
+                className="hit text-[13px] text-cinema-text/80 transition-colors duration-200 hover:text-cinema-cream"
               >
                 {t(l.key)}
               </Link>
@@ -86,7 +107,7 @@ export default function SiteNav() {
             <Link
               href={switchHref}
               hrefLang={other}
-              className="text-[13px] text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
+              className="hit text-[13px] text-cinema-text/80 transition-colors duration-200 hover:text-cinema-cream"
             >
               {t('language')}
             </Link>
@@ -98,7 +119,7 @@ export default function SiteNav() {
             onClick={() => setOpen(true)}
             aria-expanded={open}
             aria-controls="site-drawer"
-            className="rounded-sm border border-white/20 px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-cinema-cream md:hidden"
+            className="min-h-11 rounded-sm border border-white/20 bg-cinema-bg/70 px-4 text-[12px] uppercase tracking-[0.18em] text-cinema-cream md:hidden"
           >
             {t('menu')}
           </button>
@@ -108,6 +129,7 @@ export default function SiteNav() {
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={drawer}
             id="site-drawer"
             role="dialog"
             aria-modal="true"
@@ -119,11 +141,11 @@ export default function SiteNav() {
             className="fixed inset-0 z-50 flex flex-col bg-cinema-bg/95 px-6 backdrop-blur-lg md:hidden"
           >
             <div className="flex h-16 items-center justify-between">
-              <span className="font-grotesk text-[15px] font-medium text-cinema-cream">{t('name')}</span>
+              <span className="name-script font-grotesk text-[15px] font-medium text-cinema-cream">{t('name')}</span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-sm border border-white/20 px-3 py-1.5 text-[12px] uppercase tracking-[0.18em] text-cinema-cream"
+                className="min-h-11 rounded-sm border border-white/20 px-4 text-[12px] uppercase tracking-[0.18em] text-cinema-cream"
               >
                 {t('close')}
               </button>
@@ -140,7 +162,7 @@ export default function SiteNav() {
                     ref={i === 0 ? firstLink : undefined}
                     href={`/${locale}#${l.hash}`}
                     onClick={() => setOpen(false)}
-                    className="font-display text-[44px] leading-none text-cinema-cream"
+                    className="font-display text-[44px] leading-none text-cinema-cream transition-colors duration-150 active:text-cinema-muted"
                   >
                     {t(l.key)}
                   </Link>
@@ -153,7 +175,7 @@ export default function SiteNav() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-auto border-t border-white/10 py-6"
             >
-              <Link href={switchHref} hrefLang={other} className="text-sm text-cinema-muted">
+              <Link href={switchHref} hrefLang={other} className="inline-block py-3 text-sm text-cinema-muted">
                 {t('language')}
               </Link>
             </motion.div>

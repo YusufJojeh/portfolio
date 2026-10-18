@@ -23,7 +23,7 @@ function Content() {
   ];
   return (
     <div className="mr-auto max-w-[56rem]">
-      <ChapterLabel index="11">{c('11')}</ChapterLabel>
+      <ChapterLabel index="12">{c('12')}</ChapterLabel>
       <h2 className="mt-6 font-display text-[48px] leading-[0.98] text-cinema-soft md:text-[clamp(64px,7.4vw,124px)]">
         {t('statement')}
       </h2>
@@ -32,7 +32,7 @@ function Content() {
         <a
           href={`mailto:${CONTACT.email}`}
           dir="ltr"
-          className="font-display text-[26px] text-cinema-soft underline decoration-white/25 underline-offset-[6px] transition-colors duration-200 hover:decoration-cinema-cream md:text-[34px]"
+          className="hit font-display text-[26px] text-cinema-soft underline decoration-white/25 underline-offset-[6px] transition-colors duration-200 hover:decoration-cinema-cream md:text-[34px]"
         >
           {t('email')}
         </a>
@@ -43,7 +43,7 @@ function Content() {
                 href={l.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cinema-text/75 transition-colors duration-200 hover:text-cinema-cream"
+                className="hit text-cinema-text/75 transition-colors duration-200 hover:text-cinema-cream"
               >
                 {l.label} <span aria-hidden="true">↗</span>
               </a>
@@ -95,7 +95,7 @@ export default function Closing() {
   const c = useTranslations('final.chapters');
   if (reduced) {
     return (
-      <section id="closing" data-chapter="11" aria-label={c('11')} className="relative min-h-[100svh] overflow-hidden">
+      <section id="closing" data-chapter="12" aria-label={c('12')} className="relative min-h-[100svh] overflow-hidden">
         <Background />
         <div className="relative flex min-h-[100svh] items-end px-6 pb-16 pt-28 md:px-12 lg:px-16">
           <Content />
@@ -104,7 +104,7 @@ export default function Closing() {
     );
   }
   return (
-    <StickyScene id="closing" chapter="11" label={c('11')} length={2}>
+    <StickyScene id="closing" chapter="12" label={c('12')} length={2}>
       <Stage />
     </StickyScene>
   );

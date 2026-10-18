@@ -23,11 +23,11 @@ export default function HireLensWork({ locale, work }) {
       <Section className="py-10">
         <div className="grid border-y border-white/15 lg:grid-cols-2">
           <div className="py-12 lg:border-e lg:border-white/15 lg:pe-14 lg:py-16">
-            <Label>{h('aiTitle')}</Label>
+            <Label as="h2">{h('aiTitle')}</Label>
             <ol className="mt-8">
               {ai.map((item, i) => (
                 <li key={item} className="flex gap-5 border-b border-white/10 py-5 last:border-b-0">
-                  <span dir="ltr" className="pt-1 font-mono text-[10.5px] tracking-[0.18em] text-cinema-muted">
+                  <span dir="ltr" className="pt-1 font-mono text-[11px] tracking-[0.18em] text-cinema-muted">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <span className="text-[16px] leading-relaxed text-cinema-text/85 md:text-[18px]">{item}</span>
@@ -36,7 +36,7 @@ export default function HireLensWork({ locale, work }) {
             </ol>
           </div>
           <div className="border-t border-white/15 py-12 lg:border-t-0 lg:ps-14 lg:py-16">
-            <Label>{h('humanTitle')}</Label>
+            <Label as="h2">{h('humanTitle')}</Label>
             <p className="mt-8 font-display text-[56px] italic leading-[0.98] rtl:not-italic text-cinema-soft md:text-[clamp(72px,7vw,112px)]">
               {human.map((line) => (
                 <span key={line} className="block">
@@ -50,7 +50,7 @@ export default function HireLensWork({ locale, work }) {
       </Section>
 
       <Section className="py-20 md:py-28">
-        <Label>{h('flowTitle')}</Label>
+        <Label as="h2">{h('flowTitle')}</Label>
         <ol className="mt-10 grid gap-px bg-white/10 md:grid-cols-5">
           {flow.map((step, i) => {
             const last = i === flow.length - 1;
@@ -61,7 +61,7 @@ export default function HireLensWork({ locale, work }) {
                   last ? 'bg-cinema-cream text-cinema-bg' : 'bg-cinema-bg text-cinema-text'
                 }`}
               >
-                <span dir="ltr" className={`font-mono text-[10.5px] tracking-[0.18em] ${last ? 'text-cinema-bg/60' : 'text-cinema-muted'}`}>
+                <span dir="ltr" className={`font-mono text-[11px] tracking-[0.18em] ${last ? 'text-cinema-bg/60' : 'text-cinema-muted'}`}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className={`font-display text-[24px] leading-tight md:text-[26px] ${last ? '' : 'text-cinema-soft'}`}>{step}</span>
@@ -75,7 +75,7 @@ export default function HireLensWork({ locale, work }) {
       <Section className="bg-cinema-bg2 py-20 md:py-28">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,2fr)] lg:gap-20">
           <div>
-            <Label>{h('guardTitle')}</Label>
+            <Label as="h2">{h('guardTitle')}</Label>
             <p className="mt-6 max-w-[20rem] text-[15px] leading-relaxed text-cinema-text/60">{h('bilingual')}</p>
           </div>
           <ul className="grid gap-x-12 gap-y-10 md:grid-cols-2">

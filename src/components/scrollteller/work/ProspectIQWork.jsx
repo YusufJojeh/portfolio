@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
 import RunReplay from './RunReplay';
 import { Architecture, BackLink, Label, NextWork, Section, Evidence } from './WorkParts';
+import { Claims } from './CaseParts';
 
 const OVERLAY =
   'linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.82) 38%, rgba(9,11,15,0.35) 75%, rgba(9,11,15,0.6) 100%), rgba(9,11,15,0.25)';
@@ -100,7 +101,7 @@ export default function ProspectIQWork({ locale, work }) {
             <h1 dir="ltr" className="mt-5 font-display text-[64px] leading-[0.92] text-cinema-soft md:text-[clamp(96px,10vw,168px)] rtl:text-right">
               {p('title')}
             </h1>
-            <p className="mt-4 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">{p('alias')}</p>
+            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">{p('alias')}</p>
           </div>
           <p className="max-w-[34rem] font-display text-[26px] leading-[1.15] text-cinema-soft md:text-[34px]">{p('lede')}</p>
         </div>
@@ -201,7 +202,7 @@ export default function ProspectIQWork({ locale, work }) {
           ].map((c, i) =>
             c ? (
               <div key={c[0]} className="border border-white/15 p-6">
-                <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-cinema-muted">{c[0]}</p>
+                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-cinema-muted">{c[0]}</p>
                 <p className="mt-4 font-display text-[26px] leading-[1.1] text-cinema-soft md:text-[30px]">{c[1]}</p>
                 <p className="mt-4 text-[14.5px] leading-relaxed text-cinema-text/65">{c[2]}</p>
               </div>
@@ -231,7 +232,7 @@ export default function ProspectIQWork({ locale, work }) {
         <ol className="border-t border-white/15">
           {rt.loop.map((s, i) => (
             <li key={s} className="flex items-baseline gap-5 border-b border-white/10 py-3.5">
-              <span dir="ltr" className="w-6 shrink-0 font-mono text-[10.5px] tracking-[0.18em] text-cinema-muted">
+              <span dir="ltr" className="w-6 shrink-0 font-mono text-[11px] tracking-[0.18em] text-cinema-muted">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span className="text-[15.5px] text-cinema-text">{s}</span>
@@ -266,7 +267,7 @@ export default function ProspectIQWork({ locale, work }) {
         <ol className="mt-12 grid gap-x-10 md:grid-cols-2 md:[grid-auto-flow:column] md:[grid-template-rows:repeat(5,auto)]">
           {ap.chain.map((s, i) => (
             <li key={s} className="flex items-baseline gap-5 border-b border-white/10 py-3.5">
-              <span dir="ltr" className="w-6 shrink-0 font-mono text-[10.5px] tracking-[0.18em] text-cinema-muted">
+              <span dir="ltr" className="w-6 shrink-0 font-mono text-[11px] tracking-[0.18em] text-cinema-muted">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span className={`text-[15.5px] ${i === 3 ? 'text-cinema-cream' : 'text-cinema-text'}`}>{s}</span>
@@ -329,6 +330,7 @@ export default function ProspectIQWork({ locale, work }) {
       </Section>
 
       <Evidence t={t} slug="prospectiq" className="border-t border-white/10" />
+      <Claims labels={t.raw('claims')} verified={p.raw('verified')} notClaimed={p.raw('notClaimed')} tests={p('tests')} />
       <Architecture t={t} text={p('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

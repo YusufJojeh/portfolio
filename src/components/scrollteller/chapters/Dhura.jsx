@@ -10,8 +10,8 @@ export default function Dhura() {
   return (
     <ProjectScene
       id="dhura"
-      chapter="07"
-      chapterName={c('07')}
+      chapter="04"
+      chapterName={c('04')}
       variant="arabic"
       image={{
         src: '/portfolio/work/dhura/app/executive-overview.webp',
@@ -42,7 +42,7 @@ export default function Dhura() {
           <ol className="mt-5">
             {points.map((pt, i) => (
               <li key={pt} className="flex gap-4 border-t border-white/10 py-4">
-                <span dir="ltr" className="pt-1 font-mono text-[10.5px] tracking-[0.2em] text-cinema-steel">
+                <span dir="ltr" className="pt-1 font-mono text-[11px] tracking-[0.2em] text-cinema-steel">
                   0{i + 1}
                 </span>
                 <span className="text-[16px] leading-relaxed text-cinema-text/80 md:text-[18px]">{pt}</span>

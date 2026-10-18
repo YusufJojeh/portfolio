@@ -12,6 +12,8 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    // StoryFrame renders at 85 and CinematicBackground at 80; unlisted values are coerced to 75.
+    qualities: [75, 80, 85],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

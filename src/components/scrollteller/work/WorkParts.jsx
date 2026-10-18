@@ -1,3 +1,4 @@
+import { createElement } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CONTACT } from '../contact';
@@ -16,20 +17,27 @@ export function Arrow({ back = false }) {
 }
 
 export function BackLink({ locale, label }) {
+  // `lean` moves the arrow toward the destination (right in LTR), which for a back arrow is the wrong way:
+  // the important overrides send it toward "back" instead, and only when motion is allowed.
   return (
     <Link
       href={`/${locale}#rakez`}
-      className="inline-flex items-center gap-2 font-mono text-[10.5px] uppercase tracking-[0.2em] text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
+      className="lean hit group inline-flex w-fit items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-cinema-muted transition-colors duration-200 hover:text-cinema-cream"
     >
-      <Arrow back /> {label}
+      <span
+        aria-hidden="true"
+        className="inline-block -scale-x-100 rtl:scale-x-100 motion-safe:group-hover:![translate:-3px_0] motion-safe:group-focus-visible:![translate:-3px_0] motion-safe:rtl:group-hover:![translate:3px_0] motion-safe:rtl:group-focus-visible:![translate:3px_0]"
+      >
+        →
+      </span>
+      {label}
     </Link>
   );
 }
 
-export function Label({ children, className = '' }) {
-  return (
-    <p className={`font-mono text-[10.5px] uppercase tracking-[0.22em] text-cinema-muted ${className}`}>{children}</p>
-  );
+/** A mono caption. Pass as="h2" (or h3) when it titles a section so the page has a real outline. */
+export function Label({ children, className = '', as = 'p' }) {
+  return createElement(as, { className: `font-mono text-[11px] uppercase tracking-[0.22em] text-cinema-muted ${className}` }, children);
 }
 
 export function Section({ children, className = '' }) {
@@ -58,7 +66,7 @@ export function SourceLine({ t, url, className = '' }) {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-block text-[14px] text-cinema-text/80 underline decoration-white/25 underline-offset-4 transition-colors duration-200 hover:decoration-cinema-cream"
+          className="hit mt-3 inline-block text-[14px] text-cinema-text/80 underline decoration-white/25 underline-offset-4 transition-colors duration-200 hover:decoration-cinema-cream"
         >
           {t('viewSource')} <span aria-hidden="true">↗</span>
         </a>
@@ -73,7 +81,7 @@ export function Architecture({ t, text, stack, url }) {
   return (
     <Section className="border-t border-white/10 py-20 md:py-28">
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-20">
-        <Label>{t('architecture')}</Label>
+        <Label as="h2">{t('architecture')}</Label>
         <div>
           <p className="max-w-[46rem] text-[17px] leading-relaxed text-cinema-text/80 md:text-[19px]">{text}</p>
           <div className="mt-12 grid gap-10 md:grid-cols-2">
@@ -98,16 +106,20 @@ export function NextWork({ locale, t, next }) {
             className="mt-4 flex items-baseline gap-4 font-display text-[52px] leading-none text-cinema-soft transition-colors duration-200 group-hover:text-cinema-cream md:text-[clamp(72px,8vw,128px)]"
           >
             {next.title}
-            <span aria-hidden="true" className="text-[0.5em] transition-transform duration-200 ease-cinematic group-hover:translate-x-2">
+            <span
+              aria-hidden="true"
+              className="text-[0.5em] transition-transform duration-200 ease-cinematic group-hover:translate-x-2 group-focus-visible:translate-x-2 group-active:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-focus-visible:translate-x-0 motion-reduce:group-active:translate-x-0"
+            >
               →
             </span>
           </span>
         </Link>
         <a
           href={`mailto:${CONTACT.email}`}
-          className="inline-flex w-fit items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
+          className="lean inline-flex w-fit items-center gap-2 rounded-[3px] border border-white/25 px-5 py-3 text-[13.5px] font-medium text-cinema-text transition-colors duration-200 hover:border-white/60"
         >
           {t('discuss')}
+          <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
         </a>
       </div>
     </Section>
@@ -117,7 +129,7 @@ export function NextWork({ locale, t, next }) {
 /** A plain typographic opening for pages that do not lead with an image. */
 export function WorkHeader({ locale, t, kicker, title, lede, children }) {
   return (
-    <Section className="pb-16 pt-32 md:pb-24 md:pt-44">
+    <Section className="work-rise pb-16 pt-32 md:pb-24 md:pt-44">
       <BackLink locale={locale} label={t('back')} />
       <p className="mt-14 font-mono text-[11px] uppercase tracking-[0.2em] text-cinema-muted">{kicker}</p>
       <h1 dir="ltr" className="mt-5 font-display text-[64px] leading-[0.92] text-cinema-soft md:text-[clamp(96px,11vw,176px)] rtl:text-right">
@@ -137,7 +149,6 @@ const SCREENS = {
   prospectiq: [{ file: 'home', ratio: 1440 / 672, mobileRatio: 780 / 1400 }, { file: 'login', ratio: 1440 / 900 }],
   careerguide: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
   dhura: [{ file: 'login', ratio: 1440 / 900 }, { file: 'register', ratio: 1440 / 900 }],
-  algoag: [{ file: 'home', ratio: 1440 / 900 }, { file: 'login', ratio: 1440 / 900 }],
 };
 
 /**
@@ -159,7 +170,7 @@ function AppGallery({ t, slug }) {
   if (!app) return null;
   return (
     <div className="mt-20 md:mt-28">
-      <Label>{t('evidence.app.label')}</Label>
+      <Label as="h3">{t('evidence.app.label')}</Label>
       <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cinema-text/70">{t('evidence.app.demo')}</p>
       <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-14">
         {app.files.map((file) => (
@@ -174,7 +185,7 @@ function AppGallery({ t, slug }) {
                 className="block h-full w-full object-cover object-top"
               />
             </div>
-            <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+            <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">
               {t(`evidence.app.${slug}.${file}`)}
             </figcaption>
           </figure>
@@ -188,13 +199,13 @@ export function Evidence({ t, slug, className = '' }) {
   const shots = SCREENS[slug];
   if (!shots) return null;
   const caption = (file) => (
-    <figcaption className="mt-3 font-mono text-[10.5px] uppercase tracking-[0.18em] text-cinema-muted">
+    <figcaption className="mt-3 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">
       {t(`evidence.caption.${file}`)}
     </figcaption>
   );
   return (
     <Section className={`py-20 md:py-28 ${className}`}>
-      <Label>{t('evidence.label')}</Label>
+      <Label as="h2">{t('evidence.label')}</Label>
       <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-cinema-text/70">{t(`evidence.source.${slug}`)}</p>
       <div className="mt-12 hidden gap-16 md:grid">
         {shots.map((s) => (

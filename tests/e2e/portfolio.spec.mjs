@@ -1,18 +1,20 @@
 import { test, expect } from '@playwright/test';
 
-const SLUGS = ['rakez', 'hirelens', 'linguacoach', 'prospectiq', 'dhura', 'careerguide', 'algoag'];
+// Mirrors WORK_ORDER in src/content/portfolio/projects.ts.
+const SLUGS = ['rakez', 'crma', 'dhura', 'prospectiq', 'restocafe', 'mtjri', 'hirelens', 'linguacoach', 'careerguide'];
 const CHAPTERS = [
   'opening',
   'real-operations',
   'rakez',
-  'business-to-system',
-  'hirelens',
-  'linguacoach',
-  'prospectiq',
+  'crma',
   'dhura',
+  'prospectiq',
+  'restocafe',
+  'business-to-system',
   'applied-ai',
-  'experience',
   'more-systems',
+  'experience',
+  'about',
   'closing',
 ];
 
@@ -28,8 +30,8 @@ test.describe('home', () => {
   test('Arabic renders right-to-left with Arabic copy from server components', async ({ page }) => {
     await page.goto('/ar');
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    // The HireLens chapter is a server component: this guards the request-locale wiring.
-    await expect(page.locator('#hirelens h2')).toContainText('الذكاء الاصطناعي');
+    // The Applied AI chapter is a server component: this guards the request-locale wiring.
+    await expect(page.locator('#applied-ai h2')).toContainText('ذكاء اصطناعي');
   });
 
   test('no horizontal overflow at 390px', async ({ page }) => {
@@ -61,7 +63,7 @@ test.describe('reduced motion', () => {
 
   test('chapter content is visible without scroll-driven reveals', async ({ page }) => {
     await page.goto('/en');
-    for (const id of ['rakez', 'prospectiq', 'dhura', 'closing']) {
+    for (const id of ['rakez', 'crma', 'dhura', 'prospectiq', 'restocafe', 'closing']) {
       const heading = page.locator(`#${id} h2`).first();
       await heading.scrollIntoViewIfNeeded();
       await expect(heading).toBeVisible();
@@ -87,13 +89,28 @@ test.describe('work routes', () => {
   }
 
   test('real screenshots load on every page that has them', async ({ page }) => {
-    for (const slug of ['rakez', 'hirelens', 'linguacoach', 'prospectiq', 'dhura', 'careerguide', 'algoag']) {
+    for (const slug of SLUGS.filter((s) => s !== 'crma')) {
       await page.goto(`/en/work/${slug}`);
       const img = page.locator(`figure img[src*="${slug}"]`).first();
       await img.scrollIntoViewIfNeeded();
       await expect(img).toHaveJSProperty('complete', true);
       expect(await img.evaluate((el) => el.naturalWidth), slug).toBeGreaterThan(0);
       expect(await img.getAttribute('alt'), slug).toBeTruthy();
+    }
+  });
+
+  test('flagship pages say what was verified and what is not claimed', async ({ page }) => {
+    for (const slug of ['rakez', 'crma', 'dhura', 'prospectiq', 'restocafe']) {
+      await page.goto(`/en/work/${slug}`);
+      await expect(page.getByRole('heading', { name: 'What was verified' })).toHaveCount(1);
+      await expect(page.getByRole('heading', { name: 'What I do not claim' })).toHaveCount(1);
+    }
+  });
+
+  test('employer projects have no routes', async ({ page }) => {
+    for (const slug of ['ot2', 'alaya', 'algoag']) {
+      const res = await page.goto(`/en/work/${slug}`);
+      expect(res?.status(), slug).toBe(404);
     }
   });
 
