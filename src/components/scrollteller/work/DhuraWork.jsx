@@ -1,16 +1,16 @@
-import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
-import { workTitle } from '../projects';
-import { Arrow, BackLink, Evidence, Label, NextWork, Section, StackLine } from './WorkParts';
+import { Architecture, BackLink, Evidence, Label, NextWork, Section } from './WorkParts';
+import { Claims, Decisions, Facts, FlowSteps } from './CaseParts';
 
 const OVERLAY =
   'linear-gradient(270deg, rgba(9,11,15,0.9) 0%, rgba(9,11,15,0.55) 45%, rgba(9,11,15,0.35) 100%), linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.35) 45%, rgba(9,11,15,0.45) 100%)';
 
 /*
- * Dhura is a concept, and the page says so before anything else. The Arabic
- * name leads, set right-aligned in both locales, and there is no source
- * block because there is no shipped code to point to.
+ * Dhura (ذُرى) is a V1 release candidate, not a live deployment, and the cover
+ * says so. The Arabic name leads, set right-aligned in both locales. The page
+ * follows the business journey first, then the safety spine that keeps the
+ * AI layer advisory, then the evidence.
  */
 export default function DhuraWork({ locale, work }) {
   const t = useTranslations('final.work');
@@ -53,41 +53,35 @@ export default function DhuraWork({ locale, work }) {
         <p className="max-w-[56rem] font-display text-[32px] leading-[1.1] text-cinema-soft md:text-[clamp(44px,4.4vw,68px)]">{d('lede')}</p>
       </Section>
 
+      <Facts facts={d.raw('facts')} />
+
+      <Section className="py-16 md:py-24">
+        <Label as="h2">{d('journeyTitle')}</Label>
+        <p className="mt-6 max-w-[40rem] text-[15px] leading-relaxed text-cinema-text/70">{d('journeyIntro')}</p>
+        <div className="mt-12">
+          <FlowSteps steps={d.raw('journey')} stepLabel={t('step')} horizontal />
+        </div>
+      </Section>
+
       <Section className="pb-20 md:pb-28">
-        <ol className="grid gap-px bg-white/10 md:grid-cols-3">
+        <Label as="h2">{d('aiTitle')}</Label>
+        <ol className="mt-10 grid gap-px bg-white/10 md:grid-cols-3">
           {principles.map((p, i) => (
             <li key={p.t} className="bg-cinema-bg p-8 md:p-10">
               <span dir="ltr" className="font-mono text-[11px] tracking-[0.18em] text-cinema-muted">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h2 className="mt-6 font-display text-[30px] leading-tight text-cinema-soft md:text-[36px]">{p.t}</h2>
+              <h3 className="mt-6 font-display text-[28px] leading-tight text-cinema-soft md:text-[34px]">{p.t}</h3>
               <p className="mt-4 text-[15px] leading-relaxed text-cinema-text/70 md:text-[16px]">{p.d}</p>
             </li>
           ))}
         </ol>
       </Section>
 
-      <Section className="bg-cinema-bg2 py-20 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-20">
-          <div>
-            <p className="max-w-[40rem] text-[18px] leading-relaxed text-cinema-text/80 md:text-[21px]">{d('lineage')}</p>
-            <div className="mt-8 flex flex-wrap gap-6 font-mono text-[11px] uppercase tracking-[0.18em]">
-              {['rakez', 'hirelens'].map((slug) => (
-                <Link key={slug} href={`/${locale}/work/${slug}`} className="hit text-cinema-cream/85 transition-colors duration-200 hover:text-cinema-soft">
-                  {workTitle(slug)} <Arrow />
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <StackLine label={d('stackLabel')} stack={work.stack} />
-            <Label className="mt-10">{t('status')}</Label>
-            <p className="mt-3 text-[14px] text-cinema-text/60">{d('status')}</p>
-          </div>
-        </div>
-      </Section>
-
+      <Decisions title={d('decisionsTitle')} items={d.raw('decisions')} />
       <Evidence t={t} slug="dhura" />
+      <Claims labels={t.raw('claims')} verified={d.raw('verified')} notClaimed={d.raw('notClaimed')} tests={d('tests')} />
+      <Architecture t={t} text={d('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>
   );

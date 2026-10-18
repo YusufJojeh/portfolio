@@ -9,17 +9,19 @@ import ProspectIQWork from '@/components/scrollteller/work/ProspectIQWork';
 import CrmaWork from '@/components/scrollteller/work/CrmaWork';
 import DhuraWork from '@/components/scrollteller/work/DhuraWork';
 import CareerGuideWork from '@/components/scrollteller/work/CareerGuideWork';
-import AlgoagWork from '@/components/scrollteller/work/AlgoagWork';
+import RestoCafeWork from '@/components/scrollteller/work/RestoCafeWork';
+import MtjriWork from '@/components/scrollteller/work/MtjriWork';
 
 const PAGES = {
-  rakez: RakezWork,
-  hirelens: HireLensWork,
-  linguacoach: LinguaCoachWork,
-  prospectiq: ProspectIQWork,
   crma: CrmaWork,
   dhura: DhuraWork,
+  prospectiq: ProspectIQWork,
+  restocafe: RestoCafeWork,
+  rakez: RakezWork,
+  mtjri: MtjriWork,
+  hirelens: HireLensWork,
+  linguacoach: LinguaCoachWork,
   careerguide: CareerGuideWork,
-  algoag: AlgoagWork,
 };
 
 export const dynamicParams = false;

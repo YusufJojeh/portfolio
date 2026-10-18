@@ -12,6 +12,7 @@ import PhoneRow from './crma/PhoneRow';
 import RtlCompare from './crma/RtlCompare';
 import { Crop, Screen } from './crma/Screen';
 import { Architecture, BackLink, Label, NextWork, Section } from './WorkParts';
+import { Claims } from './CaseParts';
 
 /*
  * CRMA is told in the order a reviewer would test it: what it is, what it
@@ -310,7 +311,6 @@ export default function CrmaWork({ locale, work }) {
             </StaggerItem>
           ))}
         </Stagger>
-        <Note className="mt-6">{ev.tests}</Note>
         <Stagger className="mt-16 grid gap-10 md:grid-cols-3">
           {ev.highlights.map((h) => (
             <StaggerItem key={h.t} className="border-t border-white/20 pt-5">
@@ -321,25 +321,8 @@ export default function CrmaWork({ locale, work }) {
         </Stagger>
       </Chapter>
 
-      {/* Where it stands */}
-      <Section className="border-t border-white/10 py-20 md:py-28">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
-          <Reveal className="lg:col-span-4">
-            <Label as="h2">{honest.t}</Label>
-            <p className="mt-4 max-w-[24rem] text-[15px] leading-relaxed text-cinema-text/65">{honest.d}</p>
-          </Reveal>
-          <Stagger as="ul" className="grid gap-x-10 sm:grid-cols-2 lg:col-span-8">
-            {honest.items.map((it) => (
-              <StaggerItem as="li" key={it} className="flex gap-3 border-b border-white/10 py-4 text-[15px] leading-relaxed text-cinema-text/80">
-                <span aria-hidden="true" className="text-cinema-steel">
-                  —
-                </span>
-                <span>{it}</span>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </Section>
+      {/* What was verified, and what this page does not claim */}
+      <Claims labels={t.raw('claims')} verified={c.raw('verified')} notClaimed={honest.items} tests={ev.tests} />
 
       <Architecture t={t} text={c('architecture')} stack={STACK} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />

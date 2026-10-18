@@ -18,19 +18,20 @@ A bilingual (en/ar) personal portfolio for Yusuf Jojeh, Backend & Business Syste
 
 ## Positioning
 
-Applied AI in production: LLM features wired into governed, audited business workflows (HireLens, LinguaCoach, ProspectIQ), built on top of business-first backend engineering (workflows, permissions, data, APIs, integrations, reliability). The claim is carried by real case studies, not assertions.
+Applied AI in production: LLM features wired into governed, audited business workflows (CRMA, Dhura, ProspectIQ, Mtjri), built on top of business-first backend engineering (workflows, permissions, data, APIs, integrations, reliability). The claim is carried by real case studies, not assertions.
 
 ## Operating Context
 
-- Home page is a single scroll through chapters: opening, operations, the Rakez ERP, a business-to-system approach, per-project scenes, applied AI, experience, more systems, closing.
-- Each system has its own `/work/<slug>` case study: rakez, hirelens, linguacoach, prospectiq, dhura, careerguide, algoag. The order is also the "next project" loop.
+- Home page is a single scroll: hero, engineering signals, selected systems (Rakez ERP first, then CRMA, Dhura, ProspectIQ, RestoCafe OS), how I engineer business systems, applied AI, additional systems, experience, about, contact.
+- Case studies live at `/work/<slug>`, in the order of `WORK_ORDER` in `src/content/portfolio/projects.ts`: rakez, crma, dhura, prospectiq, restocafe, mtjri, hirelens, linguacoach, careerguide. The order is also the "next project" loop. Employer systems (OT2, Alaya Nizwa) never get a route or a card.
 - Locales `/en` and `/ar`; Arabic is RTL and uses its own display and body faces.
 - Contact is by email, GitHub and LinkedIn; there is no form.
 - Deployed to Vercel (see DEPLOYMENT.md). Stack: Next.js (App Router, webpack build), next-intl, framer-motion, Tailwind.
 
 ## Capabilities and Constraints
 
-- Dhura is a concept. Its page says so before anything else, and it has no source link because no shipped code exists.
+- Dhura is a V1 release candidate, not in production. Its page says so before anything else; the repository is private, so there is no source link.
+- Every flagship and major case study ends with "What was verified" and "What I do not claim". Evidence and test runs are recorded in `docs/portfolio/PORTFOLIO_EVIDENCE_MANIFEST.md`.
 - Some hero and chapter art is illustrative and is disclosed as such with the art note. Real product screenshots are unretouched evidence and stay plain.
 - Every user-facing change must ship in both locales with RTL intact; Arabic copy is not a machine afterthought.
 - Public source links exist only for projects with public repos; private work is labelled private.
@@ -45,8 +46,8 @@ Applied AI in production: LLM features wired into governed, audited business wor
 
 ## Evidence on Hand
 
-- Real roles in `messages/final/en.json` (`experience`): Rakez Company, Business Flow, Mermez (iLogistics), freelance, with periods and scopes. BSc, Information Engineering & Distributed Systems, Al-Shahbaa University.
-- Case studies with real screenshots from local builds running each repo's own demo seed: `public/portfolio/work/<slug>/` (rakez, prospectiq, hirelens, linguacoach, dhura app screens; login/home captures).
+- Real roles in `messages/final/en.json` (`experience`): ArchitWeb (employer work, product names withheld), Rakez Real Estate Company, Business Flow, Mermez (iLogistics), independent, with periods and scopes. BSc, Information Engineering & Distributed Systems, Al-Shahbaa University.
+- Case studies with real screenshots from local builds running each repo's own demo seed: `public/portfolio/work/<slug>/` (crma, rakez, prospectiq, hirelens, linguacoach, dhura app screens) and `public/portfolio/more/` (restocafe, mtjri, ilogistics).
 - Public repos for some systems via `src/lib/data/portfolio.js`.
 - Absent, and not to be invented: client names beyond those above, revenue or usage metrics, testimonials, awards.
 

@@ -43,7 +43,7 @@ const CITY = '/portfolio/story/transitions/transition-city-sunset.webp';
 const CITY_OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.88) 0%, rgba(9,11,15,0.6) 30%, rgba(9,11,15,0.12) 60%, rgba(9,11,15,0.3) 86%, rgba(9,11,15,0.82) 100%), linear-gradient(0deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0) 38%)';
 
-// The brand panel of the live Rakez staff login: a real capture, not generated art.
+// The Rakez marketing dashboard on demo seed data: a real capture, not generated art.
 const RAKEZ = '/portfolio/work/rakez/app/marketing-performance-dashboard.webp';
 const RAKEZ_OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0.7) 34%, rgba(9,11,15,0.3) 64%, rgba(9,11,15,0.45) 100%), linear-gradient(0deg, rgba(9,11,15,0.85) 0%, rgba(9,11,15,0) 40%), rgba(9,11,15,0.25)';

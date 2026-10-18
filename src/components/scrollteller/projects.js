@@ -1,40 +1,29 @@
-import { caseStudies } from '@/lib/data/portfolio';
+import { PROJECTS, WORK_ORDER, getProject } from '@/content/portfolio/projects';
 
-const byId = (id) => caseStudies.find((c) => c.id === id);
-
-// Order here is also the "next project" order on /work routes.
-const WORK = [
-  { slug: 'rakez', title: 'Rakez ERP', source: 'rakez-erp' },
-  { slug: 'hirelens', title: 'HireLens AI', source: 'hirelens' },
-  { slug: 'linguacoach', title: 'LinguaCoach AI', source: 'linguacoach' },
-  { slug: 'prospectiq', title: 'ProspectIQ', source: 'leadscope' },
-  { slug: 'crma', title: 'CRMA', source: null },
-  { slug: 'dhura', title: 'Dhura', source: 'dhura' },
-  { slug: 'careerguide', title: 'CareerGuide AI', source: 'careerguide' },
-  { slug: 'algoag', title: 'ALGOAG', source: null },
-];
-
-export const WORK_SLUGS = WORK.map((w) => w.slug);
+// Case-study routes and their "next project" loop come from the evidence
+// layer (src/content/portfolio/projects.ts), so a project without a route
+// there cannot appear here.
+export const WORK_SLUGS = WORK_ORDER;
 
 export function getWork(slug) {
-  const i = WORK.findIndex((w) => w.slug === slug);
+  const i = WORK_ORDER.indexOf(slug);
   if (i === -1) return null;
-  const w = WORK[i];
-  const data = w.source ? byId(w.source) : null;
+  const p = getProject(slug);
+  const next = getProject(WORK_ORDER[(i + 1) % WORK_ORDER.length]);
   return {
-    ...w,
-    stack: data?.stack ?? [],
-    githubUrl: data?.githubUrl ?? null,
-    next: WORK[(i + 1) % WORK.length],
+    slug,
+    title: p.name,
+    stack: p.stack,
+    githubUrl: p.sourceUrl,
+    next: { slug: next.slug, title: next.name },
   };
 }
 
 export function workTitle(slug) {
-  return WORK.find((w) => w.slug === slug)?.title ?? slug;
+  return getProject(slug)?.name ?? slug;
 }
 
-/** Public source links for the supporting systems index. */
-export const SOURCE_LINKS = {
-  restocafe: byId('restocafe')?.githubUrl ?? null,
-  ilogistics: byId('ilogistics')?.githubUrl ?? null,
-};
+/** Public source links (only repositories that resolve publicly). */
+export const SOURCE_LINKS = Object.fromEntries(
+  PROJECTS.filter((p) => p.sourceUrl).map((p) => [p.slug, p.sourceUrl]),
+);

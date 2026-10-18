@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
 import RunReplay from './RunReplay';
 import { Architecture, BackLink, Label, NextWork, Section, Evidence } from './WorkParts';
+import { Claims } from './CaseParts';
 
 const OVERLAY =
   'linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.82) 38%, rgba(9,11,15,0.35) 75%, rgba(9,11,15,0.6) 100%), rgba(9,11,15,0.25)';
@@ -329,6 +330,7 @@ export default function ProspectIQWork({ locale, work }) {
       </Section>
 
       <Evidence t={t} slug="prospectiq" className="border-t border-white/10" />
+      <Claims labels={t.raw('claims')} verified={p.raw('verified')} notClaimed={p.raw('notClaimed')} tests={p('tests')} />
       <Architecture t={t} text={p('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>

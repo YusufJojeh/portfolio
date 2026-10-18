@@ -10,8 +10,8 @@ export default function Dhura() {
   return (
     <ProjectScene
       id="dhura"
-      chapter="07"
-      chapterName={c('07')}
+      chapter="04"
+      chapterName={c('04')}
       variant="arabic"
       image={{
         src: '/portfolio/work/dhura/app/executive-overview.webp',

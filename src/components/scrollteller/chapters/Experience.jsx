@@ -9,9 +9,9 @@ export default function Experience() {
   const items = t.raw('items');
 
   return (
-    <StoryChapter id="experience" chapter="09" label={c('09')} className="bg-cinema-bg2">
+    <StoryChapter id="experience" chapter="10" label={c('10')} className="bg-cinema-bg2">
       <Reveal>
-        <ChapterLabel index="09">{c('09')}</ChapterLabel>
+        <ChapterLabel index="10">{c('10')}</ChapterLabel>
       </Reveal>
       <Reveal delay={0.08}>
         <h2 className="mt-6 font-display text-[44px] leading-[1.0] text-cinema-soft md:text-[clamp(60px,6.4vw,104px)]">

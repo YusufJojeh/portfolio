@@ -10,8 +10,8 @@ export default function ProspectIQ() {
   return (
     <ProjectScene
       id="prospectiq"
-      chapter="06"
-      chapterName={c('06')}
+      chapter="05"
+      chapterName={c('05')}
       variant="lower"
       image={{
         src: '/portfolio/work/prospectiq/app/operational-lead-intelligence-dashboard.webp',

@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import WorkCover from './WorkCover';
 import { Architecture, BackLink, Label, NextWork, Section, Evidence } from './WorkParts';
+import { Claims } from './CaseParts';
 
 const OVERLAY =
   'linear-gradient(90deg, rgba(9,11,15,0.92) 0%, rgba(9,11,15,0.6) 42%, rgba(9,11,15,0.35) 100%), linear-gradient(0deg, rgba(9,11,15,1) 0%, rgba(9,11,15,0.4) 40%, rgba(9,11,15,0.3) 100%)';
@@ -18,7 +19,7 @@ export default function RakezWork({ locale, work }) {
       <WorkCover
         overlay={OVERLAY}
         image={{
-          // Real capture of the live staff login (its brand panel), not generated art.
+          // Real capture from a local build on demo seed data, not generated art.
           src: '/portfolio/work/rakez/app/marketing-performance-dashboard.webp',
           alt: '', // decorative: the same capture is captioned in the gallery below
           aspect: 1600 / 1000,
@@ -93,6 +94,7 @@ export default function RakezWork({ locale, work }) {
       </Section>
 
       <Evidence t={t} slug="rakez" />
+      <Claims labels={t.raw('claims')} verified={r.raw('verified')} notClaimed={r.raw('notClaimed')} tests={r('tests')} />
       <Architecture t={t} text={r('architecture')} stack={work.stack} url={work.githubUrl} />
       <NextWork locale={locale} t={t} next={work.next} />
     </>
