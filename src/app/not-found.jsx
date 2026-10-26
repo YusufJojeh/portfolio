@@ -1,26 +1,20 @@
 import Link from 'next/link';
+import '@/styles/globals.css';
 
 export default function NotFound() {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-gradient-to-b from-slate-900 to-slate-950 text-white" suppressHydrationWarning>
-        <div className="min-h-screen flex items-center justify-center px-4">
-          <div className="text-center">
-            <h1 className="text-8xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent">
-              404
-            </h1>
-            <p className="text-2xl mb-2">Page Not Found</p>
-            <p className="text-slate-400 mb-8">
-              The page you're looking for doesn't exist.
-            </p>
-            <Link
-              href="/en"
-              className="inline-block px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors shadow-lg hover:shadow-xl"
-            >
-              Go Home
-            </Link>
-          </div>
-        </div>
+    <html lang="en">
+      <body className="bg-cinema-bg font-sans text-cinema-text">
+        <main className="flex min-h-screen flex-col items-start justify-center gap-6 px-6 md:px-16">
+          <p className="font-mono text-[12px] uppercase tracking-[0.22em] text-cinema-muted">404</p>
+          <h1 className="text-[40px] leading-tight text-cinema-soft">This page does not exist.</h1>
+          <Link
+            href="/en"
+            className="inline-flex items-center rounded-[3px] bg-cinema-cream px-5 py-3 text-[14px] font-medium text-cinema-bg transition-colors hover:bg-cinema-soft"
+          >
+            Go to the home page
+          </Link>
+        </main>
       </body>
     </html>
   );

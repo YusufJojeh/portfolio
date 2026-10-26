@@ -1,8 +1,9 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic, Aref_Ruqaa } from 'next/font/google';
 import { ClientProviders } from '@/providers/ClientProviders';
 import StructuredData from '@/components/server/StructuredData';
+import { SITE_URL, LOCALES, localeAlternates } from '@/lib/site';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -44,81 +45,44 @@ const arabicDisplay = Aref_Ruqaa({
   variable: '--font-arabic-display',
 });
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return LOCALES.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-
-  const seoTitle = 'Yusuf Jojeh — Backend Engineer for SaaS, CRM/ERP & AI Systems';
-  const seoDescription = 'Backend-focused Full-Stack Engineer building production SaaS, CRM/ERP platforms, secure APIs, RBAC workflows, and AI-integrated systems with Laravel, FastAPI/NestJS, React, SQL, Redis, and Docker.';
+  const t = await getTranslations({ locale, namespace: 'final.meta' });
+  const title = t('title');
+  const description = t('description');
 
   return {
-    title: {
-      template: '%s | Yusuf Jojeh',
-      default: seoTitle
-    },
-    description: seoDescription,
-    keywords: [
-      'Backend Engineer',
-      'SaaS Developer',
-      'CRM Developer',
-      'ERP Developer',
-      'Laravel Developer',
-      'NestJS Developer',
-      'FastAPI Developer',
-      'React Developer',
-      'REST API',
-      'RBAC',
-      'AI Integration',
-      'Multi-tenant',
-      'Remote Backend Developer',
-      'GCC Developer',
-      'MENA Developer',
-      'Arabic English Developer'
-    ],
-    authors: [{ name: 'Yusuf Mohammad Jojeh' }],
-    creator: 'Yusuf Mohammad Jojeh',
-    publisher: 'Yusuf Mohammad Jojeh',
+    metadataBase: new URL(SITE_URL),
+    title: { template: '%s | Yusuf Jojeh', default: title },
+    description,
+    authors: [{ name: 'Yusuf Jojeh', url: SITE_URL }],
+    creator: 'Yusuf Jojeh',
     openGraph: {
-      type: 'website',
+      type: 'profile',
       locale: locale === 'ar' ? 'ar_SY' : 'en_US',
-      url: 'https://yusufjojeh.com',
-      siteName: 'Yusuf Jojeh — Backend Engineer',
-      title: seoTitle,
-      description: seoDescription,
-      images: [
-        {
-          url: '/og-image.jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Yusuf Jojeh — Backend Engineer for SaaS, CRM/ERP & AI Systems'
-        }
-      ],
+      url: `/${locale}`,
+      siteName: 'Yusuf Jojeh',
+      title,
+      description,
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: 'summary_large_image',
-      title: seoTitle,
-      description: seoDescription,
+      title,
+      description,
       images: ['/og-image.jpg'],
     },
-    alternates: {
-      canonical: locale === 'en' ? '/' : `/${locale}`,
-      languages: {
-        'en': '/',
-        'ar': '/ar',
-      },
-    },
+    alternates: localeAlternates(locale),
     robots: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-    verification: {
-      google: 'your-google-verification-code',
+      googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 },
     },
   };
 }

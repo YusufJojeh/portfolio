@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { localeAlternates } from '@/lib/site';
 import StoryShell from '@/components/scrollteller/engine/StoryShell';
 import { WORK_SLUGS, getWork } from '@/components/scrollteller/projects';
 import RakezWork from '@/components/scrollteller/work/RakezWork';
@@ -35,7 +36,21 @@ export async function generateMetadata({ params }) {
   if (!PAGES[slug]) return {};
   const t = await getTranslations({ locale, namespace: `final.work.${slug}` });
   const description = t.has('lede') ? t('lede') : t('body');
-  return { title: { absolute: `${t('title')} — Yusuf Jojeh` }, description };
+  const title = `${t('title')} — Yusuf Jojeh`;
+  return {
+    title: { absolute: title },
+    description,
+    alternates: localeAlternates(locale, `/work/${slug}`),
+    // Next replaces openGraph wholesale rather than merging it with the layout's.
+    openGraph: {
+      type: 'article',
+      url: `/${locale}/work/${slug}`,
+      siteName: 'Yusuf Jojeh',
+      title,
+      description,
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
+    },
+  };
 }
 
 export default async function WorkPage({ params }) {

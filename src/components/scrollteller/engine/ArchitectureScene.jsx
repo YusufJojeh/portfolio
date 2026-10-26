@@ -39,21 +39,18 @@ function LiveStage({ chapter, chapterName, heading, intro, layers }) {
     setActive(i);
   });
   const fill = useStage(p, [0.12, 0.9], [0, 1], 1);
-  // Half-visible at both ends so the scene never scrolls in or out as an empty black frame.
-  const enter = useStage(p, [0, 0.1], [0.35, 1], 1);
+  // The text stays at full opacity so it always meets contrast; arrival is carried by movement alone.
   const enterY = useStage(p, [0, 0.12], [28, 0], 0);
-  const out = useStage(p, [0.92, 1], [1, 0.35], 1);
 
   return (
-    <motion.div
-      style={{ opacity: out }}
+    <div
       className="absolute inset-0 grid content-center gap-8 px-6 pb-8 pt-20 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:items-center md:gap-16 md:px-12 lg:px-16"
     >
-      <motion.div style={{ opacity: enter, y: enterY }}>
+      <motion.div style={{ y: enterY }}>
         <Intro chapter={chapter} chapterName={chapterName} heading={heading} intro={intro} />
       </motion.div>
 
-      <motion.div style={{ opacity: enter }} className="relative ps-6 md:ps-8">
+      <div className="relative ps-6 md:ps-8">
         {/* The path the rule travels, filled by scroll. */}
         <span aria-hidden="true" className="absolute inset-y-1 start-0 w-px bg-white/10" />
         <motion.span
@@ -97,8 +94,8 @@ function LiveStage({ chapter, chapterName, heading, intro, layers }) {
             </motion.p>
           </AnimatePresence>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
 
