@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { EASE } from '../engine/motion';
+import { CONTACT } from '../contact';
 
 const LINKS = [
   { key: 'work', hash: 'rakez' },
@@ -104,6 +105,15 @@ export default function SiteNav() {
                 {t(l.key)}
               </Link>
             ))}
+            <a
+              href={CONTACT.cv}
+              download
+              hrefLang="en"
+              type="application/pdf"
+              className="hit text-[13px] text-cinema-cream transition-colors duration-200 hover:text-cinema-soft"
+            >
+              {t('cv')} <span aria-hidden="true">↓</span>
+            </a>
             <Link
               href={switchHref}
               hrefLang={other}
@@ -173,8 +183,17 @@ export default function SiteNav() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-auto border-t border-white/10 py-6"
+              className="mt-auto flex items-center justify-between border-t border-white/10 py-6"
             >
+              <a
+                href={CONTACT.cv}
+                download
+                hrefLang="en"
+                type="application/pdf"
+                className="inline-block py-3 text-sm text-cinema-cream"
+              >
+                {t('cv')} <span aria-hidden="true">↓</span>
+              </a>
               <Link href={switchHref} hrefLang={other} className="inline-block py-3 text-sm text-cinema-muted">
                 {t('language')}
               </Link>

@@ -9,6 +9,7 @@
     "approach": "Approach",
     "experience": "Experience",
     "contact": "Contact",
+    "cv": "CV",
     "menu": "Menu",
     "close": "Close",
     "language": "العربية",
@@ -58,6 +59,8 @@
       "Applied AI"
     ],
     "location": "Syria / Remote · UTC+3",
+    "availability": "Remote · UTC+3 · Open to GCC/EMEA relocation",
+    "cv": "Download CV (PDF)",
     "scroll": "Scroll",
     "portraitAlt": "Yusuf Jojeh at dusk above an old city"
   },

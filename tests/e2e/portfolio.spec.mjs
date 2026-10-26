@@ -146,7 +146,11 @@ test.describe('cv and availability', () => {
     test(`/${locale} links a downloadable CV and states availability`, async ({ page, request }) => {
       await page.goto(`/${locale}`);
       const links = page.locator('a[href$=".pdf"][download]');
-      await expect(links).toHaveCount(2); // closing chapter + footer
+      // First screen, nav, closing chapter and footer.
+      expect(await links.count()).toBeGreaterThanOrEqual(3);
+      await expect(page.getByTestId('hero-availability')).toBeVisible();
+      await expect(page.getByTestId('hero-availability')).toContainText('UTC+3');
+      await expect(page.getByTestId('hero-availability').locator('a[download]')).toBeVisible();
       await expect(page.getByTestId('availability')).toContainText(locale === 'en' ? 'GCC/EMEA' : 'EMEA');
       const res = await request.get(await links.first().getAttribute('href'));
       expect(res.status()).toBe(200);

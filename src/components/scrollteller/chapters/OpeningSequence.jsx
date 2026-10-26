@@ -12,6 +12,7 @@ import { useIsMobile, useReducedMotionPref, useStage } from '../engine/useMedia'
 import { EASE } from '../engine/motion';
 import { useRevealOnFocus } from '../engine/useRevealOnFocus';
 import { usePointerWhenVisible, useWhileVisible } from '../engine/useWhileVisible';
+import { CONTACT } from '../contact';
 
 /*
  * Chapters 00–02 share one pinned stage, so every change of scene is a real
@@ -146,6 +147,22 @@ function HeroCopy({ p }) {
           >
             {t('ctaSecondary')}
           </Link>
+        </Enter>
+        {/* What a recruiter checks first: where, when, and the CV. */}
+        <Enter delay={0.62}>
+          <p data-testid="hero-availability" className="mt-4 text-[12.5px] leading-relaxed text-cinema-text/75 md:mt-5 md:text-[13.5px]">
+            <span>{t('availability')}</span>
+            <span aria-hidden="true" className="mx-2 text-cinema-steel">/</span>
+            <a
+              href={CONTACT.cv}
+              download
+              hrefLang="en"
+              type="application/pdf"
+              className="hit text-cinema-cream underline decoration-white/30 underline-offset-4 transition-colors duration-200 hover:decoration-cinema-cream"
+            >
+              {t('cv')}
+            </a>
+          </p>
         </Enter>
       </div>
     </motion.div>
