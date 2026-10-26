@@ -141,6 +141,20 @@ test.describe('work routes', () => {
   });
 });
 
+test.describe('cv and availability', () => {
+  for (const locale of ['en', 'ar']) {
+    test(`/${locale} links a downloadable CV and states availability`, async ({ page, request }) => {
+      await page.goto(`/${locale}`);
+      const links = page.locator('a[href$=".pdf"][download]');
+      await expect(links).toHaveCount(2); // closing chapter + footer
+      await expect(page.getByTestId('availability')).toContainText(locale === 'en' ? 'GCC/EMEA' : 'EMEA');
+      const res = await request.get(await links.first().getAttribute('href'));
+      expect(res.status()).toBe(200);
+      expect(res.headers()['content-type']).toContain('application/pdf');
+    });
+  }
+});
+
 test.describe('navigation', () => {
   test('mobile menu opens, closes on Escape and returns focus', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });

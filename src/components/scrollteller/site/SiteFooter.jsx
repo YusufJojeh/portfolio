@@ -9,6 +9,7 @@ export default async function SiteFooter({ locale }) {
     { label: t('closing.email'), href: `mailto:${CONTACT.email}` },
     { label: t('closing.github'), href: CONTACT.github },
     { label: t('closing.linkedin'), href: CONTACT.linkedin },
+    { label: t('closing.cv'), href: CONTACT.cv, download: true },
   ];
 
   return (
@@ -18,6 +19,7 @@ export default async function SiteFooter({ locale }) {
           <p className="name-script font-grotesk text-[15px] font-medium text-cinema-cream">{t('nav.name')}</p>
           <p className="mt-1.5 text-[13px] text-cinema-muted">{t('footer.role')}</p>
           <p className="mt-0.5 text-[13px] text-cinema-muted">{t('footer.location')}</p>
+          <p className="mt-0.5 text-[13px] text-cinema-muted">{t('closing.availability')}</p>
         </div>
         <ul className="flex flex-wrap gap-x-7 gap-y-2 text-[13px]">
           {links.map((l) => (
@@ -25,6 +27,7 @@ export default async function SiteFooter({ locale }) {
               <a
                 href={l.href}
                 {...(l.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                {...(l.download ? { download: true, hrefLang: 'en', type: 'application/pdf' } : {})}
                 className="hit text-cinema-text/80 transition-colors duration-200 hover:text-cinema-cream"
               >
                 {l.label}

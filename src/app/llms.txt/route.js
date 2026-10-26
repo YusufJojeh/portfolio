@@ -8,7 +8,7 @@ import { SITE_URL } from '@/lib/site';
 export const dynamic = 'force-static';
 
 function body() {
-  const { meta, opening, about, experience, work } = en;
+  const { meta, opening, about, experience, work, closing } = en;
 
   const projects = WORK_ORDER.map((slug) => {
     const p = getProject(slug);
@@ -23,7 +23,7 @@ function body() {
     '',
     `> ${opening.headline} ${opening.support}`,
     '',
-    `Location: ${opening.location}. Arabic version: ${SITE_URL}/ar`,
+    `Location: ${opening.location}. Availability: ${closing.availability} Arabic version: ${SITE_URL}/ar`,
     '',
     '## About',
     '',
@@ -48,6 +48,7 @@ function body() {
     `- Email: ${CONTACT.email}`,
     `- GitHub: ${CONTACT.github}`,
     `- LinkedIn: ${CONTACT.linkedin}`,
+    `- CV (PDF, English): ${SITE_URL}${CONTACT.cv}`,
     '',
   ].join('\n');
 }
