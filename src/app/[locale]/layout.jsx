@@ -2,7 +2,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic, Aref_Ruqaa } from 'next/font/google';
 import { ClientProviders } from '@/providers/ClientProviders';
+import { Analytics } from '@vercel/analytics/next';
 import StructuredData from '@/components/server/StructuredData';
+import ClickTracking from '@/components/scrollteller/site/ClickTracking';
 import { SITE_URL, LOCALES, localeAlternates } from '@/lib/site';
 import '@/styles/globals.css';
 
@@ -104,6 +106,9 @@ export default async function RootLayout({ children, params }) {
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ClientProviders>{children}</ClientProviders>
         </NextIntlClientProvider>
+        {/* Cookieless page views; custom events are recorded on Pro plans only. */}
+        <Analytics />
+        <ClickTracking locale={locale} />
       </body>
     </html>
   );

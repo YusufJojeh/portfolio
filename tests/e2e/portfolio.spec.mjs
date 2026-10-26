@@ -159,6 +159,23 @@ test.describe('cv and availability', () => {
   }
 });
 
+test('CV and contact clicks are sent as analytics events', async ({ page }) => {
+  await page.goto('/en');
+  // Keep the download and mailto from leaving the page; the tracker listens in the capture phase.
+  await page.evaluate(() => document.addEventListener('click', (e) => e.preventDefault()));
+  await page.getByTestId('hero-availability').locator('a[download]').click();
+  await page.locator('footer a[href^="mailto:"]').click();
+  const events = await page.evaluate(() =>
+    (window.vaq || []).filter((c) => c[0] === 'event').map((c) => c[1]),
+  );
+  expect(events).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({ name: 'cv_download', data: expect.objectContaining({ locale: 'en' }) }),
+      expect.objectContaining({ name: 'contact_click', data: expect.objectContaining({ channel: 'email', placement: 'footer' }) }),
+    ]),
+  );
+});
+
 test.describe('navigation', () => {
   test('mobile menu opens, closes on Escape and returns focus', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
