@@ -28,7 +28,7 @@ const nextConfig = {
 
   // Experimental features for performance
   experimental: {
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['framer-motion'],
   },
 
   // Compiler options

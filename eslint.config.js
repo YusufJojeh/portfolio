@@ -73,7 +73,7 @@ export default defineConfig([
   },
   {
     // Build scripts, tests and config files run in Node, not the browser.
-    files: ['scripts/**', 'tests/**', 'src/app/api/**', '*.config.{js,mjs}', 'next-intl.config.js'],
+    files: ['scripts/**', 'tests/**', 'src/lib/site.js', '*.config.{js,mjs}', 'next-intl.config.js'],
     languageOptions: { globals: { ...globals.node } },
   },
 ])

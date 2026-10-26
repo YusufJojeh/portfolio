@@ -10,7 +10,7 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   reporter: [['list']],
-  use: { baseURL, channel: 'chrome', trace: 'retain-on-failure' },
+  use: { baseURL, channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome', trace: 'retain-on-failure' },
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : { command: 'npm run dev', url: baseURL, reuseExistingServer: true, timeout: 180_000 },

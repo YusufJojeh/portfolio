@@ -172,7 +172,7 @@ function HeroBaseline({ p }) {
               </span>
             ))}
           </span>
-          <span className="hidden lg:inline">{t('location')}</span>
+          <span className="md:hidden lg:inline">{t('location')}</span>
           <span className="flex items-center gap-2.5">
             {t('scroll')}
             <span aria-hidden="true" data-paused={!showing} className="scroll-cue block h-3 w-px bg-cinema-cream/50" />

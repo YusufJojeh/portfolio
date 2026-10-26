@@ -1,12 +1,15 @@
-export function generatePersonSchema() {
+import { SITE_URL } from '@/lib/site';
+
+export function generatePersonSchema({ locale, description }) {
   return {
-    '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${SITE_URL}/#person`,
     name: 'Yusuf Mohammad Jojeh',
     alternateName: 'Yusuf Jojeh',
-    jobTitle: 'Backend Engineer for SaaS, CRM/ERP & AI-Integrated Systems',
-    description: 'Backend-focused Full-Stack Engineer building production SaaS, CRM/ERP platforms, secure APIs, RBAC workflows, and AI-integrated systems with Laravel, FastAPI/NestJS, React, SQL, Redis, and Docker.',
-    url: 'https://yusufjojeh.com',
+    jobTitle: 'Backend & Business Systems Engineer',
+    description,
+    url: `${SITE_URL}/${locale}`,
+    image: `${SITE_URL}/og-image.jpg`,
     email: 'yassaf.jojeh@gmail.com',
     telephone: '+963980278664',
     address: {
