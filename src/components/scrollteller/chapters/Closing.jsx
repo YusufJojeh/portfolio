@@ -28,6 +28,9 @@ function Content() {
         {t('statement')}
       </h2>
       <p className="mt-6 max-w-[32rem] text-[15px] leading-relaxed text-cinema-text/70 md:text-[17px]">{t('body')}</p>
+      <p data-testid="availability" className="mt-3 font-mono text-[12px] uppercase tracking-[0.18em] text-cinema-text/75">
+        {t('availability')}
+      </p>
       <div className="mt-10 flex flex-col gap-5 border-t border-white/15 pt-6 md:flex-row md:items-baseline md:gap-10">
         <a
           href={`mailto:${CONTACT.email}`}
@@ -36,7 +39,18 @@ function Content() {
         >
           {t('email')}
         </a>
-        <ul className="flex gap-6 text-[14px]">
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
+          <li>
+            <a
+              href={CONTACT.cv}
+              download
+              hrefLang="en"
+              type="application/pdf"
+              className="hit text-cinema-cream underline decoration-white/25 underline-offset-4 transition-colors duration-200 hover:decoration-cinema-cream"
+            >
+              {t('cv')} <span aria-hidden="true">↓</span>
+            </a>
+          </li>
           {links.map((l) => (
             <li key={l.href}>
               <a
