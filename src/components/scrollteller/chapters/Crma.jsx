@@ -17,6 +17,7 @@ export default function Crma() {
         src: '/portfolio/work/crma/pipeline.webp',
         aspect: 1600 / 1000,
         mobileSrc: '/portfolio/work/crma/mobile/pipeline.webp',
+        mobileAlt: t('mobileImageAlt'),
         mobileAspect: 780 / 1688,
         alt: t('imageAlt'),
         focus: [50, 42],
