@@ -18,6 +18,7 @@ export default function StoryFrame({
   focus = [50, 50],
   mobileFocus,
   mobileSrc,
+  mobileAlt,
   mobileAspect,
   bleed = 48,
   priority = false,
@@ -28,12 +29,12 @@ export default function StoryFrame({
   const [fx, fy] = focus;
   const [mx, my] = mobileFocus ?? focus;
   const vars = { '--fx': `${fx}%`, '--fy': `${fy}%`, '--mx': `${mx}%`, '--my': `${my}%` };
-  const frame = (source, ratio, extra, frameSizes) => (
+  const frame = (source, ratio, extra, frameSizes, imageAlt = alt) => (
     <div
       className={`story-frame absolute ${extra} ${className}`}
       style={{ aspectRatio: ratio, width: `max(100%, calc((100svh + ${bleed}px) * ${ratio}))`, ...vars }}
     >
-      <Image src={source} alt={alt} fill priority={priority} quality={quality} sizes={frameSizes} className="object-cover" />
+      <Image src={source} alt={imageAlt} fill priority={priority} quality={quality} sizes={frameSizes} className="object-cover" />
     </div>
   );
 
@@ -41,7 +42,7 @@ export default function StoryFrame({
   return (
     <>
       {frame(src, aspect, 'hidden md:block', '125vw')}
-      {frame(mobileSrc, mobileAspect ?? aspect, 'md:hidden', '(max-width: 767px) 150vw, 1px')}
+      {frame(mobileSrc, mobileAspect ?? aspect, 'md:hidden', '(max-width: 767px) 150vw, 1px', mobileAlt ?? alt)}
     </>
   );
 }
