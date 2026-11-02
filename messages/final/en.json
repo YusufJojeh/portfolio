@@ -1631,7 +1631,7 @@
       "Redis",
       "Reverb"
     ],
-    "status": "Development",
+    "status": "Public repo / local build",
     "mobileImageAlt": "Mobile view of the CRMA deal pipeline with seeded demo data"
   },
   "restocafe": {
