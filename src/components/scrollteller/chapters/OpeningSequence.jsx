@@ -230,7 +230,7 @@ function HeroPortrait({ p, reduced }) {
       </motion.div>
 
       <motion.div className={`${cameraClass} z-20`} style={camera} aria-hidden="true">
-        <StoryFrame src={CUTOUT} priority {...frame} />
+        <StoryFrame src={CUTOUT} alt={t('portraitCutoutAlt')} priority {...frame} />
       </motion.div>
 
       {/* Grade above the cutout so figure and photo stay one exposure. */}
@@ -407,6 +407,7 @@ function RakezCopy({ p }) {
             {t('title')}
           </h2>
           <p className="mt-5 max-w-[30rem] text-[15px] leading-relaxed text-cinema-text/75 md:text-[16px]">{t('lede')}</p>
+          <p className="mt-3 inline-block border border-white/15 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-cream/80">{t('status')}</p>
         </motion.div>
       </motion.div>
 
