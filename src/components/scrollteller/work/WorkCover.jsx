@@ -40,6 +40,7 @@ export default function WorkCover({
           <StoryFrame
             src={image.src}
             mobileSrc={image.mobileSrc}
+            mobileAlt={image.mobileAlt}
             mobileAspect={image.mobileAspect}
             alt={image.alt}
             aspect={image.aspect ?? 1672 / 941}
