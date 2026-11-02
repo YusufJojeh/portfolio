@@ -17,6 +17,7 @@ export default function ProspectIQ() {
         src: '/portfolio/work/prospectiq/app/operational-lead-intelligence-dashboard.webp',
         aspect: 1600 / 882,
         mobileSrc: '/portfolio/work/prospectiq/mobile.webp',
+        mobileAlt: t('mobileImageAlt'),
         mobileAspect: 780 / 1390,
         alt: t('imageAlt'),
         focus: [50, 45],
