@@ -10,7 +10,7 @@ export function generatePersonSchema({ locale, description }) {
     description,
     url: `${SITE_URL}/${locale}`,
     image: `${SITE_URL}/og-image.jpg`,
-    email: 'yassaf.jojeh@gmail.com',
+    email: 'yusufmohammdjojeh@gmail.com',
     telephone: '+963980278664',
     address: {
       '@type': 'PostalAddress',
@@ -19,7 +19,7 @@ export function generatePersonSchema({ locale, description }) {
     },
     sameAs: [
       'https://github.com/YusufJojeh',
-      'https://www.linkedin.com/in/yusuf-jojeh-95835b26b'
+      'https://www.linkedin.com/in/yusuf-jojeh/'
     ],
     knowsAbout: [
       'Backend Engineering',
