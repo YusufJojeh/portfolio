@@ -28,6 +28,7 @@ export default function ProspectIQ() {
       kicker={t('kicker')}
       title={t('title')}
       lede={t('lede')}
+      status={t('status')}
       cta={{ href: `/${locale}/work/prospectiq`, label: t('cta') }}
       details={
         <div>
