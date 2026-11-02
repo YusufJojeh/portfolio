@@ -39,15 +39,14 @@
   "opening": {
     "name": "YUSUF — JOJEH",
     "role": "Backend & Business Systems Engineer",
-    "headline": "I turn business complexity into backend systems that hold up — permissions, payments, retries and AI agents under control.",
+    "headline": "I turn business complexity into backend systems that hold up.",
     "headlineLines": [
       "I turn business complexity",
       "into backend systems that hold up."
     ],
     "headlineLinesMobile": [
-      "Business complexity,",
-      "backend systems that",
-      "hold up."
+      "I turn business complexity",
+      "into backend systems that hold up."
     ],
     "support": "I design backend systems around how real businesses operate — workflows, permissions, data, APIs, integrations, reliability and applied AI.",
     "supportShort": "Backend systems built around how real businesses operate.",
@@ -62,7 +61,7 @@
     "availability": "Remote · UTC+3 · Open to GCC/EMEA relocation",
     "cv": "Download CV (PDF)",
     "scroll": "Scroll",
-    "portraitAlt": "Yusuf Jojeh at dusk above an old city"
+    "portraitAlt": "Portrait of Yusuf Jojeh overlooking an old city at dusk"
   },
   "operations": {
     "heading": "Businesses don't run on features. They run on operations.",
@@ -172,8 +171,8 @@
     "resumed": "The same run resumes",
     "note": "A consequential action stops the run. After approval the backend reauthorizes the current user, verifies the payload hash and executes once. Then the same AgentRun carries on.",
     "cta": "Read the ProspectIQ case study",
-    "imageAlt": "LeadScope lead-intelligence dashboard with demo data",
-    "mobileImageAlt": "Mobile view of the LeadScope lead-intelligence dashboard with demo data"
+    "imageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard with demo data",
+    "mobileImageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard on a mobile screen"
   },
   "dhura": {
     "title": "Dhura",
@@ -248,7 +247,7 @@
         "period": "Sep 2026 — Present",
         "role": "Backend Developer",
         "company": "ArchitWeb",
-        "d": "Built an agent-commerce backend with 26 REST operations and 21 MCP tools, OAuth 2.1 and integration keys, checkout preflight, wallet-only direct orders, signed status webhooks and idempotent order provenance. Owned backend workflows for a Gulf endowment and donations platform across payments, finance ledger, lease installments, volunteering and notifications; one successful payment creates exactly one finance effect, with exact 3-decimal currency handling. Kept a 600+ test suite (4,000+ assertions) green through security hardening and shipped a regression-tested fix across 4 PRs. Planned a 15-item AI coding-agent platform upgrade with acceptance criteria and evidence gates; delivered 8 and delegated 7, including a runtime migration with config-only rollback and failure classification. Added canonical logging and X-Request-Id correlation. Research reports led to Playwright Test adoption and a recommendation against auto-repricing until data quality is proven."
+        "d": "• Built an agent-commerce backend that lets external AI agents shop safely. It has 26 REST operations, 21 MCP tools, OAuth 2.1 and integration keys, checkout preflight, wallet-only direct orders, signed status webhooks and idempotent order provenance.\n• Owned the backend of a Gulf endowment and donations platform (payments, finance ledger, lease installments, volunteering, notifications). Payment confirmation is idempotent: one successful payment creates exactly one finance effect.\n• Kept a 600+ test suite (4,000+ assertions) green through security hardening. Traced a session-loss defect to its root cause in redirect handling and fixed it across 4 PRs, with regression tests.\n• Planned an AI coding-agent platform upgrade as 15 dependency-linked work items with acceptance criteria and evidence gates. Delivered 8 himself and delegated 7, including a runtime migration with config-only rollback.\n• Added canonical logging and X-Request-Id correlation for end-to-end tracing.\n• Wrote research reports that changed decisions: a QA-agent assessment the team adopted, and a pricing-automation feasibility study that recommended not building yet.\nProduct and client details stay with the employer."
       },
       {
         "period": "Jan 2025 — Aug 2026",
@@ -287,13 +286,13 @@
         "t": "Mtjri",
         "d": "Multi-store commerce where AI drafts a store’s content in queued jobs and a validator checks it before it is saved.",
         "href": "mtjri",
-        "status": "status.development"
+        "status": "status.publicRepoLocalBuild"
       },
       {
         "id": "ilogistics",
         "t": "iLogistics",
         "d": "Logistics and booking platform with shipment tracking, invoices and reports. Built with a teammate; started during my work at Mermez.",
-        "status": "status.productionEmployer"
+        "status": "status.development"
       },
       {
         "id": "hirelens",
@@ -465,7 +464,7 @@
         "No business results, usage or revenue figures are claimed."
       ],
       "tests": "The repository has about 320 test files. They were not run for this page.",
-      "status": "Production (employer)"
+      "status": "Production (employer, private code)"
     },
     "hirelens": {
       "kicker": "Case study · Hiring platform",
@@ -1096,7 +1095,7 @@
           "leads": {
             "t": "Leads",
             "d": "Scored leads from every intake channel, ready to qualify or convert.",
-            "alt": "Leads list with scores and sources"
+            "alt": "Lead queue with source labels and qualification scores"
           },
           "tasks": {
             "t": "Tasks",
@@ -1118,7 +1117,7 @@
           {
             "t": "Intake",
             "d": "Leads arrive from Meta lead ads, WhatsApp, web forms and CSV import.",
-            "alt": "Leads list"
+            "alt": "Lead intake queue before qualification"
           },
           {
             "t": "Record and score",
@@ -1403,7 +1402,7 @@
       "kicker": "Case study · Restaurant operations platform",
       "title": "RestoCafe OS",
       "lede": "A multi-branch restaurant platform built around one hard problem: keeping an order correct while tills, a kitchen screen and a patchy connection all touch it.",
-      "status": "Development",
+      "status": "In development",
       "facts": [
         {
           "k": "Role",
@@ -1643,7 +1642,7 @@
       "Version checks and row locks where staff can race",
       "An offline queue in the ops app, replayed on reconnect"
     ],
-    "status": "Development",
+    "status": "In development",
     "cta": "Read the RestoCafe case study",
     "imageAlt": "RestoCafe kitchen board with seeded test orders"
   },
@@ -1700,6 +1699,7 @@
       "Spatie Permission",
       "Vue 3"
     ],
-    "mobileImageAlt": "Mobile view of the Rakez marketing dashboard with demo data"
+    "mobileImageAlt": "Mobile view of the Rakez marketing dashboard with demo data",
+    "status": "Production (employer, private code)"
   }
 }
