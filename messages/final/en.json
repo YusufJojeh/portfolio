@@ -1045,7 +1045,7 @@
       "kicker": "Case study · Multi-tenant SaaS",
       "title": "CRMA",
       "lede": "A multi-tenant CRM where AI agents propose and people approve.",
-      "status": "Development",
+      "status": "Public repo / local build",
       "heroAlt": "CRMA copilot paused on a proposed deal stage change, with the field diff, the reason, and Approve and Reject buttons",
       "calloutLabel": "The run is paused here",
       "summary": "CRMA is a multi-tenant CRM built on Laravel 12 and React 19. AI agents can search, research and draft, but they can never change data on their own. Every write becomes a proposal with a field-level diff, a stated reason and a risk class, and the agent run pauses until a person approves, edits or rejects it.",
