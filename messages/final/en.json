@@ -172,7 +172,8 @@
     "resumed": "The same run resumes",
     "note": "A consequential action stops the run. After approval the backend reauthorizes the current user, verifies the payload hash and executes once. Then the same AgentRun carries on.",
     "cta": "Read the ProspectIQ case study",
-    "imageAlt": "LeadScope lead-intelligence dashboard with demo data"
+    "imageAlt": "LeadScope lead-intelligence dashboard with demo data",
+    "mobileImageAlt": "Mobile view of the LeadScope lead-intelligence dashboard with demo data"
   },
   "dhura": {
     "title": "Dhura",
@@ -186,7 +187,8 @@
     ],
     "status": "Release candidate",
     "cta": "Read the Dhura case study",
-    "imageAlt": "Dhura executive overview with demo data"
+    "imageAlt": "Dhura executive overview with demo data",
+    "mobileImageAlt": "Mobile view of the Dhura executive overview with demo data"
   },
   "ai": {
     "heading": "Applied AI, engineered like the rest of the system.",
@@ -1629,7 +1631,8 @@
       "Redis",
       "Reverb"
     ],
-    "status": "Development"
+    "status": "Development",
+    "mobileImageAlt": "Mobile view of the CRMA deal pipeline with seeded demo data"
   },
   "restocafe": {
     "title": "RestoCafe OS",
@@ -1696,6 +1699,7 @@
       "Sanctum",
       "Spatie Permission",
       "Vue 3"
-    ]
+    ],
+    "mobileImageAlt": "Mobile view of the Rakez marketing dashboard with demo data"
   }
 }
