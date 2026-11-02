@@ -61,7 +61,8 @@
     "availability": "Remote · UTC+3 · Open to GCC/EMEA relocation",
     "cv": "Download CV (PDF)",
     "scroll": "Scroll",
-    "portraitAlt": "Portrait of Yusuf Jojeh overlooking an old city at dusk"
+    "portraitAlt": "Portrait of Yusuf Jojeh overlooking an old city at dusk",
+    "portraitCutoutAlt": "Transparent cutout portrait of Yusuf Jojeh over the dusk city scene"
   },
   "operations": {
     "heading": "Businesses don't run on features. They run on operations.",
@@ -172,7 +173,8 @@
     "note": "A consequential action stops the run. After approval the backend reauthorizes the current user, verifies the payload hash and executes once. Then the same AgentRun carries on.",
     "cta": "Read the ProspectIQ case study",
     "imageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard with demo data",
-    "mobileImageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard on a mobile screen"
+    "mobileImageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard on a mobile screen",
+    "status": "Public repo / local build"
   },
   "dhura": {
     "title": "Dhura",
@@ -361,10 +363,10 @@
     },
     "coDeveloped": "Co-developed",
     "status": {
-      "productionEmployer": "Production (employer)",
+      "productionEmployer": "Production (employer, private code)",
       "releaseCandidate": "Release candidate",
       "publicRepoLocalBuild": "Public repo / local build",
-      "development": "Development"
+      "development": "In development"
     }
   },
   "closing": {
@@ -1506,7 +1508,7 @@
       "kicker": "Case study · Multi-store commerce",
       "title": "Mtjri",
       "lede": "Multi-store commerce where AI drafts each store’s landing content in the background, and a validator decides whether it is fit to save.",
-      "status": "Development",
+      "status": "Public repo / local build",
       "facts": [
         {
           "k": "Role",
@@ -1663,7 +1665,7 @@
   "rakez": {
     "title": "Rakez ERP",
     "kicker": "Selected system · Real-estate ERP · Team-built",
-    "lede": "A real-estate ERP for a Saudi company: sales, reservations, contracts, commissions and marketing in one Arabic-first platform, built by a small team. Production (employer).",
+    "lede": "A real-estate ERP for a Saudi company: sales, reservations, contracts, commissions and marketing in one Arabic-first platform, built by a small team.",
     "handles": "What the system handles",
     "items": [
       {
