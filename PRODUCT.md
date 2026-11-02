@@ -41,7 +41,7 @@ Applied AI in production: LLM features wired into governed, audited business wor
 ## Brand Commitments
 
 - Name is "Yusuf Jojeh"; role line is "Backend & Business Systems Engineer".
-- Headline voice: "I turn business complexity into production systems." Copy is plain and first-person, with no marketing superlatives.
+- Headline voice: "I turn business complexity into backend systems that hold up." Copy is plain and first-person, with no marketing superlatives.
 - Location is shown as "Syria / Remote".
 
 ## Evidence on Hand
