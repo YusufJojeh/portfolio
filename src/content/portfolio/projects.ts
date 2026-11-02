@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     ownership: 'PERSONAL',
     visibility: 'PUBLIC_SAFE',
     evidence: 'VERIFIED',
-    maturity: 'pre-launch',
+    maturity: 'prototype',
     canonicalPath: 'Desktop/Projects/CRM',
     gitCommit: 'a627309',
     sourceUrl: null,
