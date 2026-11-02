@@ -285,40 +285,40 @@
         "t": "Mtjri",
         "d": "Multi-store commerce where AI drafts a store’s content in queued jobs and a validator checks it before it is saved.",
         "href": "mtjri",
-        "status": "Development"
+        "status": "status.development"
       },
       {
         "id": "ilogistics",
         "t": "iLogistics",
         "d": "Logistics and booking platform with shipment tracking, invoices and reports. Built with a teammate; started during my work at Mermez.",
-        "status": "Production (employer)"
+        "status": "status.productionEmployer"
       },
       {
         "id": "hirelens",
         "t": "HireLens AI",
         "d": "Recruiting copilot: AI scores evidence against a rubric, and hire or reject decisions stay human-only.",
         "href": "hirelens",
-        "status": "Development"
+        "status": "status.development"
       },
       {
         "id": "linguacoach",
         "t": "LinguaCoach AI",
         "d": "Language-learning prototype that stays usable without a paid model provider.",
         "href": "linguacoach",
-        "status": "Development"
+        "status": "status.development"
       },
       {
         "id": "careerguide",
         "t": "CareerGuide AI",
         "d": "Graduation project: career matching where the score is deterministic and AI only advises.",
         "href": "careerguide",
-        "status": "Development"
+        "status": "status.development"
       },
       {
         "id": "hexaterminal",
         "t": "HexaTerminal",
         "d": "Company website, co-developed with another engineer who wrote most of it.",
-        "status": "Development"
+        "status": "status.development"
       }
     ],
     "screens": {
@@ -358,7 +358,13 @@
         "admin-audit": "Admin audit log"
       }
     },
-    "coDeveloped": "Co-developed"
+    "coDeveloped": "Co-developed",
+    "status": {
+      "productionEmployer": "Production (employer)",
+      "releaseCandidate": "Release candidate",
+      "publicRepoLocalBuild": "Public repo / local build",
+      "development": "Development"
+    }
   },
   "closing": {
     "statement": "Better systems start with understanding the business.",
@@ -543,7 +549,7 @@
       "kicker": "Case study · Sales intelligence",
       "title": "ProspectIQ",
       "alias": "Also developed as LeadScope AI",
-      "lede": "Evidence-grounded B2B research and sales intelligence.",
+      "lede": "Evidence-grounded B2B research and sales intelligence. Public repo / local build.",
       "summary": "ProspectIQ is an evidence-grounded B2B research and sales intelligence system. It combines multi-source research, deterministic scoring, Evidence Graphs, Delta Intelligence, internal Sales Knowledge retrieval and a bounded model-directed agent runtime. Consequential actions are proposed first, explicitly approved, reauthorized at execution time, executed atomically, audited, and resumed within the same AgentRun.",
       "pathTitle": "The system path",
       "path": [
@@ -1655,7 +1661,7 @@
   "rakez": {
     "title": "Rakez ERP",
     "kicker": "Selected system · Real-estate ERP · Team-built",
-    "lede": "An ERP built for a Saudi real-estate company: sales, reservations, contracts, commissions and marketing in one Arabic-first platform, built with a small team.",
+    "lede": "A real-estate ERP for a Saudi company: sales, reservations, contracts, commissions and marketing in one Arabic-first platform, built by a small team. Production (employer).",
     "handles": "What the system handles",
     "items": [
       {
