@@ -365,6 +365,7 @@ function RakezBackground({ p }) {
           alt={t('imageAlt')}
           aspect={1600 / 1000}
           mobileSrc="/portfolio/work/rakez/mobile.webp"
+          mobileAlt={t('mobileImageAlt')}
           mobileAspect={780 / 800}
           focus={[50, 42]}
           mobileFocus={[50, 42]}
