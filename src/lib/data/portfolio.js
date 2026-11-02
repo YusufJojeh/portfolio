@@ -6,9 +6,9 @@ export const personalInfo = {
   tagline: "Scalable Backend Systems → SaaS & AI Products → Production-Ready Architecture",
   contact: {
     phone: "+963 980 278 664",
-    email: "yassaf.jojeh@gmail.com",
+    email: "yusufmohammdjojeh@gmail.com",
     github: "github.com/YusufJojeh",
-    linkedin: "www.linkedin.com/in/yusuf-jojeh-95835b26b"
+    linkedin: "https://www.linkedin.com/in/yusuf-jojeh/"
   },
   languages: [
     { name: "Arabic", level: "Native" },
