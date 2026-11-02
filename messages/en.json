@@ -29,7 +29,7 @@
   },
   "proof": {
     "years": "4+ years building web systems",
-    "projects": "13+ shipped/open projects",
+    "projects": "Backend projects across commerce, ERP/CRM, SaaS and AI-agent workflows",
     "endpoints": "150+ protected API endpoints in ERP/CRM work",
     "performance": "Measurable performance gains in logistics/reporting",
     "bilingual": "Arabic + English bilingual product delivery"
@@ -196,10 +196,10 @@
         "type": "Real-Estate CRM/ERP Concept",
         "problem": "Real-estate operations in the region need Arabic-native CRM/ERP tooling where AI can assist day-to-day work — drafting, summarizing, suggesting next actions — without ever silently executing a business decision on its own.",
         "role": "Architecture and pattern design: a deterministic domain core (listings, deals, commissions, approvals) exposed through role-scoped APIs, with an AI layer that proposes actions a human explicitly approves before anything changes state.",
-        "architecture": "The same backend spine used across the shipped systems above: a business operation modeled as relational data, guarded by role-based permissions, exposed through REST APIs, with AI wired in as an assistive layer rather than a decision-maker. Arabic-first UI with RTL layout as a first-class concern, not a translation afterthought.",
+        "architecture": "A backend approach for business workflows: model operations as relational data, enforce role-based permissions, expose REST APIs, and keep AI assistive rather than decisive. Arabic-first UI treats RTL as a first-class concern.",
         "challenges": "Keeping AI-suggested actions strictly proposal-only until a human approves them. Modeling multi-party real-estate workflows — listings, deals, commission splits — as auditable relational data. Arabic-first RTL design across every screen rather than retrofitted localization.",
-        "aiFeatures": "AI drafts and suggestions surface inline with the workflow, but every state-changing action requires explicit human approval — the same human-in-the-loop pattern used in the AI copilots shipped on Rakez ERP and HireLens AI.",
-        "impact": "A concept-stage architecture that carries forward the deterministic-core-plus-human-approved-AI pattern proven in production on the shipped case studies above.",
+        "aiFeatures": "AI drafts and suggestions sit inside the workflow, while state-changing actions require explicit human approval. This project documents that boundary as a design decision.",
+        "impact": "A concept-stage architecture illustrating a deterministic core with human approval around AI suggestions.",
         "highlights": [
           "Arabic-First, RTL",
           "Deterministic Core",
@@ -265,7 +265,7 @@
   },
   "about": {
     "title": "About Me",
-    "summary1": "I'm a backend engineer with 4+ years building production systems for SaaS, CRM/ERP, and AI-integrated platforms. My work focuses on REST API design, database architecture, RBAC permission systems, and business logic implementation using Laravel, FastAPI, NestJS, and React. I've shipped 150+ protected API endpoints, built multi-tenant architectures, and integrated LLM-powered modules into real business workflows — across real estate, e-commerce, logistics, healthcare, and lead intelligence domains.",
+    "summary1": "I'm a backend and business systems engineer focused on backend workflows for commerce, ERP/CRM, SaaS and AI-agent integrations. I work with REST APIs, database design, access boundaries and business logic using Laravel, FastAPI and NestJS. At Rakez, I contributed to an employer ERP/CRM platform with 150+ APIs.",
     "summary2": "I work remote-first and communicate in both Arabic and English. I'm available for backend and backend-focused full-stack roles with product teams across the GCC, MENA, Europe, and international remote companies. I focus on writing systems that handle real operational complexity — permissions, workflows, data integrity — not just feature checklists.",
     "summary3": "",
     "summary4": "",
@@ -328,7 +328,7 @@
   },
   "skills": {
     "title": "Skills & Technologies",
-    "subtitle": "Grouped by domain — what I use to build and ship production systems",
+    "subtitle": "Grouped by domain — tools I use to build backend systems",
     "backend": "Backend Engineering",
     "backendDesc": "Design and build REST APIs, authentication, authorization, queues, and service layers.",
     "saas": "SaaS & Business Systems",
@@ -340,7 +340,7 @@
     "ai": "AI Integration",
     "aiDesc": "Connect LLMs to real business workflows with structured outputs and reliable prompts.",
     "devops": "DevOps & Quality",
-    "devopsDesc": "Containerized deployments, CI pipelines, automated testing, and production readiness."
+    "devopsDesc": "Containerized deployments, CI pipelines, automated testing and release readiness."
   },
   "experience": {
     "title": "Work Experience",
@@ -366,9 +366,9 @@
         "description": [
           "Designed REST API architecture for AI-powered CRM modules — 150+ endpoints with Spatie RBAC (67+ permissions, 9 roles)",
           "Built commission calculation engine with multi-party distribution, approval chains, and VAT computation",
-          "Integrated OpenAI-powered AI assistant with Arabic language support into production CRM workflows",
+          "Integrated an OpenAI-powered AI assistant with Arabic language support into CRM workflows",
           "Implemented real-time WebSocket notifications via Laravel Reverb for booking and sales events",
-          "Maintained production stability through PHPUnit testing, query monitoring, and deployment automation"
+          "Supported system reliability through PHPUnit testing, query monitoring and deployment automation"
         ]
       },
       "exp2": {
@@ -381,7 +381,7 @@
           "Optimized database queries and schemas — measurable performance improvement in tracking and reporting modules (25+ indexes, eager loading)",
           "Implemented JWT authentication and RBAC authorization securing multi-role operational access",
           "Delivered backend for tracking data endpoints, analytics dashboards, and complex business reporting",
-          "Supported production deployment processes, code reviews, and system stability"
+          "Supported deployment processes, code reviews and system stability"
         ]
       },
       "exp3": {
@@ -444,7 +444,7 @@
     "list": {
       "project1": {
         "title": "Logistics & Moving Booking System",
-        "description": "Production logistics platform featuring order management, real-time tracking, payment gateway integration, multi-role permissions, and RESTful APIs for mobile and web clients."
+        "description": "Logistics platform build featuring order management, real-time tracking, payment integration, role-based permissions and REST APIs for mobile and web clients."
       },
       "project2": {
         "title": "IdeaVote – Collaborative Voting Platform",
@@ -472,7 +472,7 @@
       },
       "project8": {
         "title": "RestoCafe OS – Multi-Tenant SaaS POS Platform",
-        "description": "Production-grade Point-of-Sale system for restaurants and cafés. Features multi-tenant isolation, real-time kitchen operations via WebSocket, offline-first PWA with service workers, optimistic concurrency control, comprehensive audit logging, and load-tested architecture for multi-replica deployments with Kubernetes scaling."
+        "description": "Restaurant and café point-of-sale build with multi-tenant isolation, real-time kitchen updates, offline workflows, optimistic concurrency control and audit logging. Load-test scripts are included; deployment scale is not claimed."
       },
       "project9": {
         "title": "Matjrii – Multi-Store E-Commerce SaaS Platform",
@@ -488,12 +488,12 @@
       },
       "project12": {
         "title": "E-Commerce Platform – Modern Digital Commerce Solution",
-        "description": "Production-ready enterprise e-commerce platform combining Laravel 12 backend with React 18 modern frontend. Features sophisticated product management with unlimited products, premium glassmorphism UI with 3D animations and dark mode, powerful Orchid admin dashboard for content management, multi-level Redis caching (page, fragment, query levels), automatic WebP image optimization, advanced search and filtering, wishlist system, promotional campaigns (banners, slides, offers), complete backup and content versioning system, fully responsive design (320px to 4K+), and optimized performance delivering sub-2-second page loads."
+        "description": "Laravel 12 and React 18 e-commerce build with product management, an Orchid admin dashboard, Redis caching, search, promotions and backup/versioning workflows."
       }
     }
   },
   "contact": {
-    "title": "Need a backend engineer who understands business logic and ships production systems?",
+    "title": "Need a backend engineer who understands business logic and operational workflows?",
     "subtitle": "I'm available for remote backend and backend-focused full-stack roles across GCC, MENA, Europe, and international product teams. Best fit: SaaS, CRM/ERP, PropTech, logistics, healthcare, AI-integrated business platforms.",
     "letsConnect": "Let's Connect",
     "emailMe": "Email Me",
@@ -550,7 +550,7 @@
     }
   },
   "footer": {
-    "tagline": "Backend engineer building production SaaS, CRM/ERP platforms, and AI-integrated systems. Available for remote roles.",
+    "tagline": "Backend engineer building SaaS, CRM/ERP platforms and AI-integrated workflows. Available for remote roles.",
     "quickLinks": "Quick Links",
     "connectWithMe": "Connect With Me",
     "rights": "All rights reserved.",
@@ -582,7 +582,7 @@
     },
     "transition": {
       "chapterLabel": "CHAPTER 02",
-      "heading": "From business problems to production systems.",
+      "heading": "From business problems to backend systems.",
       "body": "Every project below started as an operational bottleneck — a spreadsheet, a manual process, a disconnected tool. What follows is the backend engineering that replaced it.",
       "signals": [
         "4+ years building web systems",
@@ -634,7 +634,7 @@
     "gallery": {
       "chapterLabel": "CHAPTER 06",
       "heading": "Additional systems",
-      "body": "Five more production platforms — same backend-first approach, different domains."
+      "body": "Five more backend project studies — the same backend-first approach across different domains."
     },
     "experience": {
       "chapterLabel": "CHAPTER 07"
