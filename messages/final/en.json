@@ -39,15 +39,15 @@
   "opening": {
     "name": "YUSUF — JOJEH",
     "role": "Backend & Business Systems Engineer",
-    "headline": "I turn business complexity into production systems.",
+    "headline": "I turn business complexity into backend systems that hold up — permissions, payments, retries and AI agents under control.",
     "headlineLines": [
       "I turn business complexity",
-      "into production systems."
+      "into backend systems that hold up."
     ],
     "headlineLinesMobile": [
-      "I turn business",
-      "complexity into",
-      "production systems."
+      "Business complexity,",
+      "backend systems that",
+      "hold up."
     ],
     "support": "I design backend systems around how real businesses operate — workflows, permissions, data, APIs, integrations, reliability and applied AI.",
     "supportShort": "Backend systems built around how real businesses operate.",
@@ -184,7 +184,7 @@
       "Deterministic AI agents with read-only, allowlisted tools",
       "Approved actions run through the same domain use cases as the UI"
     ],
-    "status": "V1 release candidate · not in production",
+    "status": "Release candidate",
     "cta": "Read the Dhura case study",
     "imageAlt": "Dhura executive overview with demo data"
   },
@@ -246,7 +246,7 @@
         "period": "Sep 2026 — Present",
         "role": "Backend Developer",
         "company": "ArchitWeb",
-        "d": "Backend work on employer and client systems in PHP/MySQL and GraphQL: payments, refunds and reporting APIs, with idempotent operations and safer retries. Product and client details stay with the employer."
+        "d": "Built an agent-commerce backend with 26 REST operations and 21 MCP tools, OAuth 2.1 and integration keys, checkout preflight, wallet-only direct orders, signed status webhooks and idempotent order provenance. Owned backend workflows for a Gulf endowment and donations platform across payments, finance ledger, lease installments, volunteering and notifications; one successful payment creates exactly one finance effect, with exact 3-decimal currency handling. Kept a 600+ test suite (4,000+ assertions) green through security hardening and shipped a regression-tested fix across 4 PRs. Planned a 15-item AI coding-agent platform upgrade with acceptance criteria and evidence gates; delivered 8 and delegated 7, including a runtime migration with config-only rollback and failure classification. Added canonical logging and X-Request-Id correlation. Research reports led to Playwright Test adoption and a recommendation against auto-repricing until data quality is proven."
       },
       {
         "period": "Jan 2025 — Aug 2026",
@@ -284,36 +284,41 @@
         "id": "mtjri",
         "t": "Mtjri",
         "d": "Multi-store commerce where AI drafts a store’s content in queued jobs and a validator checks it before it is saved.",
-        "href": "mtjri"
+        "href": "mtjri",
+        "status": "Development"
       },
       {
         "id": "ilogistics",
         "t": "iLogistics",
-        "d": "Logistics and booking platform with shipment tracking, invoices and reports. Built with a teammate; started during my work at Mermez."
+        "d": "Logistics and booking platform with shipment tracking, invoices and reports. Built with a teammate; started during my work at Mermez.",
+        "status": "Production (employer)"
       },
       {
         "id": "hirelens",
         "t": "HireLens AI",
         "d": "Recruiting copilot: AI scores evidence against a rubric, and hire or reject decisions stay human-only.",
-        "href": "hirelens"
+        "href": "hirelens",
+        "status": "Development"
       },
       {
         "id": "linguacoach",
         "t": "LinguaCoach AI",
         "d": "Language-learning prototype that stays usable without a paid model provider.",
-        "href": "linguacoach"
+        "href": "linguacoach",
+        "status": "Development"
       },
       {
         "id": "careerguide",
         "t": "CareerGuide AI",
         "d": "Graduation project: career matching where the score is deterministic and AI only advises.",
-        "href": "careerguide"
+        "href": "careerguide",
+        "status": "Development"
       },
       {
         "id": "hexaterminal",
         "t": "HexaTerminal",
         "d": "Company website, co-developed with another engineer who wrote most of it.",
-        "status": "coDeveloped"
+        "status": "Development"
       }
     ],
     "screens": {
@@ -359,7 +364,7 @@
     "statement": "Better systems start with understanding the business.",
     "body": "Open to remote roles in backend engineering, business systems and applied AI.",
     "availability": "Remote, open to GCC/EMEA relocation.",
-    "email": "yassaf.jojeh@gmail.com",
+    "email": "yusufmohammdjojeh@gmail.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "cv": "Download CV (PDF)",
@@ -451,7 +456,8 @@
         "No company data, internal URLs or source code are shown or linked.",
         "No business results, usage or revenue figures are claimed."
       ],
-      "tests": "The repository has about 320 test files. They were not run for this page."
+      "tests": "The repository has about 320 test files. They were not run for this page.",
+      "status": "Production (employer)"
     },
     "hirelens": {
       "kicker": "Case study · Hiring platform",
@@ -799,13 +805,14 @@
         "External providers (Tavily, SerpAPI, Apify, model APIs) were not called during this audit.",
         "The release-report figures above were not reproduced here."
       ],
-      "tests": "Executed on 18 Oct 2026 with SQLite and provider keys blanked: 567 passed, 3 failed, 6 skipped. The 3 failures are production-config checks that require a search API key, which was removed on purpose."
+      "tests": "Executed on 18 Oct 2026 with SQLite and provider keys blanked: 567 passed, 3 failed, 6 skipped. The 3 failures are production-config checks that require a search API key, which was removed on purpose.",
+      "status": "Public repo / local build"
     },
     "dhura": {
       "kicker": "Case study · Multi-tenant real-estate SaaS",
       "title": "Dhura",
       "arabicTitle": "ذُرى",
-      "status": "V1 release candidate · not in production",
+      "status": "Release candidate",
       "lede": "An Arabic-first real-estate platform where every module is scoped by tenant, and AI can recommend anything but changes nothing without a person.",
       "facts": [
         {
@@ -1030,7 +1037,7 @@
       "kicker": "Case study · Multi-tenant SaaS",
       "title": "CRMA",
       "lede": "A multi-tenant CRM where AI agents propose and people approve.",
-      "status": "Pre-launch · not in production",
+      "status": "Development",
       "heroAlt": "CRMA copilot paused on a proposed deal stage change, with the field diff, the reason, and Approve and Reject buttons",
       "calloutLabel": "The run is paused here",
       "summary": "CRMA is a multi-tenant CRM built on Laravel 12 and React 19. AI agents can search, research and draft, but they can never change data on their own. Every write becomes a proposal with a field-level diff, a stated reason and a risk class, and the agent run pauses until a person approves, edits or rejects it.",
@@ -1388,7 +1395,7 @@
       "kicker": "Case study · Restaurant operations platform",
       "title": "RestoCafe OS",
       "lede": "A multi-branch restaurant platform built around one hard problem: keeping an order correct while tills, a kitchen screen and a patchy connection all touch it.",
-      "status": "In development · not deployed",
+      "status": "Development",
       "facts": [
         {
           "k": "Role",
@@ -1492,7 +1499,7 @@
       "kicker": "Case study · Multi-store commerce",
       "title": "Mtjri",
       "lede": "Multi-store commerce where AI drafts each store’s landing content in the background, and a validator decides whether it is fit to save.",
-      "status": "Working build · not deployed",
+      "status": "Development",
       "facts": [
         {
           "k": "Role",
@@ -1616,7 +1623,7 @@
       "Redis",
       "Reverb"
     ],
-    "status": "Pre-launch · not in production"
+    "status": "Development"
   },
   "restocafe": {
     "title": "RestoCafe OS",
@@ -1627,7 +1634,7 @@
       "Version checks and row locks where staff can race",
       "An offline queue in the ops app, replayed on reconnect"
     ],
-    "status": "In development · not deployed",
+    "status": "Development",
     "cta": "Read the RestoCafe case study",
     "imageAlt": "RestoCafe kitchen board with seeded test orders"
   },
