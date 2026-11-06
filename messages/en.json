@@ -375,7 +375,7 @@
         "title": "Backend Developer | iLogistics SaaS",
         "company": "Mermez (Creative Digital Solutions)",
         "location": "Remote",
-        "period": "Jan 2025 – Nov 2025",
+        "period": "2022 — 2023",
         "description": [
           "Built RESTful APIs for multi-tenant logistics SaaS platform using Laravel and MySQL",
           "Optimized database queries and schemas — measurable performance improvement in tracking and reporting modules (25+ indexes, eager loading)",
@@ -494,7 +494,7 @@
   },
   "contact": {
     "title": "Need a backend engineer who understands business logic and operational workflows?",
-    "subtitle": "I'm available for remote backend and backend-focused full-stack roles across GCC, MENA, Europe, and international product teams. Best fit: SaaS, CRM/ERP, PropTech, logistics, healthcare, AI-integrated business platforms.",
+    "subtitle": "I'm available immediately for remote backend and backend-focused full-stack roles across GCC, MENA, Europe, and international product teams. Best fit: SaaS, CRM/ERP, PropTech, logistics, healthcare, AI-integrated business platforms.",
     "letsConnect": "Let's Connect",
     "emailMe": "Email Me",
     "viewGithub": "View GitHub",
@@ -550,7 +550,7 @@
     }
   },
   "footer": {
-    "tagline": "Backend engineer building SaaS, CRM/ERP platforms and AI-integrated workflows. Available for remote roles.",
+    "tagline": "Backend engineer building SaaS, CRM/ERP platforms and AI-integrated workflows. Available immediately for remote roles.",
     "quickLinks": "Quick Links",
     "connectWithMe": "Connect With Me",
     "rights": "All rights reserved.",

@@ -37,7 +37,7 @@ export const experiences = [
     title: "Backend Developer | iLogistics SaaS",
     company: "Mermez (Creative Digital Solutions)",
     location: "Remote",
-    period: "Jan 2025 – Nov 2025",
+    period: "2022 — 2023",
     description: [
       "Designed and developed RESTful APIs for iLogistics SaaS platform using Laravel and MySQL, handling multi-tenant operations",
       "Optimized database queries and schemas, resulting in approximately 25% performance improvement across tracking and reporting modules",

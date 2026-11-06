@@ -58,7 +58,7 @@
       "Applied AI"
     ],
     "location": "Syria / Remote · UTC+3",
-    "availability": "Remote · UTC+3 · Open to GCC/EMEA relocation",
+    "availability": "Available immediately · Remote · UTC+3 · Open to GCC/EMEA relocation",
     "cv": "Download CV (PDF)",
     "scroll": "Scroll",
     "portraitAlt": "Portrait of Yusuf Jojeh overlooking an old city at dusk",
@@ -264,7 +264,7 @@
         "d": "NestJS/TypeScript tenant-aware SaaS APIs, role-based business workflows, validation, database structures and integrations with React dashboards."
       },
       {
-        "period": "Jan 2025 — Nov 2025",
+        "period": "2022 — 2023",
         "role": "Backend Developer, iLogistics",
         "company": "Mermez",
         "d": "Laravel/MySQL logistics APIs and workflows for shipment tracking, authentication and reporting, with indexing, query refinement and Redis caching on recurring queries."
@@ -372,7 +372,7 @@
   "closing": {
     "statement": "Better systems start with understanding the business.",
     "body": "Open to remote roles in backend engineering, business systems and applied AI.",
-    "availability": "Remote, open to GCC/EMEA relocation.",
+    "availability": "Available immediately for remote roles; open to GCC/EMEA relocation.",
     "email": "yusufmohammdjojeh@gmail.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",

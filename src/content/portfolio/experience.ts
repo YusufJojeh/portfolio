@@ -44,7 +44,7 @@ export const EXPERIENCE: ExperienceEntry[] = [
   {
     company: 'Mermez',
     role: 'Backend Developer, iLogistics',
-    period: 'Jan 2025 — Nov 2025',
+    period: '2022 — 2023',
     systems: ['iLogistics (early history)'],
     disclose: ['logistics APIs, tracking, reporting, caching'],
     withhold: ['unbenchmarked performance figures'],
