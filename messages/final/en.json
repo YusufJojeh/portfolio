@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Yusuf Jojeh — Backend & Business Systems Engineer",
+    "title": "Yusuf Jojeh — Backend & Applied AI Engineer",
     "description": "Backend and business systems engineer. Multi-tenant SaaS, workflows, permissions, concurrency and applied AI, shown with the evidence behind each claim."
   },
   "nav": {
@@ -38,7 +38,7 @@
   },
   "opening": {
     "name": "YUSUF — JOJEH",
-    "role": "Backend & Business Systems Engineer",
+    "role": "Backend & Applied AI Engineer",
     "headline": "I turn business complexity into backend systems that hold up.",
     "headlineLines": [
       "I turn business complexity",
@@ -124,7 +124,7 @@
     "cta": "Read the HireLens case study",
     "screensTitle": "Inside the product",
     "screensIntro": "The recruiter workspace, from the evidence dashboard to the human decision.",
-    "screensNote": "Captured by the repo’s own Playwright suite on a seeded local build. Candidates, scores and jobs are demo data.",
+    "screensNote": "Captured by the repo’s own Playwright suite on a seeded project. Candidates, scores and jobs are demo data.",
     "screens": {
       "dashboard": "Evidence dashboard",
       "evaluation": "Evaluation report",
@@ -147,7 +147,7 @@
     "cta": "Read the LinguaCoach case study",
     "screensTitle": "Inside the product",
     "screensIntro": "The learner side and the admin audit trail, on a demo account.",
-    "screensNote": "Captured during a live UI audit of a local build, signed in as a seeded demo learner and admin. Activity and accounts are demo data.",
+    "screensNote": "Captured during a live UI audit of a project, signed in as a seeded demo learner and admin. Activity and accounts are demo data.",
     "screens": {
       "dashboard": "Learner dashboard",
       "coach": "AI coach conversation",
@@ -174,7 +174,7 @@
     "cta": "Read the ProspectIQ case study",
     "imageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard with demo data",
     "mobileImageAlt": "ProspectIQ (LeadScope AI) sales intelligence dashboard on a mobile screen",
-    "status": "Public repo / local build"
+    "status": "Engineering project"
   },
   "dhura": {
     "title": "Dhura",
@@ -186,7 +186,7 @@
       "Deterministic AI agents with read-only, allowlisted tools",
       "Approved actions run through the same domain use cases as the UI"
     ],
-    "status": "Release candidate",
+    "status": "Engineering project",
     "cta": "Read the Dhura case study",
     "imageAlt": "Dhura executive overview with demo data",
     "mobileImageAlt": "Mobile view of the Dhura executive overview with demo data"
@@ -243,19 +243,19 @@
   },
   "experience": {
     "heading": "Where the work happened.",
-    "education": "BSc, Information Engineering & Distributed Systems — Al-Shahbaa University, 2021–2026",
+    "education": "B.Eng., Information Engineering & Distributed Systems — Al-Shahbaa University, 2021–2026",
     "items": [
       {
-        "period": "Sep 2026 — Present",
-        "role": "Backend Developer",
+        "period": "Aug 2026 — Present",
+        "role": "Backend / AI Engineer",
         "company": "ArchitWeb",
-        "d": "• Built an agent-commerce backend that lets external AI agents shop safely. It has 26 REST operations, 21 MCP tools, OAuth 2.1 and integration keys, checkout preflight, wallet-only direct orders, signed status webhooks and idempotent order provenance.\n• Owned the backend of a Gulf endowment and donations platform (payments, finance ledger, lease installments, volunteering, notifications). Payment confirmation is idempotent: one successful payment creates exactly one finance effect.\n• Kept a 600+ test suite (4,000+ assertions) green through security hardening. Traced a session-loss defect to its root cause in redirect handling and fixed it across 4 PRs, with regression tests.\n• Planned an AI coding-agent platform upgrade as 15 dependency-linked work items with acceptance criteria and evidence gates. Delivered 8 himself and delegated 7, including a runtime migration with config-only rollback.\n• Added canonical logging and X-Request-Id correlation for end-to-end tracing.\n• Wrote research reports that changed decisions: a QA-agent assessment the team adopted, and a pricing-automation feasibility study that recommended not building yet.\nProduct and client details stay with the employer."
+        "d": "Built a production agent-commerce integration with 26 REST operations and 21 MCP tools. Verified a wallet fix with 205 assertions before QA handoff. Owned backend delivery for an Omani endowment platform; a later platform hardening run passed 630 tests and 4,018 assertions. Planned a 15-task coding-agent pipeline upgrade and delivered my eight-task track. Production releases are handled by the release owner."
       },
       {
         "period": "Jan 2025 — Aug 2026",
-        "role": "AI & CRM Specialist / Full-Stack Developer",
+        "role": "Tech Lead / Full-Stack Engineer — AI & CRM",
         "company": "Rakez Real Estate Company",
-        "d": "Part of the team building a Saudi real-estate ERP/CRM (Laravel API, Vue 3 SPA): ad-platform lead attribution, sales reservations, contract permissions, integrations and AI-assisted workflows."
+        "d": "Contributed about 296 commits to a production Laravel/Vue.js ERP/CRM. Directed task allocation and architecture for AI and advertising-platform integrations, and reviewed frontend code and integration quality. The platform had 150+ APIs in total."
       },
       {
         "period": "2025 — 2026",
@@ -265,7 +265,7 @@
       },
       {
         "period": "2022 — 2023",
-        "role": "Backend Developer, iLogistics",
+        "role": "Backend Developer",
         "company": "Mermez",
         "d": "Laravel/MySQL logistics APIs and workflows for shipment tracking, authentication and reporting, with indexing, query refinement and Redis caching on recurring queries."
       },
@@ -326,7 +326,7 @@
     ],
     "screens": {
       "ilogistics": {
-        "note": "Admin and customer screens from a local build. Names, shipments and amounts are seeded test data.",
+        "note": "Admin and customer screens from a project. Names, shipments and amounts are seeded test data.",
         "dashboard": "Admin dashboard",
         "analytics": "Analytics and reports",
         "shipments": "Shipment management",
@@ -335,7 +335,7 @@
         "customer-shipments": "Customer shipments with QR tracking"
       },
       "mtjri": {
-        "note": "The platform admin, a store's back office and its storefront, from a local build with demo stores and orders.",
+        "note": "The platform admin, a store's back office and its storefront, from a project with demo stores and orders.",
         "storefront": "Storefront",
         "store-dashboard": "Store dashboard",
         "pos": "Point of sale",
@@ -344,7 +344,7 @@
         "roles": "Staff roles and permissions"
       },
       "hirelens": {
-        "note": "Logged-in screens from a local build on the project’s demo seed.",
+        "note": "Logged-in screens from a project on the project’s demo seed.",
         "dashboard": "Evidence dashboard",
         "evaluation": "Evaluation report",
         "human-review": "Human decision",
@@ -353,7 +353,7 @@
         "audit": "Audit log"
       },
       "linguacoach": {
-        "note": "Logged-in screens from a local build on the project’s demo seed.",
+        "note": "Logged-in screens from a project on the project’s demo seed.",
         "dashboard": "Learner dashboard",
         "coach": "AI coach conversation",
         "reading": "Reading practice",
@@ -364,8 +364,8 @@
     "coDeveloped": "Co-developed",
     "status": {
       "productionEmployer": "Production (employer, private code)",
-      "releaseCandidate": "Release candidate",
-      "publicRepoLocalBuild": "Public repo / local build",
+      "releaseCandidate": "Engineering project",
+      "publicRepoLocalBuild": "Engineering project",
       "development": "In development"
     }
   },
@@ -392,7 +392,7 @@
     "next": "Next",
     "role": "Role",
     "stack": "Stack",
-    "status": "Status",
+    "status": "Engineering project",
     "domain": "Domain",
     "source": "Source",
     "private": "Private repository",
@@ -466,7 +466,7 @@
         "No business results, usage or revenue figures are claimed."
       ],
       "tests": "The repository has about 320 test files. They were not run for this page.",
-      "status": "Production (employer, private code)"
+      "status": "Engineering project"
     },
     "hirelens": {
       "kicker": "Case study · Hiring platform",
@@ -552,7 +552,7 @@
       "kicker": "Case study · Sales intelligence",
       "title": "ProspectIQ",
       "alias": "Also developed as LeadScope AI",
-      "lede": "Evidence-grounded B2B research and sales intelligence. Public repo / local build.",
+      "lede": "Evidence-grounded B2B research and sales intelligence. Engineering project.",
       "summary": "ProspectIQ is an evidence-grounded B2B research and sales intelligence system. It combines multi-source research, deterministic scoring, Evidence Graphs, Delta Intelligence, internal Sales Knowledge retrieval and a bounded model-directed agent runtime. Consequential actions are proposed first, explicitly approved, reauthorized at execution time, executed atomically, audited, and resumed within the same AgentRun.",
       "pathTitle": "The system path",
       "path": [
@@ -815,13 +815,13 @@
         "The release-report figures above were not reproduced here."
       ],
       "tests": "Executed on 18 Oct 2026 with SQLite and provider keys blanked: 567 passed, 3 failed, 6 skipped. The 3 failures are production-config checks that require a search API key, which was removed on purpose.",
-      "status": "Public repo / local build"
+      "status": "Engineering project"
     },
     "dhura": {
       "kicker": "Case study · Multi-tenant real-estate SaaS",
       "title": "Dhura",
       "arabicTitle": "ذُرى",
-      "status": "Release candidate",
+      "status": "Engineering project",
       "lede": "An Arabic-first real-estate platform where every module is scoped by tenant, and AI can recommend anything but changes nothing without a person.",
       "facts": [
         {
@@ -961,12 +961,12 @@
     "evidence": {
       "label": "Real screens",
       "source": {
-        "rakez": "The screens below come from a local build with seeded demo data. The company’s records, URLs and source stay private.",
-        "hirelens": "Captured from a local build of the application, unedited.",
-        "linguacoach": "Captured from a local build of the web app, unedited.",
-        "prospectiq": "Captured from a local build of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
-        "careerguide": "Captured from a local build of the web app, unedited.",
-        "dhura": "Captured from a local build of the V1 release candidate on demo data. Dhura is not deployed to production."
+        "rakez": "The screens below come from a project with seeded demo data. The company’s records, URLs and source stay private.",
+        "hirelens": "Captured from a project of the application, unedited.",
+        "linguacoach": "Captured from a project of the web app, unedited.",
+        "prospectiq": "Captured from a project of the web app. The marketing strip under the hero is cropped out: it carries placeholder claims, not verified figures.",
+        "careerguide": "Captured from a project of the web app, unedited.",
+        "dhura": "Captured from a project of the V1 release candidate on demo data. Dhura is not deployed to production."
       },
       "caption": {
         "home": "Landing screen",
@@ -1000,7 +1000,7 @@
       },
       "app": {
         "label": "Inside the product",
-        "demo": "Logged-in screens from a local build running on the project's own demo seed. The names, units and amounts are fictional test data, not production figures.",
+        "demo": "Logged-in screens from a project running on the project's own demo seed. The names, units and amounts are fictional test data, not production figures.",
         "rakez": {
           "marketing-performance-dashboard": "Marketing dashboard",
           "unit-inventory-search": "Unit inventory search",
@@ -1046,7 +1046,7 @@
       "kicker": "Case study · Multi-tenant SaaS",
       "title": "CRMA",
       "lede": "A multi-tenant CRM where AI agents propose and people approve.",
-      "status": "Public repo / local build",
+      "status": "Engineering project",
       "heroAlt": "CRMA copilot paused on a proposed deal stage change, with the field diff, the reason, and Approve and Reject buttons",
       "calloutLabel": "The run is paused here",
       "summary": "CRMA is a multi-tenant CRM built on Laravel 12 and React 19. AI agents can search, research and draft, but they can never change data on their own. Every write becomes a proposal with a field-level diff, a stated reason and a risk class, and the agent run pauses until a person approves, edits or rejects it.",
@@ -1404,7 +1404,7 @@
       "kicker": "Case study · Restaurant operations platform",
       "title": "RestoCafe OS",
       "lede": "A multi-branch restaurant platform built around one hard problem: keeping an order correct while tills, a kitchen screen and a patchy connection all touch it.",
-      "status": "In development",
+      "status": "Engineering project",
       "facts": [
         {
           "k": "Role",
@@ -1480,7 +1480,7 @@
           "d": "Socket.IO with a Redis adapter, and a short-lived socket token instead of the session cookie."
         }
       ],
-      "screensNote": "Captured by the repository’s own Playwright visual tests against a seeded local build. Orders, tables and amounts are test data.",
+      "screensNote": "Captured by the repository’s own Playwright visual tests against a seeded project. Orders, tables and amounts are test data.",
       "screens": {
         "kitchen": "Kitchen board",
         "order-create": "Order entry",
@@ -1508,7 +1508,7 @@
       "kicker": "Case study · Multi-store commerce",
       "title": "Mtjri",
       "lede": "Multi-store commerce where AI drafts each store’s landing content in the background, and a validator decides whether it is fit to save.",
-      "status": "Public repo / local build",
+      "status": "Engineering project",
       "facts": [
         {
           "k": "Role",
@@ -1570,7 +1570,7 @@
           "code": "BelongsToStore"
         }
       ],
-      "screensNote": "The platform admin, a store’s back office and its storefront, from a local build with demo stores and orders.",
+      "screensNote": "The platform admin, a store’s back office and its storefront, from a project with demo stores and orders.",
       "verified": [
         "Queued jobs for store and section generation.",
         "A provider manager with Ollama and an optional OpenAI fallback.",
@@ -1632,7 +1632,7 @@
       "Redis",
       "Reverb"
     ],
-    "status": "Public repo / local build",
+    "status": "Engineering project",
     "mobileImageAlt": "Mobile view of the CRMA deal pipeline with seeded demo data"
   },
   "restocafe": {
@@ -1644,15 +1644,15 @@
       "Version checks and row locks where staff can race",
       "An offline queue in the ops app, replayed on reconnect"
     ],
-    "status": "In development",
+    "status": "Engineering project",
     "cta": "Read the RestoCafe case study",
     "imageAlt": "RestoCafe kitchen board with seeded test orders"
   },
   "about": {
     "heading": "About.",
     "body": [
-      "I am a backend engineer who starts with the business: how a sale is approved, how a booking is held, how money is split. The code comes after the operation is clear.",
-      "Most of my work is Laravel, FastAPI and NestJS on relational databases, with the AI layer built as part of the system rather than beside it."
+      "I am Yusuf Mohammad Jojeh, a Backend & Applied AI Engineer based in Aleppo, Syria. I have developed software since 2022, working across PHP/Laravel, custom PHP frameworks, Python/FastAPI, and TypeScript. I also build frontend applications with React.js, Next.js, and Vue.js.",
+      "My work connects business workflows, payments, permissions, and AI integrations. I make changes reviewable through explicit API contracts, automated checks, and QA handoffs that state what was not verified. I hold the IBM AI Developer Professional Certificate and am continuing a RAG and agentic AI learning path."
     ],
     "focus": [
       "Backend architecture",
@@ -1702,6 +1702,6 @@
       "Vue 3"
     ],
     "mobileImageAlt": "Mobile view of the Rakez marketing dashboard with demo data",
-    "status": "Production (employer, private code)"
+    "status": "Engineering project"
   }
 }
