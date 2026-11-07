@@ -33,7 +33,11 @@ export default function Experience() {
               <p className="font-display text-[28px] leading-[1.05] text-cinema-soft md:text-[34px]">{it.company}</p>
               <p className="mt-1.5 text-[14px] text-cinema-text/70">{it.role}</p>
             </div>
-            <p className="whitespace-pre-line max-w-[36rem] text-[15px] leading-relaxed text-cinema-text/65 md:pt-1.5">{it.d}</p>
+            <div className="max-w-[42rem] space-y-5 text-[16px] leading-7 text-cinema-text/80 md:pt-1.5">
+              {it.d.split(/\n+/).map((paragraph) => paragraph.replace(/^\s*[•●▪]\s*/, '').trim()).filter(Boolean).map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </Reveal>
         ))}
       </ol>
