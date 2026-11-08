@@ -9,7 +9,7 @@ import { EASE } from '../engine/motion';
 import { CONTACT } from '../contact';
 
 const LINKS = [
-  { key: 'work', hash: 'project-theatre' },
+  { key: 'work', hash: 'rakez' },
   { key: 'approach', hash: 'business-to-system' },
   { key: 'experience', hash: 'experience' },
   { key: 'contact', hash: 'closing' },

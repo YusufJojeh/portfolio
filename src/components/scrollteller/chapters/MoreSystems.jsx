@@ -5,7 +5,7 @@ import ChapterLabel from '../engine/ChapterLabel';
 import Reveal from '../engine/Reveal';
 import { SOURCE_LINKS } from '../projects';
 
-import ProjectGallery from './ProjectGallery';
+import ProjectCard from './ProjectCard';
 
 // Real screens, in card order. Case-study projects reuse their work captures;
 // the rest come from local builds and each repo's own Playwright visual suite, on demo data.
@@ -17,6 +17,11 @@ const SHOTS = {
 };
 
 function Meta({ item, t, locale }) {
+  if (item.status) {
+    return (
+      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">{t(item.status)}</span>
+    );
+  }
   const source = SOURCE_LINKS[item.id];
   if (!item.href && !source) return null;
   return (
@@ -67,11 +72,27 @@ export default function MoreSystems() {
         </Reveal>
       </div>
 
-      <ProjectGallery locale={locale} projects={cards.map((it) => ({
-        ...it,
-        note: t(`screens.${it.id}.note`),
-        screens: SHOTS[it.id].files.map((file) => ({ src: `/portfolio/${SHOTS[it.id].dir}/${file}.webp`, caption: t(`screens.${it.id}.${file}`) })),
-      }))} />
+      <div className="mt-14 border-t border-white/15 md:mt-20">
+        {cards.map((it, i) => {
+          const { dir, files } = SHOTS[it.id];
+          return (
+            <Reveal key={it.id}>
+              <ProjectCard
+                index={String(i + 1).padStart(2, '0')}
+                title={it.t}
+                description={it.d}
+                note={t(`screens.${it.id}.note`)}
+                meta={<Meta item={it} t={t} locale={locale} />}
+                flip={i % 2 === 1}
+                screens={files.map((f) => ({
+                  src: `/portfolio/${dir}/${f}.webp`,
+                  caption: t(`screens.${it.id}.${f}`),
+                }))}
+              />
+            </Reveal>
+          );
+        })}
+      </div>
 
       <ul>
         {rest.map((it) => (
