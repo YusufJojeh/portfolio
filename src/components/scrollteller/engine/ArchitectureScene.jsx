@@ -64,9 +64,7 @@ function LiveStage({ chapter, chapterName, heading, intro, layers }) {
             return (
               <li key={l.t} aria-current={on ? 'step' : undefined} className="border-t border-white/[0.07] first:border-t-0">
                 <div className="flex items-baseline gap-4 py-2.5 md:py-3.5">
-                  <span dir="ltr" className={`font-mono text-[11px] tracking-[0.2em] transition-colors duration-500 ${on ? 'text-cinema-cream' : 'text-cinema-steel'}`}>
-                    0{i + 1}
-                  </span>
+                  
                   <span
                     className={`font-display text-[24px] leading-none transition-colors duration-500 ease-cinematic md:text-[30px] ${
                       on ? 'text-cinema-soft' : i < active ? 'text-cinema-muted' : 'text-cinema-steel'
@@ -105,10 +103,10 @@ function StillStage({ id, chapter, chapterName, heading, intro, layers }) {
       <div className="grid gap-12 md:grid-cols-2 md:gap-16">
         <Intro chapter={chapter} chapterName={chapterName} heading={heading} intro={intro} />
         <ol className="border-s border-white/10 ps-6 md:ps-8">
-          {layers.map((l, i) => (
+          {layers.map((l) => (
             <li key={l.t} className="border-t border-white/[0.07] py-4 first:border-t-0">
               <p className="flex items-baseline gap-4">
-                <span dir="ltr" className="font-mono text-[11px] tracking-[0.2em] text-cinema-steel">0{i + 1}</span>
+                
                 <span className="font-display text-[26px] leading-none text-cinema-soft">{l.t}</span>
               </p>
               <p className="mt-2 text-[15px] leading-relaxed text-cinema-text/70">{l.d}</p>

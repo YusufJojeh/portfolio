@@ -17,11 +17,6 @@ const SHOTS = {
 };
 
 function Meta({ item, t, locale }) {
-  if (item.status) {
-    return (
-      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-cinema-muted">{t(item.status)}</span>
-    );
-  }
   const source = SOURCE_LINKS[item.id];
   if (!item.href && !source) return null;
   return (

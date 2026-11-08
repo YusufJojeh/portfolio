@@ -28,12 +28,10 @@ export default function AppliedAI() {
           </Reveal>
         </div>
         <ol>
-          {principles.map((pr, i) => (
+          {principles.map((pr) => (
             <Reveal as="li" key={pr.t} className="border-t border-white/10 py-8 md:py-10">
               <div className="flex gap-5">
-                <span dir="ltr" className="pt-2 font-mono text-[11px] tracking-[0.2em] text-cinema-steel">
-                  0{i + 1}
-                </span>
+                
                 <div>
                   <h3 className="font-display text-[28px] leading-[1.05] text-cinema-soft md:text-[36px]">{pr.t}</h3>
                   <p className="mt-3 max-w-[36rem] text-[15px] leading-relaxed text-cinema-text/70 md:text-[16px]">{pr.d}</p>
