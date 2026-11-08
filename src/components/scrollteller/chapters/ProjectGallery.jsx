@@ -40,7 +40,7 @@ export default function ProjectGallery({ projects, locale }) {
             animate={{ rotateY: flipped && selected && !reduced ? 180 : 0 }} transition={{ duration: reduced ? 0 : 0.5 }} style={{ transformStyle: 'preserve-3d' }}>
             <div className="absolute inset-0 overflow-hidden rounded-2xl" style={{ backfaceVisibility: 'hidden', visibility: flipped && selected ? 'hidden' : 'visible' }}>
               <div className="relative h-[240px] md:h-[290px]"><Image src={item.screens[0].src} alt={item.screens[0].caption} fill sizes="(max-width: 768px) 80vw, 54vw" className="object-cover object-top" draggable={false}/></div>
-              <div className="p-6"><span className="text-xs tracking-[0.2em] text-blue-200">{String(index + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span><h3 className="mt-3 font-display text-3xl text-white">{item.t}</h3></div>
+              <div className="p-6"><h3 className="mt-3 font-display text-3xl text-white">{item.t}</h3></div>
             </div>
             {flipped && selected && <div dir={ar ? 'rtl' : 'ltr'} className="absolute inset-0 flex flex-col justify-center overflow-y-auto rounded-2xl bg-[#111820] p-7" style={{ transform: reduced ? undefined : 'rotateY(180deg)', backfaceVisibility: 'hidden' }}><h3 className="font-display text-3xl text-white">{item.t}</h3><p className="mt-5 text-base leading-7 text-white/80">{item.d}</p><p className="mt-5 text-sm leading-6 text-white/60">{item.note}</p></div>}
           </motion.div>
@@ -53,7 +53,7 @@ export default function ProjectGallery({ projects, locale }) {
       <button ref={opener} className={`${button} bg-blue-200 text-slate-950`} onClick={open}>{ar ? 'استكشف المشروع' : 'Explore project'}</button>
       <button className={button} onClick={() => go(1)} aria-label={ar ? 'المشروع التالي' : 'Next project'}>→</button>
     </div>
-    <p aria-live="polite" className="mt-4 text-center text-sm text-white/60">{project.t} · {active + 1} / {projects.length}</p>
+    <p aria-live="polite" className="mt-4 text-center text-sm text-white/60">{project.t}</p>
     <style>{`@keyframes gallery-open { from { opacity: 0; transform: translateY(24px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } } .project-gallery-dialog[open] { animation: gallery-open .35s cubic-bezier(.2,.8,.2,1); } @media (prefers-reduced-motion: reduce) { .project-gallery-dialog[open] { animation: none; } }`}</style>
     <dialog ref={dialog} onClick={(event) => { if(event.target === dialog.current) dialog.current.close(); }} className="project-gallery-dialog m-auto max-h-[92svh] w-[94vw] max-w-6xl overflow-auto rounded-2xl border border-white/20 bg-[#0e141c] p-0 text-white backdrop:bg-black/85">
       <motion.div initial={false} animate={{ opacity: 1 }} className="p-5 md:p-10" dir={ar ? 'rtl' : 'ltr'}>
