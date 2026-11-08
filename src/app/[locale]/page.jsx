@@ -3,7 +3,6 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import StoryShell from '@/components/scrollteller/engine/StoryShell';
-import OpeningSequence from '@/components/scrollteller/chapters/OpeningSequence';
 import BusinessToSystem from '@/components/scrollteller/chapters/BusinessToSystem';
 import AppliedAI from '@/components/scrollteller/chapters/AppliedAI';
 import MoreSystems from '@/components/scrollteller/chapters/MoreSystems';
@@ -23,7 +22,6 @@ export default async function HomePage({ params }) {
   return (
     <StoryShell locale={locale} rail={false}>
       {/* 00 Opening · 01 Engineering signals · 02 Rakez — one pinned sequence */}
-      <OpeningSequence />
       <SpatialProjects />
       {/* 03–06 Selected systems, continued */}
       <BusinessToSystem />

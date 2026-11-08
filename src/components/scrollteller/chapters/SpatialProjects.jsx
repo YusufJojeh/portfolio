@@ -1,40 +1,45 @@
 'use client';
-import { useRef } from 'react';
+import { Component, useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useScroll, useTransform, useSpring, useMotionValue, useReducedMotion } from 'framer-motion';
-import { useLocale, useTranslations } from 'next-intl';
-const WORK = [
- ['crma','crmaTeaser','/portfolio/work/crma/pipeline.webp','#6fa6ff'],
- ['dhura','dhura','/portfolio/work/dhura/app/executive-overview.webp','#79d7c4'],
- ['prospectiq','prospectiq','/portfolio/work/prospectiq/app/operational-lead-intelligence-dashboard.webp','#b8a0ff'],
- ['restocafe','restocafe','/portfolio/more/restocafe/kitchen.webp','#e6b983'],
+import { useLocale } from 'next-intl';
+import { useReducedMotion, useInView } from 'framer-motion';
+import { useForcedReducedMotion } from '../engine/motionPref';
+import styles from './SpatialProjects.module.css';
+const Orbit=dynamic(()=>import('./ProjectOrbit'),{ssr:false});
+const works=[
+ {slug:'rakez',name:'Real estate operations',tag:'ERP / CRM',stack:'Laravel · Vue.js · MySQL',image:'/portfolio/work/rakez/app/sales-reservation-operations.webp',description:'Production ERP/CRM for a Saudi real-estate business. Full-stack delivery, AI integrations, architecture decisions, and frontend code review.'},
+ {slug:'crma',name:'Customer operations',tag:'Business systems',stack:'Laravel · APIs · Automation',image:'/portfolio/work/crma/pipeline.webp',description:'Business workflows brought into one operational interface. Explore the system, its architecture, and implementation.'},
+ {slug:'dhura',name:'Executive intelligence',tag:'Decision support',stack:'Full-stack engineering',image:'/portfolio/work/dhura/app/executive-overview.webp',description:'An executive view of business operations. Explore the dashboards, workflows, and engineering behind the system.'},
+ {slug:'prospectiq',name:'Lead intelligence',tag:'Applied AI',stack:'Python · FastAPI · React.js',image:'/portfolio/work/prospectiq/app/operational-lead-intelligence-dashboard.webp',description:'Lead research and LLM scoring inside an operational workflow. A Python backend connected to a full-stack workspace.'},
+ {slug:'restocafe',name:'Restaurant operations',tag:'Business systems',stack:'NestJS · React.js · Redis',image:'/portfolio/more/restocafe/kitchen.webp',description:'Restaurant operations across connected workflows. Explore the kitchen interface and the backend that supports it.'},
 ];
-function Exhibit({ slug, namespace, image, accent, reverse }) {
- const ref=useRef(null); const t=useTranslations(`final.${namespace}`); const locale=useLocale(); const reduced=useReducedMotion();
- const {scrollYProgress}=useScroll({target:ref,offset:['start end','end start']});
- const pitch=useTransform(scrollYProgress,[0,.5,1],[16,0,-10]);
- const drift=useTransform(scrollYProgress,[0,1],[65,-65]);
- const mx=useMotionValue(0),my=useMotionValue(0);
- const rx=useSpring(my,{stiffness:120,damping:24}),ry=useSpring(mx,{stiffness:120,damping:24});
- function move(e){if(reduced||e.pointerType!=='mouse')return;const b=e.currentTarget.getBoundingClientRect();mx.set(((e.clientX-b.left)/b.width-.5)*12);my.set(-((e.clientY-b.top)/b.height-.5)*8);}
- return <section ref={ref} id={slug} className="relative isolate overflow-hidden px-6 py-24 md:px-16 md:py-36" style={{'--exhibit-accent':accent}}>
-  <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-20" style={{background:`radial-gradient(ellipse at ${reverse?'25%':'75%'} 45%, ${accent}, transparent 55%)`}}/>
-  <div className={`mx-auto grid max-w-[1440px] items-center gap-14 lg:grid-cols-[.8fr_1.4fr] ${reverse?'lg:[&>header]:order-2':''}`}>
-   <header className="relative z-10"><p className="mb-6 text-xs uppercase tracking-[.2em]" style={{color:accent}}>{t('kicker')}</p><h2 className="font-display text-5xl leading-none md:text-7xl">{t('title')}</h2><p className="mt-7 max-w-lg text-lg leading-8 text-cinema-text/75">{t('lede')}</p><Link href={`/${locale}/work/${slug}`} className="mt-8 inline-flex items-center gap-5 rounded-full border border-white/25 px-6 py-4 transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-blue-300">{t('cta')} <span aria-hidden="true">↗</span></Link></header>
-   <div onPointerMove={move} onPointerLeave={()=>{mx.set(0);my.set(0);}} className="relative py-12" style={{perspective:1600}}>
-    <motion.div style={{rotateX:reduced?0:pitch,y:reduced?0:drift,transformStyle:'preserve-3d'}}>
-     <motion.div style={{rotateX:reduced?0:rx,rotateY:reduced?0:ry,transformStyle:'preserve-3d'}}>
-      <div aria-hidden="true" className="absolute inset-0 rounded-2xl border border-white/15" style={{transform:'translateZ(-60px) translate(22px,28px)',background:'#101720'}}/>
-      <div aria-hidden="true" className="absolute inset-0 rounded-2xl border" style={{transform:'translateZ(-30px) translate(11px,14px)',borderColor:accent+'55',background:'#131c27'}}/>
-      <Link href={`/${locale}/work/${slug}`} aria-label={t('cta')} className="relative block overflow-hidden rounded-2xl border border-white/25 bg-[#10151c] shadow-[0_35px_90px_rgba(0,0,0,.65)] focus-visible:outline focus-visible:outline-blue-300" style={{transform:'translateZ(20px)'}}>
-       <div className="flex items-center justify-between border-b border-white/10 px-5 py-3"><span className="text-xs tracking-[.14em] text-white/60">{t('title')}</span><span style={{color:accent}} aria-hidden="true">✦</span></div>
-       <div className="relative aspect-[16/10]"><Image src={image} alt={t('imageAlt')} fill sizes="(max-width: 1024px) 90vw, 60vw" className="object-cover object-top"/></div>
-      </Link>
-     </motion.div>
-    </motion.div>
+class SceneBoundary extends Component {
+ state={failed:false};
+ static getDerivedStateFromError(){return {failed:true};}
+ render(){return this.state.failed?this.props.fallback:this.props.children;}
+}
+export default function SpatialProjects(){
+ const locale=useLocale(),arabic=locale==='ar';const [active,setActive]=useState(0),[enabled,setEnabled]=useState(false),[paused,setPaused]=useState(false);
+ const reduced=useReducedMotion(),forced=useForcedReducedMotion(),ref=useRef(null),start=useRef(0);const visible=useInView(ref,{margin:'200px'});const work=works[active];
+ useEffect(()=>{try {const c=document.createElement('canvas');setEnabled(Boolean(c.getContext('webgl2')));}catch{setEnabled(false);}},[]);
+ const still=<div className={styles.still}><Image src={work.image} alt={work.name+' interface'} fill priority sizes="(max-width: 700px) 95vw, 70vw" className={styles.screenImage}/></div>;
+ return <section className={styles.world} ref={ref} lang="en" dir="ltr" aria-label="Selected projects">
+  <header className={styles.intro}>
+   <div className={styles.identity}><span>Yusuf Jojeh</span><span>Backend & Applied AI Engineer</span></div>
+   <h1>I turn business<br/><span className={styles.outline}>complexity</span><br/>into working systems.</h1>
+   <div className={styles.statement}><p>From the interface to the API.<br/>From an AI agent to a safe payment.</p><a href="#project-theatre">Explore my work <span aria-hidden="true">↘</span></a></div>
+  </header>
+  <div className={styles.theatre} id="project-theatre">
+   <div className={styles.theatreTop}><span>Selected systems</span><button type="button" onClick={()=>setPaused(!paused)} aria-pressed={paused}>{paused?'Enable 3D':'Still view'}</button></div>
+   <div className={styles.backdrop} aria-hidden="true">{work.tag}</div>
+   <div className={styles.stage} onPointerDown={e=>{start.current=e.clientX;}} onPointerUp={e=>{const delta=e.clientX-start.current;if(Math.abs(delta)>50)setActive((active+(delta<0?1:works.length-1))%works.length);}}>
+    {enabled&&!reduced&&!forced&&!paused&&visible?<SceneBoundary fallback={still}><Orbit works={works} active={active} onSelect={setActive}/></SceneBoundary>:still}
    </div>
+   <div className={styles.selection} aria-label="Choose a project">{works.map((w,i)=><button id={w.slug} type="button" key={w.slug} aria-pressed={i===active} onClick={()=>setActive(i)}>{w.name}</button>)}</div>
+   <div className={styles.detail} aria-live="polite"><div><p>{work.stack}</p><h2>{work.name}</h2></div><p>{work.description}</p><Link href={`/${locale}/work/${work.slug}`}>{arabic?'عرض المشروع':'Explore project'} <span aria-hidden="true">↗</span></Link></div>
   </div>
+  <div className={styles.disciplines}><span>Backend engineering</span><span>Applied AI</span><span>Full-stack delivery</span><span>Technical leadership</span></div>
  </section>;
 }
-export default function SpatialProjects(){return <div>{WORK.map(([slug,namespace,image,accent],i)=><Exhibit key={slug} slug={slug} namespace={namespace} image={image} accent={accent} reverse={i%2===1}/>)}</div>;}
