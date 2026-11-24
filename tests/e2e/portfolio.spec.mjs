@@ -23,7 +23,7 @@ const overflow = (page) => page.evaluate(() => document.documentElement.scrollWi
 test.describe('home', () => {
   test('renders the opening and every chapter anchor', async ({ page }) => {
     await page.goto('/en');
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('business complexity');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('full-stack software');
     for (const id of CHAPTERS) await expect(page.locator(`#${id}`)).toHaveCount(1);
   });
 
