@@ -313,7 +313,7 @@
       {
         "id": "careerguide",
         "t": "CareerGuide AI",
-        "d": "Graduation project: career matching where the score is deterministic and AI only advises.",
+        "d": "A career-matching engineering project with deterministic scores and AI-assisted explanations.",
         "href": "careerguide",
         "status": "status.development"
       },

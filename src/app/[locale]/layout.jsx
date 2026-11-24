@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
-import { Inter, Inter_Tight, Instrument_Serif, IBM_Plex_Sans_Arabic, Aref_Ruqaa } from 'next/font/google';
+import { Inter, Instrument_Serif, IBM_Plex_Sans_Arabic, Aref_Ruqaa } from 'next/font/google';
+import localFont from 'next/font/local';
 import { ClientProviders } from '@/providers/ClientProviders';
 import { Analytics } from '@vercel/analytics/next';
 import StructuredData from '@/components/server/StructuredData';
@@ -23,9 +24,9 @@ const display = Instrument_Serif({
   variable: '--font-display',
 });
 
-const grotesk = Inter_Tight({
-  subsets: ['latin'],
-  weight: ['500', '600'],
+const grotesk = localFont({
+  src: '../../styles/inter-tight-latin-wght-normal.woff2',
+  weight: '100 900',
   display: 'swap',
   variable: '--font-grotesk',
 });
