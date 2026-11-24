@@ -23,7 +23,7 @@ const overflow = (page) => page.evaluate(() => document.documentElement.scrollWi
 test.describe('home', () => {
   test('renders the opening and every chapter anchor', async ({ page }) => {
     await page.goto('/en');
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('business complexity');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('full-stack software');
     for (const id of CHAPTERS) await expect(page.locator(`#${id}`)).toHaveCount(1);
   });
 
@@ -78,10 +78,11 @@ test.describe('reduced motion', () => {
 });
 
 test.describe('work routes', () => {
+  // Check content as soon as the document is ready. Image checks wait on the image itself.
   for (const locale of ['en', 'ar']) {
     for (const slug of SLUGS) {
       test(`/${locale}/work/${slug} renders`, async ({ page }) => {
-        const res = await page.goto(`/${locale}/work/${slug}`);
+        const res = await page.goto(`/${locale}/work/${slug}`, { waitUntil: 'domcontentloaded' });
         expect(res?.status()).toBe(200);
         await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
       });
@@ -90,7 +91,7 @@ test.describe('work routes', () => {
 
   test('real screenshots load on every page that has them', async ({ page }) => {
     for (const slug of SLUGS.filter((s) => s !== 'crma')) {
-      await page.goto(`/en/work/${slug}`);
+      await page.goto(`/en/work/${slug}`, { waitUntil: 'domcontentloaded' });
       const img = page.locator(`figure img[src*="${slug}"]`).first();
       await img.scrollIntoViewIfNeeded();
       await expect(img).toHaveJSProperty('complete', true);
@@ -101,7 +102,7 @@ test.describe('work routes', () => {
 
   test('flagship pages say what was verified and what is not claimed', async ({ page }) => {
     for (const slug of ['rakez', 'crma', 'dhura', 'prospectiq', 'restocafe']) {
-      await page.goto(`/en/work/${slug}`);
+      await page.goto(`/en/work/${slug}`, { waitUntil: 'domcontentloaded' });
       await expect(page.getByRole('heading', { name: 'What was verified' })).toHaveCount(1);
       await expect(page.getByRole('heading', { name: 'What I do not claim' })).toHaveCount(1);
     }
@@ -109,7 +110,7 @@ test.describe('work routes', () => {
 
   test('employer projects have no routes', async ({ page }) => {
     for (const slug of ['ot2', 'alaya', 'algoag']) {
-      const res = await page.goto(`/en/work/${slug}`);
+      const res = await page.goto(`/en/work/${slug}`, { waitUntil: 'domcontentloaded' });
       expect(res?.status(), slug).toBe(404);
     }
   });
@@ -122,7 +123,7 @@ test.describe('work routes', () => {
   test('no horizontal overflow at 390px', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     for (const slug of SLUGS) {
-      await page.goto(`/en/work/${slug}`);
+      await page.goto(`/en/work/${slug}`, { waitUntil: 'domcontentloaded' });
       expect(await overflow(page), slug).toBeLessThanOrEqual(0);
     }
   });
@@ -131,7 +132,7 @@ test.describe('work routes', () => {
     const seen = [];
     let slug = SLUGS[0];
     for (let i = 0; i < SLUGS.length; i++) {
-      await page.goto(`/en/work/${slug}`);
+      await page.goto(`/en/work/${slug}`, { waitUntil: 'domcontentloaded' });
       seen.push(slug);
       const href = await page.locator(`a[href^="/en/work/"]`).last().getAttribute('href');
       slug = href.split('/').pop();
