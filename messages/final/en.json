@@ -186,7 +186,7 @@
       "Deterministic AI agents with read-only, allowlisted tools",
       "Approved actions run through the same domain use cases as the UI"
     ],
-    "status": "Engineering project",
+    "status": "V1 release candidate, not in production",
     "cta": "Read the Dhura case study",
     "imageAlt": "Dhura executive overview with demo data",
     "mobileImageAlt": "Mobile view of the Dhura executive overview with demo data"
@@ -249,7 +249,7 @@
         "period": "Sep 2026 — Present",
         "role": "Backend Engineer",
         "company": "ArchitWeb",
-        "d": "Own application-level production defects and coordinate frontend, mobile, and QA handoffs for commerce and operating systems.\\n\\n• Built a REST and MCP agent checkout layer with delegated access, spend controls, wallet orders, and traceability. Hardened wallet and refund flows against retries and concurrent execution.\\n• Enabled a fallback payment gateway in production during an outage, with about 45 minutes of hands-on engineering to activate it.\\n• Built GraphQL and custom PHP workflows for an Omani waqf operations platform. The work covered leases, donations, financial records, and acceptance testing.\\n• Own message-to-task intake and a staging QA workflow that uses AI for planning and Playwright for repeatable test outcomes. Write API and release handoffs and mentor an engineering trainee."
+        "d": "Own application-level production defects and coordinate frontend, mobile, and QA handoffs for commerce and operating systems.\\n\\n• Built a REST and MCP agent checkout layer with delegated access, spend controls, wallet orders, and traceability. Hardened wallet and refund flows against retries and concurrent execution.\\n• Enabled a fallback payment gateway in production during an outage, with about 45 minutes of hands-on engineering to activate it.\\n• Built GraphQL and custom PHP workflows for an Omani endowment management platform. The work covered leases, donations, financial records, and acceptance testing.\\n• Own message-to-task intake and a staging QA workflow that uses AI for planning and Playwright for repeatable test outcomes. Write API and release handoffs and mentor an engineering trainee."
       },
       {
         "period": "Jan 2025 — Aug 2026",
@@ -821,7 +821,7 @@
       "kicker": "Case study · Multi-tenant real-estate SaaS",
       "title": "Dhura",
       "arabicTitle": "ذُرى",
-      "status": "Engineering project",
+      "status": "V1 release candidate, not in production",
       "lede": "An Arabic-first real-estate platform where every module is scoped by tenant, and AI can recommend anything but changes nothing without a person.",
       "facts": [
         {
@@ -1046,7 +1046,7 @@
       "kicker": "Case study · Multi-tenant SaaS",
       "title": "CRMA",
       "lede": "A multi-tenant CRM where AI agents propose and people approve.",
-      "status": "Engineering project",
+      "status": "Pre-launch engineering project",
       "heroAlt": "CRMA copilot paused on a proposed deal stage change, with the field diff, the reason, and Approve and Reject buttons",
       "calloutLabel": "The run is paused here",
       "summary": "CRMA is a multi-tenant CRM built on Laravel 12 and React 19. AI agents can search, research and draft, but they can never change data on their own. Every write becomes a proposal with a field-level diff, a stated reason and a risk class, and the agent run pauses until a person approves, edits or rejects it.",
