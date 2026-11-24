@@ -58,7 +58,7 @@
       "Applied AI"
     ],
     "location": "Syria / Remote · UTC+3",
-    "availability": "Remote from Syria · Open to GCC and selected EMEA relocation",
+    "availability": "Remote from Syria · UTC+3 · Open to GCC and selected EMEA relocation",
     "cv": "Download CV (PDF)",
     "scroll": "Scroll",
     "portraitAlt": "Portrait of Yusuf Jojeh overlooking an old city at dusk",
@@ -320,8 +320,7 @@
       {
         "id": "hexaterminal",
         "t": "HexaTerminal",
-        "d": "Company website, co-developed with another engineer who wrote most of it.",
-        "status": "status.development"
+        "d": "Founder-led B2B software studio for ERP, CRM, and workflow automation. I lead engineering and technical delivery."
       }
     ],
     "screens": {
@@ -372,7 +371,7 @@
   "closing": {
     "statement": "Better systems start with understanding the business.",
     "body": "Open to full-stack, backend, and applied AI roles with GCC teams and selected EMEA companies.",
-    "availability": "Available immediately for remote roles; open to GCC/EMEA relocation.",
+    "availability": "Open to remote work and sponsored GCC/EMEA relocation.",
     "email": "yusufmohammdjojeh@gmail.com",
     "github": "GitHub",
     "linkedin": "LinkedIn",
