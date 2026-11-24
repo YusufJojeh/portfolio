@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Yusuf Jojeh — Backend & Applied AI Engineer",
-    "description": "Backend and business systems engineer. Multi-tenant SaaS, workflows, permissions, concurrency and applied AI, shown with the evidence behind each claim."
+    "title": "Yusuf Jojeh | Full-Stack Software Engineer",
+    "description": "Full-stack software for commerce, ERP/CRM, and SaaS, with deep backend engineering, production reliability, and applied AI."
   },
   "nav": {
     "name": "Yusuf Jojeh",
@@ -38,27 +38,27 @@
   },
   "opening": {
     "name": "YUSUF — JOJEH",
-    "role": "Backend & Applied AI Engineer",
-    "headline": "I turn business complexity into backend systems that hold up.",
+    "role": "Full-Stack Software Engineer | Backend & Applied AI",
+    "headline": "I build full-stack software for business operations.",
     "headlineLines": [
-      "I turn business complexity",
-      "into backend systems that hold up."
+      "I build full-stack software",
+      "for business operations."
     ],
     "headlineLinesMobile": [
-      "I turn business complexity",
-      "into backend systems that hold up."
+      "I build full-stack software",
+      "for business operations."
     ],
-    "support": "I design backend systems around how real businesses operate — workflows, permissions, data, APIs, integrations, reliability and applied AI.",
-    "supportShort": "Backend systems built around how real businesses operate.",
+    "support": "I build operator interfaces, APIs, and data workflows for commerce, ERP/CRM, and SaaS. My work includes payments, production reliability, and controlled AI actions.",
+    "supportShort": "Full-stack engineering for commerce, ERP/CRM, and applied AI.",
     "ctaPrimary": "Explore systems",
     "ctaSecondary": "Get in touch",
     "microcopy": [
-      "Backend Systems",
+      "Full-Stack Systems",
       "Business Workflows",
       "Applied AI"
     ],
     "location": "Syria / Remote · UTC+3",
-    "availability": "Available immediately · Remote · UTC+3 · Open to GCC/EMEA relocation",
+    "availability": "Remote from Syria · Open to GCC and selected EMEA relocation",
     "cv": "Download CV (PDF)",
     "scroll": "Scroll",
     "portraitAlt": "Portrait of Yusuf Jojeh overlooking an old city at dusk",
@@ -246,16 +246,16 @@
     "education": "B.Eng., Information Engineering & Distributed Systems — Al-Shahbaa University, 2021–2026",
     "items": [
       {
-        "period": "Aug 2026 — Present",
-        "role": "Backend / AI Engineer",
+        "period": "Sep 2026 — Present",
+        "role": "Backend Engineer",
         "company": "ArchitWeb",
-        "d": "Build PHP backends, commerce integrations, and AI-enabled workflows for GCC business systems.\n\n• Built a production agent-commerce integration spanning 26 REST operations and 21 MCP tools, with OAuth 2.1, integration keys, wallet checkout, spending controls, and shared rate limits.\n• Fixed wallet top-up behavior and checked 205 assertions before QA handoff, including retries, ownership, amount mismatches, and concurrency. Restored a payment option through a selective gateway backport that reached production.\n• Delivered refund reconciliation, tax/invoice corrections, financial reports, sales-funnel reporting, and consent-aware cart recovery.\n• Built a mobile shopping-assistant backend with session context, live stock/prices, cart changes, and customer-scoped order answers. Wrote frontend/mobile integration contracts.\n• Owned backend delivery for an endowment platform covering properties, leases, dues, beneficiaries, donations, ledger, payments, reports, and notifications. A later platform hardening run passed 630 tests and 4,018 assertions. Verified a non-production restore rehearsal and fixed a deployment defect that deleted uploads.\n• Planned a 15-task coding-agent pipeline upgrade and delivered my eight-task track; a teammate delivered and released the other track.\n• Built n8n task-intake automation serving four client groups and an end-to-end QA-agent proof of concept using GitHub Actions and Playwright. Follow up a trainee under manager guidance.\n• Introduced a QA reporting format formally adopted by the team. Coordinate backend, frontend/mobile, and QA delivery with reproducible checks and explicit unverified paths.\n\nProduction releases are handled by the release owner. I specify, review, and verify AI-assisted changes."
+        "d": "Own application-level production defects and coordinate frontend, mobile, and QA handoffs for commerce and operating systems.\\n\\n• Built a REST and MCP agent checkout layer with delegated access, spend controls, wallet orders, and traceability. Hardened wallet and refund flows against retries and concurrent execution.\\n• Enabled a fallback payment gateway in production during an outage, with about 45 minutes of hands-on engineering to activate it.\\n• Built GraphQL and custom PHP workflows for an Omani waqf operations platform. The work covered leases, donations, financial records, and acceptance testing.\\n• Own message-to-task intake and a staging QA workflow that uses AI for planning and Playwright for repeatable test outcomes. Write API and release handoffs and mentor an engineering trainee."
       },
       {
         "period": "Jan 2025 — Aug 2026",
-        "role": "Tech Lead / Full-Stack Engineer — AI & CRM",
+        "role": "Full-Stack Developer (AI & CRM)",
         "company": "Rakez Real Estate Company",
-        "d": "Contributed about 296 commits to a production Laravel/Vue.js ERP/CRM. Directed task allocation and architecture for AI and advertising-platform integrations, and reviewed frontend code and integration quality. The platform had 150+ APIs in total."
+        "d": "Worked across Laravel and Vue on a production Saudi real-estate ERP/CRM. Coordinated technical delivery across roughly five contributors, including architecture, task allocation, code review, advertising integrations, and acceptance checks. The platform contains more than 150 APIs across the team's work."
       },
       {
         "period": "2025 — 2026",
@@ -371,7 +371,7 @@
   },
   "closing": {
     "statement": "Better systems start with understanding the business.",
-    "body": "Open to remote roles in backend engineering, business systems and applied AI.",
+    "body": "Open to full-stack, backend, and applied AI roles with GCC teams and selected EMEA companies.",
     "availability": "Available immediately for remote roles; open to GCC/EMEA relocation.",
     "email": "yusufmohammdjojeh@gmail.com",
     "github": "GitHub",
@@ -380,7 +380,7 @@
     "imageAlt": "A city skyline after sunset"
   },
   "footer": {
-    "role": "Backend & Business Systems Engineer",
+    "role": "Full-Stack Software Engineer | Backend & Applied AI",
     "location": "Aleppo, Syria · Remote · UTC+3",
     "rights": "All rights reserved.",
     "top": "Back to top",
@@ -410,7 +410,7 @@
         },
         {
           "k": "My role",
-          "v": "Backend and full-stack engineer on a small team, and its largest committer"
+          "v": "Full-stack engineering and technical delivery across roughly five contributors"
         },
         {
           "k": "Context",
@@ -458,7 +458,7 @@
         "Laravel API on MySQL with a separate Vue 3 and TypeScript SPA (read from the repository config).",
         "Row locking (lockForUpdate) in sixteen backend files, and a waiting-list flow for units.",
         "Meta, Google and TikTok ad integrations, and Reverb, Sanctum, Spatie Permission and OpenAI packages.",
-        "My commits: about 350 of roughly 610, mostly ads attribution, architecture fixes, sales, contracts and integrations."
+        "The team platform includes more than 150 APIs. My contributions span sales, contracts, advertising attribution, and application architecture."
       ],
       "notClaimed": [
         "I did not build it alone: it is a team repository with several contributors.",
@@ -1651,8 +1651,8 @@
   "about": {
     "heading": "About.",
     "body": [
-      "I am Yusuf Mohammad Jojeh, a Backend & Applied AI Engineer based in Aleppo, Syria. I have developed software since 2022, working across PHP/Laravel, custom PHP frameworks, Python/FastAPI, and TypeScript. I also build frontend applications with React.js, Next.js, and Vue.js.",
-      "My work connects business workflows, payments, permissions, and AI integrations. I make changes reviewable through explicit API contracts, automated checks, and QA handoffs that state what was not verified. I hold the IBM AI Developer Professional Certificate and am continuing a RAG and agentic AI learning path."
+      "I am Yusuf Mohammad Jojeh, a full-stack software engineer based in Aleppo, Syria. Since 2022, I have built products with React, Next.js, and Vue, backed by Laravel/PHP, NestJS, and Python/FastAPI services.",
+      "My work connects business workflows, payments, permissions, and AI integrations. I use explicit API contracts, automated regression checks, and QA handoffs to make changes verifiable. Hands-on marketing and sales operations in medical tourism gave me direct experience with campaigns, qualification, and CRM follow-up. I hold the IBM AI Developer Professional Certificate."
     ],
     "focus": [
       "Backend architecture",
